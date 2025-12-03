@@ -1,0 +1,5 @@
+read_verilog -sv -formal -overwrite {workspace}/verilog/Clock_Gen_wrapper.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/vendor/AD9361_1RT_FDD.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/top_wrapper.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/top.json

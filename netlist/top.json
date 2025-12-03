@@ -1,0 +1,1801 @@
+{
+  "creator": "Yosys 0.48 (git sha1 aaa5347494801e9e3870b31387da59da24233f76, clang++ 18.1.2-wasi-sdk -O3)",
+  "modules": {
+    "AD9361_1RT_FDD": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:12.1-525.10"
+      },
+      "ports": {
+        "clk200M": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "AD9361_P0_D": {
+          "direction": "input",
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+        },
+        "AD9361_DATACLK": {
+          "direction": "input",
+          "bits": [ 15 ]
+        },
+        "AD9361_RX_FRAME": {
+          "direction": "input",
+          "bits": [ 16 ]
+        },
+        "AD9361_RX_DAT_I": {
+          "direction": "output",
+          "bits": [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ]
+        },
+        "AD9361_RX_DAT_Q": {
+          "direction": "output",
+          "bits": [ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+        },
+        "AD9361_RX_CLK": {
+          "direction": "output",
+          "bits": [ 41 ]
+        },
+        "AD9361_TX_DAT_I": {
+          "direction": "input",
+          "bits": [ 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 ]
+        },
+        "AD9361_TX_DAT_Q": {
+          "direction": "input",
+          "bits": [ 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ]
+        },
+        "AD9361_TX_CLK": {
+          "direction": "input",
+          "bits": [ 66 ]
+        },
+        "AD9361_P1_D": {
+          "direction": "output",
+          "bits": [ 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ]
+        },
+        "AD9361_FBCLK": {
+          "direction": "output",
+          "bits": [ 79 ]
+        },
+        "AD9361_TX_FRAME": {
+          "direction": "output",
+          "bits": [ 16 ]
+        }
+      },
+      "cells": {
+        "$procdff$10": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "0",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:511.3-515.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 41 ],
+            "D": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ],
+            "Q": [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ]
+          }
+        },
+        "$procdff$11": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "0",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:511.3-515.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 41 ],
+            "D": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 ],
+            "Q": [ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+          }
+        },
+        "IBUFG_instA": {
+          "hide_name": 0,
+          "type": "IBUFG",
+          "parameters": {
+            "IBUF_LOW_PWR": "FALSE",
+            "IOSTANDARD": "DEFAULT"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:40.11-43.10"
+          },
+          "connections": {
+            "I": [ 15 ],
+            "O": [ 79 ]
+          }
+        },
+        "IDDR_inst_B0": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:330.10-338.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 3 ],
+            "Q1": [ 92 ],
+            "Q2": [ 80 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B1": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:315.10-323.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 4 ],
+            "Q1": [ 93 ],
+            "Q2": [ 81 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B10": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:180.10-188.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 13 ],
+            "Q1": [ 102 ],
+            "Q2": [ 90 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B11": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:165.10-173.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 14 ],
+            "Q1": [ 103 ],
+            "Q2": [ 91 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B2": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:300.10-308.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 5 ],
+            "Q1": [ 94 ],
+            "Q2": [ 82 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B3": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:285.10-293.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 6 ],
+            "Q1": [ 95 ],
+            "Q2": [ 83 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B4": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:270.10-278.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 7 ],
+            "Q1": [ 96 ],
+            "Q2": [ 84 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B5": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:255.10-263.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 8 ],
+            "Q1": [ 97 ],
+            "Q2": [ 85 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B6": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:240.10-248.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 9 ],
+            "Q1": [ 98 ],
+            "Q2": [ 86 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B7": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:225.10-233.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 10 ],
+            "Q1": [ 99 ],
+            "Q2": [ 87 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B8": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:210.10-218.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 11 ],
+            "Q1": [ 100 ],
+            "Q2": [ 88 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDDR_inst_B9": {
+          "hide_name": 0,
+          "type": "IDDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE_PIPELINED",
+            "INIT_Q1": "0",
+            "INIT_Q2": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:195.10-203.9"
+          },
+          "connections": {
+            "C": [ 41 ],
+            "CE": [ "1" ],
+            "D": [ 12 ],
+            "Q1": [ 101 ],
+            "Q2": [ 89 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "IDELAYCTRL_inst": {
+          "hide_name": 0,
+          "type": "IDELAYCTRL",
+          "parameters": {
+          },
+          "attributes": {
+            "IODELAY_GROUP": "idelay",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:50.14-54.15"
+          },
+          "connections": {
+            "RDY": [ 104 ],
+            "REFCLK": [ 2 ],
+            "RST": [ "0" ]
+          }
+        },
+        "IDELAYE2_instA": {
+          "hide_name": 0,
+          "type": "IDELAYE2",
+          "parameters": {
+            "CINVCTRL_SEL": "FALSE",
+            "DELAY_SRC": "DATAIN",
+            "HIGH_PERFORMANCE_MODE": "FALSE",
+            "IDELAY_TYPE": "FIXED",
+            "IDELAY_VALUE": "00000000000000000000000000000000",
+            "PIPE_SEL": "FALSE",
+            "REFCLK_FREQUENCY": "200.000000",
+            "SIGNAL_PATTERN": "DATA"
+          },
+          "attributes": {
+            "IODELAY_GROUP": "idelay",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:67.12-80.13"
+          },
+          "connections": {
+            "C": [ "1" ],
+            "CE": [ "1" ],
+            "CINVCTRL": [ "0" ],
+            "CNTVALUEIN": [ "0", "0", "0", "0", "0" ],
+            "CNTVALUEOUT": [ ],
+            "DATAIN": [ 79 ],
+            "DATAOUT": [ 105 ],
+            "IDATAIN": [ "0" ],
+            "INC": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LD": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LDPIPEEN": [ "0" ],
+            "REGRST": [ "0" ]
+          }
+        },
+        "IDELAYE2_instB": {
+          "hide_name": 0,
+          "type": "IDELAYE2",
+          "parameters": {
+            "CINVCTRL_SEL": "FALSE",
+            "DELAY_SRC": "DATAIN",
+            "HIGH_PERFORMANCE_MODE": "FALSE",
+            "IDELAY_TYPE": "FIXED",
+            "IDELAY_VALUE": "00000000000000000000000000000000",
+            "PIPE_SEL": "FALSE",
+            "REFCLK_FREQUENCY": "200.000000",
+            "SIGNAL_PATTERN": "DATA"
+          },
+          "attributes": {
+            "IODELAY_GROUP": "idelay",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:93.12-106.13"
+          },
+          "connections": {
+            "C": [ "1" ],
+            "CE": [ "1" ],
+            "CINVCTRL": [ "0" ],
+            "CNTVALUEIN": [ "0", "0", "0", "0", "0" ],
+            "CNTVALUEOUT": [ ],
+            "DATAIN": [ 105 ],
+            "DATAOUT": [ 106 ],
+            "IDATAIN": [ "0" ],
+            "INC": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LD": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LDPIPEEN": [ "0" ],
+            "REGRST": [ "0" ]
+          }
+        },
+        "IDELAYE2_instC": {
+          "hide_name": 0,
+          "type": "IDELAYE2",
+          "parameters": {
+            "CINVCTRL_SEL": "FALSE",
+            "DELAY_SRC": "DATAIN",
+            "HIGH_PERFORMANCE_MODE": "FALSE",
+            "IDELAY_TYPE": "FIXED",
+            "IDELAY_VALUE": "00000000000000000000000000000000",
+            "PIPE_SEL": "FALSE",
+            "REFCLK_FREQUENCY": "200.000000",
+            "SIGNAL_PATTERN": "DATA"
+          },
+          "attributes": {
+            "IODELAY_GROUP": "idelay",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:119.12-132.13"
+          },
+          "connections": {
+            "C": [ "1" ],
+            "CE": [ "1" ],
+            "CINVCTRL": [ "0" ],
+            "CNTVALUEIN": [ "0", "0", "0", "0", "0" ],
+            "CNTVALUEOUT": [ ],
+            "DATAIN": [ 106 ],
+            "DATAOUT": [ 107 ],
+            "IDATAIN": [ "0" ],
+            "INC": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LD": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LDPIPEEN": [ "0" ],
+            "REGRST": [ "0" ]
+          }
+        },
+        "IDELAYE2_instD": {
+          "hide_name": 0,
+          "type": "IDELAYE2",
+          "parameters": {
+            "CINVCTRL_SEL": "FALSE",
+            "DELAY_SRC": "DATAIN",
+            "HIGH_PERFORMANCE_MODE": "FALSE",
+            "IDELAY_TYPE": "FIXED",
+            "IDELAY_VALUE": "00000000000000000000000000000000",
+            "PIPE_SEL": "FALSE",
+            "REFCLK_FREQUENCY": "200.000000",
+            "SIGNAL_PATTERN": "DATA"
+          },
+          "attributes": {
+            "IODELAY_GROUP": "idelay",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:145.12-158.13"
+          },
+          "connections": {
+            "C": [ "1" ],
+            "CE": [ "1" ],
+            "CINVCTRL": [ "0" ],
+            "CNTVALUEIN": [ "0", "0", "0", "0", "0" ],
+            "CNTVALUEOUT": [ ],
+            "DATAIN": [ 107 ],
+            "DATAOUT": [ 41 ],
+            "IDATAIN": [ "0" ],
+            "INC": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LD": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "LDPIPEEN": [ "0" ],
+            "REGRST": [ "0" ]
+          }
+        },
+        "ODDR_inst_B0": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:498.10-506.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 54 ],
+            "D2": [ 42 ],
+            "Q": [ 67 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B1": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:484.10-492.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 55 ],
+            "D2": [ 43 ],
+            "Q": [ 68 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B10": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:358.10-366.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 64 ],
+            "D2": [ 52 ],
+            "Q": [ 77 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B11": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:344.10-352.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 65 ],
+            "D2": [ 53 ],
+            "Q": [ 78 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B2": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:470.10-478.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 56 ],
+            "D2": [ 44 ],
+            "Q": [ 69 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B3": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:456.10-464.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 57 ],
+            "D2": [ 45 ],
+            "Q": [ 70 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B4": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:442.10-450.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 58 ],
+            "D2": [ 46 ],
+            "Q": [ 71 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B5": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:428.10-436.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 59 ],
+            "D2": [ 47 ],
+            "Q": [ 72 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B6": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:414.10-422.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 60 ],
+            "D2": [ 48 ],
+            "Q": [ 73 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B7": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:400.10-408.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 61 ],
+            "D2": [ 49 ],
+            "Q": [ 74 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B8": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:386.10-394.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 62 ],
+            "D2": [ 50 ],
+            "Q": [ 75 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        },
+        "ODDR_inst_B9": {
+          "hide_name": 0,
+          "type": "ODDR",
+          "parameters": {
+            "DDR_CLK_EDGE": "SAME_EDGE",
+            "INIT": "0",
+            "SRTYPE": "SYNC"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:372.10-380.9"
+          },
+          "connections": {
+            "C": [ 66 ],
+            "CE": [ "1" ],
+            "D1": [ 63 ],
+            "D2": [ 51 ],
+            "Q": [ 76 ],
+            "R": [ "0" ],
+            "S": [ "0" ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\AD9361_RX_DAT_Ib[11:0]": {
+          "hide_name": 1,
+          "bits": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:511.3-515.6"
+          }
+        },
+        "$0\\AD9361_RX_DAT_Qb[11:0]": {
+          "hide_name": 1,
+          "bits": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:511.3-515.6"
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$1": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$2": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$3": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$4": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$5": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$6": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$7": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "$auto$genrtlil.cc:2136:genRTLIL$8": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "signed": 1,
+          "attributes": {
+          }
+        },
+        "AD9361_DATACLK": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:15.11-15.25"
+          }
+        },
+        "AD9361_DATACLKa": {
+          "hide_name": 0,
+          "bits": [ 108 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:33.8-33.23"
+          }
+        },
+        "AD9361_DATACLKo": {
+          "hide_name": 0,
+          "bits": [ 79 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:32.8-32.23"
+          }
+        },
+        "AD9361_FBCLK": {
+          "hide_name": 0,
+          "bits": [ 79 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:25.12-25.24"
+          }
+        },
+        "AD9361_P0_D": {
+          "hide_name": 0,
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:14.19-14.30"
+          }
+        },
+        "AD9361_P1_D": {
+          "hide_name": 0,
+          "bits": [ 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:24.19-24.30"
+          }
+        },
+        "AD9361_RX_CLK": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:19.12-19.25"
+          }
+        },
+        "AD9361_RX_DAT_I": {
+          "hide_name": 0,
+          "bits": [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:17.19-17.34"
+          }
+        },
+        "AD9361_RX_DAT_Ia": {
+          "hide_name": 0,
+          "bits": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:34.15-34.31"
+          }
+        },
+        "AD9361_RX_DAT_Ib": {
+          "hide_name": 0,
+          "bits": [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:508.13-508.29"
+          }
+        },
+        "AD9361_RX_DAT_Ic": {
+          "hide_name": 0,
+          "bits": [ 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:508.31-508.47"
+          }
+        },
+        "AD9361_RX_DAT_Q": {
+          "hide_name": 0,
+          "bits": [ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:18.19-18.34"
+          }
+        },
+        "AD9361_RX_DAT_Qa": {
+          "hide_name": 0,
+          "bits": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:35.15-35.31"
+          }
+        },
+        "AD9361_RX_DAT_Qb": {
+          "hide_name": 0,
+          "bits": [ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:509.13-509.29"
+          }
+        },
+        "AD9361_RX_DAT_Qc": {
+          "hide_name": 0,
+          "bits": [ 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:509.31-509.47"
+          }
+        },
+        "AD9361_RX_FRAME": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:16.11-16.26"
+          }
+        },
+        "AD9361_RX_FRAME_dy": {
+          "hide_name": 0,
+          "bits": [ 133 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:30.8-30.26"
+          }
+        },
+        "AD9361_TX_CLK": {
+          "hide_name": 0,
+          "bits": [ 66 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:23.11-23.24"
+          }
+        },
+        "AD9361_TX_DAT_I": {
+          "hide_name": 0,
+          "bits": [ 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:21.18-21.33"
+          }
+        },
+        "AD9361_TX_DAT_Q": {
+          "hide_name": 0,
+          "bits": [ 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:22.18-22.33"
+          }
+        },
+        "AD9361_TX_FRAME": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:26.12-26.27"
+          }
+        },
+        "CLK_delay": {
+          "hide_name": 0,
+          "bits": [ 105, 106, 107, 41 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:29.14-29.23"
+          }
+        },
+        "IDELAYCTRL_rdy": {
+          "hide_name": 0,
+          "bits": [ 104 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:31.8-31.22"
+          }
+        },
+        "clk200M": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/verilog/vendor/AD9361_1RT_FDD.v:13.11-13.18"
+          }
+        }
+      }
+    },
+    "Clock_Gen": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/Clock_Gen_wrapper.v:1.1-149.10"
+      },
+      "ports": {
+        "PL_CLK_100MHz": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "clk_2d048M": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "rst_32d768M": {
+          "direction": "output",
+          "bits": [ 4 ]
+        },
+        "rst_16d384M": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "rst_n_1d024M": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "clk_32d768M": {
+          "direction": "output",
+          "bits": [ 7 ]
+        },
+        "clk_16d384M": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "clk_200M": {
+          "direction": "output",
+          "bits": [ 9 ]
+        },
+        "clk_1d024M": {
+          "direction": "output",
+          "bits": [ 10 ]
+        }
+      },
+      "cells": {
+        "u_Div_clk32M768": {
+          "hide_name": 0,
+          "type": "Div_clk32M768",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:75.19-92.6"
+          },
+          "connections": {
+            "clk128K": [ 11 ],
+            "clk16K": [ 12 ],
+            "clk16M384": [ 8 ],
+            "clk1K": [ 13 ],
+            "clk1M024": [ 10 ],
+            "clk256K": [ 14 ],
+            "clk2K": [ 15 ],
+            "clk2M048": [ 3 ],
+            "clk32K": [ 16 ],
+            "clk32M768": [ 7 ],
+            "clk4K": [ 17 ],
+            "clk4M096": [ 18 ],
+            "clk512K": [ 19 ],
+            "clk64K": [ 20 ],
+            "clk8K": [ 21 ],
+            "clk8M192": [ 22 ]
+          }
+        },
+        "u_clk_wiz_128M": {
+          "hide_name": 0,
+          "type": "clk_wiz_128M",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:61.18-65.6"
+          },
+          "connections": {
+            "clk_128M": [ 23 ],
+            "clk_200M": [ 9 ],
+            "clk_in1": [ 2 ]
+          }
+        },
+        "u_clk_wiz_32M768": {
+          "hide_name": 0,
+          "type": "clk_wiz_32M768",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:68.20-72.6"
+          },
+          "connections": {
+            "clk_32M768": [ 7 ],
+            "clk_in1": [ 23 ],
+            "locked": [ 24 ]
+          }
+        },
+        "u_proc_sys_reset_16M384": {
+          "hide_name": 0,
+          "type": "proc_sys_reset_gen",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:108.24-119.6"
+          },
+          "connections": {
+            "aux_reset_in": [ "1" ],
+            "bus_struct_reset": [ 5 ],
+            "dcm_locked": [ 24 ],
+            "ext_reset_in": [ "1" ],
+            "interconnect_aresetn": [ 25 ],
+            "mb_debug_sys_rst": [ "0" ],
+            "mb_reset": [ 26 ],
+            "peripheral_aresetn": [ 27 ],
+            "peripheral_reset": [ 28 ],
+            "slowest_sync_clk": [ 8 ]
+          }
+        },
+        "u_proc_sys_reset_1M024": {
+          "hide_name": 0,
+          "type": "proc_sys_reset_gen",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:122.24-133.6"
+          },
+          "connections": {
+            "aux_reset_in": [ "1" ],
+            "bus_struct_reset": [ 29 ],
+            "dcm_locked": [ 24 ],
+            "ext_reset_in": [ "1" ],
+            "interconnect_aresetn": [ 6 ],
+            "mb_debug_sys_rst": [ "0" ],
+            "mb_reset": [ 30 ],
+            "peripheral_aresetn": [ 31 ],
+            "peripheral_reset": [ 32 ],
+            "slowest_sync_clk": [ 10 ]
+          }
+        },
+        "u_proc_sys_reset_32M768": {
+          "hide_name": 0,
+          "type": "proc_sys_reset_gen",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:136.24-147.6"
+          },
+          "connections": {
+            "aux_reset_in": [ "1" ],
+            "bus_struct_reset": [ 4 ],
+            "dcm_locked": [ 24 ],
+            "ext_reset_in": [ "1" ],
+            "interconnect_aresetn": [ 33 ],
+            "mb_debug_sys_rst": [ "0" ],
+            "mb_reset": [ 34 ],
+            "peripheral_aresetn": [ 35 ],
+            "peripheral_reset": [ 36 ],
+            "slowest_sync_clk": [ 7 ]
+          }
+        }
+      },
+      "netnames": {
+        "PL_CLK_100MHz": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:2.17-2.30"
+          }
+        },
+        "bus_struct_reset_2": {
+          "hide_name": 0,
+          "bits": [ 29 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:43.16-43.34"
+          }
+        },
+        "clk128K": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:33.10-33.17"
+          }
+        },
+        "clk16K": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:36.10-36.16"
+          }
+        },
+        "clk16M384": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:26.10-26.19"
+          }
+        },
+        "clk1K": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:40.10-40.15"
+          }
+        },
+        "clk1M024": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:30.10-30.18"
+          }
+        },
+        "clk256K": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:32.10-32.17"
+          }
+        },
+        "clk2K": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:39.10-39.15"
+          }
+        },
+        "clk2M048": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:29.10-29.18"
+          }
+        },
+        "clk32K": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:35.10-35.16"
+          }
+        },
+        "clk4K": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:38.10-38.15"
+          }
+        },
+        "clk4M096": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:28.10-28.18"
+          }
+        },
+        "clk512K": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:31.10-31.17"
+          }
+        },
+        "clk64K": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:34.10-34.16"
+          }
+        },
+        "clk8K": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:37.10-37.15"
+          }
+        },
+        "clk8M192": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:27.10-27.18"
+          }
+        },
+        "clk_128M": {
+          "hide_name": 0,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:18.10-18.18"
+          }
+        },
+        "clk_16d384M": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:8.17-8.28"
+          }
+        },
+        "clk_1d024M": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:10.17-10.27"
+          }
+        },
+        "clk_200M": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:9.17-9.25"
+          }
+        },
+        "clk_2d048M": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:3.17-3.27"
+          }
+        },
+        "clk_32d768M": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:7.17-7.28"
+          }
+        },
+        "clk_gen_32d768M": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:22.10-22.25"
+          }
+        },
+        "interconnect_aresetn": {
+          "hide_name": 0,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:47.16-47.36"
+          }
+        },
+        "interconnect_aresetn_3": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:48.16-48.38"
+          }
+        },
+        "locked": {
+          "hide_name": 0,
+          "bits": [ 24 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:23.10-23.16"
+          }
+        },
+        "mb_reset": {
+          "hide_name": 0,
+          "bits": [ 26 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:52.16-52.24"
+          }
+        },
+        "mb_reset_2": {
+          "hide_name": 0,
+          "bits": [ 30 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:53.16-53.26"
+          }
+        },
+        "mb_reset_3": {
+          "hide_name": 0,
+          "bits": [ 34 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:54.16-54.26"
+          }
+        },
+        "peripheral_aresetn": {
+          "hide_name": 0,
+          "bits": [ 27 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:49.16-49.34"
+          }
+        },
+        "peripheral_aresetn_2": {
+          "hide_name": 0,
+          "bits": [ 31 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:50.16-50.36"
+          }
+        },
+        "peripheral_aresetn_3": {
+          "hide_name": 0,
+          "bits": [ 35 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:51.16-51.36"
+          }
+        },
+        "peripheral_reset": {
+          "hide_name": 0,
+          "bits": [ 28 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:44.16-44.32"
+          }
+        },
+        "peripheral_reset_2": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:45.16-45.34"
+          }
+        },
+        "peripheral_reset_3": {
+          "hide_name": 0,
+          "bits": [ 36 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:46.16-46.34"
+          }
+        },
+        "rst_16d384M": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:5.17-5.28"
+          }
+        },
+        "rst_32d768M": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:4.17-4.28"
+          }
+        },
+        "rst_n_1d024M": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:6.17-6.29"
+          }
+        }
+      }
+    },
+    "top": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/top_wrapper.v:1.1-61.10"
+      },
+      "ports": {
+        "PL_CLK_100MHz": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "AD9361_P0_D": {
+          "direction": "input",
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+        },
+        "AD9361_DATACLK": {
+          "direction": "input",
+          "bits": [ 15 ]
+        },
+        "AD9361_RX_FRAME": {
+          "direction": "input",
+          "bits": [ 16 ]
+        },
+        "AD9361_FBCLK": {
+          "direction": "output",
+          "bits": [ 17 ]
+        },
+        "AD9361_P1_D": {
+          "direction": "output",
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+        },
+        "AD9361_TX_FRAME": {
+          "direction": "output",
+          "bits": [ 30 ]
+        },
+        "GPIO_TH1": {
+          "direction": "output",
+          "bits": [ 31 ]
+        },
+        "GPIO_TH2": {
+          "direction": "output",
+          "bits": [ 32 ]
+        },
+        "GPIO_TH3": {
+          "direction": "output",
+          "bits": [ 33 ]
+        },
+        "GPIO_TH4": {
+          "direction": "output",
+          "bits": [ 34 ]
+        }
+      },
+      "cells": {
+        "u_AD9361_1RT_FDD": {
+          "hide_name": 0,
+          "type": "AD9361_1RT_FDD",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/top_wrapper.v:45.16-59.2"
+          },
+          "port_directions": {
+            "AD9361_DATACLK": "input",
+            "AD9361_FBCLK": "output",
+            "AD9361_P0_D": "input",
+            "AD9361_P1_D": "output",
+            "AD9361_RX_CLK": "output",
+            "AD9361_RX_DAT_I": "output",
+            "AD9361_RX_DAT_Q": "output",
+            "AD9361_RX_FRAME": "input",
+            "AD9361_TX_CLK": "input",
+            "AD9361_TX_DAT_I": "input",
+            "AD9361_TX_DAT_Q": "input",
+            "AD9361_TX_FRAME": "output",
+            "clk200M": "input"
+          },
+          "connections": {
+            "AD9361_DATACLK": [ 15 ],
+            "AD9361_FBCLK": [ 17 ],
+            "AD9361_P0_D": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ],
+            "AD9361_P1_D": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ],
+            "AD9361_RX_CLK": [ 35 ],
+            "AD9361_RX_DAT_I": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 ],
+            "AD9361_RX_DAT_Q": [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ],
+            "AD9361_RX_FRAME": [ 16 ],
+            "AD9361_TX_CLK": [ 60 ],
+            "AD9361_TX_DAT_I": [ 61 ],
+            "AD9361_TX_DAT_Q": [ 62 ],
+            "AD9361_TX_FRAME": [ 30 ],
+            "clk200M": [ 63 ]
+          }
+        },
+        "u_Clock_Gen": {
+          "hide_name": 0,
+          "type": "Clock_Gen",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/top_wrapper.v:25.11-35.2"
+          },
+          "port_directions": {
+            "PL_CLK_100MHz": "input",
+            "clk_16d384M": "output",
+            "clk_1d024M": "output",
+            "clk_200M": "output",
+            "clk_2d048M": "output",
+            "clk_32d768M": "output",
+            "rst_16d384M": "output",
+            "rst_32d768M": "output",
+            "rst_n_1d024M": "output"
+          },
+          "connections": {
+            "PL_CLK_100MHz": [ 2 ],
+            "clk_16d384M": [ 64 ],
+            "clk_1d024M": [ 65 ],
+            "clk_200M": [ 63 ],
+            "clk_2d048M": [ 66 ],
+            "clk_32d768M": [ 67 ],
+            "rst_16d384M": [ 68 ],
+            "rst_32d768M": [ 69 ],
+            "rst_n_1d024M": [ 70 ]
+          }
+        }
+      },
+      "netnames": {
+        "AD9361_DATACLK": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:4.11-4.25"
+          }
+        },
+        "AD9361_FBCLK": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:6.12-6.24"
+          }
+        },
+        "AD9361_P0_D": {
+          "hide_name": 0,
+          "bits": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:3.18-3.29"
+          }
+        },
+        "AD9361_P1_D": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:7.19-7.30"
+          }
+        },
+        "AD9361_RX_CLK": {
+          "hide_name": 0,
+          "bits": [ 35 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:40.6-40.19"
+          }
+        },
+        "AD9361_RX_DAT_I": {
+          "hide_name": 0,
+          "bits": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:38.13-38.28"
+          }
+        },
+        "AD9361_RX_DAT_Q": {
+          "hide_name": 0,
+          "bits": [ 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:39.13-39.28"
+          }
+        },
+        "AD9361_RX_FRAME": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:5.11-5.26"
+          }
+        },
+        "AD9361_TX_CLK": {
+          "hide_name": 0,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:55.24-55.37"
+          }
+        },
+        "AD9361_TX_DAT_I": {
+          "hide_name": 0,
+          "bits": [ 61 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:53.24-53.39"
+          }
+        },
+        "AD9361_TX_DAT_Q": {
+          "hide_name": 0,
+          "bits": [ 62 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:54.24-54.39"
+          }
+        },
+        "AD9361_TX_FRAME": {
+          "hide_name": 0,
+          "bits": [ 30 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:8.12-8.27"
+          }
+        },
+        "GPIO_TH1": {
+          "hide_name": 0,
+          "bits": [ 31 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:9.12-9.20"
+          }
+        },
+        "GPIO_TH2": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:10.12-10.20"
+          }
+        },
+        "GPIO_TH3": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:11.12-11.20"
+          }
+        },
+        "GPIO_TH4": {
+          "hide_name": 0,
+          "bits": [ 34 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:12.12-12.20"
+          }
+        },
+        "PL_CLK_100MHz": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:2.11-2.24"
+          }
+        },
+        "clk_16d384M": {
+          "hide_name": 0,
+          "bits": [ 64 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:21.6-21.17"
+          }
+        },
+        "clk_1d024M": {
+          "hide_name": 0,
+          "bits": [ 65 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:23.6-23.16"
+          }
+        },
+        "clk_200M": {
+          "hide_name": 0,
+          "bits": [ 63 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:22.6-22.14"
+          }
+        },
+        "clk_2d048M": {
+          "hide_name": 0,
+          "bits": [ 66 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:16.6-16.16"
+          }
+        },
+        "clk_32d768M": {
+          "hide_name": 0,
+          "bits": [ 67 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:20.6-20.17"
+          }
+        },
+        "rst_16d384M": {
+          "hide_name": 0,
+          "bits": [ 68 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:18.6-18.17"
+          }
+        },
+        "rst_32d768M": {
+          "hide_name": 0,
+          "bits": [ 69 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:17.6-17.17"
+          }
+        },
+        "rst_n_1d024M": {
+          "hide_name": 0,
+          "bits": [ 70 ],
+          "attributes": {
+            "src": "{workspace}/verilog/top_wrapper.v:19.6-19.18"
+          }
+        }
+      }
+    }
+  }
+}

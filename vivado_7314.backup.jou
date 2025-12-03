@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Dec  2 14:23:35 2025
+# Process ID         : 7314
+# Current directory  : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+# Command line       : vivado
+# Log file           : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+# Journal file       : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+# Running On         : LiPtPDesktop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419.198 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 16611 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20906 MB
+# Available Virtual  : 15084 MB
+#-----------------------------------------------------------
+start_gui
+create_project sdr-psk-fpga-2025 . -part xc7z020clg484-1
+add_files {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Pre.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_QPSK.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_MIX.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/vendor/AD9361_1RT_FDD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+add_files -fileset constrs_1 -norecurse /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constriants/lt_zynq_V200.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

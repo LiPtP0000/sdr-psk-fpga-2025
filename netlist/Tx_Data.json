@@ -1,0 +1,1929 @@
+{
+  "creator": "Yosys 0.48 (git sha1 aaa5347494801e9e3870b31387da59da24233f76, clang++ 18.1.2-wasi-sdk -O3)",
+  "modules": {
+    "PN_Gen": {
+      "attributes": {
+        "dynports": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/PN_Gen.v:12.1-52.10"
+      },
+      "parameter_default_values": {
+        "N": "00000000000000000000000000000101"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "pn": {
+          "direction": "output",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+        "$logic_not${workspace}/verilog/PN_Gen.v:51$2": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:51.16-51.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 5 ]
+          }
+        },
+        "$procdff$108": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:23.7-32.10"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 6 ],
+            "Q": [ 3 ]
+          }
+        },
+        "$procdff$109": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:23.7-32.10"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 7, 8, 9, 10, 11 ],
+            "Q": [ 12, 13, 14, 15, 16 ]
+          }
+        },
+        "$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PN_Gen.v:24.13-24.16|{workspace}/verilog/PN_Gen.v:24.9-31.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "0", "0" ],
+            "B": [ 17, 12, 13, 14, 15 ],
+            "S": [ 4 ],
+            "Y": [ 7, 8, 9, 10, 11 ]
+          }
+        },
+        "$procmux$97": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PN_Gen.v:24.13-24.16|{workspace}/verilog/PN_Gen.v:24.9-31.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 16 ],
+            "S": [ 4 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$reduce_or${workspace}/verilog/PN_Gen.v:51$1": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:51.18-51.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12, 13, 14, 15, 16 ],
+            "Y": [ 4 ]
+          }
+        },
+        "$xor${workspace}/verilog/PN_Gen.v:29$4": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:29.36-29.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16 ],
+            "B": [ 14 ],
+            "Y": [ 17 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\PN_buf[4:0]": {
+          "hide_name": 1,
+          "bits": [ 7, 8, 9, 10, 11 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:23.7-32.10"
+          }
+        },
+        "$0\\pn[0:0]": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:23.7-32.10"
+          }
+        },
+        "$1\\PN_buf[4:0]": {
+          "hide_name": 1,
+          "bits": [ "1", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:18.15-18.25"
+          }
+        },
+        "$logic_not${workspace}/verilog/PN_Gen.v:51$2_Y": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:51.16-51.26"
+          }
+        },
+        "$procmux$100_Y": {
+          "hide_name": 1,
+          "bits": [ 7, 8, 9, 10, 11 ],
+          "attributes": {
+          }
+        },
+        "$procmux$101_CMP": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+          }
+        },
+        "$procmux$97_Y": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+          }
+        },
+        "$procmux$98_CMP": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+          }
+        },
+        "$reduce_or${workspace}/verilog/PN_Gen.v:51$1_Y": {
+          "hide_name": 1,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:51.18-51.25"
+          }
+        },
+        "$xor${workspace}/verilog/PN_Gen.v:29$4_Y": {
+          "hide_name": 1,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:29.36-29.57"
+          }
+        },
+        "PN_buf": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15, 16 ],
+          "attributes": {
+            "init": "00001",
+            "src": "{workspace}/verilog/PN_Gen.v:18.15-18.21"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:15.13-15.16"
+          }
+        },
+        "pn": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:16.13-16.15"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PN_Gen.v:19.15-19.18"
+          }
+        }
+      }
+    },
+    "Tx_Data": {
+      "attributes": {
+        "dynports": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/Tx_Data.v:12.1-92.10"
+      },
+      "parameter_default_values": {
+        "BYTES": "00000000000000000000000000000001"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "MODE_CTRL": {
+          "direction": "input",
+          "bits": [ 4, 5, 6, 7 ]
+        },
+        "pkt_sent": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "data_tdata": {
+          "direction": "output",
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16 ]
+        },
+        "data_tvalid": {
+          "direction": "output",
+          "bits": [ 17 ]
+        },
+        "data_tready": {
+          "direction": "input",
+          "bits": [ 18 ]
+        },
+        "data_tlast": {
+          "direction": "output",
+          "bits": [ 19 ]
+        },
+        "data_tuser": {
+          "direction": "output",
+          "bits": [ 20 ]
+        },
+        "payload_length": {
+          "direction": "output",
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0" ]
+        }
+      },
+      "cells": {
+        "$add${workspace}/verilog/Tx_Data.v:66$10": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ]
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:66$11": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.27-66.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "B": [ "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ]
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:68$13": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.25-68.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100 ]
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:68$14": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.40-68.68"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+            "B": [ "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:70$16": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000100000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:70.35-70.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148 ]
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:52$7": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6, 7 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 149 ]
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:58$8": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6, 7 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 150 ]
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:68$15": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.25-68.68"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100 ],
+            "B": [ 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+            "Y": [ 151 ]
+          }
+        },
+        "$lt${workspace}/verilog/Tx_Data.v:66$12": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000010000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000010000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ],
+            "B": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ],
+            "Y": [ 152 ]
+          }
+        },
+        "$not${workspace}/verilog/Tx_Data.v:78$17": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:78.28-78.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 153 ],
+            "Y": [ 154 ]
+          }
+        },
+        "$procdff$102": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 155, 156, 157, 158, 159, 160, 161, 162 ],
+            "Q": [ 9, 10, 11, 12, 13, 14, 15, 16 ]
+          }
+        },
+        "$procdff$103": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 163 ],
+            "Q": [ 17 ]
+          }
+        },
+        "$procdff$104": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 164 ],
+            "Q": [ 19 ]
+          }
+        },
+        "$procdff$105": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 165 ],
+            "Q": [ 20 ]
+          }
+        },
+        "$procdff$106": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ],
+            "Q": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ]
+          }
+        },
+        "$procdff$107": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 182 ],
+            "Q": [ 153 ]
+          }
+        },
+        "$procmux$22": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:76.15-76.23|{workspace}/verilog/Tx_Data.v:76.11-80.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 153 ],
+            "B": [ 154 ],
+            "S": [ 8 ],
+            "Y": [ 183 ]
+          }
+        },
+        "$procmux$25": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55|{workspace}/verilog/Tx_Data.v:66.9-81.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183 ],
+            "B": [ 153 ],
+            "S": [ 152 ],
+            "Y": [ 184 ]
+          }
+        },
+        "$procmux$28": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 184 ],
+            "B": [ 153 ],
+            "S": [ 150 ],
+            "Y": [ 185 ]
+          }
+        },
+        "$procmux$31": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 185 ],
+            "B": [ 153 ],
+            "S": [ 149 ],
+            "Y": [ 186 ]
+          }
+        },
+        "$procmux$33": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 186 ],
+            "S": [ 3 ],
+            "Y": [ 182 ]
+          }
+        },
+        "$procmux$36": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:76.15-76.23|{workspace}/verilog/Tx_Data.v:76.11-80.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 8 ],
+            "Y": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ]
+          }
+        },
+        "$procmux$39": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:70.15-70.26|{workspace}/verilog/Tx_Data.v:70.11-70.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "B": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132 ],
+            "S": [ 18 ],
+            "Y": [ 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ]
+          }
+        },
+        "$procmux$41": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55|{workspace}/verilog/Tx_Data.v:66.9-81.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ],
+            "B": [ 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ],
+            "S": [ 152 ],
+            "Y": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234 ]
+          }
+        },
+        "$procmux$44": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234 ],
+            "B": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "S": [ 150 ],
+            "Y": [ 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ]
+          }
+        },
+        "$procmux$47": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ],
+            "B": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "S": [ 149 ],
+            "Y": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 ]
+          }
+        },
+        "$procmux$49": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 ],
+            "S": [ 3 ],
+            "Y": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ]
+          }
+        },
+        "$procmux$53": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55|{workspace}/verilog/Tx_Data.v:66.9-81.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 153 ],
+            "S": [ 152 ],
+            "Y": [ 267 ]
+          }
+        },
+        "$procmux$56": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 267 ],
+            "B": [ "0" ],
+            "S": [ 150 ],
+            "Y": [ 268 ]
+          }
+        },
+        "$procmux$59": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 268 ],
+            "B": [ "1" ],
+            "S": [ 149 ],
+            "Y": [ 269 ]
+          }
+        },
+        "$procmux$61": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 269 ],
+            "S": [ 3 ],
+            "Y": [ 165 ]
+          }
+        },
+        "$procmux$65": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55|{workspace}/verilog/Tx_Data.v:66.9-81.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 151 ],
+            "S": [ 152 ],
+            "Y": [ 270 ]
+          }
+        },
+        "$procmux$68": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 270 ],
+            "B": [ "0" ],
+            "S": [ 150 ],
+            "Y": [ 271 ]
+          }
+        },
+        "$procmux$71": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 271 ],
+            "B": [ "0" ],
+            "S": [ 149 ],
+            "Y": [ 272 ]
+          }
+        },
+        "$procmux$73": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 19 ],
+            "B": [ 272 ],
+            "S": [ 3 ],
+            "Y": [ 164 ]
+          }
+        },
+        "$procmux$77": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55|{workspace}/verilog/Tx_Data.v:66.9-81.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 152 ],
+            "Y": [ 273 ]
+          }
+        },
+        "$procmux$80": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 273 ],
+            "B": [ "1" ],
+            "S": [ 150 ],
+            "Y": [ 274 ]
+          }
+        },
+        "$procmux$83": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 274 ],
+            "B": [ "1" ],
+            "S": [ 149 ],
+            "Y": [ 275 ]
+          }
+        },
+        "$procmux$85": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "B": [ 275 ],
+            "S": [ 3 ],
+            "Y": [ 163 ]
+          }
+        },
+        "$procmux$89": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38|{workspace}/verilog/Tx_Data.v:58.12-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 276, 277, 277, 277, 277, 277, 277, 277 ],
+            "B": [ 278, 277, 277, 277, 277, 277, 277, 277 ],
+            "S": [ 150 ],
+            "Y": [ 279, 280, 281, 282, 283, 284, 285, 286 ]
+          }
+        },
+        "$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33|{workspace}/verilog/Tx_Data.v:52.7-82.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 279, 280, 281, 282, 283, 284, 285, 286 ],
+            "B": [ 277, 277, 277, 277, 277, 277, 277, 277 ],
+            "S": [ 149 ],
+            "Y": [ 287, 288, 289, 290, 291, 292, 293, 294 ]
+          }
+        },
+        "$procmux$94": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:51.9-51.14|{workspace}/verilog/Tx_Data.v:51.5-87.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+            "B": [ 287, 288, 289, 290, 291, 292, 293, 294 ],
+            "S": [ 3 ],
+            "Y": [ 155, 156, 157, 158, 159, 160, 161, 162 ]
+          }
+        },
+        "$ternary${workspace}/verilog/Tx_Data.v:65$9": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:65.41-65.66"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 278 ],
+            "B": [ 277 ],
+            "S": [ 153 ],
+            "Y": [ 276 ]
+          }
+        },
+        "$ternary${workspace}/verilog/Tx_Data.v:91$19": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010000"
+          },
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:91.33-91.83"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 153 ],
+            "Y": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ]
+          }
+        },
+        "inst_PN_Gen_N4": {
+          "hide_name": 0,
+          "type": "PN_Gen",
+          "parameters": {
+            "N": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:45.19-48.4"
+          },
+          "port_directions": {
+            "clk": "input",
+            "pn": "output"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "pn": [ 278 ]
+          }
+        },
+        "inst_PN_Gen_N5": {
+          "hide_name": 0,
+          "type": "PN_Gen",
+          "parameters": {
+            "N": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/Tx_Data.v:40.19-43.4"
+          },
+          "port_directions": {
+            "clk": "input",
+            "pn": "output"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "pn": [ 277 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\cnt[15:0]": {
+          "hide_name": 1,
+          "bits": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$0\\data_tdata[7:0]": {
+          "hide_name": 1,
+          "bits": [ 155, 156, 157, 158, 159, 160, 161, 162 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$0\\data_tlast[0:0]": {
+          "hide_name": 1,
+          "bits": [ 164 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$0\\data_tuser[0:0]": {
+          "hide_name": 1,
+          "bits": [ 165 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$0\\data_tvalid[0:0]": {
+          "hide_name": 1,
+          "bits": [ 163 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$0\\mix_is_bpsk[0:0]": {
+          "hide_name": 1,
+          "bits": [ 182 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:50.3-88.6"
+          }
+        },
+        "$1\\cnt[15:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:35.14-35.21"
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:66$10_Y": {
+          "hide_name": 1,
+          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.24"
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:66$11_Y": {
+          "hide_name": 1,
+          "bits": [ 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.27-66.55"
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:68$13_Y": {
+          "hide_name": 1,
+          "bits": [ 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.25-68.36"
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:68$14_Y": {
+          "hide_name": 1,
+          "bits": [ 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.40-68.68"
+          }
+        },
+        "$add${workspace}/verilog/Tx_Data.v:70$16_Y": {
+          "hide_name": 1,
+          "bits": [ 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:70.35-70.42"
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:52$7_Y": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:52.11-52.33"
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:58$8_Y": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:58.16-58.38"
+          }
+        },
+        "$eq${workspace}/verilog/Tx_Data.v:68$15_Y": {
+          "hide_name": 1,
+          "bits": [ 151 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:68.25-68.68"
+          }
+        },
+        "$lt${workspace}/verilog/Tx_Data.v:66$12_Y": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:66.13-66.55"
+          }
+        },
+        "$not${workspace}/verilog/Tx_Data.v:78$17_Y": {
+          "hide_name": 1,
+          "bits": [ 154 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:78.28-78.40"
+          }
+        },
+        "$procmux$22_Y": {
+          "hide_name": 1,
+          "bits": [ 183 ],
+          "attributes": {
+          }
+        },
+        "$procmux$23_CMP": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+          }
+        },
+        "$procmux$25_Y": {
+          "hide_name": 1,
+          "bits": [ 184 ],
+          "attributes": {
+          }
+        },
+        "$procmux$26_CMP": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$procmux$28_Y": {
+          "hide_name": 1,
+          "bits": [ 185 ],
+          "attributes": {
+          }
+        },
+        "$procmux$29_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$31_Y": {
+          "hide_name": 1,
+          "bits": [ 186 ],
+          "attributes": {
+          }
+        },
+        "$procmux$32_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$33_Y": {
+          "hide_name": 1,
+          "bits": [ 182 ],
+          "attributes": {
+          }
+        },
+        "$procmux$34_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$36_Y": {
+          "hide_name": 1,
+          "bits": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ],
+          "attributes": {
+          }
+        },
+        "$procmux$37_CMP": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+          }
+        },
+        "$procmux$39_Y": {
+          "hide_name": 1,
+          "bits": [ 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218 ],
+          "attributes": {
+          }
+        },
+        "$procmux$40_CMP": {
+          "hide_name": 1,
+          "bits": [ 18 ],
+          "attributes": {
+          }
+        },
+        "$procmux$41_Y": {
+          "hide_name": 1,
+          "bits": [ 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234 ],
+          "attributes": {
+          }
+        },
+        "$procmux$42_CMP": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$procmux$44_Y": {
+          "hide_name": 1,
+          "bits": [ 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250 ],
+          "attributes": {
+          }
+        },
+        "$procmux$45_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$47_Y": {
+          "hide_name": 1,
+          "bits": [ 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 ],
+          "attributes": {
+          }
+        },
+        "$procmux$48_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$49_Y": {
+          "hide_name": 1,
+          "bits": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ],
+          "attributes": {
+          }
+        },
+        "$procmux$50_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$53_Y": {
+          "hide_name": 1,
+          "bits": [ 267 ],
+          "attributes": {
+          }
+        },
+        "$procmux$54_CMP": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$procmux$56_Y": {
+          "hide_name": 1,
+          "bits": [ 268 ],
+          "attributes": {
+          }
+        },
+        "$procmux$57_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$59_Y": {
+          "hide_name": 1,
+          "bits": [ 269 ],
+          "attributes": {
+          }
+        },
+        "$procmux$60_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$61_Y": {
+          "hide_name": 1,
+          "bits": [ 165 ],
+          "attributes": {
+          }
+        },
+        "$procmux$62_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$65_Y": {
+          "hide_name": 1,
+          "bits": [ 270 ],
+          "attributes": {
+          }
+        },
+        "$procmux$66_CMP": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$procmux$68_Y": {
+          "hide_name": 1,
+          "bits": [ 271 ],
+          "attributes": {
+          }
+        },
+        "$procmux$69_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$71_Y": {
+          "hide_name": 1,
+          "bits": [ 272 ],
+          "attributes": {
+          }
+        },
+        "$procmux$72_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$73_Y": {
+          "hide_name": 1,
+          "bits": [ 164 ],
+          "attributes": {
+          }
+        },
+        "$procmux$74_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$77_Y": {
+          "hide_name": 1,
+          "bits": [ 273 ],
+          "attributes": {
+          }
+        },
+        "$procmux$78_CMP": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$procmux$80_Y": {
+          "hide_name": 1,
+          "bits": [ 274 ],
+          "attributes": {
+          }
+        },
+        "$procmux$81_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$83_Y": {
+          "hide_name": 1,
+          "bits": [ 275 ],
+          "attributes": {
+          }
+        },
+        "$procmux$84_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$85_Y": {
+          "hide_name": 1,
+          "bits": [ 163 ],
+          "attributes": {
+          }
+        },
+        "$procmux$86_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$procmux$89_Y": {
+          "hide_name": 1,
+          "bits": [ 279, 280, 281, 282, 283, 284, 285, 286 ],
+          "attributes": {
+          }
+        },
+        "$procmux$90_CMP": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$procmux$92_Y": {
+          "hide_name": 1,
+          "bits": [ 287, 288, 289, 290, 291, 292, 293, 294 ],
+          "attributes": {
+          }
+        },
+        "$procmux$93_CMP": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$procmux$94_Y": {
+          "hide_name": 1,
+          "bits": [ 155, 156, 157, 158, 159, 160, 161, 162 ],
+          "attributes": {
+          }
+        },
+        "$procmux$95_CMP": {
+          "hide_name": 1,
+          "bits": [ 3 ],
+          "attributes": {
+          }
+        },
+        "$shr${workspace}/verilog/Tx_Data.v:91$18_Y": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:91.64-91.83"
+          }
+        },
+        "$ternary${workspace}/verilog/Tx_Data.v:65$9_Y": {
+          "hide_name": 1,
+          "bits": [ 276 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:65.41-65.66"
+          }
+        },
+        "$ternary${workspace}/verilog/Tx_Data.v:91$19_Y": {
+          "hide_name": 1,
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:91.33-91.83"
+          }
+        },
+        "MODE_CTRL": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6, 7 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:17.28-17.37"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:15.28-15.31"
+          }
+        },
+        "cnt": {
+          "hide_name": 0,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+          "attributes": {
+            "init": "0000000000000000",
+            "src": "{workspace}/verilog/Tx_Data.v:35.14-35.17"
+          }
+        },
+        "data_tdata": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:21.28-21.38"
+          }
+        },
+        "data_tlast": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:24.28-24.38"
+          }
+        },
+        "data_tready": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:23.28-23.39"
+          }
+        },
+        "data_tuser": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:25.28-25.38"
+          }
+        },
+        "data_tvalid": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:22.28-22.39"
+          }
+        },
+        "mix_is_bpsk": {
+          "hide_name": 0,
+          "bits": [ 153 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:36.14-36.25"
+          }
+        },
+        "payload_length": {
+          "hide_name": 0,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:26.28-26.42"
+          }
+        },
+        "payload_length_symbs": {
+          "hide_name": 0,
+          "bits": [ 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:33.15-33.35"
+          }
+        },
+        "pkt_sent": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:19.28-19.36"
+          }
+        },
+        "pn_4": {
+          "hide_name": 0,
+          "bits": [ 278 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:38.14-38.18"
+          }
+        },
+        "pn_5": {
+          "hide_name": 0,
+          "bits": [ 277 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:38.8-38.12"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/verilog/Tx_Data.v:16.28-16.33"
+          }
+        }
+      }
+    }
+  }
+}

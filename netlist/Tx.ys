@@ -1,0 +1,8 @@
+read_verilog -sv -formal -overwrite {workspace}/verilog/Tx_Data.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/PN_Gen.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/Packetizer.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/PSK_Modulation_wrapper.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/Bits_Flatten.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/Tx_wrapper.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/Tx.json
