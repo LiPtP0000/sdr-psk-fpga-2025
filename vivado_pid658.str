@@ -1,0 +1,488 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 658
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Dec 09 16:27:44 CST 2025
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 6.6.87.2-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 32
+LSB Release Description: Ubuntu 24.04.2 LTS
+
+Display: 0
+Screen size: 1600x1000
+Local screen bounds: x = 0, y = 0, width = 1600, height = 1000
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	liptp
+User home directory: /home/liptp
+User working directory: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /home/liptp/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /home/liptp/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /home/liptp/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+Vivado journal file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-658-LiPtPDesktop
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2024.2/bin:/tools/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025:LiPtPDesktop_1765268847_589
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2024.2
+XILINX_SDK: /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2024.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,700 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: sdr-psk-fpga-2025.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 103 MB (+105475kb) [00:00:07]
+// [Engine Memory]: 1,493 MB (+1413790kb) [00:00:07]
+// [GUI Memory]: 125 MB (+17203kb) [00:00:08]
+// [Engine Memory]: 1,685 MB (+122856kb) [00:00:08]
+// [GUI Memory]: 151 MB (+20707kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1348 ms.
+// Tcl Message: open_project sdr-psk-fpga-2025.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'. 
+// Project name: sdr-psk-fpga-2025; location: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,720 MB. GUI used memory: 72 MB. Current time: 12/9/25, 4:27:45 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // a (dialog0)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 31); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, lt_zynq_V200.xdc]", 33, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  1041 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,714 MB. GUI used memory: 73 MB. Current time: 12/9/25, 4:57:46 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1065 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,714 MB. GUI used memory: 74 MB. Current time: 12/9/25, 5:27:46 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1483 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,715 MB. GUI used memory: 56 MB. Current time: 12/9/25, 5:57:46 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1047 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,715 MB. GUI used memory: 55 MB. Current time: 12/9/25, 6:27:46 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1039 ms. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2336 ms.
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:40 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:40 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+// HMemoryUtils.trashcanNow. Engine heap size: 1,833 MB. GUI used memory: 51 MB. Current time: 12/9/25, 6:55:41 PM CST
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:41 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+// [Engine Memory]: 1,833 MB (+67559kb) [02:28:07]
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:41 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:41 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:55:41 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+// WARNING: HEventQueue.dispatchEvent() is taking  36193 ms.
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:18 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:18 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:19 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:19 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:20 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:20 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:20 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:21 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:21 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:22 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2024.2 (64-bit)
+# SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build: 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Current time: Tue Dec 09 18:56:22 CST 2025
+# Process ID (PID): 658
+# OS: Ubuntu
+# User: liptp
+# Project: sdr-psk-fpga-2025
+# Part: xc7z020clg484-1
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.IllegalArgumentException: Width (0) and height (0) cannot be <= 0 (See /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado_pid658.debug)
+*/

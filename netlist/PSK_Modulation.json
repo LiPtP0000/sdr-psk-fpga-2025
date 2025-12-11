@@ -1,0 +1,407 @@
+{
+  "creator": "Yosys 0.48 (git sha1 aaa5347494801e9e3870b31387da59da24233f76, clang++ 18.1.2-wasi-sdk -O3)",
+  "modules": {
+    "PSK_Modulation": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:1.1-101.10"
+      },
+      "ports": {
+        "psk_tdata": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "psk_tlast": {
+          "direction": "input",
+          "bits": [ 10 ]
+        },
+        "psk_tuser": {
+          "direction": "input",
+          "bits": [ 11 ]
+        },
+        "psk_tvalid": {
+          "direction": "input",
+          "bits": [ 12 ]
+        },
+        "clk_16d384M": {
+          "direction": "input",
+          "bits": [ 13 ]
+        },
+        "rst_16d384M": {
+          "direction": "input",
+          "bits": [ 14 ]
+        },
+        "clk_1d024M": {
+          "direction": "input",
+          "bits": [ 15 ]
+        },
+        "rst_n_1d024M": {
+          "direction": "input",
+          "bits": [ 16 ]
+        },
+        "DELAY_CNT": {
+          "direction": "input",
+          "bits": [ 17, 18, 19, 20 ]
+        },
+        "TX_PHASE_CONFIG": {
+          "direction": "input",
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ]
+        },
+        "psk_tready": {
+          "direction": "output",
+          "bits": [ 37 ]
+        },
+        "DAC_I": {
+          "direction": "output",
+          "bits": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ]
+        },
+        "DAC_Q": {
+          "direction": "output",
+          "bits": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61 ]
+        },
+        "DAC_valid": {
+          "direction": "output",
+          "bits": [ 62 ]
+        },
+        "DAC_bits": {
+          "direction": "output",
+          "bits": [ 63, 64 ]
+        }
+      },
+      "cells": {
+        "u_NCO_cos_sin": {
+          "hide_name": 0,
+          "type": "NCO_cos_sin",
+          "parameters": {
+            "I_WIDTH": "00000000000000000000000000100000",
+            "O_WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:62.7-69.6"
+          },
+          "connections": {
+            "NCO_cos": [ 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+            "NCO_sin": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ],
+            "NCO_tdata": [ 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "NCO_tvalid": [ 121 ],
+            "NCO_vld": [ 122 ],
+            "clk": [ 13 ]
+          }
+        },
+        "u_PSK_Mod": {
+          "hide_name": 0,
+          "type": "PSK_Mod",
+          "parameters": {
+            "BYTES": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:81.7-99.6"
+          },
+          "connections": {
+            "DELAY_CNT": [ 17, 18, 19, 20 ],
+            "carrier_I": [ 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+            "carrier_Q": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ],
+            "clk_16M384": [ 13 ],
+            "data_tdata": [ 123 ],
+            "data_tlast": [ 124 ],
+            "data_tready": [ 125 ],
+            "data_tuser": [ 126 ],
+            "data_tvalid": [ 127 ],
+            "out_I": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ],
+            "out_Q": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61 ],
+            "out_bits": [ 63, 64 ],
+            "out_clk_1M024": [ 128 ],
+            "out_is_bpsk": [ 129 ],
+            "out_last": [ 130 ],
+            "out_vld": [ 62 ],
+            "rst_16M384": [ 14 ]
+          }
+        },
+        "u_axis_data_fifo_cdc_3": {
+          "hide_name": 0,
+          "type": "axis_data_fifo_1",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:27.22-40.6"
+          },
+          "connections": {
+            "m_axis_tdata": [ 131, 132, 133, 134, 135, 136, 137, 138 ],
+            "m_axis_tlast": [ 139 ],
+            "m_axis_tready": [ 140 ],
+            "m_axis_tuser": [ 141 ],
+            "m_axis_tvalid": [ 142 ],
+            "s_axis_aclk": [ 15 ],
+            "s_axis_aresetn": [ 16 ],
+            "s_axis_tdata": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+            "s_axis_tlast": [ 10 ],
+            "s_axis_tready": [ 37 ],
+            "s_axis_tuser": [ 11 ],
+            "s_axis_tvalid": [ 12 ]
+          }
+        },
+        "u_carrier_gen": {
+          "hide_name": 0,
+          "type": "carrier_gen",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:45.17-51.6"
+          },
+          "connections": {
+            "aclk": [ 13 ],
+            "m_axis_data_tdata": [ 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+            "m_axis_data_tvalid": [ 121 ],
+            "s_axis_config_tdata": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "s_axis_config_tvalid": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "DAC_I": {
+          "hide_name": 0,
+          "bits": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:13.19-13.24"
+          }
+        },
+        "DAC_Q": {
+          "hide_name": 0,
+          "bits": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:14.19-14.24"
+          }
+        },
+        "DAC_bits": {
+          "hide_name": 0,
+          "bits": [ 63, 64 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:16.19-16.27"
+          }
+        },
+        "DAC_valid": {
+          "hide_name": 0,
+          "bits": [ 62 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:15.19-15.28"
+          }
+        },
+        "DELAY_CNT": {
+          "hide_name": 0,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:10.19-10.28"
+          }
+        },
+        "NCO_cos": {
+          "hide_name": 0,
+          "bits": [ 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:55.19-55.26"
+          }
+        },
+        "NCO_sin": {
+          "hide_name": 0,
+          "bits": [ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:56.19-56.26"
+          }
+        },
+        "NCO_vld": {
+          "hide_name": 0,
+          "bits": [ 122 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:57.19-57.26"
+          }
+        },
+        "PSK_16M_tdata": {
+          "hide_name": 0,
+          "bits": [ 123 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:84.24-84.37"
+          }
+        },
+        "PSK_16M_tlast": {
+          "hide_name": 0,
+          "bits": [ 124 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:87.24-87.37"
+          }
+        },
+        "PSK_16M_tready": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:86.24-86.38"
+          }
+        },
+        "PSK_16M_tuser": {
+          "hide_name": 0,
+          "bits": [ 126 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:88.24-88.37"
+          }
+        },
+        "PSK_16M_tvalid": {
+          "hide_name": 0,
+          "bits": [ 127 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:85.24-85.38"
+          }
+        },
+        "TX_PHASE_CONFIG": {
+          "hide_name": 0,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:11.19-11.34"
+          }
+        },
+        "clk_16d384M": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:6.19-6.30"
+          }
+        },
+        "clk_1d024M": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:8.19-8.29"
+          }
+        },
+        "data_tready": {
+          "hide_name": 0,
+          "bits": [ 143 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:73.10-73.21"
+          }
+        },
+        "dds_nco_tdata": {
+          "hide_name": 0,
+          "bits": [ 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:43.17-43.30"
+          }
+        },
+        "dds_nco_tvalid": {
+          "hide_name": 0,
+          "bits": [ 121 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:42.17-42.31"
+          }
+        },
+        "out_clk_1M024": {
+          "hide_name": 0,
+          "bits": [ 128 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:76.10-76.23"
+          }
+        },
+        "out_is_bpsk": {
+          "hide_name": 0,
+          "bits": [ 129 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:75.10-75.21"
+          }
+        },
+        "out_last": {
+          "hide_name": 0,
+          "bits": [ 130 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:74.10-74.18"
+          }
+        },
+        "psk_16M_tdata": {
+          "hide_name": 0,
+          "bits": [ 131, 132, 133, 134, 135, 136, 137, 138 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:22.16-22.29"
+          }
+        },
+        "psk_16M_tlast": {
+          "hide_name": 0,
+          "bits": [ 139 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:23.16-23.29"
+          }
+        },
+        "psk_16M_tready": {
+          "hide_name": 0,
+          "bits": [ 140 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:25.16-25.30"
+          }
+        },
+        "psk_16M_tuser": {
+          "hide_name": 0,
+          "bits": [ 141 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:24.16-24.29"
+          }
+        },
+        "psk_16M_tvalid": {
+          "hide_name": 0,
+          "bits": [ 142 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:21.16-21.30"
+          }
+        },
+        "psk_tdata": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:2.19-2.28"
+          }
+        },
+        "psk_tlast": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:3.19-3.28"
+          }
+        },
+        "psk_tready": {
+          "hide_name": 0,
+          "bits": [ 37 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:12.19-12.29"
+          }
+        },
+        "psk_tuser": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:4.19-4.28"
+          }
+        },
+        "psk_tvalid": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:5.19-5.29"
+          }
+        },
+        "rst_16d384M": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:7.19-7.30"
+          }
+        },
+        "rst_n_1d024M": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/verilog/PSK_Modulation_wrapper.v:9.19-9.31"
+          }
+        }
+      }
+    }
+  }
+}
