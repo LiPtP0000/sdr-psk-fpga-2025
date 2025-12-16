@@ -32,6 +32,7 @@ module PSK_Modulation (
         .s_axis_tdata  (psk_tdata),
         .s_axis_tlast  (psk_tlast),
         .s_axis_tuser  (psk_tuser),
+        .m_axis_aclk   (clk_16d384M),
         .m_axis_tvalid (psk_16M_tvalid),
         .m_axis_tready (psk_16M_tready),
         .m_axis_tdata  (psk_16M_tdata),
@@ -54,7 +55,7 @@ module PSK_Modulation (
     // output declaration of module NCO_cos_sin
     wire [12-1:0] NCO_cos;
     wire [12-1:0] NCO_sin;
-    reg           NCO_vld;
+    wire          NCO_vld;
 
     NCO_cos_sin #(
         .I_WIDTH(32),
@@ -70,9 +71,9 @@ module PSK_Modulation (
 
 
     // output declaration of module PSK_Mod
-    reg  data_tready;
-    reg  out_last;
-    reg  out_is_bpsk;
+    wire data_tready;
+    wire out_last;
+    wire out_is_bpsk;
     wire out_clk_1M024;
 
     PSK_Mod #(
@@ -81,11 +82,11 @@ module PSK_Modulation (
     ) u_PSK_Mod (
         .clk_16M384   (clk_16d384M),
         .rst_16M384   (rst_16d384M),
-        .data_tdata   (PSK_16M_tdata),
-        .data_tvalid  (PSK_16M_tvalid),
-        .data_tready  (PSK_16M_tready),
-        .data_tlast   (PSK_16M_tlast),
-        .data_tuser   (PSK_16M_tuser),
+        .data_tdata   (psk_16M_tdata),
+        .data_tvalid  (psk_16M_tvalid),
+        .data_tready  (psk_16M_tready),
+        .data_tlast   (psk_16M_tlast),
+        .data_tuser   (psk_16M_tuser),
         .carrier_I    (NCO_cos),
         .carrier_Q    (NCO_sin),
         .DELAY_CNT    (DELAY_CNT),

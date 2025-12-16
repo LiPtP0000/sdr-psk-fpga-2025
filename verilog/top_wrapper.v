@@ -206,7 +206,7 @@ module top (
     wire [15:0] gardner_error;
     wire [15:0] gardner_increment;
 
-    Rx_wrapper u_Rx_wrapper (
+    Rx u_Rx (
         .clk_1M024        (clk_1d024M),
         .clk_2M048        (clk_2d048M),
         .clk_16M384       (clk_16d384M),

@@ -2,7 +2,6 @@ module gardner_wrapper (
     // Global inputs
     input wire       clk_32M768,
     input wire       rst_32M768,
-    input wire       is_bpsk,
     input wire [3:0] GARDNER_SHIFT,
 
     // Data inputs (AXI-Stream style from image)
@@ -45,7 +44,6 @@ module gardner_wrapper (
 
     timing_error_wrapper u_timing_error_wrapper (
         .clk_32M768(clk_32M768),
-        .is_bpsk   (is_bpsk),
         .I         (w_I_up2),     // [15:0]
         .Q         (w_Q_up2),     // [15:0]
         // Outputs

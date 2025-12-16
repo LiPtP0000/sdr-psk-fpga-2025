@@ -1,0 +1,1107 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Dec 12 16:03:59 2025
+# Process ID         : 594
+# Current directory  : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+# Command line       : vivado sdr-psk-fpga-2025.xpr
+# Log file           : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+# Journal file       : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+# Running On         : LiPtPDesktop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419.198 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 16611 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20906 MB
+# Available Virtual  : 20249 MB
+#-----------------------------------------------------------
+start_gui
+open_project sdr-psk-fpga-2025.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+update_compile_order -fileset sources_1
+create_ip -name c_shift_ram -vendor xilinx.com -library ip -version 12.0 -module_name gardner_shift_ram -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/gardner_shift_ram.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'gardner_shift_ram'...
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/gardner_shift_ram.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'gardner_shift_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'gardner_shift_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'gardner_shift_ram'...
+catch { config_ip_cache -export [get_ips -all gardner_shift_ram] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: gardner_shift_ram
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/gardner_shift_ram.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/gardner_shift_ram.xci]
+launch_runs gardner_shift_ram_synth_1 -jobs 32
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: gardner_shift_ram
+[Fri Dec 12 16:05:08 2025] Launched gardner_shift_ram_synth_1...
+Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/gardner_shift_ram_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/gardner_shift_ram.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+expected number but got ""
+Invalid double value provided.
+expected number but got ""
+expected number but got ""
+Invalid double value provided.
+expected number but got ""
+create_ip -name fir_compiler -vendor xilinx.com -library ip -version 7.2 -module_name interp_smoothing_filter -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner
+set_property -dict [list \
+  CONFIG.Clock_Frequency {32.768} \
+  CONFIG.CoefficientVector {1,2,1} \
+  CONFIG.Coefficient_Fanout {false} \
+  CONFIG.Coefficient_Fractional_Bits {0} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Unsigned} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {2} \
+  CONFIG.Control_Broadcast_Fanout {false} \
+  CONFIG.Control_Column_Fanout {false} \
+  CONFIG.Control_LUT_Pipeline {false} \
+  CONFIG.Control_Path_Fanout {false} \
+  CONFIG.Data_Path_Broadcast {false} \
+  CONFIG.Data_Path_Fanout {false} \
+  CONFIG.Data_Width {16} \
+  CONFIG.Decimation_Rate {1} \
+  CONFIG.Disable_Half_Band_Centre_Tap {false} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Filter_Type {Interpolation} \
+  CONFIG.Interpolation_Rate {2} \
+  CONFIG.No_BRAM_Read_First_Mode {false} \
+  CONFIG.No_SRL_Attributes {false} \
+  CONFIG.Number_Channels {1} \
+  CONFIG.Optimal_Column_Lengths {false} \
+  CONFIG.Optimization_Goal {Area} \
+  CONFIG.Optimization_List {None} \
+  CONFIG.Optimization_Selection {None} \
+  CONFIG.Other {false} \
+  CONFIG.Output_Rounding_Mode {Truncate_LSBs} \
+  CONFIG.Output_Width {16} \
+  CONFIG.Pre_Adder_Pipeline {false} \
+  CONFIG.Quantization {Integer_Coefficients} \
+  CONFIG.RateSpecification {Frequency_Specification} \
+  CONFIG.Sample_Frequency {16.384} \
+  CONFIG.Zero_Pack_Factor {1} \
+] [get_ips interp_smoothing_filter]
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/interp_smoothing_filter.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'interp_smoothing_filter'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/interp_smoothing_filter.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'interp_smoothing_filter'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'interp_smoothing_filter'...
+INFO: [IP_Flow 19-1686] Generating 'C Simulation' target for IP 'interp_smoothing_filter'...
+INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'interp_smoothing_filter'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'interp_smoothing_filter'...
+INFO: [xilinx.com:ip:fir_compiler:7.2-1] interp_smoothing_filter: Coefficient Reload not selected, no files generated
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'interp_smoothing_filter'...
+catch { config_ip_cache -export [get_ips -all interp_smoothing_filter] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: interp_smoothing_filter
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/interp_smoothing_filter.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/interp_smoothing_filter.xci]
+launch_runs interp_smoothing_filter_synth_1 -jobs 32
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: interp_smoothing_filter
+[Fri Dec 12 16:55:35 2025] Launched interp_smoothing_filter_synth_1...
+Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/interp_smoothing_filter_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/interp_smoothing_filter.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+create_ip -name c_shift_ram -vendor xilinx.com -library ip -version 12.0 -module_name shift_ram_is_bpsk -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx
+set_property -dict [list \
+  CONFIG.DefaultData {1} \
+  CONFIG.Width {1} \
+] [get_ips shift_ram_is_bpsk]
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'shift_ram_is_bpsk'...
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'shift_ram_is_bpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'shift_ram_is_bpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'shift_ram_is_bpsk'...
+catch { config_ip_cache -export [get_ips -all shift_ram_is_bpsk] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: shift_ram_is_bpsk
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci]
+launch_runs shift_ram_is_bpsk_synth_1 -jobs 32
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: shift_ram_is_bpsk
+[Fri Dec 12 17:00:46 2025] Launched shift_ram_is_bpsk_synth_1...
+Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/shift_ram_is_bpsk_synth_1/runme.log
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_files -from_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v -to_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Pre.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Pre.v' with file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v'.
+add_files -norecurse -scan_for_includes {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v' cannot be added to the project because it already exists in the project, skipping this file
+import_files -norecurse {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci] -no_script -reset -force -quiet
+remove_files  -fileset shift_ram_is_bpsk /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci
+INFO: [Project 1-386] Moving file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Rx/shift_ram_is_bpsk/shift_ram_is_bpsk.xci' from fileset 'shift_ram_is_bpsk' to fileset 'sources_1'.
+add_files -norecurse -scan_for_includes {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+import_files -force -norecurse {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+update_compile_order -fileset sources_1
+create_fileset -simset sim_Tx
+set_property SOURCE_SET sources_1 [get_filesets sim_Tx]
+add_files -fileset sim_Tx -norecurse -scan_for_includes /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v
+import_files -fileset sim_Tx -norecurse /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v
+update_compile_order -fileset sim_Tx
+set_property top tb_Tx [get_filesets sim_Tx]
+set_property top_lib xil_defaultlib [get_filesets sim_Tx]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'top'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj top_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_32M768_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_32M768
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_128M_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_128M
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/vendor/AD9361_1RT_FDD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AD9361_1RT_FDD
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/AXI_2x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AXI_2x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Abs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Abs
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Clock_Gen_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Depacketizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Depacketizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Div_clk32M768.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Div_clk32M768
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Error_Detect_Ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Error_Detect_Ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Corrector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Gardner_Corrector
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_IQ_Preprocess.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Gardner_IQ_Preprocess
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Timing_Error.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Gardner_Timing_Error
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_rx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_rx_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Detection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Signal_Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Signal_Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_BD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rx_BD
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_PD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rx_PD
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_SD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rx_SD
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/SPB_Detection_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPB_Detection
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Truncate_IQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Truncate_IQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CONSTANT
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/costas_loop_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module costas_loop_wrapper
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'NCO_cos' is not allowed [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/costas_loop_wrapper.v:23]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'error_tdata' is not allowed [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/costas_loop_wrapper.v:147]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/flatten_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flatten_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/gardner_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gardner_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/interpolation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interpolation_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/timing_error_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module timing_error_wrapper
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'error_n' is not allowed [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/timing_error_wrapper.v:41]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/top_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj top_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/gardner_shift_ram/sim/gardner_shift_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gardner_shift_ram'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Gardner/interp_smoothing_filter/sim/interp_smoothing_filter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'interp_smoothing_filter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/fir_compiler_0/sim/fir_compiler_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fir_compiler_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/sim/err_detect_QPSK.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'err_detect_QPSK'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/sim/err_detect_BPSK.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'err_detect_BPSK'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/LPF/sim/LPF.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LPF'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/sim/Costas_LPF_shift_ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Costas_LPF_shift_ram'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Multiplier/sim/Multiplier.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Multiplier'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/NCO_DDS/sim/NCO_DDS.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'NCO_DDS'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/carrier_gen/sim/carrier_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'carrier_gen'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/proc_sys_reset_gen/sim/proc_sys_reset_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'proc_sys_reset_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L xbip_utils_v3_0_14 -L c_reg_fd_v12_0_10 -L c_shift_ram_v12_0_18 -L axi_utils_v2_0_10 -L fir_compiler_v7_2_23 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L c_addsub_v12_0_19 -L mult_gen_v12_0_22 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L lib_cdc_v1_0_3 -L proc_sys_reset_v5_0_16 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L xbip_utils_v3_0_14 -L c_reg_fd_v12_0_10 -L c_shift_ram_v12_0_18 -L axi_utils_v2_0_10 -L fir_compiler_v7_2_23 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L c_addsub_v12_0_19 -L mult_gen_v12_0_22 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L lib_cdc_v1_0_3 -L proc_sys_reset_v5_0_16 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'is_bpsk' on this module [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/timing_error_wrapper.v:47]
+ERROR: [VRFC 10-8530] module 'Gardner_Corrector_default' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Corrector.v:11]
+ERROR: [VRFC 10-8530] module 'MMCME2_ADV(CLKFBOUT_MULT_F=8.0,CLKIN1_PERIOD=10.0,CLKOUT0_DIVIDE_F=6.25,CLKOUT1_DIVIDE=4)' is ignored due to previous errors [/proj/xbuilds/SWIP/2024.2_1107_2045/installs/lin64/Vivado/2024.2/data/verilog/src/unisims/MMCME2_ADV.v:123]
+ERROR: [VRFC 10-8530] module 'axis_data_fifo_v2_0_15_top(C_FAMILY="zynq",C_AXIS_SIGNAL_SET=32'b010010011,C_FIFO_DEPTH=16,C_IS_ACLK_ASYNC=1,C_SYNCHRONIZER_STAGE=3,C_USE_ADV_FEATURES=825241648)' is ignored due to previous errors [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/axis_data_fifo_v2_0/hdl/axis_data_fifo_v2_0_vl_rfs.v:53]
+ERROR: [VRFC 10-8530] module 'Gardner_IQ_Preprocess(SHIFT=0)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_IQ_Preprocess.v:11]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+add_files -norecurse -scan_for_includes {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Delay.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/AXI_2x.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Abs.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Bits_Flatten.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Clock_Gen_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Delay.v] -no_script -reset -force -quiet
+remove_files  {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/AXI_2x.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Abs.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Bits_Flatten.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Clock_Gen_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Delay.v}
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Depacketizer.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Div_clk32M768.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Error_Detect_Ctrl.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Corrector.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_IQ_Preprocess.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Timing_Error.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_Phase.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_cos_sin.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_rx_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Not_Gate.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PN_Gen.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Detection.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Mod.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Modulation_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Signal_Extend.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Packetizer.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_BD.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_PD.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_SD.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Truncate_IQ.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/SPB_Detection_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_Data.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/costas_loop_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/flatten_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/gardner_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/interpolation_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/timing_error_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/top_wrapper.v] -no_script -reset -force -quiet
+remove_files  {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Depacketizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Div_clk32M768.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Error_Detect_Ctrl.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Corrector.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_IQ_Preprocess.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Gardner_Timing_Error.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_Phase.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_cos_sin.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/NCO_rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Not_Gate.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PN_Gen.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Detection.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Mod.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Modulation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/PSK_Signal_Extend.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Packetizer.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_BD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_PD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_SD.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Rx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Truncate_IQ.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/SPB_Detection_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_Data.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/Tx_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/costas_loop_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/flatten_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/gardner_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/interpolation_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/timing_error_wrapper.v /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sources_1/imports/verilog/top_wrapper.v}
+create_fileset -simset sim_BPSK
+set_property SOURCE_SET sources_1 [get_filesets sim_BPSK]
+add_files -fileset sim_BPSK -norecurse -scan_for_includes /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v
+update_compile_order -fileset sim_BPSK
+move_files -fileset sim_BPSK [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v]
+ERROR: [filemgmt 20-1460] Files are not permitted to be moved into filesets that already contain the same file path name: '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v'
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v] -no_script -reset -force -quiet
+remove_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_BPSK.v
+set_property top tb_BPSK [get_filesets sim_BPSK]
+set_property top_lib xil_defaultlib [get_filesets sim_BPSK]
+update_compile_order -fileset sim_BPSK
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v] -no_script -reset -force -quiet
+remove_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v
+update_compile_order -fileset sim_Tx
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_MIX.v] -no_script -reset -force -quiet
+remove_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_MIX.v
+export_ip_user_files -of_objects  [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_QPSK.v] -no_script -reset -force -quiet
+remove_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_QPSK.v
+current_fileset -simset [ get_filesets sim_BPSK ]
+current_fileset -simset [ get_filesets sim_Tx ]
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/carrier_gen/sim/carrier_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'carrier_gen'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'Tx_1bit' on this module [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:65]
+ERROR: [VRFC 10-3180] cannot find port 'DAC_vld' on this module [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:62]
+ERROR: [VRFC 10-8530] module 'Tx_Data(BYTES=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v:12]
+ERROR: [VRFC 10-8530] module 'Packetizer(BYTES=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v:15]
+ERROR: [VRFC 10-8530] module 'Bits_Flatten(BYPASS_SELECTION=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:12]
+ERROR: [VRFC 10-8530] module 'PN_Gen_default' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:12]
+ERROR: [VRFC 10-8530] module 'axis_data_fifo_v2_0_15_top(C_FAMILY="zynq",C_AXIS_SIGNAL_SET=32'b010010011,C_SYNCHRONIZER_STAGE=3,C_USE_ADV_FEATURES=825241648)' is ignored due to previous errors [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/axis_data_fifo_v2_0/hdl/axis_data_fifo_v2_0_vl_rfs.v:53]
+ERROR: [VRFC 10-8530] module 'PSK_Mod_default' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:11]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'Tx_1bit' on this module [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:65]
+ERROR: [VRFC 10-3180] cannot find port 'DAC_vld' on this module [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:62]
+ERROR: [VRFC 10-8530] module 'Tx_Data(BYTES=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v:12]
+ERROR: [VRFC 10-8530] module 'Packetizer(BYTES=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v:15]
+ERROR: [VRFC 10-8530] module 'Bits_Flatten(BYPASS_SELECTION=1'b1)' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:12]
+ERROR: [VRFC 10-8530] module 'PN_Gen_default' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:12]
+ERROR: [VRFC 10-8530] module 'axis_data_fifo_v2_0_15_top(C_FAMILY="zynq",C_AXIS_SIGNAL_SET=32'b010010011,C_SYNCHRONIZER_STAGE=3,C_USE_ADV_FEATURES=825241648)' is ignored due to previous errors [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/axis_data_fifo_v2_0/hdl/axis_data_fifo_v2_0_vl_rfs.v:53]
+ERROR: [VRFC 10-8530] module 'PSK_Mod_default' is ignored due to previous errors [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:11]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_files -from_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v -to_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v' with file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v' to '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v'.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'Tx_Data_0' is not declared under prefix 'dut' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:95]
+ERROR: [VRFC 10-2991] 'Tx_Data_0' is not declared under prefix 'dut' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'Tx_Data_0' is not declared under prefix 'dut' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:95]
+ERROR: [VRFC 10-2991] 'Tx_Data_0' is not declared under prefix 'dut' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_files -from_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v -to_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v' with file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v' to '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v'.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'inst' is not declared under prefix 'u_Tx_Data' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:95]
+ERROR: [VRFC 10-2991] 'inst' is not declared under prefix 'u_Tx_Data' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'inst' is not declared under prefix 'u_Tx_Data' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:95]
+ERROR: [VRFC 10-2991] 'inst' is not declared under prefix 'u_Tx_Data' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_files -from_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v -to_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v' with file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v' to '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v'.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'pn_5' is not declared under prefix 'inst_PN_Gen_N5' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_files -from_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v -to_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v' with file '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/tb/tb_Tx.v' to '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v'.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_tdata' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:84]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'hdr_vld' is not permitted [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v:97]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'pld_vld' is not permitted [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v:98]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_tdata' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:84]
+WARNING: [VRFC 10-5021] port 'm_axis_aclk' is not connected on this instance [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:27]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'NCO_vld' is not permitted [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:68]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'out_last' is not permitted [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:95]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'out_is_bpsk' is not permitted [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -simset [get_filesets sim_Tx ]
+Command: launch_simulation  -simset sim_Tx
+INFO: [Vivado 12-12493] Simulation top is 'tb_Tx'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_Tx'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_Tx' in fileset 'sim_Tx'...
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/LPF.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/costas_loop_LPF.coe'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/fir_compiler_0.mif'
+INFO: [SIM-utils-43] Exported '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim/interp_smoothing_filter.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_Tx'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xvlog --incr --relax -prj tb_Tx_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_1/sim/axis_data_fifo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/axis_data_fifo_0/sim/axis_data_fifo_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bits_Flatten
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NCO_cos_sin
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PN_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Mod
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PSK_Modulation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Packetizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx_Data
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/sim_Tx/imports/tb/tb_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Tx
+xvhdl --incr --relax -prj tb_Tx_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L mult_gen_v12_0_22 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L floating_point_v7_1_19 -L dds_compiler_v6_0_26 -L axis_infrastructure_v1_1_1 -L axis_data_fifo_v2_0_15 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_Tx_behav xil_defaultlib.tb_Tx xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'data_tdata' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:84]
+WARNING: [VRFC 10-5021] port 'm_axis_aclk' is not connected on this instance [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:27]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_14.xbip_utils_v3_0_14_pkg
+Compiling package xbip_utils_v3_0_14.xcc_utils_v3_0
+Compiling package dds_compiler_v6_0_26.dds_compiler_v6_0_26_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package dds_compiler_v6_0_26.pkg_dds_compiler_v6_0_26
+Compiling package dds_compiler_v6_0_26.dds_compiler_v6_0_26_hdl_comps
+Compiling package xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv_comp
+Compiling package axi_utils_v2_0_10.axi_utils_v2_0_10_pkg
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_10.global_util_pkg
+Compiling package axi_utils_v2_0_10.axi_utils_comps
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_unsigned
+Compiling package dds_compiler_v6_0_26.pkg_betas
+Compiling package dds_compiler_v6_0_26.pkg_alphas
+Compiling module xil_defaultlib.PN_Gen_default
+Compiling module xil_defaultlib.PN_Gen(N=4)
+Compiling module xil_defaultlib.Tx_Data(BYTES=1'b1)
+Compiling module axis_infrastructure_v1_1_1.axis_infrastructure_v1_1_1_util_...
+Compiling module axis_infrastructure_v1_1_1.axis_infrastructure_v1_1_1_util_...
+Compiling module axis_infrastructure_v1_1_1.axis_infrastructure_v1_1_1_util_...
+Compiling module xpm.xpm_cdc_sync_rst(INIT=0,INIT_SYN...
+Compiling module xpm.xpm_fifo_rst(CDC_DEST_SYNC_FF=3)
+Compiling module xpm.xpm_fifo_reg_bit
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=1...
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=9...
+Compiling module xpm.xpm_memory_base(MEMORY_TYPE=1,ME...
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=2...
+Compiling module xpm.xpm_fifo_base(FIFO_WRITE_DEPTH=5...
+Compiling module xpm.xpm_fifo_axis(FIFO_DEPTH=512,TDA...
+Compiling module axis_data_fifo_v2_0_15.axis_data_fifo_v2_0_15_top(C_FAM...
+Compiling module xil_defaultlib.axis_data_fifo_0
+Compiling module xil_defaultlib.Packetizer(BYTES=1'b1)
+Compiling module xpm.xpm_cdc_sync_rst(DEST_SYNC_FF=3,...
+Compiling module xpm.xpm_fifo_rst(COMMON_CLOCK=0,CDC_...
+Compiling module xpm.xpm_counter_updn(COUNTER_WIDTH=5...
+Compiling module xpm.xpm_counter_updn
+Compiling module xpm.xpm_memory_base(MEMORY_TYPE=1,ME...
+Compiling module xpm.xpm_cdc_gray(DEST_SYNC_FF=3,INIT...
+Compiling module xpm.xpm_fifo_reg_vec
+Compiling module xpm.xpm_cdc_gray(DEST_SYNC_FF=5,INIT...
+Compiling module xpm.xpm_fifo_reg_vec(REG_WIDTH=5)
+Compiling module xpm.xpm_cdc_gray(DEST_SYNC_FF=3,INIT...
+Compiling module xpm.xpm_fifo_base(COMMON_CLOCK=0,FIF...
+Compiling module xpm.xpm_fifo_axis(CLOCKING_MODE="ind...
+Compiling module axis_data_fifo_v2_0_15.axis_data_fifo_v2_0_15_top(C_FAM...
+Compiling module xil_defaultlib.axis_data_fifo_1
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.dds_compiler_v6_0_26_rdy [\dds_compiler_v6_0_26_rdy(c_has_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.pipe_add [\pipe_add(c_width=15,c_seg_width...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.accum [\accum(c_xdevicefamily="zynq",c_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_latency...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.sin_cos [\sin_cos(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.dds_compiler_v6_0_26_core [\dds_compiler_v6_0_26_core(c_xde...]
+Compiling architecture synth of entity dds_compiler_v6_0_26.dds_compiler_v6_0_26_viv [\dds_compiler_v6_0_26_viv(c_xdev...]
+Compiling architecture xilinx of entity dds_compiler_v6_0_26.dds_compiler_v6_0_26 [\dds_compiler_v6_0_26(c_xdevicef...]
+Compiling architecture carrier_gen_arch of entity xil_defaultlib.carrier_gen [carrier_gen_default]
+Compiling module xil_defaultlib.NCO_cos_sin
+Compiling module xil_defaultlib.PSK_Mod_default
+Compiling module xil_defaultlib.PSK_Modulation
+Compiling module xil_defaultlib.Bits_Flatten(BYPASS_SELECTION=1'...
+Compiling module xil_defaultlib.Tx
+Compiling module xil_defaultlib.tb_Tx
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_Tx_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.sim/sim_Tx/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_Tx_behav -key {Behavioral:sim_Tx:Functional:tb_Tx} -tclbatch {tb_Tx.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_Tx.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: file ../../behav_sim/_Tx_behav_sim.csv could not be opened
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb_Tx.dut.u_axis_data_fifo_0.inst.gen_fifo.xpm_fifo_axis_inst.xpm_fifo_base_inst.gen_sdpram.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb_Tx/dut/u_axis_data_fifo_0/inst/gen_fifo.xpm_fifo_axis_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial302_23  Scope: tb_Tx.dut.u_axis_data_fifo_0.inst.gen_fifo.xpm_fifo_axis_inst.xpm_fifo_base_inst.gen_sdpram.xpm_memory_base_inst.config_drc  File: /tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 514
+Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value. tb_Tx.dut.u_PSK_Modulation.u_axis_data_fifo_cdc_3.inst.gen_fifo.xpm_fifo_axis_inst.xpm_fifo_base_inst.gen_sdpram.xpm_memory_base_inst.config_drc
+Time: 1 ps  Iteration: 0  Process: /tb_Tx/dut/u_PSK_Modulation/u_axis_data_fifo_cdc_3/inst/gen_fifo.xpm_fifo_axis_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/Initial302_91  Scope: tb_Tx.dut.u_PSK_Modulation.u_axis_data_fifo_cdc_3.inst.gen_fifo.xpm_fifo_axis_inst.xpm_fifo_base_inst.gen_sdpram.xpm_memory_base_inst.config_drc  File: /tools/Xilinx/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv Line: 514
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_Tx_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 10019.703 ; gain = 36.141 ; free physical = 11657 ; free virtual = 13977
+run all
+run: Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 10100.422 ; gain = 80.719 ; free physical = 10440 ; free virtual = 13814
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 269724 KB (Peak: 318504 KB), Simulation CPU Usage: 11150 ms
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 12 18:48:23 2025...

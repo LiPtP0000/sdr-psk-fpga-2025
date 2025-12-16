@@ -1,0 +1,122 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Dec 11 20:32:22 2025
+# Process ID         : 17474
+# Current directory  : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+# Command line       : vivado sdr-psk-fpga-2025.xpr
+# Log file           : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+# Journal file       : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+# Running On         : LiPtPDesktop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419.198 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 16611 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20906 MB
+# Available Virtual  : 18205 MB
+#-----------------------------------------------------------
+start_gui
+open_project sdr-psk-fpga-2025.xpr
+update_compile_order -fileset sources_1
+set_property -dict [list \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Data_Width {16} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Output_Rounding_Mode {Truncate_LSBs} \
+  CONFIG.Output_Width {16} \
+] [get_ips fir_compiler_0]
+set_property -dict [list \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.Frequency_Resolution {0.4} \
+  CONFIG.Latency {8} \
+  CONFIG.Noise_Shaping {None} \
+  CONFIG.OUTPUT_FORM {Twos_Complement} \
+  CONFIG.Output_Frequency1 {0} \
+  CONFIG.Output_Width {12} \
+  CONFIG.Parameter_Entry {Hardware_Parameters} \
+  CONFIG.Phase_Increment {Streaming} \
+  CONFIG.Phase_Width {16} \
+  CONFIG.Phase_offset {None} \
+  CONFIG.S_PHASE_Has_TUSER {Not_Required} \
+] [get_ips NCO_DDS]
+set_property CONFIG.OutputWidthHigh {23} [get_ips Multiplier]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Multiplier/Multiplier.xci]
+catch { config_ip_cache -export [get_ips -all Multiplier] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Multiplier/Multiplier.xci] -no_script -sync -force -quiet
+reset_run Multiplier_synth_1
+launch_runs Multiplier_synth_1 -jobs 32
+wait_on_run Multiplier_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Multiplier/Multiplier.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+create_ip -name c_shift_ram -vendor xilinx.com -library ip -version 12.0 -module_name Costas_LPF_shift_ram -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas
+set_property -dict [list \
+  CONFIG.Depth {58} \
+  CONFIG.Width {1} \
+] [get_ips Costas_LPF_shift_ram]
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci]
+catch { config_ip_cache -export [get_ips -all Costas_LPF_shift_ram] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci]
+launch_runs Costas_LPF_shift_ram_synth_1 -jobs 32
+wait_on_run Costas_LPF_shift_ram_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+create_ip -name mult_gen -vendor xilinx.com -library ip -version 12.0 -module_name err_detect_BPSK -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas
+set_property -dict [list \
+  CONFIG.Multiplier_Construction {Use_Mults} \
+  CONFIG.OutputWidthLow {16} \
+  CONFIG.PipeStages {2} \
+  CONFIG.PortAWidth {16} \
+  CONFIG.PortBWidth {16} \
+  CONFIG.Use_Custom_Output_Width {true} \
+] [get_ips err_detect_BPSK]
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci]
+catch { config_ip_cache -export [get_ips -all err_detect_BPSK] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci]
+launch_runs err_detect_BPSK_synth_1 -jobs 32
+wait_on_run err_detect_BPSK_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+create_ip -name c_addsub -vendor xilinx.com -library ip -version 12.0 -module_name err_detect_QPSK -dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas
+set_property -dict [list \
+  CONFIG.A_Width {16} \
+  CONFIG.Add_Mode {Subtract} \
+  CONFIG.B_Value {0000000000000000} \
+  CONFIG.B_Width {16} \
+  CONFIG.CE {false} \
+  CONFIG.Implementation {DSP48} \
+  CONFIG.Latency {2} \
+  CONFIG.Out_Width {16} \
+] [get_ips err_detect_QPSK]
+generate_target {instantiation_template} [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci]
+catch { config_ip_cache -export [get_ips -all err_detect_QPSK] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci]
+launch_runs err_detect_QPSK_synth_1 -jobs 32
+wait_on_run err_detect_QPSK_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+set_property CONFIG.Depth {8} [get_ips Costas_LPF_shift_ram]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci]
+catch { config_ip_cache -export [get_ips -all Costas_LPF_shift_ram] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci] -no_script -sync -force -quiet
+reset_run Costas_LPF_shift_ram_synth_1
+launch_runs Costas_LPF_shift_ram_synth_1 -jobs 32
+wait_on_run Costas_LPF_shift_ram_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/Costas_LPF_shift_ram/Costas_LPF_shift_ram.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+set_property CONFIG.OutputWidthHigh {31} [get_ips err_detect_BPSK]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci]
+catch { config_ip_cache -export [get_ips -all err_detect_BPSK] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -no_script -sync -force -quiet
+reset_run err_detect_BPSK_synth_1
+launch_runs err_detect_BPSK_synth_1 -jobs 32
+wait_on_run err_detect_BPSK_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

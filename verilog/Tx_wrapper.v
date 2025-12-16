@@ -73,8 +73,8 @@ module Tx (
     wire       Packetizer_PSK_tuser;
     wire       Packetizer_PSK_tready;
 
-    reg        hdr_vld;
-    reg        pld_vld;
+    wire       hdr_vld;
+    wire       pld_vld;
 
 
     Packetizer #(
@@ -105,10 +105,10 @@ module Tx (
         .psk_tready     (Packetizer_PSK_tready),
         .psk_tuser      (Packetizer_PSK_tuser),
         .psk_tvalid     (Packetizer_PSK_tvalid),
-        .clk_16d384M    (clk_16d384M),
-        .rst_16d384M    (rst_16d384M),
-        .clk_1d024M     (clk_1d024M),
-        .rst_n_1d024M   (rst_n_1d024M),
+        .clk_16d384M    (clk_16M384),
+        .rst_16d384M    (rst_16M384),
+        .clk_1d024M     (clk_1M024),
+        .rst_n_1d024M   (rst_n_1M024),
         .DELAY_CNT      (DELAY_CNT),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
         .DAC_I          (DAC_I),

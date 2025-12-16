@@ -13,7 +13,6 @@ module Gardner_Timing_Error # (
   parameter WIDTH = 16
 ) (
   input                     clk,
-  input                     is_bpsk,
   input  signed [WIDTH-1:0] I,
   input  signed [WIDTH-1:0] I_d16,
   input  signed [WIDTH-1:0] I_d32,
