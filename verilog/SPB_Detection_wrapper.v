@@ -1,6 +1,7 @@
 module SPB_Detection (
     // Global Clock and Reset
     input wire clk,
+    input wire clk_enable,
     input wire rst_32M768,
 
     // Data Inputs (from I_1M/Q_1M ports)
@@ -41,6 +42,7 @@ module SPB_Detection (
         .MAX_WINDOW_WIDTH(8)
     ) u_Rx_SD_0 (
         .clk(clk),
+        .clk_enable(clk_enable),
         .rst(rst_32M768),
 
         // AXI Stream-like Interface
@@ -65,6 +67,7 @@ module SPB_Detection (
         .MAX_WINDOW_WIDTH(8)
     ) u_Rx_PD_0 (
         .clk(clk),
+        .clk_enable(clk_enable),
         .rst(rst_32M768),
 
         // Config & Control
@@ -87,6 +90,7 @@ module SPB_Detection (
         .MAX_WINDOW_WIDTH(8)
     ) u_Rx_BD_0 (
         .clk(clk),
+        .clk_enable(clk_enable),
         .rst(rst_32M768),
 
         // Config & Control

@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-// Date        : Tue Dec  2 14:57:36 2025
+// Date        : Tue Dec 16 22:58:04 2025
 // Host        : LiPtPDesktop running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_sim_netlist.v
@@ -23,7 +23,7 @@ module clk_wiz_32M768
   input clk_in1;
 
   wire clk_32M768;
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  wire clk_in1;
   wire locked;
 
   clk_wiz_32M768_clk_wiz inst
@@ -69,12 +69,7 @@ module clk_wiz_32M768_clk_wiz
        (.I(clkfbout_clk_wiz_32M768),
         .O(clkfbout_buf_clk_wiz_32M768));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* CAPACITANCE = "DONT_CARE" *) 
-  (* IBUF_DELAY_VALUE = "0" *) 
-  (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
+  BUFG clkin1_bufg
        (.I(clk_in1),
         .O(clk_in1_clk_wiz_32M768));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -118,7 +113,7 @@ module clk_wiz_32M768_clk_wiz
     .CLKOUT6_DUTY_CYCLE(0.500000),
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
-    .COMPENSATION("ZHOLD"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),

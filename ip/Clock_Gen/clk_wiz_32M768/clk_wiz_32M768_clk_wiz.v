@@ -75,7 +75,7 @@ module clk_wiz_32M768_clk_wiz
   //------------------------------------
 wire clk_in1_clk_wiz_32M768;
 wire clk_in2_clk_wiz_32M768;
-  IBUF clkin1_ibufg
+  BUFG clkin1_bufg
    (.O (clk_in1_clk_wiz_32M768),
     .I (clk_in1));
 

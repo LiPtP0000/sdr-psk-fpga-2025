@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
--- Date        : Tue Dec  2 14:57:36 2025
+-- Date        : Tue Dec 16 22:58:04 2025
 -- Host        : LiPtPDesktop running 64-bit Ubuntu 24.04.2 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_sim_netlist.vhdl
@@ -46,13 +46,7 @@ architecture STRUCTURE of clk_wiz_32M768_clk_wiz is
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkin1_ibufg : label is "PRIMITIVE";
-  attribute CAPACITANCE : string;
-  attribute CAPACITANCE of clkin1_ibufg : label is "DONT_CARE";
-  attribute IBUF_DELAY_VALUE : string;
-  attribute IBUF_DELAY_VALUE of clkin1_ibufg : label is "0";
-  attribute IFD_DELAY_VALUE : string;
-  attribute IFD_DELAY_VALUE of clkin1_ibufg : label is "AUTO";
+  attribute BOX_TYPE of clkin1_bufg : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
@@ -61,11 +55,8 @@ clkf_buf: unisim.vcomponents.BUFG
       I => clkfbout_clk_wiz_32M768,
       O => clkfbout_buf_clk_wiz_32M768
     );
-clkin1_ibufg: unisim.vcomponents.IBUF
-    generic map(
-      IOSTANDARD => "DEFAULT"
-    )
-        port map (
+clkin1_bufg: unisim.vcomponents.BUFG
+     port map (
       I => clk_in1,
       O => clk_in1_clk_wiz_32M768
     );
@@ -111,7 +102,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT6_DUTY_CYCLE => 0.500000,
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => false,
-      COMPENSATION => "ZHOLD",
+      COMPENSATION => "BUF_IN",
       DIVCLK_DIVIDE => 1,
       IS_CLKINSEL_INVERTED => '0',
       IS_PSEN_INVERTED => '0',

@@ -104,21 +104,19 @@ module top (
     );
 
     // output declaration of module Clock_Gen
+    wire clk_200M;
     wire clk_2d048M;
-    wire rst_32d768M;
-    wire rst_16d384M;
-    wire rst_n_1d024M;
     wire clk_32d768M;
     wire clk_16d384M;
-    wire clk_200M;
     wire clk_1d024M;
+    wire rst_32d768M;
+    wire rst_n_32d768M;
 
     Clock_Gen u_Clock_Gen (
         .PL_CLK_100MHz(PL_CLK_100MHz),
         .clk_2d048M   (clk_2d048M),
         .rst_32d768M  (rst_32d768M),
-        .rst_16d384M  (rst_16d384M),
-        .rst_n_1d024M (rst_n_1d024M),
+        .rst_n_32d768M(rst_n_32d768M),
         .clk_32d768M  (clk_32d768M),
         .clk_16d384M  (clk_16d384M),
         .clk_200M     (clk_200M),
@@ -139,6 +137,7 @@ module top (
     wire [ 1:0] DAC_bits;
 
     Tx u_Tx (
+        .rst_n_2M048    (rst_n_2d048M),
         .rst_n_1M024    (rst_n_1d024M),
         .MODE_CTRL      (MODE_CTRL),
         .DELAY_CNT      (DELAY_CNT),
@@ -159,13 +158,43 @@ module top (
         .DAC_bits       (DAC_bits)
     );
 
-    // output declaration of module AD9361_1RT_FDD
+    wire [11:0] tsm_I;
+    wire [11:0] tsm_Q;
     wire [11:0] rev_I;
     wire [11:0] rev_Q;
+    wire [11:0] ADC_I;
+    wire [11:0] ADC_Q;
+    wire [23:0] DAC_concat;
+
     // In FDD mode, AD9361 uses FBCLK to sample transmitted data and DATACLK to sample received data.
     // FBCLK has the same frequency and duty cycle as DATACLK
     // Thus, both transmitted and received data are sampled relative to the AD9361 clock.
     wire        AD9361_CLK;
+
+    // async FIFO: 32.768M Clock -> AD9361_CLK
+    // reset given by rst_32d768M.
+    // output declaration of module axis_data_fifo_AD_DA
+    wire        DAC_tready;
+    wire        tsm_tvalid;
+    wire [23:0] tsm_concat;
+
+    axis_data_fifo_AD_DA u_axis_data_fifo_DAC (
+        .s_axis_aresetn(rst_n_32d768M),
+        .s_axis_aclk   (clk_32d768M),
+        .s_axis_tvalid (DAC_valid),
+        .s_axis_tready (DAC_tready),
+        .s_axis_tdata  (DAC_concat),
+        .m_axis_aclk   (AD9361_CLK),
+        .m_axis_tvalid (tsm_tvalid),
+        .m_axis_tready (1'b1),
+        .m_axis_tdata  (tsm_concat)
+    );
+
+    assign DAC_concat = {DAC_Q, DAC_I};
+    assign tsm_I = tsm_concat[11:0];
+    assign tsm_Q = tsm_concat[23:12];
+
+
 
     AD9361_1RT_FDD u_AD9361_1RT_FDD (
         .clk200M        (clk_200M),
@@ -175,14 +204,65 @@ module top (
         .AD9361_RX_DAT_I(rev_I),
         .AD9361_RX_DAT_Q(rev_Q),
         .AD9361_RX_CLK  (AD9361_CLK),
-        .AD9361_TX_DAT_I(DAC_I),
-        .AD9361_TX_DAT_Q(DAC_Q),
+        .AD9361_TX_DAT_I(tsm_I),
+        .AD9361_TX_DAT_Q(tsm_Q),
         .AD9361_TX_CLK  (AD9361_CLK),
         .AD9361_P1_D    (AD9361_P1_D),
         .AD9361_FBCLK   (AD9361_FBCLK),
         .AD9361_TX_FRAME(AD9361_TX_FRAME)
     );
 
+    // Rx FIFO write enable generation (decimation by 12)
+    reg  [3:0] decimate_cnt;
+    wire       rev_valid;
+
+    always @(posedge AD9361_CLK) begin
+        if (decimate_cnt == 11) decimate_cnt <= 0;
+        else decimate_cnt <= decimate_cnt + 1;
+    end
+
+    // async FIFO: AD9361_CLK -> 32.768M Clock
+    // reset given by processor_system_reset IP driven by AD9361_CLK.
+    // output declaration of module axis_data_fifo_AD_DA
+    wire        rev_tready;
+    wire        ADC_tvalid;
+    wire [23:0] ADC_concat;
+    wire [23:0] rev_concat;
+    wire        rev_aresetn;
+
+    axis_data_fifo_AD_DA u_axis_data_fifo_ADC (
+        .s_axis_aresetn(rev_aresetn),
+        .s_axis_aclk   (AD9361_CLK),
+        .s_axis_tvalid (rev_valid),
+        .s_axis_tready (rev_tready),
+        .s_axis_tdata  ({rev_Q, rev_I}),
+        .m_axis_aclk   (clk_32d768M),
+        .m_axis_tvalid (ADC_tvalid),
+        .m_axis_tready (1'b1),
+        .m_axis_tdata  (ADC_concat)
+    );
+
+
+    (* ASYNC_REG = "TRUE" *)reg rev_aresetn_d1;
+    (* ASYNC_REG = "TRUE" *)reg rev_aresetn_d2;
+
+    // Use CDC sync method to obtain rev_aresetn from rst_32d768M
+    always @(posedge AD9361_CLK or posedge rst_32d768M) begin
+        if (rst_32d768M) begin
+            rev_aresetn_d1 <= 1'b0;
+            rev_aresetn_d2 <= 1'b0;
+        end else begin
+            rev_aresetn_d1 <= 1'b1;
+            rev_aresetn_d2 <= rev_aresetn_d1;
+        end
+    end
+    assign rev_aresetn = rev_aresetn_d2;
+
+    // Only when counter is 0 and RX_FRAME is valid, write to FIFO
+    assign rev_valid = (decimate_cnt == 0) && AD9361_RX_FRAME;
+    assign ADC_I = ADC_concat[11:0];
+    assign ADC_Q = ADC_concat[23:12];
+    assign rev_concat = {rev_Q, rev_I};
 
     // output declaration of module Rx_wrapper
     wire        BPSK_raw;
@@ -211,10 +291,11 @@ module top (
         .clk_2M048        (clk_2d048M),
         .clk_16M384       (clk_16d384M),
         .clk_32M768       (clk_32d768M),
-        .ADC_I            (rev_I),
-        .ADC_Q            (rev_Q),
+        .ADC_I            (ADC_I),
+        .ADC_Q            (ADC_Q),
         .rst_16M384       (rst_16d384M),
         .rst_32M768       (rst_32d768M),
+        .rst_n_2M048      (rst_n_2d048M),
         .MODE_CTRL        (MODE_CTRL),
         .FEEDBACK_SHIFT   (FEEDBACK_SHIFT),
         .GARDNER_SHIFT    (GARDNER_SHIFT),

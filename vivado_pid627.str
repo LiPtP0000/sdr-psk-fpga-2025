@@ -1,0 +1,2662 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 627
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Dec 17 01:44:34 CST 2025
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 6.6.87.2-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 32
+LSB Release Description: Ubuntu 24.04.2 LTS
+
+Display: 0
+Screen size: 1600x1000
+Local screen bounds: x = 0, y = 0, width = 1600, height = 1000
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	liptp
+User home directory: /home/liptp
+User working directory: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /home/liptp/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /home/liptp/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /home/liptp/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+Vivado journal file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-627-LiPtPDesktop
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2024.2/bin:/tools/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025:LiPtPDesktop_1765907059_558
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2024.2
+XILINX_SDK: /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2024.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,943 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: sdr-psk-fpga-2025.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 102 MB (+104253kb) [00:00:07]
+// [Engine Memory]: 1,500 MB (+1421265kb) [00:00:07]
+// [Engine Memory]: 1,864 MB (+303567kb) [00:00:08]
+// [GUI Memory]: 119 MB (+12742kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1817 ms.
+// Tcl Message: open_project sdr-psk-fpga-2025.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'. 
+// [GUI Memory]: 133 MB (+8133kb) [00:00:09]
+// Project name: sdr-psk-fpga-2025; location: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// [GUI Memory]: 145 MB (+5950kb) [00:00:10]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,947 MB. GUI used memory: 80 MB. Current time: 12/17/25, 1:44:35 AM CST
+// [Engine Memory]: 1,971 MB (+13894kb) [00:00:10]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 23 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,117 MB. GUI used memory: 78 MB. Current time: 12/17/25, 1:45:00 AM CST
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// [Engine Memory]: 2,421 MB (+368500kb) [00:00:39]
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,887 MB. GUI used memory: 78 MB. Current time: 12/17/25, 1:45:06 AM CST
+// [Engine Memory]: 2,887 MB (+361816kb) [00:00:40]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 3,120 MB (+93125kb) [00:00:41]
+// [GUI Memory]: 159 MB (+6577kb) [00:00:42]
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1054 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 8299.602 ; gain = 0.000 ; free physical = 12567 ; free virtual = 18340 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8973.328 ; gain = 0.000 ; free physical = 11985 ; free virtual = 17797 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 9414.758 ; gain = 1115.156 ; free physical = 11587 ; free virtual = 17405 
+// 'dV' command handler elapsed time: 9 seconds
+// Elapsed time: 10 seconds
+dismissDialog("Open Synthesized Design"); // bh (Open Synthesized Design Progress)
+// [GUI Memory]: 175 MB (+9045kb) [00:00:44]
+// Elapsed time: 12 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog0)
+// [GUI Memory]: 187 MB (+2616kb) [00:00:56]
+// [Engine Memory]: 3,365 MB (+93023kb) [00:00:57]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+// HMemoryUtils.trashcanNow. Engine heap size: 3,366 MB. GUI used memory: 113 MB. Current time: 12/17/25, 1:45:25 AM CST
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog1)
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -7.010 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aa
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top_wrapper.v), u_AD9361_1RT_FDD : AD9361_1RT_FDD (AD9361_1RT_FDD.v)]", 13, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top_wrapper.v), u_AD9361_1RT_FDD : AD9361_1RT_FDD (AD9361_1RT_FDD.v)]", 13, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// Launch External Editor: 'code /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/vendor/AD9361_1RT_FDD.v'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 199 MB (+3235kb) [00:02:18]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 02m:10s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 02m:12s
+// Elapsed time: 51 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog2)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 01:46:49 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 34 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (PAResourceCommand.PACommandNames_REPORTS_WINDOW)
+selectRadioButton(PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN, "Open Synthesized Design"); // a (PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,284 MB. GUI used memory: 110 MB. Current time: 12/17/25, 1:47:28 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,284 MB. GUI used memory: 111 MB. Current time: 12/17/25, 1:47:28 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// [Engine Memory]: 3,902 MB (+386908kb) [00:03:03]
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,902 MB. GUI used memory: 88 MB. Current time: 12/17/25, 1:47:34 AM CST
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 9551.828 ; gain = 0.000 ; free physical = 10146 ; free virtual = 16213 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9551.828 ; gain = 0.000 ; free physical = 10125 ; free virtual = 16193 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 9592.961 ; gain = 41.133 ; free physical = 10118 ; free virtual = 16191 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog4)
+// Elapsed time: 42 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog5)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6, true, false, false, false, false, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Double Click - Node
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -8.269 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:46s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:48s
+// Elapsed time: 41 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 210 MB (+972kb) [00:04:57]
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Launch Runs"); // g (dialog6)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 01:49:24 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 66 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,579 MB. GUI used memory: 113 MB. Current time: 12/17/25, 1:50:33 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,579 MB. GUI used memory: 114 MB. Current time: 12/17/25, 1:50:33 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,357 MB. GUI used memory: 91 MB. Current time: 12/17/25, 1:50:40 AM CST
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/./.Xil/Vivado-627-LiPtPDesktop/xc7z020_detail.xgd_7CF04EC3 elapsed time: 0.6s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 0.6s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 9592.961 ; gain = 0.000 ; free physical = 9662 ; free virtual = 15759 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9592.961 ; gain = 0.000 ; free physical = 9643 ; free virtual = 15740 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+// Elapsed time: 20 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog8)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): FALSE
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_INFORMATION_MESSAGES): FALSE
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets -quiet u_Clock_Gen/clk16M384]'. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:422]. ]", 3); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:3]. ]", 2); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:3]. , [Common 17-55] 'set_property' expects at least one object. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:111]. ]", 96, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc;-;;-;16;-;line;-;111;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Launch External Editor: 'code /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc'
+// Elapsed time: 72 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog9)
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,922 MB. GUI used memory: 125 MB. Current time: 12/17/25, 1:52:40 AM CST
+// Elapsed time: 72 seconds
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -6.380 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// PAPropertyPanels.initPanels (Path 11) elapsed time: 0.3s
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 11 ; -6.38 ; 2 ; 1 ; AD9361_P0_D[0] ; u_AD9361_1RT_FDD/IDDR_inst_B0/D ; 3.4627159 ; 3.4627159 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 0, "-6.38", 1); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 11 ; -6.38 ; 2 ; 1 ; AD9361_P0_D[0] ; u_AD9361_1RT_FDD/IDDR_inst_B0/D ; 3.4627159 ; 3.4627159 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 0, "Path 11", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 11 ; -6.38 ; 2 ; 1 ; AD9361_P0_D[0] ; u_AD9361_1RT_FDD/IDDR_inst_B0/D ; 3.4627159 ; 3.4627159 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 0, "Path 11", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// [GUI Memory]: 221 MB (+595kb) [00:10:42]
+// [GUI Memory]: 232 MB (+471kb) [00:11:00]
+// [GUI Memory]: 245 MB (+755kb) [00:11:43]
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:50s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 12m:52s
+// [GUI Memory]: 258 MB (+677kb) [00:15:07]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 21m:22s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 21m:24s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 21m:28s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 21m:30s
+// Elapsed time: 719 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog10)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:06:07 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 25 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,561 MB. GUI used memory: 124 MB. Current time: 12/17/25, 2:06:33 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,545 MB. GUI used memory: 125 MB. Current time: 12/17/25, 2:06:33 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,537 MB. GUI used memory: 93 MB. Current time: 12/17/25, 2:06:39 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 9757.684 ; gain = 0.000 ; free physical = 9774 ; free virtual = 15360 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9757.684 ; gain = 0.000 ; free physical = 9763 ; free virtual = 15362 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 9757.684 ; gain = 0.000 ; free physical = 9757 ; free virtual = 15362 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog12)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog13)
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -8.250 ns]", 9, false, false, false, false, false, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 23m:14s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 23m:16s
+// Elapsed time: 47 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog14)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:07:53 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 45 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,813 MB. GUI used memory: 115 MB. Current time: 12/17/25, 2:08:39 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,813 MB. GUI used memory: 117 MB. Current time: 12/17/25, 2:08:39 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,611 MB. GUI used memory: 95 MB. Current time: 12/17/25, 2:08:44 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 9865.523 ; gain = 0.000 ; free physical = 9766 ; free virtual = 15368 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 9865.523 ; gain = 0.000 ; free physical = 9757 ; free virtual = 15358 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 9865.523 ; gain = 0.000 ; free physical = 9749 ; free virtual = 15356 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog16)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog17)
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6, true, false, false, false, false, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Double Click - Node
+collapseTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -2.815 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 13 ; -2.806 ; 1 ; 1 ; AD9361_P0_D[3] ; u_AD9361_1RT_FDD/IDDR_inst_B3/D ; 1.602003 ; 0.82775295 ; 0.77425 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 2, "Path 13", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 13 ; -2.806 ; 1 ; 1 ; AD9361_P0_D[3] ; u_AD9361_1RT_FDD/IDDR_inst_B3/D ; 1.602003 ; 0.82775295 ; 0.77425 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 2, "Path 13", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 25m:52s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 25m:54s
+// Elapsed time: 72 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 3,967 MB. GUI used memory: 135 MB. Current time: 12/17/25, 2:10:30 AM CST
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog18)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:10:32 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 56 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,727 MB. GUI used memory: 122 MB. Current time: 12/17/25, 2:11:29 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,727 MB. GUI used memory: 122 MB. Current time: 12/17/25, 2:11:29 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,727 MB. GUI used memory: 98 MB. Current time: 12/17/25, 2:11:34 AM CST
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 4,740 MB (+674136kb) [00:27:10]
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 9906.527 ; gain = 0.000 ; free physical = 9604 ; free virtual = 15206 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9906.527 ; gain = 0.000 ; free physical = 9603 ; free virtual = 15205 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 9906.527 ; gain = 0.000 ; free physical = 9539 ; free virtual = 15147 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog20)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog21)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -3.052 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 13 ; -3.042 ; 1 ; 1 ; AD9361_P0_D[3] ; u_AD9361_1RT_FDD/IDDR_inst_B3/D ; 1.602003 ; 0.82775295 ; 0.77425 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 2, "Path 13", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 13 ; -3.042 ; 1 ; 1 ; AD9361_P0_D[3] ; u_AD9361_1RT_FDD/IDDR_inst_B3/D ; 1.602003 ; 0.82775295 ; 0.77425 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 2, "Path 13", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 31m:18s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 31m:20s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,775 MB. GUI used memory: 144 MB. Current time: 12/17/25, 2:15:55 AM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 31m:52s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 31m:54s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32m:16s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32m:18s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32m:42s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32m:44s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 33m:50s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 33m:52s
+// Elapsed time: 388 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog22)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:18:33 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 57 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,912 MB. GUI used memory: 124 MB. Current time: 12/17/25, 2:19:31 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,912 MB. GUI used memory: 125 MB. Current time: 12/17/25, 2:19:31 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Reloading design"); // a (RDIResource.ProgressDialog_BACKGROUND)
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,912 MB. GUI used memory: 101 MB. Current time: 12/17/25, 2:19:37 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 10099.465 ; gain = 0.000 ; free physical = 10092 ; free virtual = 15068 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10099.465 ; gain = 0.000 ; free physical = 10080 ; free virtual = 15068 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10099.465 ; gain = 0.000 ; free physical = 10073 ; free virtual = 15067 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog24)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog25)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Clock Summary]", 3, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aa
+selectTab((HResource) null, (HResource) null, "Netlist", 1); // aa
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog25)
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2 
+// Tcl Message: INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Clock Summary]", 3, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -3.071 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -3.071 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -3.071 ns]", 9, false, false, false, false, false, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Double Click
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 15 ; -3.053 ; 2 ; 1 ; AD9361_P0_D[5] ; u_AD9361_1RT_FDD/IDDR_inst_B5/D ; 1.5825299 ; 1.5825299 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 4, "Path 15", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 15 ; -3.053 ; 2 ; 1 ; AD9361_P0_D[5] ; u_AD9361_1RT_FDD/IDDR_inst_B5/D ; 1.5825299 ; 1.5825299 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 4, "Path 15", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 37m:04s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 37m:06s
+// Elapsed time: 90 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog26)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:21:50 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 53 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,458 MB. GUI used memory: 131 MB. Current time: 12/17/25, 2:22:43 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,458 MB. GUI used memory: 132 MB. Current time: 12/17/25, 2:22:43 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,990 MB. GUI used memory: 104 MB. Current time: 12/17/25, 2:22:49 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10189.488 ; gain = 0.000 ; free physical = 10033 ; free virtual = 15024 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10189.488 ; gain = 0.000 ; free physical = 10025 ; free virtual = 15016 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 10189.488 ; gain = 0.000 ; free physical = 10017 ; free virtual = 15014 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog28)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog29)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -2.442 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 15 ; -2.423 ; 2 ; 1 ; AD9361_P0_D[5] ; u_AD9361_1RT_FDD/IDDR_inst_B5/D ; 2.2120612 ; 2.2120612 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 4, "Path 15", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 15 ; -2.423 ; 2 ; 1 ; AD9361_P0_D[5] ; u_AD9361_1RT_FDD/IDDR_inst_B5/D ; 2.2120612 ; 2.2120612 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 4, "Path 15", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,613 MB. GUI used memory: 141 MB. Current time: 12/17/25, 2:23:19 AM CST
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 15 ; -2.423 ; 2 ; 1 ; AD9361_P0_D[5] ; u_AD9361_1RT_FDD/IDDR_inst_B5/D ; 2.2120612 ; 2.2120612 ; 0.0 ; 0.0 ; AD9361_DATACLK ; AD9361_DATACLK ;  ; 0.03535534", 4, "Path 15", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 39m:06s
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog30)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:23:43 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 39m:10s
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 27 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,083 MB. GUI used memory: 130 MB. Current time: 12/17/25, 2:24:11 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,083 MB. GUI used memory: 131 MB. Current time: 12/17/25, 2:24:11 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,083 MB. GUI used memory: 106 MB. Current time: 12/17/25, 2:24:17 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 10267.309 ; gain = 0.000 ; free physical = 9946 ; free virtual = 14937 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 246 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10267.309 ; gain = 0.000 ; free physical = 9947 ; free virtual = 14939 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10267.309 ; gain = 0.000 ; free physical = 9941 ; free virtual = 14938 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog32)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog33)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+// Elapsed time: 170 seconds
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths]", 6); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Intra-Clock Paths, AD9361_DATACLK, Hold -1.120 ns]", 9, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:56s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 43m:58s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 44m:20s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 44m:22s
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 45m:06s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 45m:08s
+// Elapsed time: 149 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog34)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:29:51 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 31 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,379 MB. GUI used memory: 130 MB. Current time: 12/17/25, 2:30:22 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,379 MB. GUI used memory: 132 MB. Current time: 12/17/25, 2:30:22 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,220 MB. GUI used memory: 108 MB. Current time: 12/17/25, 2:30:28 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 10360.203 ; gain = 0.000 ; free physical = 10228 ; free virtual = 14998 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 258 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] 
+// Tcl Message: INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:116] INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:424] 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10360.203 ; gain = 0.000 ; free physical = 10214 ; free virtual = 14984 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10360.203 ; gain = 0.000 ; free physical = 10205 ; free virtual = 14980 
+dismissDialog("Reloading design"); // bh (Reloading design Progress)
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog36)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Timing Summary]", 21, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_TIMING_SUMMARY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Timing Summary"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Timing Summary"); // ag (dialog37)
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+dismissDialog("Report Timing Summary"); // bh (Report Timing Summary Progress)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 31, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog38)
+// Tcl Message: launch_runs impl_1 -jobs 32 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10101 ; free virtual = 14871 Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10101 ; free virtual = 14871 
+// Tcl Message: Writing XDEF routing. 
+// Tcl Message: Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10097 ; free virtual = 14867 
+// Tcl Message: Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Wrote RouteStorage: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10082 ; free virtual = 14855 Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10082 ; free virtual = 14855 Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10080 ; free virtual = 14854 Write Physdb Complete: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10080 ; free virtual = 14854 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Wed Dec 17 02:30:46 2025] Launched impl_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 45 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+selectButton(PAResourceAtoD.ClosePlanner_YES, "Yes", "Close Design"); // a (PAResourceAtoD.ClosePlanner_YES)
+dismissDialog("Close Design"); // a.a (dialog40)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,545 MB. GUI used memory: 137 MB. Current time: 12/17/25, 2:31:34 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,545 MB. GUI used memory: 137 MB. Current time: 12/17/25, 2:31:34 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bh (Close Progress)
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,281 MB. GUI used memory: 114 MB. Current time: 12/17/25, 2:31:39 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10096 ; free virtual = 14915 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 249 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10096 ; free virtual = 14915 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10085 ; free virtual = 14904 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10085 ; free virtual = 14904 Read PlaceDB: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10085 ; free virtual = 14904 Read PulsedLatchDB: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10085 ; free virtual = 14904 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10083 ; free virtual = 14901 Read Physdb Files: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10083 ; free virtual = 14901 
+// Tcl Message: Restored from archive | CPU: 0.190000 secs | Memory: 7.423126 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.16 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10083 ; free virtual = 14901 Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10083 ; free virtual = 14901 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 3 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance   
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: METHODOLOGY_ADDED
+// Device view-level: 0.0
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dV' command handler elapsed time: 9 seconds
+dismissDialog("Open Implemented Design"); // bh (Open Implemented Design Progress)
+// Elapsed time: 14 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Methodology Violations"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Methodology Violations"); // aF (dialog41)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Methodology Summary]", 4, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Check Timing]", 5); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design, Report Methodology]", 39, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_METHODOLOGY
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Methodology"); // a (RDIResource.BaseDialog_OK)
+// 'cD' command handler elapsed time: 3 seconds
+dismissDialog("Report Methodology"); // a (dialog42)
+// Tcl Message: report_methodology -name ultrafast_methodology_1 
+// Tcl Message: Command: report_methodology -name ultrafast_methodology_1 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. INFO: [DRC 23-133] Running Methodology with 8 threads 
+// TclEventType: METHODOLOGY_ADDED
+// Tcl Message: report_methodology completed successfully 
+dismissDialog("Report Methodology"); // bh (Report Methodology Progress)
+// Elapsed time: 111 seconds
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #24 ; Warning ; An output delay is missing on AD9361_P1_D[9] relative to the rising and/or falling clock edge(s) of AD9361_DATACLK.", 1028, "An output delay is missing on AD9361_P1_D[9] relative to the rising and/or falling clock edge(s) of AD9361_DATACLK.", 2, false, false, false, false, true, false); // B.c (PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE) - Popup Trigger
+selectMenuItem(PAResourceTtoZ.VioTreeTablePanel_COPY_DRC_INFORMATION, "Copy"); // aq (PAResourceTtoZ.VioTreeTablePanel_COPY_DRC_INFORMATION)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 145 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 31, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog43)
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,619 MB. GUI used memory: 164 MB. Current time: 12/17/25, 2:36:36 AM CST
+// TclEventType: RUN_STATUS_CHANGE
+// Device view-level: 0.0
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog44)
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:36:38 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log [Wed Dec 17 02:36:38 2025] Launched impl_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 62 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,497 MB. GUI used memory: 140 MB. Current time: 12/17/25, 2:37:42 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,497 MB. GUI used memory: 141 MB. Current time: 12/17/25, 2:37:42 AM CST
+// Tcl Message: refresh_design 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,448 MB. GUI used memory: 118 MB. Current time: 12/17/25, 2:37:46 AM CST
+// DeviceView Instantiated
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10226 ; free virtual = 14682 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 249 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10227 ; free virtual = 14683 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 Read PlaceDB: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 Read Physdb Files: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.13 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 
+// Tcl Message: Restored from archive | CPU: 0.170000 secs | Memory: 7.422989 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.13 . Memory (MB): peak = 10498.254 ; gain = 0.000 ; free physical = 10216 ; free virtual = 14672 
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: DRC_ADDED
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 10508.004 ; gain = 9.750 ; free physical = 10209 ; free virtual = 14670 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Device view-level: 0.0
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Reloading"); // bh (Reloading Progress)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Methodology Summary]", 4, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Check Timing]", 5); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Check Timing, no_output_delay]", 11, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Methodology Summary]", 4, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Check Timing, no_clock]", 6, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// Elapsed time: 53 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Bad Practice (1024) ;  ; ", 2); // B.c (PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Bad Practice (1024) ;  ; ", 2); // B.c (PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE)
+// Elapsed time: 57 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] set_false_path:No valid object(s) found for '-through [get_nets -quiet u_Clock_Gen/clk16M384]'. [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc:422]. ]", 3); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 97 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Timing 38-472] The REFCLK pin of IDELAYCTRL u_AD9361_1RT_FDD/IDELAYCTRL_inst is not reached by any clock but IDELAYE2 u_AD9361_1RT_FDD/data_delay_stage1[1].IDELAYE2_data_s1 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property value.. ]", 9); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Timing 38-472] The REFCLK pin of IDELAYCTRL u_AD9361_1RT_FDD/IDELAYCTRL_inst is not reached by any clock but IDELAYE2 u_AD9361_1RT_FDD/data_delay_stage1[1].IDELAYE2_data_s1 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property value.. , [Timing 38-472] The REFCLK pin of IDELAYCTRL u_AD9361_1RT_FDD/IDELAYCTRL_inst is not reached by any clock but IDELAYE2 u_AD9361_1RT_FDD/data_delay_stage1[10].IDELAYE2_data_s1 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property value.. ]", 12, false, false, false, false, true, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Popup Trigger
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 70 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 31, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog46)
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Device view-level: 0.0
+// TclEventType: RUN_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 4,912 MB. GUI used memory: 166 MB. Current time: 12/17/25, 2:43:00 AM CST
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog47)
+// TclEventType: RUN_LAUNCH
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 02:43:03 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log [Wed Dec 17 02:43:03 2025] Launched impl_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 165 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,506 MB. GUI used memory: 143 MB. Current time: 12/17/25, 2:45:49 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,449 MB. GUI used memory: 144 MB. Current time: 12/17/25, 2:45:49 AM CST
+// Tcl Message: refresh_design 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,449 MB. GUI used memory: 121 MB. Current time: 12/17/25, 2:45:54 AM CST
+// DeviceView Instantiated
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10443 ; free virtual = 14644 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 249 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10442 ; free virtual = 14644 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 Read PlaceDB: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 Read Physdb Files: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 
+// Tcl Message: Restored from archive | CPU: 0.170000 secs | Memory: 7.462524 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10444 ; free virtual = 14645 
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: DRC_ADDED
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 10438 ; free virtual = 14645 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Device view-level: 0.0
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+dismissDialog("Reloading"); // bh (Reloading Progress)
+selectCheckBox(PAResourceTtoZ.VioResultsTab_CRITICAL_WARNINGS, (String) null, false); // f (PAResourceTtoZ.VioResultsTab_CRITICAL_WARNINGS): FALSE
+// Elapsed time: 13 seconds
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Warning ; The generated clock clk_128M has a sub-optimal master source pin selection, timing can be pessimistic", 29, "The generated clock clk_128M has a sub-optimal master source pin selection, timing can be pessimistic", 2, false); // B.c (PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Warning ; The generated clock clk_128M has a sub-optimal master source pin selection, timing can be pessimistic", 29, "The generated clock clk_128M has a sub-optimal master source pin selection, timing can be pessimistic", 2, false, false, false, false, true, false); // B.c (PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE) - Popup Trigger
+selectMenuItem(PAResourceTtoZ.VioTreeTablePanel_COPY_DRC_INFORMATION, "Copy"); // aq (PAResourceTtoZ.VioTreeTablePanel_COPY_DRC_INFORMATION)
+// Elapsed time: 462 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen)]", 4); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen), Nets (22)]", 5); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+selectButton(PAResourceAtoD.ClosePlanner_YES, "Yes", "Close Design"); // a (PAResourceAtoD.ClosePlanner_YES)
+dismissDialog("Close Design"); // a.a (dialog49)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,827 MB. GUI used memory: 129 MB. Current time: 12/17/25, 2:54:20 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,448 MB. GUI used memory: 131 MB. Current time: 12/17/25, 2:54:20 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bh (Close Progress)
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,457 MB. GUI used memory: 104 MB. Current time: 12/17/25, 2:54:28 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 12070 ; free virtual = 14491 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 258 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 11960 ; free virtual = 14490 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 8 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances  
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 10524.012 ; gain = 0.000 ; free physical = 11943 ; free virtual = 14488 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// 'dV' command handler elapsed time: 11 seconds
+dismissDialog("Open Synthesized Design"); // bh (Open Synthesized Design Progress)
+// [Engine Memory]: 5,382 MB (+424629kb) [01:10:05]
+// Elapsed time: 13 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog50)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, Nets (119)]", 1); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, Nets (119)]", 1); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen)]", 4); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen), Nets (24)]", 5); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen), Nets (24), clk_1d024M]", 15, false); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen), Nets (24), clk_1d024M_BUFG]", 16, false); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// Elapsed time: 31 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, u_Clock_Gen (Clock_Gen), Nets (24), clk_1d024M]", 15, false); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE)
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 304 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 31, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes", "Synthesis is Out-of-date"); // a (RDIResource.BaseDialog_YES)
+// 'a' command handler elapsed time: 3 seconds
+dismissDialog("Synthesis is Out-of-date"); // u (dialog51)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.srcs/utils_1/imports/synth_1/top.dcp with file /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/top.dcp 
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog52)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 32 
+// Tcl Message: [Wed Dec 17 03:00:45 2025] Launched synth_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/synth_1/runme.log [Wed Dec 17 03:00:45 2025] Launched impl_1... Run output will be captured here: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 86 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+selectButton(PAResourceAtoD.ClosePlanner_YES, "Yes", "Close Design"); // a (PAResourceAtoD.ClosePlanner_YES)
+dismissDialog("Close Design"); // a.a (dialog54)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,378 MB. GUI used memory: 130 MB. Current time: 12/17/25, 3:02:16 AM CST
+// Engine heap size: 4,986 MB. GUI used memory: 132 MB. Current time: 12/17/25, 3:02:16 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bh (Close Progress)
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 4,448 MB. GUI used memory: 109 MB. Current time: 12/17/25, 3:02:24 AM CST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11646 ; free virtual = 14473 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 249 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11625 ; free virtual = 14470 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11590 ; free virtual = 14472 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11590 ; free virtual = 14472 Read PlaceDB: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.1 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11590 ; free virtual = 14472 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11590 ; free virtual = 14472 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11582 ; free virtual = 14471 Read Physdb Files: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11582 ; free virtual = 14471 
+// Tcl Message: Restored from archive | CPU: 0.210000 secs | Memory: 7.504013 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11582 ; free virtual = 14471 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11582 ; free virtual = 14471 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 3 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance   
+// TclEventType: DRC_ADDED
+// Tcl Message: open_run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10731.113 ; gain = 0.000 ; free physical = 11555 ; free virtual = 14469 
+// Device view-level: 0.0
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// [Engine Memory]: 5,945 MB (+307391kb) [01:18:01]
+// 'dV' command handler elapsed time: 14 seconds
+// [Engine Memory]: 6,297 MB (+58201kb) [01:18:01]
+dismissDialog("Open Implemented Design"); // bh (Open Implemented Design Progress)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Methodology Violations"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Methodology Violations"); // aF (dialog55)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog56)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths]", 7, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths]", 7); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, AD9361_DATACLK to clk_16d384M]", 9); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, AD9361_DATACLK to clk_16d384M, Setup -5.838 ns]", 10, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 89 ; -5.838 ; 0 ; 1 ; u_AD9361_1RT_FDD/AD9361_RX_DAT_Ib_reg[9]/C ; u_Rx/u_PSK_Signal_Extend/PSK_signal_reg[9]/D ; 8.323237 ; 0.459 ; 7.8642364 ; 0.0019095836 ; AD9361_DATACLK ; clk_16d384M ;  ; 0.1785413", 0, "Path 89", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,293 MB. GUI used memory: 170 MB. Current time: 12/17/25, 3:02:59 AM CST
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 89 ; -5.838 ; 0 ; 1 ; u_AD9361_1RT_FDD/AD9361_RX_DAT_Ib_reg[9]/C ; u_Rx/u_PSK_Signal_Extend/PSK_signal_reg[9]/D ; 8.323237 ; 0.459 ; 7.8642364 ; 0.0019095836 ; AD9361_DATACLK ; clk_16d384M ;  ; 0.1785413", 0, "Path 89", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Methodology Summary]", 4, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, AD9361_DATACLK to clk_16d384M, Setup -5.838 ns]", 10, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+// Elapsed time: 20 seconds
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 89 ; -5.838 ; 0 ; 1 ; u_AD9361_1RT_FDD/AD9361_RX_DAT_Ib_reg[9]/C ; u_Rx/u_PSK_Signal_Extend/PSK_signal_reg[9]/D ; 8.323237 ; 0.459 ; 7.8642364 ; 0.0019095836 ; AD9361_DATACLK ; clk_16d384M ;  ; 0.1785413", 0, "Path 89", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 89 ; -5.838 ; 0 ; 1 ; u_AD9361_1RT_FDD/AD9361_RX_DAT_Ib_reg[9]/C ; u_Rx/u_PSK_Signal_Extend/PSK_signal_reg[9]/D ; 8.323237 ; 0.459 ; 7.8642364 ; 0.0019095836 ; AD9361_DATACLK ; clk_16d384M ;  ; 0.1785413", 0, "Path 89", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// [GUI Memory]: 271 MB (+145kb) [01:19:32]
+// [GUI Memory]: 285 MB (+304kb) [01:19:46]
+// [GUI Memory]: 300 MB (+887kb) [01:20:08]
+// [GUI Memory]: 315 MB (+209kb) [01:20:36]
+// [GUI Memory]: 331 MB (+10kb) [01:20:46]
+// Elapsed time: 109 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // D (PAResourceOtoP.PAViews_BASE_WORKSPACE, PlanAheadTabBaseWorkspace)
+// [GUI Memory]: 348 MB (+452kb) [01:21:11]
+// [GUI Memory]: 366 MB (+947kb) [01:21:15]
+// Device view-level: 0.4
+floatFrame(PAResourceOtoP.PAViews_PATH_TABLE, "Path 89 - top_timing_summary_routed"); // R (PAResourceOtoP.PAViews_PATH_TABLE, Path Table)
+// PAResourceOtoP.PAViews_PATH_TABLE: Path Table: float view
+maximizeFrame(PAResourceOtoP.PAViews_PATH_TABLE, "Path 89 - top_timing_summary_routed"); // R (PAResourceOtoP.PAViews_PATH_TABLE, Path Table)
+// [GUI Memory]: 385 MB (+686kb) [01:21:20]
+// [GUI Memory]: 405 MB (+187kb) [01:21:21]
+// [GUI Memory]: 425 MB (+15kb) [01:23:47]
+// [GUI Memory]: 447 MB (+1021kb) [01:23:48]
+// PAResourceOtoP.PAViews_PATH_TABLE: Path Table: close view
+// Elapsed time: 405 seconds
+closeFrame(PAResourceOtoP.PAViews_PATH_TABLE, "Path 89 - top_timing_summary_routed"); // R (PAResourceOtoP.PAViews_PATH_TABLE, Path Table)
+dockFrame(PAResourceOtoP.PAViews_PATH_TABLE, "Path 89 - top_timing_summary_routed"); // R (PAResourceOtoP.PAViews_PATH_TABLE, Path Table)
+maximizeFrame(PAResourceOtoP.PAViews_PATH_TABLE, "Path 89 - top_timing_summary_routed"); // R (PAResourceOtoP.PAViews_PATH_TABLE, Path Table)
+closeView(PAResourceOtoP.PAViews_PATH_TABLE, "Path Table"); // h (PAResourceOtoP.PAViews_PATH_TABLE, PlanAheadTabPath Table)
+// [GUI Memory]: 470 MB (+392kb) [01:28:11]
+unMinimizeFrame(PAResourceOtoP.PAViews_TIMING, "Timing - Timing Summary - impl_1 (saved)"); // R (PAResourceOtoP.PAViews_TIMING, Timing)
+// Device view-level: 0.1
+collapseTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, AD9361_DATACLK to clk_16d384M]", 9); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, clk_16d384M to AD9361_DATACLK]", 16); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, clk_16d384M to AD9361_DATACLK]", 16, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Node
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, clk_16d384M to AD9361_DATACLK]", 16, true, false, false, false, false, true); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE) - Double Click - Node
+expandTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, clk_16d384M to AD9361_DATACLK]", 16); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, Inter-Clock Paths, clk_16d384M to AD9361_DATACLK, Setup -2.038 ns]", 17, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 142 ; -2.038 ; 0 ; 1 ; u_Tx/u_PSK_Modulation/u_PSK_Mod/out_Q_reg[6]/C ; u_AD9361_1RT_FDD/ODDR_inst_B6/D1 ; 0.88653797 ; 0.518 ; 0.36853838 ; 3.9835868 ; clk_16d384M ; AD9361_DATACLK ;  ; 0.1785413", 0, "Path 142", 0); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,438 MB. GUI used memory: 197 MB. Current time: 12/17/25, 3:12:52 AM CST
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 142 ; -2.038 ; 0 ; 1 ; u_Tx/u_PSK_Modulation/u_PSK_Mod/out_Q_reg[6]/C ; u_AD9361_1RT_FDD/ODDR_inst_B6/D1 ; 0.88653797 ; 0.518 ; 0.36853838 ; 3.9835868 ; clk_16d384M ; AD9361_DATACLK ;  ; 0.1785413", 0, "Path 142", 0, false, false, false, false, true); // e.b (PAResourceTtoZ.TimingItemFlatTablePanel_TABLE) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:32m:41s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01h:32m:42s
+// Elapsed time: 315 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (PAResourceTtoZ.TaskBanner_CLOSE)
+closeTask("Implementation", "Implemented Design", "DesignTask.RESULTS_ANALYSIS");
+selectButton(RDIResource.BaseDialog_OK, "OK", "Confirm Close"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Confirm Close"); // u (dialog57)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,675 MB. GUI used memory: 138 MB. Current time: 12/17/25, 3:18:11 AM CST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,508 MB. GUI used memory: 140 MB. Current time: 12/17/25, 3:18:11 AM CST
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bh (Close Progress)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "FIFO"); // OverlayTextField (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI4-Stream Data FIFO ; AXI4-Stream ; Production ; Included ; xilinx.com:ip:axis_data_fifo:2.0", 3, "AXI4-Stream Data FIFO", 0, false); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI4-Stream Data FIFO ; AXI4-Stream ; Production ; Included ; xilinx.com:ip:axis_data_fifo:2.0", 3); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI4-Stream Data FIFO ; AXI4-Stream ; Production ; Included ; xilinx.com:ip:axis_data_fifo:2.0", 3, "AXI4-Stream Data FIFO", 0, false, false, false, false, false, true); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+dismissDialog("Customize IP"); // i (Customize IP Progress)
+// Elapsed time: 63 seconds
+selectComboBox("Independent clocks (IS_ACLK_ASYNC)", "Yes", 1); // D (Independent clocks (IS_ACLK_ASYNC))
+// Elapsed time: 11 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Flags", 1); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+// Elapsed time: 12 seconds
+setText("Component Name", "axis_data_fifo_ADC"); // I (Component Name)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "General", 0); // bd (PAResourceEtoH.HACGCTabbedPane_TABBED_PANE)
+// Elapsed time: 38 seconds
+setText("TDATA width (bytes)", "2", true); // I (TDATA width (bytes))
+// Elapsed time: 13 seconds
+selectComboBox("FIFO depth (FIFO_DEPTH)", "256", 4); // D (FIFO depth (FIFO_DEPTH))
+// Elapsed time: 33 seconds
+selectButton(PAResourceAtoD.CustomizeCoreDialog_IP_LOCATION, "IP Location", "Customize IP"); // C (PAResourceAtoD.CustomizeCoreDialog_IP_LOCATION, IP Dialog_ipLocation)
+selectMoreButton(PAResourceAtoD.CustomizeCoreDialog_CHOOSE_IP_LOCATION, (String) null); // s (PAResourceAtoD.CustomizeCoreDialog_CHOOSE_IP_LOCATION)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

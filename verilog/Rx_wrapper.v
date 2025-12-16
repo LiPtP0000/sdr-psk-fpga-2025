@@ -7,6 +7,7 @@ module Rx (
     input  [11:0] ADC_Q,
     input         rst_16M384,
     input         rst_32M768,
+    input         rst_n_2M048,
     input  [ 3:0] MODE_CTRL,
     input  [ 3:0] FEEDBACK_SHIFT,
     input  [ 3:0] GARDNER_SHIFT,
@@ -101,7 +102,8 @@ module Rx (
         .O_WIDTH   (12),
         .USE_I_STRM(1)
     ) u_PSK_Signal_Extend (
-        .clk        (clk_16M384),
+        .clk        (clk_32M768),
+        .clk_enable (clk_16M384),
         .DAC_I      (ADC_I),
         .DAC_Q      (ADC_Q),
         .is_bpsk    (is_bpsk_from_depacketizer),
@@ -130,9 +132,11 @@ module Rx (
     );
 
     // 3. 16M Data Registering
-    always @(posedge clk_16M384) begin
-        I_16M_reg <= I_data_costas;
-        Q_16M_reg <= Q_data_costas;
+    always @(posedge clk_32M768) begin
+        if (clk_16M384) begin
+            I_16M_reg <= I_data_costas;
+            Q_16M_reg <= Q_data_costas;
+        end
     end
 
     // 4. Gardner Loop
@@ -155,7 +159,8 @@ module Rx (
     PSK_Detection #(
         .WIDTH(16)
     ) u_PSK_Detection (
-        .clk       (clk_gardner_rec),
+        .clk       (clk_32M768),
+        .clk_enable(clk_gardner_rec),
         .rst_32M768(rst_32M768),
         .I_tdata   (I_gardner_rec),
         .I_tvalid  (1'b1),
@@ -168,7 +173,8 @@ module Rx (
 
     // 6. SPB Detection
     SPB_Detection u_SPB_Detection (
-        .clk            (clk_gardner_rec),
+        .clk            (clk_32M768),
+        .clk_enable     (clk_gardner_rec),
         .rst_32M768     (rst_32M768),
         .I_1M           (I_gardner_rec),
         .Q_1M           (Q_gardner_rec),
@@ -191,7 +197,8 @@ module Rx (
         .WIDTH           (16),
         .MAX_WINDOW_WIDTH(8)
     ) u_Depacketizer (
-        .clk         (clk_gardner_rec),
+        .clk         (clk_32M768),
+        .clk_enable  (clk_gardner_rec),
         .rst         (rst_32M768),
         .RX_BD_WINDOW(RX_BD_WINDOW),
         .MODE_CTRL   (MODE_CTRL),
@@ -218,7 +225,9 @@ module Rx (
     flatten_wrapper u_flatten_wrapper (
         .clk_1M024  (clk_1M024),
         .rst_32M768 (rst_32M768),
-        .clk_out    (clk_gardner_rec),      // Connected to recovered clock
+        .rst_n_2M048(rst_n_2M048),
+        .clk_32M768 (clk_32M768),
+        .clk_enable (clk_gardner_rec),      // Clock enable signal
         .clk_2M048  (clk_2M048),
         .data_tdata (depacketizer_tdata),
         .data_tlast (depacketizer_tlast),

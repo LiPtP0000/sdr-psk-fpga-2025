@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-// Date        : Tue Dec  2 15:02:40 2025
+// Date        : Tue Dec 16 22:57:15 2025
 // Host        : LiPtPDesktop running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_stub.v

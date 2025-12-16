@@ -1,12 +1,12 @@
 module Tx (
-    input         rst_n_1M024,
     input  [ 3:0] MODE_CTRL,
     input  [ 3:0] DELAY_CNT,
     input  [15:0] TX_PHASE_CONFIG,
-    input         rst_16M384,
-    input         clk_16M384,
-    input         clk_1M024,
-    input         clk_2M048,
+    input         rst_n_32M768,
+    input         clk_32M768,
+    input         clk_16M384,       // Clock enable signal  
+    input         clk_1M024,        // Clock enable signal
+    input         clk_2M048,        // Clock enable signal
     output        tx_valid,
     output        tx_serial,
     output        data_tlast,
@@ -31,8 +31,9 @@ module Tx (
     Tx_Data #(
         .BYTES(1'b1)
     ) u_Tx_Data (
-        .clk           (clk_1M024),
-        .rst_n         (rst_n_1M024),
+        .clk           (clk_32M768),
+        .clk_enable    (clk_1M024),
+        .rst_n         (rst_n_32M768),
         .MODE_CTRL     (MODE_CTRL),
         .pkt_sent      (pkt_sent),
         .data_tdata    (Txdata_FIFO_tdata),
@@ -50,9 +51,12 @@ module Tx (
     wire       FIFO_Packetizer_tlast;
     wire       FIFO_Packetizer_tuser;
 
-    axis_data_fifo_0 u_axis_data_fifo_0 (
-        .s_axis_aresetn(rst_n_1M024),
-        .s_axis_aclk   (clk_1M024),
+    Sync_FIFO #(
+        .DATA_WIDTH(8),
+        .DEPTH     (512)
+    ) u_axis_data_fifo_0 (
+        .s_axis_aresetn(rst_n_32M768),
+        .s_axis_aclk   (clk_32M768),
         .s_axis_tvalid (Txdata_FIFO_tvalid),
         .s_axis_tready (Txdata_FIFO_tready),
         .s_axis_tdata  (Txdata_FIFO_tdata),
@@ -80,8 +84,9 @@ module Tx (
     Packetizer #(
         .BYTES(1'b1)
     ) u_Packetizer (
-        .clk           (clk_1M024),
-        .rst_n         (rst_n_1M024),
+        .clk           (clk_32M768),
+        .clk_enable    (clk_1M024),
+        .rst_n         (rst_n_32M768),
         .MODE_CTRL     (MODE_CTRL),
         .payload_length(payload_length),
         .I_tdata       (FIFO_Packetizer_tdata),
@@ -126,8 +131,10 @@ module Tx (
         .BYPASS_SELECTION(1'b1)
     ) u_Bits_Flatten (
         .bypass (Packetizer_PSK_tuser),
-        .clk_in (clk_1M024),
-        .clk_out(clk_2M048),
+        .clk(clk_32M768)
+        .ce_1M (clk_1M024),
+        .rst_n  (rst_n_32M768),
+        .ce_2M(clk_2M048),
         .I      (Packetizer_PSK_tdata),
         .I_vld  (pld_vld),
         .O      (tx_serial),

@@ -3,7 +3,8 @@
 // Detect BPSK/QPSK from I/Q data.
 //
 // Author: Wuqiong Zhao (me@wqzhao.org)
-// Date: 2024/01/05
+// Author: LiPtP (LiPtP0000)
+// Date: 2025/12/17
 
 `timescale 1ns / 1ps
 
@@ -11,6 +12,7 @@ module PSK_Detection #(
     parameter WIDTH = 16
 ) (
     input                     clk,
+    input                     clk_enable,
     input                     rst_32M768,
     input  signed [WIDTH-1:0] I_tdata,
     input                     I_tvalid,
@@ -28,12 +30,12 @@ module PSK_Detection #(
         if (rst_32M768) begin
             QPSK <= 2'b0;
             vld  <= 1'b0;
-        end else begin
+        end else if (clk_enable) begin
             if (I_tvalid && Q_tvalid) begin
                 QPSK <= {I_tdata[WIDTH-1], Q_tdata[WIDTH-1]};
                 BPSK <= I_plus_Q[WIDTH];
                 vld  <= I_tvalid & Q_tvalid;
             end
-        end
+        end else;
     end
 endmodule

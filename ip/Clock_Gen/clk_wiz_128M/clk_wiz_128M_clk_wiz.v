@@ -75,7 +75,7 @@ module clk_wiz_128M_clk_wiz
   //------------------------------------
 wire clk_in1_clk_wiz_128M;
 wire clk_in2_clk_wiz_128M;
-  IBUF clkin1_ibufg
+  BUFG clkin1_bufg
    (.O (clk_in1_clk_wiz_128M),
     .I (clk_in1));
 

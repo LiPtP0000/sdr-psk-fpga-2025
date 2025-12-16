@@ -9,31 +9,38 @@
 `timescale 1ns / 1ps
 
 module PSK_Signal_Extend #(
-  parameter I_WIDTH    = 12,
-  parameter O_WIDTH    = 16,
-  parameter USE_I_STRM = 1 // 1 for I stream, 0 for Q stream
+    parameter I_WIDTH    = 12,
+    parameter O_WIDTH    = 16,
+    parameter USE_I_STRM = 1 // 1 for I stream, 0 for Q stream
 ) (
-  input                           clk,
-  input      signed [I_WIDTH-1:0] DAC_I,
-  input      signed [I_WIDTH-1:0] DAC_Q,
-  input                           is_bpsk,
-  output reg signed [O_WIDTH-1:0] PSK_signal,
-  output reg                      is_bpsk_out
+    input                           clk,
+    input                           clk_enable,
+    input  signed     [I_WIDTH-1:0] DAC_I,
+    input  signed     [I_WIDTH-1:0] DAC_Q,
+    input                           is_bpsk,
+    output reg signed [O_WIDTH-1:0] PSK_signal,
+    output reg                      is_bpsk_out
 );
-  // assign LSB to zeros
-  generate
-    if (USE_I_STRM) begin
-      always @ (posedge clk) begin
-        PSK_signal <= { DAC_I, {O_WIDTH-I_WIDTH{1'b0}} };
-      end
-    end else begin
-      always @ (posedge clk) begin
-        PSK_signal <= { DAC_Q, {O_WIDTH-I_WIDTH{1'b0}} };
-      end
-    end
-  endgenerate
+    // assign LSB to zeros
+    generate
+        if (USE_I_STRM) begin
+            always @(posedge clk) begin
+                if (clk_enable) begin
+                    PSK_signal <= {DAC_I, {O_WIDTH - I_WIDTH{1'b0}}};
+                end
+            end
+        end else begin
+            always @(posedge clk) begin
+                if (clk_enable) begin
+                    PSK_signal <= {DAC_Q, {O_WIDTH - I_WIDTH{1'b0}}};
+                end
+            end
+        end
+    endgenerate
 
-  always @ (posedge clk) begin
-    is_bpsk_out <= is_bpsk; // delay 1 CC
-  end
+    always @(posedge clk) begin
+        if (clk_enable) begin
+            is_bpsk_out <= is_bpsk;  // delay 1 CC
+        end
+    end
 endmodule
