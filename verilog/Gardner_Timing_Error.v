@@ -13,18 +13,20 @@ module Gardner_Timing_Error # (
   parameter WIDTH = 16
 ) (
   input                     clk,
-  input  signed [WIDTH-1:0] I,
-  input  signed [WIDTH-1:0] I_d16,
-  input  signed [WIDTH-1:0] I_d32,
-  input  signed [WIDTH-1:0] Q,
-  input  signed [WIDTH-1:0] Q_d16,
-  input  signed [WIDTH-1:0] Q_d32,
+  input  signed [WIDTH-1:0] I,        // Only MSB (sign bit) is used for edge detection
+  input  signed [WIDTH-1:0] I_d16,    // All bits used for error calculation
+  input  signed [WIDTH-1:0] I_d32,    // Only MSB (sign bit) is used for edge detection
+  input  signed [WIDTH-1:0] Q,        // Only MSB (sign bit) is used for edge detection
+  input  signed [WIDTH-1:0] Q_d16,    // All bits used for error calculation
+  input  signed [WIDTH-1:0] Q_d32,    // Only MSB (sign bit) is used for edge detection
   output signed [WIDTH-1:0] error_n
 );
   // localparam [2:0] SGN_DIFF_P = 3'b001;
   // localparam [2:0] SGN_DIFF_N = 3'b010;
   // localparam [2:0] SGN_DIFF_0 = 3'b100;
 
+  // Gardner algorithm: detect sign changes between I(n) and I(n-32)
+  // Note: Only sign bits (MSB) of I, I_d32, Q, Q_d32 are used. Lower bits will be optimized away.
   wire I_sgn_n = I[WIDTH-1];
   wire I_d32_sgn_n = I_d32[WIDTH-1];
   wire [1:0] I_sgn_x2;

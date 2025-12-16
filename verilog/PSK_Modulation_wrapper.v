@@ -40,6 +40,11 @@ module PSK_Modulation (
         .m_axis_tuser  (psk_16M_tuser)
     );
 
+    // Apply RRC Filter Here
+
+
+    // output declaration of module carrier_gen
+    // May be removed in subsequent versions, since fc/4 NCO can be simplified as a 4-1 MUX
     wire        dds_nco_tvalid;
     wire [31:0] dds_nco_tdata;
 

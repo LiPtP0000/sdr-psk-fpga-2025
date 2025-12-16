@@ -18,9 +18,8 @@ module costas_loop_wrapper #(
 );
 
     // output declaration of module NCO_rx_wrapper
-    wire        feedback_tdata_inmodule;
+    wire [15:0] feedback_tdata_inmodule;
     wire        feedback_tvalid_inmodule;
-    wire [11:0] NCO_cos;
     wire [11:0] NCO_sin;
     wire        NCO_valid;
 
@@ -28,7 +27,6 @@ module costas_loop_wrapper #(
         .clk_16M384     (clk_16M384),
         .rst_16M384     (rst_16M384),
         .FEEDBACK_SHIFT (FEEDBACK_SHIFT),
-        .is_bpsk        (is_bpsk),
         .feedback_tdata (feedback_tdata_inmodule),
         .feedback_tvalid(feedback_tvalid_inmodule),
         .NCO_cos        (NCO_cos),
@@ -138,15 +136,14 @@ module costas_loop_wrapper #(
     );
 
     // output declaration of module Error_Detect_Ctrl
-    reg  [DATA_WIDTH-1:0] out_I_tdata;
+    wire [DATA_WIDTH-1:0] out_I_tdata;
     // not used since multiplier needs no valid signal
-    reg                   out_I_tvalid;
-    reg  [DATA_WIDTH-1:0] out_Q_tdata;
+    wire                  out_I_tvalid;
+    wire [DATA_WIDTH-1:0] out_Q_tdata;
     // not used since multiplier needs no valid signal
-    reg                   out_Q_tvalid;
-    wire [DATA_WIDTH-1:0] error_tdata;
+    wire                  out_Q_tvalid;
     wire                  error_tvalid;
-    reg                   is_bpsk_delayed;
+    wire                  is_bpsk_delayed;
     wire [DATA_WIDTH-1:0] error_bpsk_tdata;
     wire [DATA_WIDTH-1:0] error_qpsk_tdata;
     Error_Detect_Ctrl #(
@@ -203,7 +200,6 @@ module costas_loop_wrapper #(
 
     assign PD = {PD_Q, PD_I};
     assign feedback_tdata = feedback_tdata_inmodule;
-    assign feedback_tvalid = feedback_tvalid_inmodule;
 
     assign I_data = O1_I_tdata;
     assign Q_data = O1_Q_tdata;

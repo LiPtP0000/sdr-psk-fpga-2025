@@ -50,7 +50,7 @@ module tb_QPSK;
     assign TX_PHASE_CONFIG = 8192 - 8;  // 8192 for 4.196 MHz
 
     // module instantiation
-    Tx_imp_1IUYQQO inst_Tx (
+    Tx inst_Tx (
         .clk_16M384(clk_16M384),
         .rst_16M384(rst_16M384),
         .clk_1M024(clk_1M024),
@@ -60,11 +60,11 @@ module tb_QPSK;
         .DAC_I(DAC_I),
         .DAC_Q(DAC_Q),
         .DAC_bits(DAC_bits),
-        .DAC_vld(DAC_vld),
+        .DAC_valid(DAC_vld),
         .MODE_CTRL(MODE_CTRL),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
-        .Tx_1bit(Tx_1bit),
-        .Tx_vld(Tx_vld),
+        .tx_serial(Tx_1bit),
+        .tx_valid(Tx_vld),
         .data_tdata(Tx_tdata),
         .data_tlast(Tx_tlast),
         .data_tuser(Tx_tuser),

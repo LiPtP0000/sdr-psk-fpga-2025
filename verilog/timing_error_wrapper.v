@@ -1,6 +1,5 @@
 module timing_error_wrapper (
     input wire        clk_32M768,
-    input wire        is_bpsk,
     input wire [15:0] I,
     input wire [15:0] Q,
 
@@ -37,14 +36,11 @@ module timing_error_wrapper (
         .Q  (Q_delay_32)
     );
 
-    // output declaration of module Gardner_Timing_Error
-    wire [16-1:0] error_n;
 
     Gardner_Timing_Error #(
         .WIDTH(16)
     ) u_Gardner_Timing_Error (
         .clk    (clk_32M768),
-        .is_bpsk(is_bpsk),
         .I      (I),
         .I_d16  (I_delay_16),
         .I_d32  (I_delay_32),

@@ -4,7 +4,7 @@
     "Clock_Gen": {
       "attributes": {
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "{workspace}/verilog/Clock_Gen.v:1.1-149.10"
+        "src": "{workspace}/verilog/Clock_Gen_wrapper.v:1.1-149.10"
       },
       "ports": {
         "PL_CLK_100MHz": {
@@ -52,7 +52,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:75.19-92.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:75.19-92.6"
           },
           "port_directions": {
             "clk128K": "output",
@@ -98,7 +98,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:61.18-65.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:61.18-65.6"
           },
           "port_directions": {
             "clk_128M": "output",
@@ -118,7 +118,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:68.20-72.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:68.20-72.6"
           },
           "port_directions": {
             "clk_32M768": "output",
@@ -138,7 +138,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:108.24-119.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:108.24-119.6"
           },
           "port_directions": {
             "aux_reset_in": "input",
@@ -172,7 +172,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:122.24-133.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:122.24-133.6"
           },
           "port_directions": {
             "aux_reset_in": "input",
@@ -206,7 +206,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "{workspace}/verilog/Clock_Gen.v:136.24-147.6"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:136.24-147.6"
           },
           "port_directions": {
             "aux_reset_in": "input",
@@ -239,273 +239,273 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:2.17-2.30"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:2.17-2.30"
           }
         },
         "bus_struct_reset_2": {
           "hide_name": 0,
           "bits": [ 29 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:43.16-43.34"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:43.16-43.34"
           }
         },
         "clk128K": {
           "hide_name": 0,
           "bits": [ 11 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:33.10-33.17"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:33.10-33.17"
           }
         },
         "clk16K": {
           "hide_name": 0,
           "bits": [ 12 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:36.10-36.16"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:36.10-36.16"
           }
         },
         "clk16M384": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:26.10-26.19"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:26.10-26.19"
           }
         },
         "clk1K": {
           "hide_name": 0,
           "bits": [ 13 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:40.10-40.15"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:40.10-40.15"
           }
         },
         "clk1M024": {
           "hide_name": 0,
           "bits": [ 10 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:30.10-30.18"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:30.10-30.18"
           }
         },
         "clk256K": {
           "hide_name": 0,
           "bits": [ 14 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:32.10-32.17"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:32.10-32.17"
           }
         },
         "clk2K": {
           "hide_name": 0,
           "bits": [ 15 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:39.10-39.15"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:39.10-39.15"
           }
         },
         "clk2M048": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:29.10-29.18"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:29.10-29.18"
           }
         },
         "clk32K": {
           "hide_name": 0,
           "bits": [ 16 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:35.10-35.16"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:35.10-35.16"
           }
         },
         "clk4K": {
           "hide_name": 0,
           "bits": [ 17 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:38.10-38.15"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:38.10-38.15"
           }
         },
         "clk4M096": {
           "hide_name": 0,
           "bits": [ 18 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:28.10-28.18"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:28.10-28.18"
           }
         },
         "clk512K": {
           "hide_name": 0,
           "bits": [ 19 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:31.10-31.17"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:31.10-31.17"
           }
         },
         "clk64K": {
           "hide_name": 0,
           "bits": [ 20 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:34.10-34.16"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:34.10-34.16"
           }
         },
         "clk8K": {
           "hide_name": 0,
           "bits": [ 21 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:37.10-37.15"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:37.10-37.15"
           }
         },
         "clk8M192": {
           "hide_name": 0,
           "bits": [ 22 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:27.10-27.18"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:27.10-27.18"
           }
         },
         "clk_128M": {
           "hide_name": 0,
           "bits": [ 23 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:18.10-18.18"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:18.10-18.18"
           }
         },
         "clk_16d384M": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:8.17-8.28"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:8.17-8.28"
           }
         },
         "clk_1d024M": {
           "hide_name": 0,
           "bits": [ 10 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:10.17-10.27"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:10.17-10.27"
           }
         },
         "clk_200M": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:9.17-9.25"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:9.17-9.25"
           }
         },
         "clk_2d048M": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:3.17-3.27"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:3.17-3.27"
           }
         },
         "clk_32d768M": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:7.17-7.28"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:7.17-7.28"
           }
         },
         "clk_gen_32d768M": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:22.10-22.25"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:22.10-22.25"
           }
         },
         "interconnect_aresetn": {
           "hide_name": 0,
           "bits": [ 25 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:47.16-47.36"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:47.16-47.36"
           }
         },
         "interconnect_aresetn_3": {
           "hide_name": 0,
           "bits": [ 33 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:48.16-48.38"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:48.16-48.38"
           }
         },
         "locked": {
           "hide_name": 0,
           "bits": [ 24 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:23.10-23.16"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:23.10-23.16"
           }
         },
         "mb_reset": {
           "hide_name": 0,
           "bits": [ 26 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:52.16-52.24"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:52.16-52.24"
           }
         },
         "mb_reset_2": {
           "hide_name": 0,
           "bits": [ 30 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:53.16-53.26"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:53.16-53.26"
           }
         },
         "mb_reset_3": {
           "hide_name": 0,
           "bits": [ 34 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:54.16-54.26"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:54.16-54.26"
           }
         },
         "peripheral_aresetn": {
           "hide_name": 0,
           "bits": [ 27 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:49.16-49.34"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:49.16-49.34"
           }
         },
         "peripheral_aresetn_2": {
           "hide_name": 0,
           "bits": [ 31 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:50.16-50.36"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:50.16-50.36"
           }
         },
         "peripheral_aresetn_3": {
           "hide_name": 0,
           "bits": [ 35 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:51.16-51.36"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:51.16-51.36"
           }
         },
         "peripheral_reset": {
           "hide_name": 0,
           "bits": [ 28 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:44.16-44.32"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:44.16-44.32"
           }
         },
         "peripheral_reset_2": {
           "hide_name": 0,
           "bits": [ 32 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:45.16-45.34"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:45.16-45.34"
           }
         },
         "peripheral_reset_3": {
           "hide_name": 0,
           "bits": [ 36 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:46.16-46.34"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:46.16-46.34"
           }
         },
         "rst_16d384M": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:5.17-5.28"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:5.17-5.28"
           }
         },
         "rst_32d768M": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:4.17-4.28"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:4.17-4.28"
           }
         },
         "rst_n_1d024M": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "src": "{workspace}/verilog/Clock_Gen.v:6.17-6.29"
+            "src": "{workspace}/verilog/Clock_Gen_wrapper.v:6.17-6.29"
           }
         }
       }
@@ -774,110 +774,825 @@
     },
     "clk_wiz_128M": {
       "attributes": {
-        "BLOCK_STUB": "true",
-        "blackbox": "00000000000000000000000000000001",
+        "CORE_GENERATION_INFO": "clk_wiz_128M,clk_wiz_v6_0_15_0_0,{component_name=clk_wiz_128M,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=2,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_bmstub.v:8.1-29.10"
+        "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v:68.1-86.10"
       },
       "ports": {
-        "clk_in1": {
-          "direction": "input",
-          "bits": [ 2 ]
-        },
         "clk_128M": {
           "direction": "output",
-          "bits": [ 3 ]
+          "bits": [ 2 ]
         },
         "clk_200M": {
           "direction": "output",
+          "bits": [ 3 ]
+        },
+        "clk_in1": {
+          "direction": "input",
           "bits": [ 4 ]
         }
       },
       "cells": {
+        "inst": {
+          "hide_name": 0,
+          "type": "clk_wiz_128M_clk_wiz",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v:77.24-84.4"
+          },
+          "port_directions": {
+            "clk_128M": "output",
+            "clk_200M": "output",
+            "clk_in1": "input"
+          },
+          "connections": {
+            "clk_128M": [ 2 ],
+            "clk_200M": [ 3 ],
+            "clk_in1": [ 4 ]
+          }
+        }
       },
       "netnames": {
         "clk_128M": {
           "hide_name": 0,
-          "bits": [ 3 ],
+          "bits": [ 2 ],
           "attributes": {
-            "X_INTERFACE_INFO": "xilinx.com:signal:clock:1.0 clock_CLK_OUT1 CLK_OUT1",
-            "X_INTERFACE_MODE": "master clock_CLK_OUT1",
-            "X_INTERFACE_PARAMETER": "XIL_INTERFACENAME clock_CLK_OUT1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_BUSIF , ASSOCIATED_PORT , ASSOCIATED_RESET , INSERT_VIP 0",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_bmstub.v:21.10-21.18"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v:71.17-71.25"
           }
         },
         "clk_200M": {
           "hide_name": 0,
-          "bits": [ 4 ],
+          "bits": [ 3 ],
           "attributes": {
-            "X_INTERFACE_INFO": "xilinx.com:signal:clock:1.0 clock_CLK_OUT2 CLK_OUT2",
-            "X_INTERFACE_MODE": "master clock_CLK_OUT2",
-            "X_INTERFACE_PARAMETER": "XIL_INTERFACENAME clock_CLK_OUT2, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_BUSIF , ASSOCIATED_PORT , ASSOCIATED_RESET , INSERT_VIP 0",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_bmstub.v:25.10-25.18"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v:72.17-72.25"
           }
         },
         "clk_in1": {
           "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v:74.17-74.24"
+          }
+        }
+      }
+    },
+    "clk_wiz_128M_clk_wiz": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:66.1-204.10"
+      },
+      "ports": {
+        "clk_128M": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "clk_200M": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "clk_in1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "clkf_buf": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:184.8-186.32"
+          },
+          "connections": {
+            "I": [ 5 ],
+            "O": [ 6 ]
+          }
+        },
+        "clkin1_ibufg": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:78.8-80.18"
+          },
+          "connections": {
+            "I": [ 4 ],
+            "O": [ 7 ]
+          }
+        },
+        "clkout1_buf": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:193.8-195.34"
+          },
+          "connections": {
+            "I": [ 8 ],
+            "O": [ 2 ]
+          }
+        },
+        "clkout2_buf": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:198.8-200.34"
+          },
+          "connections": {
+            "I": [ 9 ],
+            "O": [ 3 ]
+          }
+        },
+        "mmcm_adv_inst": {
+          "hide_name": 0,
+          "type": "MMCME2_ADV",
+          "parameters": {
+            "BANDWIDTH": "OPTIMIZED",
+            "CLKFBOUT_MULT_F": "8.000000",
+            "CLKFBOUT_PHASE": "0.000000",
+            "CLKFBOUT_USE_FINE_PS": "FALSE",
+            "CLKIN1_PERIOD": "10.000000",
+            "CLKOUT0_DIVIDE_F": "6.250000",
+            "CLKOUT0_DUTY_CYCLE": "0.500000",
+            "CLKOUT0_PHASE": "0.000000",
+            "CLKOUT0_USE_FINE_PS": "FALSE",
+            "CLKOUT1_DIVIDE": "00000000000000000000000000000100",
+            "CLKOUT1_DUTY_CYCLE": "0.500000",
+            "CLKOUT1_PHASE": "0.000000",
+            "CLKOUT1_USE_FINE_PS": "FALSE",
+            "CLKOUT4_CASCADE": "FALSE",
+            "COMPENSATION": "ZHOLD",
+            "DIVCLK_DIVIDE": "00000000000000000000000000000001",
+            "STARTUP_WAIT": "FALSE"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:137.3-177.33"
+          },
+          "connections": {
+            "CLKFBIN": [ 6 ],
+            "CLKFBOUT": [ 5 ],
+            "CLKFBOUTB": [ 10 ],
+            "CLKFBSTOPPED": [ 11 ],
+            "CLKIN1": [ 7 ],
+            "CLKIN2": [ "0" ],
+            "CLKINSEL": [ "1" ],
+            "CLKINSTOPPED": [ 12 ],
+            "CLKOUT0": [ 8 ],
+            "CLKOUT0B": [ 13 ],
+            "CLKOUT1": [ 9 ],
+            "CLKOUT1B": [ 14 ],
+            "CLKOUT2": [ 15 ],
+            "CLKOUT2B": [ 16 ],
+            "CLKOUT3": [ 17 ],
+            "CLKOUT3B": [ 18 ],
+            "CLKOUT4": [ 19 ],
+            "CLKOUT5": [ 20 ],
+            "CLKOUT6": [ 21 ],
+            "DADDR": [ "0", "0", "0", "0", "0", "0", "0" ],
+            "DCLK": [ "0" ],
+            "DEN": [ "0" ],
+            "DI": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "DO": [ 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
+            "DRDY": [ 38 ],
+            "DWE": [ "0" ],
+            "LOCKED": [ 39 ],
+            "PSCLK": [ "0" ],
+            "PSDONE": [ 40 ],
+            "PSEN": [ "0" ],
+            "PSINCDEC": [ "0" ],
+            "PWRDWN": [ "0" ],
+            "RST": [ "0" ]
+          }
+        }
+      },
+      "netnames": {
+        "clk_128M": {
+          "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "X_INTERFACE_INFO": "xilinx.com:signal:clock:1.0 clock_CLK_IN1 CLK_IN1",
-            "X_INTERFACE_MODE": "slave clock_CLK_IN1",
-            "X_INTERFACE_PARAMETER": "XIL_INTERFACENAME clock_CLK_IN1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_BUSIF , ASSOCIATED_PORT , ASSOCIATED_RESET , INSERT_VIP 0, BOARD.ASSOCIATED_PARAM CLK_IN1_BOARD_INTERFACE",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_bmstub.v:17.9-17.16"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:70.17-70.25"
+          }
+        },
+        "clk_128M_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:92.15-92.36"
+          }
+        },
+        "clk_200M": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:71.17-71.25"
+          }
+        },
+        "clk_200M_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:93.15-93.36"
+          }
+        },
+        "clk_in1": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:72.17-72.24"
+          }
+        },
+        "clk_in1_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:76.6-76.26"
+          }
+        },
+        "clk_in2_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:77.6-77.26"
+          }
+        },
+        "clk_out3_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:94.15-94.36"
+          }
+        },
+        "clk_out4_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:95.15-95.36"
+          }
+        },
+        "clk_out5_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 44 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:96.15-96.36"
+          }
+        },
+        "clk_out6_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 45 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:97.15-97.36"
+          }
+        },
+        "clk_out7_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 46 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:98.15-98.36"
+          }
+        },
+        "clkfbout_buf_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:105.15-105.40"
+          }
+        },
+        "clkfbout_clk_wiz_128M": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:104.15-104.36"
+          }
+        },
+        "clkfboutb_unused": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:106.15-106.31"
+          }
+        },
+        "clkfbstopped_unused": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:116.15-116.34"
+          }
+        },
+        "clkinstopped_unused": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:117.15-117.34"
+          }
+        },
+        "clkout0b_unused": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:107.10-107.25"
+          }
+        },
+        "clkout1b_unused": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:108.9-108.24"
+          }
+        },
+        "clkout2_unused": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:109.9-109.23"
+          }
+        },
+        "clkout2b_unused": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:110.9-110.24"
+          }
+        },
+        "clkout3_unused": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:111.9-111.23"
+          }
+        },
+        "clkout3b_unused": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:112.9-112.24"
+          }
+        },
+        "clkout4_unused": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:113.9-113.23"
+          }
+        },
+        "clkout5_unused": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:114.15-114.29"
+          }
+        },
+        "clkout6_unused": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:115.15-115.29"
+          }
+        },
+        "do_unused": {
+          "hide_name": 0,
+          "bits": [ 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:100.15-100.24"
+          }
+        },
+        "drdy_unused": {
+          "hide_name": 0,
+          "bits": [ 38 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:101.15-101.26"
+          }
+        },
+        "locked_int": {
+          "hide_name": 0,
+          "bits": [ 39 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:103.15-103.25"
+          }
+        },
+        "psdone_unused": {
+          "hide_name": 0,
+          "bits": [ 40 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v:102.15-102.28"
           }
         }
       }
     },
     "clk_wiz_32M768": {
       "attributes": {
-        "BLOCK_STUB": "true",
-        "blackbox": "00000000000000000000000000000001",
+        "CORE_GENERATION_INFO": "clk_wiz_32M768,clk_wiz_v6_0_15_0_0,{component_name=clk_wiz_32M768,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=7.812,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}",
         "cells_not_processed": "00000000000000000000000000000001",
-        "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_bmstub.v:8.1-27.10"
+        "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v:67.1-87.10"
       },
       "ports": {
-        "clk_in1": {
-          "direction": "input",
-          "bits": [ 2 ]
-        },
         "clk_32M768": {
           "direction": "output",
-          "bits": [ 3 ]
+          "bits": [ 2 ]
         },
         "locked": {
           "direction": "output",
+          "bits": [ 3 ]
+        },
+        "clk_in1": {
+          "direction": "input",
           "bits": [ 4 ]
         }
       },
       "cells": {
+        "inst": {
+          "hide_name": 0,
+          "type": "clk_wiz_32M768_clk_wiz",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v:77.26-85.4"
+          },
+          "port_directions": {
+            "clk_32M768": "output",
+            "clk_in1": "input",
+            "locked": "output"
+          },
+          "connections": {
+            "clk_32M768": [ 2 ],
+            "clk_in1": [ 4 ],
+            "locked": [ 3 ]
+          }
+        }
       },
       "netnames": {
         "clk_32M768": {
           "hide_name": 0,
-          "bits": [ 3 ],
+          "bits": [ 2 ],
           "attributes": {
-            "X_INTERFACE_INFO": "xilinx.com:signal:clock:1.0 clock_CLK_OUT1 CLK_OUT1",
-            "X_INTERFACE_MODE": "master clock_CLK_OUT1",
-            "X_INTERFACE_PARAMETER": "XIL_INTERFACENAME clock_CLK_OUT1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_BUSIF , ASSOCIATED_PORT , ASSOCIATED_RESET , INSERT_VIP 0",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_bmstub.v:21.10-21.20"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v:70.17-70.27"
           }
         },
         "clk_in1": {
           "hide_name": 0,
-          "bits": [ 2 ],
+          "bits": [ 4 ],
           "attributes": {
-            "X_INTERFACE_INFO": "xilinx.com:signal:clock:1.0 clock_CLK_IN1 CLK_IN1",
-            "X_INTERFACE_MODE": "slave clock_CLK_IN1",
-            "X_INTERFACE_PARAMETER": "XIL_INTERFACENAME clock_CLK_IN1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_BUSIF , ASSOCIATED_PORT , ASSOCIATED_RESET , INSERT_VIP 0, BOARD.ASSOCIATED_PARAM CLK_IN1_BOARD_INTERFACE",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_bmstub.v:17.9-17.16"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v:74.17-74.24"
           }
         },
         "locked": {
           "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v:72.17-72.23"
+          }
+        }
+      }
+    },
+    "clk_wiz_32M768_clk_wiz": {
+      "attributes": {
+        "cells_not_processed": "00000000000000000000000000000001",
+        "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:65.1-198.10"
+      },
+      "ports": {
+        "clk_32M768": {
+          "direction": "output",
+          "bits": [ 2 ]
+        },
+        "locked": {
+          "direction": "output",
+          "bits": [ 3 ]
+        },
+        "clk_in1": {
+          "direction": "input",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "clkf_buf": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:182.8-184.34"
+          },
+          "connections": {
+            "I": [ 5 ],
+            "O": [ 6 ]
+          }
+        },
+        "clkin1_ibufg": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:78.8-80.18"
+          },
+          "connections": {
+            "I": [ 4 ],
+            "O": [ 7 ]
+          }
+        },
+        "clkout1_buf": {
+          "hide_name": 0,
+          "type": "BUFG",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:191.8-193.38"
+          },
+          "connections": {
+            "I": [ 8 ],
+            "O": [ 2 ]
+          }
+        },
+        "mmcm_adv_inst": {
+          "hide_name": 0,
+          "type": "MMCME2_ADV",
+          "parameters": {
+            "BANDWIDTH": "OPTIMIZED",
+            "CLKFBOUT_MULT_F": "8.000000",
+            "CLKFBOUT_PHASE": "0.000000",
+            "CLKFBOUT_USE_FINE_PS": "FALSE",
+            "CLKIN1_PERIOD": "7.812000",
+            "CLKOUT0_DIVIDE_F": "31.250000",
+            "CLKOUT0_DUTY_CYCLE": "0.500000",
+            "CLKOUT0_PHASE": "0.000000",
+            "CLKOUT0_USE_FINE_PS": "FALSE",
+            "CLKOUT4_CASCADE": "FALSE",
+            "COMPENSATION": "ZHOLD",
+            "DIVCLK_DIVIDE": "00000000000000000000000000000001",
+            "STARTUP_WAIT": "FALSE"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:134.3-174.33"
+          },
+          "connections": {
+            "CLKFBIN": [ 6 ],
+            "CLKFBOUT": [ 5 ],
+            "CLKFBOUTB": [ 9 ],
+            "CLKFBSTOPPED": [ 10 ],
+            "CLKIN1": [ 7 ],
+            "CLKIN2": [ "0" ],
+            "CLKINSEL": [ "1" ],
+            "CLKINSTOPPED": [ 11 ],
+            "CLKOUT0": [ 8 ],
+            "CLKOUT0B": [ 12 ],
+            "CLKOUT1": [ 13 ],
+            "CLKOUT1B": [ 14 ],
+            "CLKOUT2": [ 15 ],
+            "CLKOUT2B": [ 16 ],
+            "CLKOUT3": [ 17 ],
+            "CLKOUT3B": [ 18 ],
+            "CLKOUT4": [ 19 ],
+            "CLKOUT5": [ 20 ],
+            "CLKOUT6": [ 21 ],
+            "DADDR": [ "0", "0", "0", "0", "0", "0", "0" ],
+            "DCLK": [ "0" ],
+            "DEN": [ "0" ],
+            "DI": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "DO": [ 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
+            "DRDY": [ 38 ],
+            "DWE": [ "0" ],
+            "LOCKED": [ 3 ],
+            "PSCLK": [ "0" ],
+            "PSDONE": [ 39 ],
+            "PSEN": [ "0" ],
+            "PSINCDEC": [ "0" ],
+            "PWRDWN": [ "0" ],
+            "RST": [ "0" ]
+          }
+        }
+      },
+      "netnames": {
+        "clk_32M768": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:69.17-69.27"
+          }
+        },
+        "clk_32M768_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:92.15-92.40"
+          }
+        },
+        "clk_in1": {
+          "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "X_INTERFACE_IGNORE": "true",
-            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_bmstub.v:23.10-23.16"
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:72.17-72.24"
+          }
+        },
+        "clk_in1_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:76.6-76.28"
+          }
+        },
+        "clk_in2_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 40 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:77.6-77.28"
+          }
+        },
+        "clk_out2_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:93.15-93.38"
+          }
+        },
+        "clk_out3_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:94.15-94.38"
+          }
+        },
+        "clk_out4_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:95.15-95.38"
+          }
+        },
+        "clk_out5_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 44 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:96.15-96.38"
+          }
+        },
+        "clk_out6_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 45 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:97.15-97.38"
+          }
+        },
+        "clk_out7_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 46 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:98.15-98.38"
+          }
+        },
+        "clkfbout_buf_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:105.15-105.42"
+          }
+        },
+        "clkfbout_clk_wiz_32M768": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:104.15-104.38"
+          }
+        },
+        "clkfboutb_unused": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:106.15-106.31"
+          }
+        },
+        "clkfbstopped_unused": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:117.15-117.34"
+          }
+        },
+        "clkinstopped_unused": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:118.15-118.34"
+          }
+        },
+        "clkout0b_unused": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:107.10-107.25"
+          }
+        },
+        "clkout1_unused": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:108.9-108.23"
+          }
+        },
+        "clkout1b_unused": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:109.9-109.24"
+          }
+        },
+        "clkout2_unused": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:110.9-110.23"
+          }
+        },
+        "clkout2b_unused": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:111.9-111.24"
+          }
+        },
+        "clkout3_unused": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:112.9-112.23"
+          }
+        },
+        "clkout3b_unused": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:113.9-113.24"
+          }
+        },
+        "clkout4_unused": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:114.9-114.23"
+          }
+        },
+        "clkout5_unused": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:115.15-115.29"
+          }
+        },
+        "clkout6_unused": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:116.15-116.29"
+          }
+        },
+        "do_unused": {
+          "hide_name": 0,
+          "bits": [ 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:100.15-100.24"
+          }
+        },
+        "drdy_unused": {
+          "hide_name": 0,
+          "bits": [ 38 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:101.15-101.26"
+          }
+        },
+        "locked": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:71.17-71.23"
+          }
+        },
+        "locked_int": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:103.15-103.25"
+          }
+        },
+        "psdone_unused": {
+          "hide_name": 0,
+          "bits": [ 39 ],
+          "attributes": {
+            "src": "{workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v:102.15-102.28"
           }
         }
       }

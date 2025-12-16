@@ -11,7 +11,7 @@ module tb_BPSK;
     // file for data writing
     integer fd;
     initial begin
-        fd = $fopen("/../../behav_sim/_BPSK_behav_sim.csv", "w");
+        fd = $fopen("/../../behav_sim/BPSK_behav_sim.csv", "w");
         $fdisplay(fd, "time, feedback");
         #19500 $fclose(fd);
     end
@@ -32,6 +32,7 @@ module tb_BPSK;
 
     // Tx wires
     wire signed [11:0] DAC_I, DAC_Q;
+
     wire [ 1:0] DAC_bits;
     wire        DAC_vld;
     wire [ 3:0] DELAY_CNT;
@@ -60,11 +61,11 @@ module tb_BPSK;
         .DAC_I(DAC_I),
         .DAC_Q(DAC_Q),
         .DAC_bits(DAC_bits),
-        .DAC_vld(DAC_vld),
+        .DAC_valid(DAC_vld),
         .MODE_CTRL(MODE_CTRL),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
-        .Tx_1bit(Tx_1bit),
-        .Tx_vld(Tx_vld),
+        .tx_serial(Tx_1bit),
+        .tx_valid(Tx_vld),
         .data_tdata(Tx_tdata),
         .data_tlast(Tx_tlast),
         .data_tuser(Tx_tuser),
@@ -94,6 +95,10 @@ module tb_BPSK;
     wire        Rx_tuser;
     wire        Rx_tvalid;
     wire        Rx_valid;
+    wire [15:0] error_tdata;
+    wire [15:0] feedback_tdata;
+    wire [15:0] gardner_error;
+    wire [15:0] gardner_increment;
     Rx inst_Rx (
         .ADC_I(ADC_I),
         .ADC_Q(ADC_Q),
@@ -114,7 +119,7 @@ module tb_BPSK;
         .RX_SD_THRESHOLD(RX_SD_THRESHOLD),
         .RX_SD_WINDOW(RX_SD_WINDOW),
         .Rx_1bit(Rx_1bit),
-        .Rx_vld(Rx_valid),
+        .Rx_valid(Rx_valid),
         .clk_16M384(clk_16M384),
         .clk_1M024(clk_1M024),
         .clk_1M_out(clk_1M_out),
@@ -125,7 +130,11 @@ module tb_BPSK;
         .data_tuser(Rx_tuser),
         .data_tvalid(Rx_tvalid),
         .rst_16M384(rst_16M384),
-        .rst_32M768(rst_32M768)
+        .rst_32M768(rst_32M768),
+        .error_tdata(error_tdata),
+        .feedback_tdata(feedback_tdata),
+        .gardner_error(gardner_error),
+        .gardner_increment(gardner_increment)
     );
 
     // loopback
@@ -173,7 +182,7 @@ module tb_BPSK;
 
     // data writing to CSV
     always #4 begin
-        $fdisplay(fd, "%d, %d", $time, $signed(inst_Rx.costas_loop_0.feedback_tdata));
+        $fdisplay(fd, "%d, %d", $time, $signed(feedback_tdata));
     end
 
 endmodule

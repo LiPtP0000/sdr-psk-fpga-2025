@@ -2,7 +2,6 @@ module NCO_rx_wrapper (
     input         clk_16M384,
     input         rst_16M384,
     input  [ 3:0] FEEDBACK_SHIFT,
-    input         is_bpsk,
     input  [15:0] feedback_tdata,
     input         feedback_tvalid,
     output [11:0] NCO_cos,
@@ -22,14 +21,14 @@ module NCO_rx_wrapper (
         .clk            (clk_16M384),
         .rst            (rst_16M384),
         .FEEDBACK_SHIFT (FEEDBACK_SHIFT),
-        .feedback_tdata (feedback_dds_tdata),
-        .feedback_tvalid(feedback_dds_tvalid),
-        .phase_tdata    (phase_tdata),
-        .phase_tvalid   (phase_tvalid)
+        .feedback_tdata (feedback_tdata),
+        .feedback_tvalid(feedback_tvalid),
+        .phase_tdata    (phase_dds_tdata),
+        .phase_tvalid   (phase_dds_tvalid)
     );
 
     NCO_DDS u_NCO_DDS (
-        .aclk               (aclk),
+        .aclk               (clk_16M384),
         .s_axis_phase_tvalid(phase_dds_tvalid),
         .s_axis_phase_tdata (phase_dds_tdata),
         .m_axis_data_tvalid (dds_cos_sin_data_tvalid),

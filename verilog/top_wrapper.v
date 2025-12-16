@@ -14,7 +14,7 @@ module top (
 
     // Constant Config.
 
-    wire [8-1:0] DELAY_CNT;
+    wire [4-1:0] DELAY_CNT;
 
     CONSTANT #(
         .WIDTH(4),
@@ -175,8 +175,8 @@ module top (
         .AD9361_RX_DAT_I(rev_I),
         .AD9361_RX_DAT_Q(rev_Q),
         .AD9361_RX_CLK  (AD9361_CLK),
-        .AD9361_TX_DAT_I(AD9361_TX_DAT_I),
-        .AD9361_TX_DAT_Q(AD9361_TX_DAT_Q),
+        .AD9361_TX_DAT_I(DAC_I),
+        .AD9361_TX_DAT_Q(DAC_Q),
         .AD9361_TX_CLK  (AD9361_CLK),
         .AD9361_P1_D    (AD9361_P1_D),
         .AD9361_FBCLK   (AD9361_FBCLK),

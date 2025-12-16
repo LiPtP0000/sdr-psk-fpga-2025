@@ -13,10 +13,10 @@ module interpolation_wrapper (
 
     // Logic implementation goes here...
     // output declaration of module Gardner_IQ_SHIFT
-    reg [16-1:0] I_out_tdata;
-    reg          I_out_tvalid;
-    reg [16-1:0] Q_out_tdata;
-    reg          Q_out_tvalid;
+    wire [16-1:0] I_out_tdata;
+    wire          I_out_tvalid;
+    wire [16-1:0] Q_out_tdata;
+    wire          Q_out_tvalid;
 
     // No shift, sample at 32.768MHz clock.
     Gardner_IQ_Preprocess #(
