@@ -3,11 +3,10 @@ module Rx (
     input         clk_2M048,
     input         clk_16M384,
     input         clk_32M768,
+    input         rst_n_32M768,
+    input         rst_32M768,
     input  [11:0] ADC_I,
     input  [11:0] ADC_Q,
-    input         rst_16M384,
-    input         rst_32M768,
-    input         rst_n_2M048,
     input  [ 3:0] MODE_CTRL,
     input  [ 3:0] FEEDBACK_SHIFT,
     input  [ 3:0] GARDNER_SHIFT,
@@ -117,10 +116,11 @@ module Rx (
         .DATA_WIDTH       (16),
         .MSB_TRUNCATE_BITS(6)
     ) u_costas_loop_wrapper (
+        .clk_32M768    (clk_32M768),
+        .rst_32M768    (rst_32M768),
         .clk_16M384    (clk_16M384),
         .PSK_signal    (PSK_signal_extended),
         .is_bpsk       (is_bpsk_extended),
-        .rst_16M384    (rst_16M384),
         .FEEDBACK_SHIFT(FEEDBACK_SHIFT),
         .NCO_cos       (NCO_cos_internal),
         .I_data        (I_data_costas),
@@ -221,22 +221,23 @@ module Rx (
         .disassert_PD(disassert_PD)
     );
 
-    // 8. Flatten Wrapper
-    flatten_wrapper u_flatten_wrapper (
-        .clk_1M024  (clk_1M024),
-        .rst_32M768 (rst_32M768),
-        .rst_n_2M048(rst_n_2M048),
-        .clk_32M768 (clk_32M768),
-        .clk_enable (clk_gardner_rec),      // Clock enable signal
-        .clk_2M048  (clk_2M048),
-        .data_tdata (depacketizer_tdata),
-        .data_tlast (depacketizer_tlast),
-        .data_tuser (depacketizer_tuser),
-        .data_tvalid(depacketizer_tvalid),
-        .data_tready(depacketizer_tready),
-        .Rx_1bit    (Rx_1bit_internal),
-        .Rx_vld     (Rx_vld_internal)
+    // 8. Flatten
+    Bits_Flatten #(
+        .N               (2),
+        .M               (8),
+        .BYPASS_SELECTION(1)
+    ) u_Bits_Flatten (
+        .clk   (clk_32M768),
+        .rst_n (rst_n_32M768),
+        .ce_1M (clk_1M024),
+        .ce_2M (clk_2M048),
+        .bypass(1'b1),
+        .I     (depacketizer_tdata),
+        .I_vld (depacketizer_tvalid),
+        .O     (Rx_1bit_internal),
+        .O_vld (Rx_vld_internal)
     );
+
 
     // =========================================================================
     // Output Assignment

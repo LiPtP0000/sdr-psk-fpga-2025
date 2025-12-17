@@ -11,7 +11,7 @@ module PSK_Mod #(
     input                           data_tvalid,
     output reg                      data_tready,
     input                           data_tlast,
-    input                           data_tuser,    // is_bpsk
+    input                           data_tuser,   // is_bpsk
     input  signed     [  WIDTH-1:0] carrier_I,
     input  signed     [  WIDTH-1:0] carrier_Q,
     input             [        3:0] DELAY_CNT,
@@ -20,9 +20,9 @@ module PSK_Mod #(
     output reg                      out_vld,
     output reg                      out_last,
     output reg                      out_is_bpsk,
-    output reg        [        1:0] out_bits,
-    output                          out_clk_1M024  // A reference clock at 1.024 MHz
+    output reg        [        1:0] out_bits
 );
+
     localparam BITS = BYTES * 8;
 
     reg [     3:0] cnt;
@@ -83,6 +83,5 @@ module PSK_Mod #(
         end else;  // prevent latch
     end
 
-    assign out_clk_1M024 = cnt[3];
 
 endmodule

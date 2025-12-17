@@ -53,6 +53,7 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT LPF
   PORT (
+    aresetn : IN STD_LOGIC;
     aclk : IN STD_LOGIC;
     s_axis_data_tvalid : IN STD_LOGIC;
     s_axis_data_tready : OUT STD_LOGIC;
@@ -69,6 +70,7 @@ END COMPONENT;
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
 your_instance_name : LPF
   PORT MAP (
+    aresetn => aresetn,
     aclk => aclk,
     s_axis_data_tvalid => s_axis_data_tvalid,
     s_axis_data_tready => s_axis_data_tready,

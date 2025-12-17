@@ -59,6 +59,8 @@ USE dds_compiler_v6_0_26.dds_compiler_v6_0_26;
 ENTITY NCO_DDS IS
   PORT (
     aclk : IN STD_LOGIC;
+    aclken : IN STD_LOGIC;
+    aresetn : IN STD_LOGIC;
     s_axis_phase_tvalid : IN STD_LOGIC;
     s_axis_phase_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     m_axis_data_tvalid : OUT STD_LOGIC;
@@ -159,6 +161,12 @@ ARCHITECTURE NCO_DDS_arch OF NCO_DDS IS
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
   ATTRIBUTE X_INTERFACE_MODE OF aclk: SIGNAL IS "slave aclk_intf";
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF M_AXIS_PHASE:S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_PHASE, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF aclken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 aclken_intf CE";
+  ATTRIBUTE X_INTERFACE_MODE OF aclken: SIGNAL IS "slave aclken_intf";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF aclken: SIGNAL IS "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH";
+  ATTRIBUTE X_INTERFACE_INFO OF aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 aresetn_intf RST";
+  ATTRIBUTE X_INTERFACE_MODE OF aresetn: SIGNAL IS "slave aresetn_intf";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF aresetn: SIGNAL IS "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_data_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DATA TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_data_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DATA TVALID";
   ATTRIBUTE X_INTERFACE_MODE OF m_axis_data_tvalid: SIGNAL IS "master M_AXIS_DATA";
@@ -197,8 +205,8 @@ BEGIN
       C_USE_DSP48 => 1,
       C_POR_MODE => 0,
       C_AMPLITUDE => 0,
-      C_HAS_ACLKEN => 0,
-      C_HAS_ARESETN => 0,
+      C_HAS_ACLKEN => 1,
+      C_HAS_ARESETN => 1,
       C_HAS_TLAST => 0,
       C_HAS_TREADY => 0,
       C_HAS_S_PHASE => 1,
@@ -221,8 +229,8 @@ BEGIN
     )
     PORT MAP (
       aclk => aclk,
-      aclken => '1',
-      aresetn => '1',
+      aclken => aclken,
+      aresetn => aresetn,
       s_axis_phase_tvalid => s_axis_phase_tvalid,
       s_axis_phase_tdata => s_axis_phase_tdata,
       s_axis_phase_tlast => '0',

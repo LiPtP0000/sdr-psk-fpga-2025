@@ -8,23 +8,30 @@
 
 `timescale 1ns / 1ps
 
-module NCO_cos_sin # (
-  parameter I_WIDTH = 32,
-  parameter O_WIDTH = 12
+module NCO_cos_sin #(
+    parameter I_WIDTH = 32,
+    parameter O_WIDTH = 12
 ) (
-  // input
-  input                           clk,
-  input             [I_WIDTH-1:0] NCO_tdata,
-  input                           NCO_tvalid,
-  // output
-  output reg signed [O_WIDTH-1:0] NCO_cos,
-  output reg signed [O_WIDTH-1:0] NCO_sin,
-  output reg                      NCO_vld
+    // input
+    input                           clk,
+    input                           enable,
+    input             [I_WIDTH-1:0] NCO_tdata,
+    input                           NCO_tvalid,
+    // output
+    output reg signed [O_WIDTH-1:0] NCO_cos,
+    output reg signed [O_WIDTH-1:0] NCO_sin,
+    output reg                      NCO_vld
 );
-  // output assign
-  always @ (posedge clk) begin
-    NCO_cos <= NCO_tvalid ? NCO_tdata[O_WIDTH-1:0] : 0;
-    NCO_sin <= NCO_tvalid ? NCO_tdata[O_WIDTH-1+I_WIDTH/2:I_WIDTH/2] : 0;
-    NCO_vld <= NCO_tvalid;
-  end
+    // output assign
+    always @(posedge clk) begin
+        if (enable) begin
+            NCO_cos <= NCO_tvalid ? NCO_tdata[O_WIDTH-1:0] : 0;
+            NCO_sin <= NCO_tvalid ? NCO_tdata[O_WIDTH-1+I_WIDTH/2:I_WIDTH/2] : 0;
+            NCO_vld <= NCO_tvalid;
+        end else begin
+            NCO_cos <= NCO_cos;
+            NCO_sin <= NCO_sin;
+            NCO_vld <= NCO_vld;
+        end
+    end
 endmodule

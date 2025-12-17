@@ -1,16 +1,16 @@
 # CLKS
 set_property PACKAGE_PIN M19 [get_ports PL_CLK_100MHz]
-set_property PACKAGE_PIN L18 [get_ports clk_prog_clk0]
-set_property PACKAGE_PIN Y9 [get_ports clk_prog_clk1]
-set_property PACKAGE_PIN Y6 [get_ports clk_prog_clk2]
+# set_property PACKAGE_PIN L18 [get_ports clk_prog_clk0]
+# set_property PACKAGE_PIN Y9 [get_ports clk_prog_clk1]
+# set_property PACKAGE_PIN Y6 [get_ports clk_prog_clk2]
 
 # Primary clock constraint for 100MHz input clock
 create_clock -period 10.000 -name PL_CLK_100MHz [get_ports PL_CLK_100MHz]
 
 set_property IOSTANDARD LVCMOS33 [get_ports PL_CLK_100MHz]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk0]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk1]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk2]
+# set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk0]
+# set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk1]
+# set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk2]
 
 
 # sfp  ports
@@ -30,7 +30,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports clk_prog_clk2]
 # set_property IOSTANDARD LVCMOS33 [get_ports SFP_Rate_Select]
 # set_property IOSTANDARD LVCMOS33 [get_ports SFP_LOS]
 # 
-LS_ADC2 & LS_ADC1 PINS
+# LS_ADC2 & LS_ADC1 PINS
 # set_property PACKAGE_PIN R20 [get_ports {LS_ADC2_DB[13]}]
 # set_property PACKAGE_PIN R21 [get_ports {LS_ADC2_DB[12]}]
 # set_property PACKAGE_PIN P18 [get_ports {LS_ADC2_DB[11]}]
@@ -99,7 +99,7 @@ LS_ADC2 & LS_ADC1 PINS
 # set_property IOSTANDARD LVCMOS33 [get_ports LS_ADC1_CLK]
 # set_property IOSTANDARD LVCMOS33 [get_ports LS_ADC1_OTR]
 # 
-LS_DAC2 & LS_DAC1 PINS
+# LS_DAC2 & LS_DAC1 PINS
 # 
 # set_property PACKAGE_PIN W8 [get_ports {LS_DAC2_DB[13]}]
 # set_property PACKAGE_PIN V8 [get_ports {LS_DAC2_DB[12]}]
@@ -265,40 +265,40 @@ set_property PACKAGE_PIN L22  [get_ports GPIO_TH1]
 set_property PACKAGE_PIN AA12 [get_ports GPIO_TH2]
 set_property PACKAGE_PIN AB12 [get_ports GPIO_TH3]
 set_property PACKAGE_PIN D21  [get_ports GPIO_TH4]
-set_property PACKAGE_PIN L21  [get_ports GPIO_TH5]
-set_property PACKAGE_PIN R7   [get_ports GPIO_TH6]
-set_property PACKAGE_PIN U7   [get_ports GPIO_TH7]
-set_property PACKAGE_PIN T6   [get_ports GPIO_TH8]
-set_property PACKAGE_PIN L19  [get_ports GPIO_TH9]
-set_property PACKAGE_PIN J18  [get_ports GPIO_TH10]
+# set_property PACKAGE_PIN L21  [get_ports GPIO_TH5]
+# set_property PACKAGE_PIN R7   [get_ports GPIO_TH6]
+# set_property PACKAGE_PIN U7   [get_ports GPIO_TH7]
+# set_property PACKAGE_PIN T6   [get_ports GPIO_TH8]
+# set_property PACKAGE_PIN L19  [get_ports GPIO_TH9]
+# set_property PACKAGE_PIN J18  [get_ports GPIO_TH10]
 
 set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH1]
 set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH2]
 set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH3]
 set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH4]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH5]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH6]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH7]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH8]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH9]
-set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH10]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH5]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH6]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH7]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH8]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH9]
+# set_property IOSTANDARD LVCMOS33 [get_ports GPIO_TH10]
 
 # DSP PINS
-set_property PACKAGE_PIN E21 [get_ports McBSP0_CLKS0]
-set_property PACKAGE_PIN F19 [get_ports McBSP0_CLKX0]
-set_property PACKAGE_PIN G19 [get_ports McBSP0_FSX0]
-set_property PACKAGE_PIN J17 [get_ports McBSP0_DX0]
-set_property PACKAGE_PIN J16 [get_ports McBSP0_FSR0]
-set_property PACKAGE_PIN M17 [get_ports McBSP0_DR0]
-set_property PACKAGE_PIN R19 [get_ports McBSP1_DX1]
-
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_CLKS0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_CLKX0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_FSX0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_DX0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_FSR0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_DR0]
-set_property IOSTANDARD LVCMOS33 [get_ports McBSP1_DX1]
+# set_property PACKAGE_PIN E21 [get_ports McBSP0_CLKS0]
+# set_property PACKAGE_PIN F19 [get_ports McBSP0_CLKX0]
+# set_property PACKAGE_PIN G19 [get_ports McBSP0_FSX0]
+# set_property PACKAGE_PIN J17 [get_ports McBSP0_DX0]
+# set_property PACKAGE_PIN J16 [get_ports McBSP0_FSR0]
+# set_property PACKAGE_PIN M17 [get_ports McBSP0_DR0]
+# set_property PACKAGE_PIN R19 [get_ports McBSP1_DX1]
+# 
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_CLKS0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_CLKX0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_FSX0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_DX0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_FSR0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP0_DR0]
+# set_property IOSTANDARD LVCMOS33 [get_ports McBSP1_DX1]
 
 # AD9361 PINS
 set_property PACKAGE_PIN AB19 [get_ports {AD9361_P0_D[11]}]
@@ -332,26 +332,31 @@ set_property PACKAGE_PIN Y19 [get_ports {AD9361_P1_D[0]}]
 #  set_property PACKAGE_PIN V17  [ get_ports AD9361_Ctrl_IN[1] ]
 #  set_property PACKAGE_PIN W21  [ get_ports AD9361_Ctrl_IN[0] ]
 
-set_property PACKAGE_PIN C15 [get_ports AD9361_rst]
-set_property PACKAGE_PIN AA17 [get_ports AD9361_TX_FRAME]
-set_property PACKAGE_PIN U17 [get_ports AD9361_RX_FRAME]
-set_property PACKAGE_PIN W16 [get_ports AD9361_FBCLK]
-set_property PACKAGE_PIN W17 [get_ports AD9361_DATACLK]
-set_property PACKAGE_PIN U21 [get_ports AD9361_ENABLE]
-set_property PACKAGE_PIN W21 [get_ports AD9361_SYNC_IN]
-set_property PACKAGE_PIN V17 [get_ports AD9361_EN_AGC]
-#  set_property PACKAGE_PIN U12  [ get_ports AD9361_UART_1_TX ]
-#  set_property PACKAGE_PIN U11  [ get_ports AD9361_UART_1_RX ]
-set_property PACKAGE_PIN W20 [get_ports AD9361_TXNRX]
-#  set_property PACKAGE_PIN B15  [ get_ports AD9361_PLLT_CLK_OUT ]    # not used
-#  set_property PACKAGE_PIN V14  [ get_ports AD9361_PLL_B_OUT_P ]     # not used
-#  set_property PACKAGE_PIN V15  [ get_ports AD9361_PLL_B_OUT_N ]     # not used
+## The following AD9361 single-pin assignments are optional and may not exist
+## in every top-level design. Vivado emits warnings when ports are not found.
+## Commenting them out to avoid warnings. Uncomment if your top-level
+## actually defines these ports.
+# set_property PACKAGE_PIN C15 [get_ports AD9361_rst]
+ set_property PACKAGE_PIN AA17 [get_ports AD9361_TX_FRAME]
+ set_property PACKAGE_PIN U17 [get_ports AD9361_RX_FRAME]
+ set_property PACKAGE_PIN W16 [get_ports AD9361_FBCLK]
+ set_property PACKAGE_PIN W17 [get_ports AD9361_DATACLK]
+# set_property PACKAGE_PIN U21 [get_ports AD9361_ENABLE]
+# set_property PACKAGE_PIN W21 [get_ports AD9361_SYNC_IN]
+# set_property PACKAGE_PIN V17 [get_ports AD9361_EN_AGC]
+# #  set_property PACKAGE_PIN U12  [ get_ports AD9361_UART_1_TX ]
+# #  set_property PACKAGE_PIN U11  [ get_ports AD9361_UART_1_RX ]
+# set_property PACKAGE_PIN W20 [get_ports AD9361_TXNRX]
+# #  set_property PACKAGE_PIN B15  [ get_ports AD9361_PLLT_CLK_OUT ]    # not used
+# #  set_property PACKAGE_PIN V14  [ get_ports AD9361_PLL_B_OUT_P ]     # not used
+# #  set_property PACKAGE_PIN V15  [ get_ports AD9361_PLL_B_OUT_N ]     # not used
 
-set_property PACKAGE_PIN AB17 [get_ports AD9361_SPI_CLK]
-set_property PACKAGE_PIN U20 [get_ports AD9361_SPI_DI]
-set_property PACKAGE_PIN V20 [get_ports AD9361_SPI_DO]
-set_property PACKAGE_PIN AA18 [get_ports AD9361_SPI_ENB]
-set_property PACKAGE_PIN V19 [get_ports AD9361_SPI_SEL]
+## Optional AD9361 SPI pins: comment out unless present in top-level
+# set_property PACKAGE_PIN AB17 [get_ports AD9361_SPI_CLK]
+# set_property PACKAGE_PIN U20 [get_ports AD9361_SPI_DI]
+# set_property PACKAGE_PIN V20 [get_ports AD9361_SPI_DO]
+# set_property PACKAGE_PIN AA18 [get_ports AD9361_SPI_ENB]
+# set_property PACKAGE_PIN V19 [get_ports AD9361_SPI_SEL]
 
 
 set_property IOSTANDARD LVCMOS18 [get_ports {AD9361_P0_D[11]}]
@@ -385,36 +390,41 @@ set_property IOSTANDARD LVCMOS18 [get_ports {AD9361_P1_D[0]}]
 #  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_Ctrl_IN[1] ]
 #  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_Ctrl_IN[0] ]
 
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_TX_FRAME]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_RX_FRAME]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_FBCLK]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_DATACLK]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_ENABLE]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SYNC_IN]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_EN_AGC]
-#  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_UART_1_TX ]
-#  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_UART_1_RX ]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_TXNRX]
-#  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_PLLT_CLK_OUT ]
-#  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_PLL_B_OUT_P ]
-#  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_PLL_B_OUT_N ]
+## Optional AD9361 IOSTANDARD assignments - comment out to avoid warnings
+ set_property IOSTANDARD LVCMOS18 [get_ports AD9361_TX_FRAME]
+ set_property IOSTANDARD LVCMOS18 [get_ports AD9361_RX_FRAME]
+ set_property IOSTANDARD LVCMOS18 [get_ports AD9361_FBCLK]
+ set_property IOSTANDARD LVCMOS18 [get_ports AD9361_DATACLK]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_ENABLE]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SYNC_IN]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_EN_AGC]
+# #  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_UART_1_TX ]
+# #  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_UART_1_RX ]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_TXNRX]
+# #  set_property IOSTANDARD LVCMOS33 [ get_ports AD9361_PLLT_CLK_OUT ]
+# #  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_PLL_B_OUT_P ]
+# #  set_property IOSTANDARD LVCMOS18 [ get_ports AD9361_PLL_B_OUT_N ]
 
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_CLK]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_DI]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_DO]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_ENB]
-set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_SEL]
+## Optional AD9361 SPI IOSTANDARDs
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_CLK]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_DI]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_DO]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_ENB]
+# set_property IOSTANDARD LVCMOS18 [get_ports AD9361_SPI_SEL]
 
-set_property IOSTANDARD LVCMOS33 [get_ports AD9361_rst]
+## Optional AD9361 reset IOSTANDARD
+# set_property IOSTANDARD LVCMOS33 [get_ports AD9361_rst]
 
 # other pins
-set_property PACKAGE_PIN R15 [get_ports AD9361_10M_OUT]
-set_property PACKAGE_PIN B19 [get_ports AD9361_10M_IN]
+## Optional 10MHz reference pins - comment out if top doesn't define them
+# set_property PACKAGE_PIN R15 [get_ports AD9361_10M_OUT]
+# set_property PACKAGE_PIN B19 [get_ports AD9361_10M_IN]
+#
+# set_property IOSTANDARD LVCMOS33 [get_ports AD9361_10M_OUT]
+# set_property IOSTANDARD LVCMOS33 [get_ports AD9361_10M_IN]
 
-set_property IOSTANDARD LVCMOS33 [get_ports AD9361_10M_OUT]
-set_property IOSTANDARD LVCMOS33 [get_ports AD9361_10M_IN]
-
-create_clock -period 32.552 -name AD9361_DATACLK [get_ports AD9361_DATACLK]
+# Optional AD9361 data clock constraint - enable if AD9361_DATACLK exists
+ create_clock -period 32.552 -name AD9361_DATACLK [get_ports AD9361_DATACLK]
 #create_clock -name CLK_B2B_FPGA_7 -period 32 [ get_ports CLK_B2B_FPGA_7_P ]
 # create_clock -period 32.552 -name clk2AD9361 [get_pins inst_AD9361/AD9361_RX_CLK]
 
@@ -463,15 +473,18 @@ create_clock -period 32.552 -name AD9361_DATACLK [get_ports AD9361_DATACLK]
 
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets AD9361_RX_FRAME]
 
-# Input delay constraints for AD9361 receive data
-set_input_delay 0.500 -max -clock AD9361_DATACLK [get_ports {AD9361_P0_D}]
-set_input_delay -0.500 -min -clock AD9361_DATACLK [get_ports {AD9361_P0_D}]
+#  Input delay constraints for AD9361 receive data
+# Optional I/O delay constraints for AD9361 interface. Commented out to
+# avoid Vivado complaining when the AD9361_* ports are not present at
+# synthesis/elaboration time. Uncomment when the ports exist in top.
+ set_input_delay 0.500 -max -clock AD9361_DATACLK [get_ports {AD9361_P0_D}]
+ set_input_delay -0.500 -min -clock AD9361_DATACLK [get_ports {AD9361_P0_D}]
 
-# Output delay constraints for AD9361 transmit data
-# AD9361_P1_D is driven by AD9361_TX_CLK which is synchronous to AD9361_DATACLK
-set_output_delay -clock AD9361_DATACLK -max 0.500 [get_ports {AD9361_P1_D}]
-set_output_delay -clock AD9361_DATACLK -min -0.500 [get_ports {AD9361_P1_D}]
+ # Output delay constraints for AD9361 transmit data
+ # AD9361_P1_D is driven by AD9361_TX_CLK which is synchronous to AD9361_DATACLK
+ set_output_delay -clock AD9361_DATACLK -max 0.500 [get_ports {AD9361_P1_D}]
+ set_output_delay -clock AD9361_DATACLK -min -0.500 [get_ports {AD9361_P1_D}]
 
-set_false_path -to [get_pins -hierarchical -filter {NAME =~ *rev_aresetn_d1_reg/CLR}]
+set_false_path -to [get_pins -of_objects [get_cells rev_aresetn_d1_reg] -filter {IS_PRESET || IS_CLEAR}]
+set_false_path -to [get_pins -of_objects [get_cells rev_aresetn_d2_reg] -filter {IS_PRESET || IS_CLEAR}]
 # set_false_path -to [get_pins -hierarchical -filter {NAME =~ *rev_aresetn_d2_reg/CLR}]
-set_false_path -to [get_cells -hierarchical -filter {NAME =~ *clk_in_d1_reg}]

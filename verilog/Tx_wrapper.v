@@ -105,15 +105,14 @@ module Tx (
     );
 
     PSK_Modulation u_PSK_Modulation (
+        .clk_32d768M    (clk_32M768),
+        .rst_n_32d768M  (rst_n_32M768),
         .psk_tdata      (Packetizer_PSK_tdata),
         .psk_tlast      (Packetizer_PSK_tlast),
         .psk_tready     (Packetizer_PSK_tready),
         .psk_tuser      (Packetizer_PSK_tuser),
         .psk_tvalid     (Packetizer_PSK_tvalid),
         .clk_16d384M    (clk_16M384),
-        .rst_16d384M    (rst_16M384),
-        .clk_1d024M     (clk_1M024),
-        .rst_n_1d024M   (rst_n_1M024),
         .DELAY_CNT      (DELAY_CNT),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
         .DAC_I          (DAC_I),
@@ -130,15 +129,15 @@ module Tx (
         .M               (8),
         .BYPASS_SELECTION(1'b1)
     ) u_Bits_Flatten (
-        .bypass (Packetizer_PSK_tuser),
-        .clk(clk_32M768)
+        .bypass(Packetizer_PSK_tuser),
+        .clk   (clk_32M768),
         .ce_1M (clk_1M024),
-        .rst_n  (rst_n_32M768),
-        .ce_2M(clk_2M048),
-        .I      (Packetizer_PSK_tdata),
-        .I_vld  (pld_vld),
-        .O      (tx_serial),
-        .O_vld  (tx_valid)
+        .rst_n (rst_n_32M768),
+        .ce_2M (clk_2M048),
+        .I     (Packetizer_PSK_tdata),
+        .I_vld (pld_vld),
+        .O     (tx_serial),
+        .O_vld (tx_valid)
     );
 
     // Output assignments

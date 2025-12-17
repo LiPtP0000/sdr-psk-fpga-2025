@@ -54,6 +54,8 @@
 COMPONENT NCO_DDS
   PORT (
     aclk : IN STD_LOGIC;
+    aclken : IN STD_LOGIC;
+    aresetn : IN STD_LOGIC;
     s_axis_phase_tvalid : IN STD_LOGIC;
     s_axis_phase_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     m_axis_data_tvalid : OUT STD_LOGIC;
@@ -69,6 +71,8 @@ END COMPONENT;
 your_instance_name : NCO_DDS
   PORT MAP (
     aclk => aclk,
+    aclken => aclken,
+    aresetn => aresetn,
     s_axis_phase_tvalid => s_axis_phase_tvalid,
     s_axis_phase_tdata => s_axis_phase_tdata,
     m_axis_data_tvalid => m_axis_data_tvalid,

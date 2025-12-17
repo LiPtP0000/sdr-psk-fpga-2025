@@ -3,10 +3,11 @@ module costas_loop_wrapper #(
     parameter DATA_WIDTH = 16,
     parameter MSB_TRUNCATE_BITS = 6
 ) (
+    input         clk_32M768,
+    input         rst_32M768,
     input         clk_16M384,
     input  [11:0] PSK_signal,
     input         is_bpsk,
-    input         rst_16M384,
     input  [ 3:0] FEEDBACK_SHIFT,
     output [11:0] NCO_cos,
     output [15:0] I_data,
@@ -24,8 +25,8 @@ module costas_loop_wrapper #(
     wire        NCO_valid;
 
     NCO_rx_wrapper u_NCO_rx_wrapper (
-        .clk_16M384     (clk_16M384),
-        .rst_16M384     (rst_16M384),
+        .clk_32M768     (clk_32M768),
+        .rst_32M768     (rst_32M768),
         .FEEDBACK_SHIFT (FEEDBACK_SHIFT),
         .feedback_tdata (feedback_tdata_inmodule),
         .feedback_tvalid(feedback_tvalid_inmodule),
@@ -40,7 +41,7 @@ module costas_loop_wrapper #(
     wire [  DATA_WIDTH-1:0] PD_I;
 
     Multiplier u_Multiplier_1 (
-        .CLK(clk_16M384),
+        .CLK(clk_32M768),
         .A  (PSK_signal),
         .B  (NCO_cos),
         .P  (PD_I)
@@ -51,7 +52,7 @@ module costas_loop_wrapper #(
     wire [DATA_WIDTH-1:0] PD_Q;
 
     Multiplier u_Multiplier_2 (
-        .CLK(clk_16M384),
+        .CLK(clk_32M768),
         .A  (PSK_signal),
         .B  (NCO_sin),
         .P  (PD_Q)
@@ -62,7 +63,7 @@ module costas_loop_wrapper #(
     // NCO 10 (DDS 8 + 1 + 1) + Multiplier 3 + 8 shift RAM = 21 start-up latency
     wire NCO_valid_delayed;
     Costas_LPF_shift_ram u_Costas_LPF_shift_ram (
-        .CLK(clk_16M384),
+        .CLK(clk_32M768),
         .D  (NCO_valid),
         .Q  (NCO_valid_delayed)
     );
@@ -74,7 +75,8 @@ module costas_loop_wrapper #(
     wire [LPF_OUT_WIDTH-1:0] IQ_LPF_tdata;
 
     LPF u_LPF (
-        .aclk              (clk_16M384),
+        .aclk              (clk_32M768),
+        .aresetn           (rst_n_32M768),
         .s_axis_data_tvalid(NCO_valid_delayed),
         .s_axis_data_tready(LPF_data_tready),
         .s_axis_data_tdata (PD),
@@ -149,8 +151,9 @@ module costas_loop_wrapper #(
     Error_Detect_Ctrl #(
         .WIDTH(DATA_WIDTH)
     ) u_Error_Detect_Ctrl (
-        .clk              (clk_16M384),
-        .rst              (rst_16M384),
+        .clk              (clk_32M768),
+        .rst              (rst_32M768),
+        .enable           (clk_16M384),
         .is_bpsk          (is_bpsk),
         .in_I_tdata       (O2_I_tdata),
         .in_I_tvalid      (O2_I_tvalid),
@@ -172,7 +175,7 @@ module costas_loop_wrapper #(
 
     // Requires 16-bit inputs, or use * and force DSP48 use.
     err_detect_BPSK u_err_detect_BPSK (
-        .CLK(clk_16M384),
+        .CLK(clk_32M768),
         .A  (out_I_tdata),
         .B  (out_Q_tdata),
         .P  (error_bpsk_tdata)
@@ -182,15 +185,16 @@ module costas_loop_wrapper #(
     err_detect_QPSK u_err_detect_QPSK (
         .A  (out_I_tdata),
         .B  (out_Q_tdata),
-        .CLK(clk_16M384),
+        .CLK(clk_32M768),
         .S  (error_qpsk_tdata)
     );
 
     // output declaration of module fir_compiler_0
     wire loop_filter_tready;
-
+    // error_tvalid requires a 16.384MHz rhythm
     fir_compiler_0 u_fir_compiler_0 (
-        .aclk              (clk_16M384),
+        .aclk              (clk_32M768),
+        .aresetn           (rst_n_32M768),
         .s_axis_data_tvalid(error_tvalid),
         .s_axis_data_tready(loop_filter_tready),
         .s_axis_data_tdata (error_tdata),

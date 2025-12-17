@@ -6,6 +6,7 @@
 
 (* BLOCK_STUB = "true" *)
 module LPF (
+  aresetn,
   aclk,
   s_axis_data_tvalid,
   s_axis_data_tready,
@@ -14,6 +15,10 @@ module LPF (
   m_axis_data_tdata
 );
 
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *)
+  (* X_INTERFACE_MODE = "slave aresetn_intf" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+  input aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk_intf CLK" *)
   (* X_INTERFACE_MODE = "slave aclk_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_DATA:S_AXIS_RELOAD, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_PORT , INSERT_VIP 0" *)

@@ -89,6 +89,8 @@ architecture tb of tb_carrier_gen is
 
   -- General inputs
   signal aclk                            : std_logic := '0';  -- the master clock
+  signal aclken                          : std_logic := '1';  -- clock enable
+  signal aresetn                         : std_logic := '1';  -- synchronous active low reset, overrides aclken
 
   -- Config slave channel signals
   signal s_axis_config_tvalid            : std_logic := '0';  -- payload is valid
@@ -106,7 +108,7 @@ architecture tb of tb_carrier_gen is
   -----------------------------------------------------------------------
 
   -- Config slave channel alias signals
-  signal s_axis_config_tdata_inc       : std_logic_vector(14 downto 0) := (others => '0');
+  signal s_axis_config_tdata_inc       : std_logic_vector(15 downto 0) := (others => '0');
 
   -- Data master channel alias signals
   signal m_axis_data_tdata_cosine      : std_logic_vector(11 downto 0) := (others => '0');
@@ -124,6 +126,8 @@ begin
   dut : entity work.carrier_gen
     port map (
       aclk                            => aclk
+      ,aclken                          => aclken
+      ,aresetn                         => aresetn
       ,s_axis_config_tvalid            => s_axis_config_tvalid
       ,s_axis_config_tdata             => s_axis_config_tdata
       ,m_axis_data_tvalid              => m_axis_data_tvalid
@@ -165,23 +169,36 @@ begin
     -- The phase increment value here is derived from the output frequency value set in the CORE Generator GUI.
     s_axis_config_tvalid <= '1';
     s_axis_config_tdata <= (others => '0');  -- set unused TDATA bits to zero
-    s_axis_config_tdata(14 downto 0) <= "010000000000000";  -- phase increment
-    wait for CLOCK_PERIOD;
-    s_axis_config_tvalid <= '0';
-
-    -- Run for long enough to produce 5 periods of outputs
-    wait for CLOCK_PERIOD * 20;
-
-    -- Configure the core with a different configuration:
-    --   set phase increment to half of its current value
-    s_axis_config_tvalid <= '1';
-    s_axis_config_tdata <= (others => '0');  -- set unused TDATA bits to zero
-    s_axis_config_tdata(14 downto 0) <= "001000000000000";  -- current phase increment / 2
+    s_axis_config_tdata(15 downto 0) <= "0010000000000000";  -- phase increment
     wait for CLOCK_PERIOD;
     s_axis_config_tvalid <= '0';
 
     -- Run for long enough to produce 5 periods of outputs
     wait for CLOCK_PERIOD * 40;
+
+    -- Configure the core with a different configuration:
+    --   set phase increment to half of its current value
+    s_axis_config_tvalid <= '1';
+    s_axis_config_tdata <= (others => '0');  -- set unused TDATA bits to zero
+    s_axis_config_tdata(15 downto 0) <= "0001000000000000";  -- current phase increment / 2
+    wait for CLOCK_PERIOD;
+    s_axis_config_tvalid <= '0';
+
+    -- Run for long enough to produce 5 periods of outputs
+    wait for CLOCK_PERIOD * 80;
+
+    -- Deassert clock enable for a bit
+    aclken <= '0';
+    wait for CLOCK_PERIOD * 10;
+    aclken <= '1';
+    wait for CLOCK_PERIOD * 20;
+
+    -- Reset the core, then continue running
+    aresetn <= '0';  -- Reset is active low
+    wait for CLOCK_PERIOD * 2;  -- Hold reset for 2 clock cycles, as specified in the DDS Compiler datasheet
+    aresetn <= '1';
+    -- Run for long enough to produce 5 periods of outputs
+    wait for CLOCK_PERIOD * 80;
 
     -- End of test
     end_of_simulation <= true;           
@@ -207,7 +224,7 @@ begin
     -- Instead, check the protocol of the data master channel:
     -- check that the payload is valid (not X) when TVALID is high
 
-    if m_axis_data_tvalid = '1' then
+    if m_axis_data_tvalid = '1' and aresetn = '1' and aclken = '1' then
       if is_x(m_axis_data_tdata) then
         report "ERROR: m_axis_data_tdata is invalid when m_axis_data_tvalid is high" severity error;
         check_ok := false;
@@ -225,7 +242,7 @@ begin
   -----------------------------------------------------------------------
 
   -- Config slave channel alias signals
-  s_axis_config_tdata_inc       <= s_axis_config_tdata(14 downto 0);
+  s_axis_config_tdata_inc       <= s_axis_config_tdata(15 downto 0);
 
   -- Data master channel alias signals: update these only when they are valid
   m_axis_data_tdata_cosine      <= m_axis_data_tdata(11 downto 0) when m_axis_data_tvalid = '1';

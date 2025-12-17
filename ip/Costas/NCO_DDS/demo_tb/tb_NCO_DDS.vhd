@@ -89,6 +89,8 @@ architecture tb of tb_NCO_DDS is
 
   -- General inputs
   signal aclk                            : std_logic := '0';  -- the master clock
+  signal aclken                          : std_logic := '1';  -- clock enable
+  signal aresetn                         : std_logic := '1';  -- synchronous active low reset, overrides aclken
 
   -- Phase slave channel signals
   signal s_axis_phase_tvalid             : std_logic := '0';  -- payload is valid
@@ -124,6 +126,8 @@ begin
   dut : entity work.NCO_DDS
     port map (
       aclk                            => aclk
+      ,aclken                          => aclken
+      ,aresetn                         => aresetn
       ,s_axis_phase_tvalid             => s_axis_phase_tvalid
       ,s_axis_phase_tdata              => s_axis_phase_tdata
       ,m_axis_data_tvalid              => m_axis_data_tvalid
@@ -170,6 +174,34 @@ begin
     end loop;
     s_axis_phase_tvalid <= '0';
 
+    -- Set up phase slave channel to input constant data every clock cycle, then demonstrate:
+    --   pausing the core by deasserting TVALID
+    --   clock enable
+    --   reset
+    s_axis_phase_tvalid <= '1';
+    s_axis_phase_tdata  <= (others => '0');  -- set unused TDATA bits to zero
+    s_axis_phase_tdata(15 downto 0) <= "0000000000000000";  -- constant phase increment
+    wait for CLOCK_PERIOD * 20;
+
+    -- Pause the core by deasserting TVALID of the phase slave channel
+    s_axis_phase_tvalid <= '0';
+    wait for CLOCK_PERIOD * 10;
+    s_axis_phase_tvalid <= '1';
+    wait for CLOCK_PERIOD * 20;
+
+    -- Deassert clock enable for a bit
+    aclken <= '0';
+    wait for CLOCK_PERIOD * 10;
+    aclken <= '1';
+    wait for CLOCK_PERIOD * 20;
+
+    -- Reset the core, then continue running
+    aresetn <= '0';  -- Reset is active low
+    wait for CLOCK_PERIOD * 2;  -- Hold reset for 2 clock cycles, as specified in the DDS Compiler datasheet
+    aresetn <= '1';
+    -- Run for long enough to produce 5 periods of outputs
+    wait for CLOCK_PERIOD * 160;
+
     -- End of test
     end_of_simulation <= true;           
     report "Not a real failure. Simulation finished successfully. Test completed successfully" severity failure;
@@ -194,7 +226,7 @@ begin
     -- Instead, check the protocol of the data master channel:
     -- check that the payload is valid (not X) when TVALID is high
 
-    if m_axis_data_tvalid = '1' then
+    if m_axis_data_tvalid = '1' and aresetn = '1' and aclken = '1' then
       if is_x(m_axis_data_tdata) then
         report "ERROR: m_axis_data_tdata is invalid when m_axis_data_tvalid is high" severity error;
         check_ok := false;

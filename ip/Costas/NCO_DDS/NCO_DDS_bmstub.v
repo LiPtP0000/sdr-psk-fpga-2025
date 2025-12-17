@@ -7,6 +7,8 @@
 (* BLOCK_STUB = "true" *)
 module NCO_DDS (
   aclk,
+  aclken,
+  aresetn,
   s_axis_phase_tvalid,
   s_axis_phase_tdata,
   m_axis_data_tvalid,
@@ -17,6 +19,14 @@ module NCO_DDS (
   (* X_INTERFACE_MODE = "slave aclk_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF M_AXIS_PHASE:S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_PHASE, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_PORT , INSERT_VIP 0" *)
   input aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 aclken_intf CE" *)
+  (* X_INTERFACE_MODE = "slave aclken_intf" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH" *)
+  input aclken;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aresetn_intf RST" *)
+  (* X_INTERFACE_MODE = "slave aresetn_intf" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+  input aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_PHASE TVALID" *)
   (* X_INTERFACE_MODE = "slave S_AXIS_PHASE" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXIS_PHASE, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN , LAYERED_METADATA undef, INSERT_VIP 0" *)

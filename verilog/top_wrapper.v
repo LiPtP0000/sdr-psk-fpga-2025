@@ -137,12 +137,11 @@ module top (
     wire [ 1:0] DAC_bits;
 
     Tx u_Tx (
-        .rst_n_2M048    (rst_n_2d048M),
-        .rst_n_1M024    (rst_n_1d024M),
         .MODE_CTRL      (MODE_CTRL),
         .DELAY_CNT      (DELAY_CNT),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
-        .rst_16M384     (rst_16d384M),
+        .clk_32M768     (clk_32d768M),
+        .rst_n_32M768   (rst_n_32d768M),
         .clk_16M384     (clk_16d384M),
         .clk_1M024      (clk_1d024M),
         .clk_2M048      (clk_2d048M),
@@ -215,10 +214,17 @@ module top (
     // Rx FIFO write enable generation (decimation by 12)
     reg  [3:0] decimate_cnt;
     wire       rev_valid;
-
+    wire       rev_aresetn;
     always @(posedge AD9361_CLK) begin
-        if (decimate_cnt == 11) decimate_cnt <= 0;
-        else decimate_cnt <= decimate_cnt + 1;
+        if (!rev_aresetn) begin
+            decimate_cnt <= 0;
+        end else begin
+            if (decimate_cnt == 11) begin
+                decimate_cnt <= 0;
+            end else begin
+                decimate_cnt <= decimate_cnt + 1;
+            end
+        end
     end
 
     // async FIFO: AD9361_CLK -> 32.768M Clock
@@ -228,7 +234,7 @@ module top (
     wire        ADC_tvalid;
     wire [23:0] ADC_concat;
     wire [23:0] rev_concat;
-    wire        rev_aresetn;
+
 
     axis_data_fifo_AD_DA u_axis_data_fifo_ADC (
         .s_axis_aresetn(rev_aresetn),
@@ -293,9 +299,8 @@ module top (
         .clk_32M768       (clk_32d768M),
         .ADC_I            (ADC_I),
         .ADC_Q            (ADC_Q),
-        .rst_16M384       (rst_16d384M),
         .rst_32M768       (rst_32d768M),
-        .rst_n_2M048      (rst_n_2d048M),
+        .rst_n_32M768     (rst_n_32d768M),
         .MODE_CTRL        (MODE_CTRL),
         .FEEDBACK_SHIFT   (FEEDBACK_SHIFT),
         .GARDNER_SHIFT    (GARDNER_SHIFT),

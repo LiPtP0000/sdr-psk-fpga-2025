@@ -88,6 +88,7 @@ architecture tb of tb_LPF is
 
   -- General signals
   signal aclk                            : std_logic := '0';  -- the master clock
+  signal aresetn                         : std_logic := '1';  -- synchronous active low reset
 
   -- Data slave channel signals
   signal s_axis_data_tvalid              : std_logic := '0';  -- payload is valid
@@ -123,6 +124,7 @@ begin
   dut : entity work.LPF
     port map (
       aclk                            => aclk,
+      aresetn                         => aresetn,
       s_axis_data_tvalid              => s_axis_data_tvalid,
       s_axis_data_tready              => s_axis_data_tready,
       s_axis_data_tdata               => s_axis_data_tdata,
@@ -169,6 +171,9 @@ begin
         end loop;
         ip_count := ip_count + 1;
         wait for T_HOLD;
+      -- Input rate is 1 input each 2 clock cycles: drive valid inputs at this rate
+        s_axis_data_tvalid <= '0';
+        wait for CLOCK_PERIOD * 1;
         exit when ip_count >= samples;
       end loop;
     end procedure drive_data;
@@ -182,7 +187,7 @@ begin
 
     -- Procedure to drive an impulse and let the impulse response emerge on the data master channel
     -- samples is the number of input samples to drive; default is enough for impulse response output to emerge
-    procedure drive_impulse ( samples : natural := 53 ) is
+    procedure drive_impulse ( samples : natural := 41 ) is
       variable impulse : std_logic_vector(31 downto 0);
     begin
       impulse := (others => '0');  -- initialize unused bits to zero
@@ -199,7 +204,7 @@ begin
   begin
 
     -- Drive inputs T_HOLD time after rising edge of clock
-    wait until rising_edge(aclk);
+    wait until rising_edge(aclk) and aresetn = '1';
     wait for T_HOLD;
 
     -- Drive a single impulse and let the impulse response emerge
@@ -208,8 +213,20 @@ begin
     -- Drive another impulse, during which demonstrate use and effect of AXI handshaking signals
     drive_impulse(2);  -- start of impulse; data is now zero
     s_axis_data_tvalid <= '0';
-    wait for CLOCK_PERIOD * 5;  -- provide no data for 5 input samples worth
-    drive_zeros(51);  -- back to normal operation
+    wait for CLOCK_PERIOD * 10;  -- provide no data for 5 input samples worth
+    drive_zeros(2);  -- 2 normal input samples
+    s_axis_data_tvalid <= '1';
+    wait for CLOCK_PERIOD * 10;  -- provide data as fast as the core can accept it for 5 input samples worth
+    drive_zeros(32);  -- back to normal operation
+
+    -- Drive another impulse, during which demonstrate:
+    --   reset (aresetn)
+    drive_impulse(15);  -- to partway through impulse response
+    s_axis_data_tvalid <= '0';
+    aresetn <= '0';  -- assert reset (active low)
+    wait for CLOCK_PERIOD * 2;  -- hold reset active for 2 clock cycles, as recommended in FIR Compiler Datasheet
+    aresetn <= '1';  -- deassert reset
+    drive_impulse;  -- send new impulse, following reset
 
     -- Drive a set of impulses of different magnitudes on each path
     -- Path inputs are provided in parallel, in different fields of s_axis_data_tdata
@@ -217,7 +234,7 @@ begin
     data(15 downto 0) := "0100000000000000";  -- path 0: impulse >> 0
     data(31 downto 16) := "0010000000000000";  -- path 1: impulse >> 1
     drive_data(data);
-    drive_zeros(52);
+    drive_zeros(40);
 
     -- End of test
     report "Not a real failure. Simulation finished successfully. Test completed successfully" severity failure;
@@ -242,7 +259,7 @@ begin
     -- Instead, check the protocol of the master DATA channel:
     -- check that the payload is valid (not X) when TVALID is high
 
-    if m_axis_data_tvalid = '1' then
+    if m_axis_data_tvalid = '1' and aresetn = '1' then
       if is_x(m_axis_data_tdata) then
         report "ERROR: m_axis_data_tdata is invalid when m_axis_data_tvalid is high" severity error;
         check_ok := false;
