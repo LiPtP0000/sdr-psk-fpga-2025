@@ -14,7 +14,7 @@ module tb_Tx;
         fd = $fopen("../../behav_sim/_Tx_behav_sim.csv", "w");
         $fdisplay(
             fd,
-            "time, clk_1M024, rst_n_1M024, clk_16M384, rst_16M384, DAC_I, DAC_Q, DAC_bits, DAC_vld, pn_5, pn_4");
+            "time, clk_1M024, rst_n_32M768, clk_16M384, clk_32M768, DAC_I, DAC_Q, DAC_bits, DAC_vld, pn_5, pn_4");
         #28000 $fclose(fd);
     end
 
@@ -30,6 +30,7 @@ module tb_Tx;
     wire [ 3:0] DELAY_CNT;
     wire [ 3:0] MODE_CTRL;
     wire        Tx_1bit;
+    wire        Tx_vld;
     wire [15:0] TX_PHASE_CONFIG;  // maximum 15 bits
     wire [ 7:0] data_tdata;
     wire        data_tlast;
@@ -37,10 +38,10 @@ module tb_Tx;
     wire        data_tvalid;
 
     // clock
+    reg         clk_32M768;
+    reg         rst_n_32M768;
     reg         clk_16M384;
-    reg         rst_16M384;
     reg         clk_1M024;
-    reg         rst_n_1M024;
     reg         clk_2M048;
 
     // configuration parameters (constants)
@@ -50,32 +51,35 @@ module tb_Tx;
 
     // module instantiation
     Tx dut (
-        .clk_16M384(clk_16M384),
-        .rst_16M384(rst_16M384),
-        .clk_1M024(clk_1M024),
-        .rst_n_1M024(rst_n_1M024),
-        .clk_2M048(clk_2M048),
-        .DELAY_CNT(DELAY_CNT),
-        .DAC_I(DAC_I),
-        .DAC_Q(DAC_Q),
-        .DAC_bits(DAC_bits),
-        .DAC_valid(DAC_vld),
-        .MODE_CTRL(MODE_CTRL),
+        .MODE_CTRL      (MODE_CTRL),
+        .DELAY_CNT      (DELAY_CNT),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
-        .tx_serial(Tx_1bit),
-        .data_tdata(data_tdata),
-        .data_tlast(data_tlast),
-        .data_tuser(data_tuser),
-        .data_tvalid(data_tvalid)
+        .clk_32M768     (clk_32M768),
+        .rst_n_32M768   (rst_n_32M768),
+        .clk_16M384     (clk_16M384),
+        .clk_1M024      (clk_1M024),
+        .clk_2M048      (clk_2M048),
+        .tx_valid       (Tx_vld),
+        .tx_serial      (Tx_1bit),
+        .data_tlast     (data_tlast),
+        .data_tvalid    (data_tvalid),
+        .data_tuser     (data_tuser),
+        .data_tdata     (data_tdata),
+        .DAC_I          (DAC_I),
+        .DAC_Q          (DAC_Q),
+        .DAC_valid      (DAC_vld),
+        .DAC_bits       (DAC_bits)
     );
 
     // clock generation
-    always #1 clk_16M384 = ~clk_16M384;
-    always #8 clk_2M048 = ~clk_2M048;  // 16 per symbol
-    always #16 clk_1M024 = ~clk_1M024;  // 32 per symbol
+    always #1 clk_32M768 = ~clk_32M768;
+    always #2 clk_16M384 = ~clk_16M384;
+    always #16 clk_2M048 = ~clk_2M048;  // 32 per symbol
+    always #32 clk_1M024 = ~clk_1M024;  // 64 per symbol
 
     // clock initial
     initial begin
+        clk_32M768 = 1'b1;
         clk_16M384 = 1'b1;
         clk_2M048  = 1'b1;
         clk_1M024  = 1'b1;
@@ -83,16 +87,14 @@ module tb_Tx;
 
     // reset generation
     initial begin
-        rst_16M384  = 1'b1;
-        rst_n_1M024 = 1'b0;
-        #128 rst_16M384 = 1'b0;
-        rst_n_1M024 = 1'b1;
+        rst_n_32M768 = 1'b0;
+        #128 rst_n_32M768 = 1'b1;
     end
 
     // data writing to CSV
     always #1 begin
-        $fdisplay(fd, "%d, %b, %b, %b, %b, %d, %d, %d, %b, %b, %b", $time, clk_1M024, rst_n_1M024,
-                  clk_16M384, rst_16M384, DAC_I, DAC_Q, DAC_bits, DAC_vld, dut.u_Tx_Data.pn_5,
+        $fdisplay(fd, "%d, %b, %b, %b, %b, %d, %d, %d, %b, %b, %b", $time, clk_1M024, rst_n_32M768,
+                  clk_16M384, clk_32M768, DAC_I, DAC_Q, DAC_bits, DAC_vld, dut.u_Tx_Data.pn_5,
                   dut.u_Tx_Data.pn_4);
     end
 

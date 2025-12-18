@@ -123,15 +123,19 @@ module Depacketizer #(
     // =========================== Start of FSM ===========================
     always @(posedge clk) begin
         if (rst) begin
-            state           <= STATE_IDLE;
-            /* counter */cnt_TRN         <= 0;
-            /* counter */cnt_HDR         <= 0;
-            /* counter */cnt_PLD         <= 0;
-            /* AXIS o1 */data_tdata_reg  <= 0;
-            /* AXIS o2 */data_tvalid_reg <= 1'b0;
-            /* AXIS o3 */data_tlast_reg  <= 1'b0;
-            /* AXIS o4 */is_bpsk_reg     <= 1'b1;
-            BD_sgn_reg      <= 1'b0;
+            state                <= STATE_IDLE;
+            /* counter */cnt_TRN              <= 0;
+            /* counter */cnt_HDR              <= 0;
+            /* counter */cnt_PLD              <= 0;
+            /* AXIS o1 */data_tdata_reg       <= 0;
+            /* AXIS o2 */data_tvalid_reg      <= 1'b0;
+            /* AXIS o3 */data_tlast_reg       <= 1'b0;
+            /* AXIS o4 */is_bpsk_reg          <= 1'b1;
+            BD_sgn_reg           <= 1'b0;
+            payload_length       <= 0;
+            payload_length_symbs <= 0;
+            MCS                  <= 0;
+            signature            <= 0;
         end else if (clk_enable) begin
             state <= state_next;
             case (state)

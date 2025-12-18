@@ -205,29 +205,16 @@ module top (
         .AD9361_RX_CLK  (AD9361_CLK),
         .AD9361_TX_DAT_I(tsm_I),
         .AD9361_TX_DAT_Q(tsm_Q),
-        .AD9361_TX_CLK  (AD9361_CLK),
+        .AD9361_TX_CLK  (AD9361_FBCLK),
         .AD9361_P1_D    (AD9361_P1_D),
         .AD9361_FBCLK   (AD9361_FBCLK),
         .AD9361_TX_FRAME(AD9361_TX_FRAME)
     );
 
-    // Rx FIFO write enable generation (decimation by 12)
-    reg  [3:0] decimate_cnt;
-    wire       rev_valid;
-    wire       rev_aresetn;
-    always @(posedge AD9361_CLK) begin
-        if (!rev_aresetn) begin
-            decimate_cnt <= 0;
-        end else begin
-            if (decimate_cnt == 11) begin
-                decimate_cnt <= 0;
-            end else begin
-                decimate_cnt <= decimate_cnt + 1;
-            end
-        end
-    end
+    wire        rev_valid;
+    wire        rev_aresetn;
 
-    // async FIFO: AD9361_CLK -> 32.768M Clock
+    // async FIFO: AD9361_CLK (30.72M) -> 32.768M Clock
     // reset given by processor_system_reset IP driven by AD9361_CLK.
     // output declaration of module axis_data_fifo_AD_DA
     wire        rev_tready;
@@ -264,8 +251,8 @@ module top (
     end
     assign rev_aresetn = rev_aresetn_d2;
 
-    // Only when counter is 0 and RX_FRAME is valid, write to FIFO
-    assign rev_valid = (decimate_cnt == 0) && AD9361_RX_FRAME;
+    // Only when RX_FRAME is valid, write to FIFO
+    assign rev_valid = AD9361_RX_FRAME;
     assign ADC_I = ADC_concat[11:0];
     assign ADC_Q = ADC_concat[23:12];
     assign rev_concat = {rev_Q, rev_I};

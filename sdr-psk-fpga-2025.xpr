@@ -58,7 +58,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="34"/>
+    <Option Name="WTXSimLaunchSim" Val="68"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -307,6 +307,13 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/verilog/interpolation_wrapper.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/verilog/utils/skid_buffer_1m_16m.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -588,7 +595,7 @@
       <File Path="$PSRCDIR/sim_Tx/imports/tb/tb_Tx.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/verilog/tb/tb_Tx.v"/>
-          <Attr Name="ImportTime" Val="1765865502"/>
+          <Attr Name="ImportTime" Val="1765935280"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -860,9 +867,7 @@
     </Run>
     <Run Id="axis_data_fifo_AD_DA_synth_1" Type="Ft3:Synth" SrcSet="axis_data_fifo_AD_DA" Part="xc7z020clg484-1" ConstrsSet="axis_data_fifo_AD_DA" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/axis_data_fifo_AD_DA_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axis_data_fifo_AD_DA_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/axis_data_fifo_AD_DA_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1145,9 +1150,7 @@
     </Run>
     <Run Id="axis_data_fifo_AD_DA_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="axis_data_fifo_AD_DA" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="axis_data_fifo_AD_DA_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axis_data_fifo_AD_DA_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/axis_data_fifo_AD_DA_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

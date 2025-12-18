@@ -339,7 +339,7 @@ set_property PACKAGE_PIN Y19 [get_ports {AD9361_P1_D[0]}]
 # set_property PACKAGE_PIN C15 [get_ports AD9361_rst]
  set_property PACKAGE_PIN AA17 [get_ports AD9361_TX_FRAME]
  set_property PACKAGE_PIN U17 [get_ports AD9361_RX_FRAME]
- set_property PACKAGE_PIN W16 [get_ports AD9361_FBCLK]
+ set_property PACKAGE_PIN W16 [get_ports AD9361_FBCLK] 
  set_property PACKAGE_PIN W17 [get_ports AD9361_DATACLK]
 # set_property PACKAGE_PIN U21 [get_ports AD9361_ENABLE]
 # set_property PACKAGE_PIN W21 [get_ports AD9361_SYNC_IN]
@@ -428,48 +428,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {AD9361_P1_D[0]}]
 #create_clock -name CLK_B2B_FPGA_7 -period 32 [ get_ports CLK_B2B_FPGA_7_P ]
 # create_clock -period 32.552 -name clk2AD9361 [get_pins inst_AD9361/AD9361_RX_CLK]
 
-# Ripple counter derived clocks from Div_clk32M768 module
-# These are NOT proper clocks (they are register outputs used as clocks - bad practice but existing design)
-# Set them as asynchronous clocks to avoid false timing violations
-# Only constrain if the nets exist and are used as clocks
-# =============================================================================
-# 逻辑分频时钟约束 (替换掉原来的 set_false_path)
-# =============================================================================
 
-# 1. 16.384MHz (clk_cnt[0], 2分频)
-# 对应: assign clk16M384 = clk_cnt[0];
-# create_generated_clock -name clk_16d384M \
-    # -source [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[0]/C] \
-    # -divide_by 2 \
-    # [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[0]/Q]
-
-# 2. 8.192MHz (clk_cnt[1], 4分频)
-# 对应: assign clk8M192 = clk_cnt[1];
-# create_generated_clock -name clk_8d192M \
-    # -source [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[1]/C] \
-    # -divide_by 4 \
-    # [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[1]/Q]
-
-# 3. 4.096MHz (clk_cnt[2], 8分频)
-# 对应: assign clk4M096 = clk_cnt[2];
-# create_generated_clock -name clk_4d096M \
-    # -source [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[2]/C] \
-    # -divide_by 8 \
-    # [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[2]/Q]
-
-# 4. 2.048MHz (clk_cnt[3], 16分频)
-# 对应: assign clk2M048 = clk_cnt[3];
-# create_generated_clock -name clk_2d048M \
-    # -source [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[3]/C] \
-    # -divide_by 16 \
-    # [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[3]/Q]
-
-# 5. 1.024MHz (clk_cnt[4], 32分频)
-# 对应: assign clk1M024 = clk_cnt[4];
-# create_generated_clock -name clk_1d024M \
-    # -source [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[4]/C] \
-    # -divide_by 32 \
-    # [get_pins u_Clock_Gen/u_Div_clk32M768/clk_cnt_reg[4]/Q]
 
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets AD9361_RX_FRAME]
 

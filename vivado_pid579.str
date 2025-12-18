@@ -1,0 +1,628 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 579
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Dec 18 00:42:07 CST 2025
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Ubuntu
+OS Version: 6.6.87.2-microsoft-standard-WSL2
+OS Architecture: amd64
+Available processors (cores): 32
+LSB Release Description: Ubuntu 24.04.2 LTS
+
+Display: 0
+Screen size: 1600x1000
+Local screen bounds: x = 0, y = 0, width = 1600, height = 1000
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	liptp
+User home directory: /home/liptp
+User working directory: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /home/liptp/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /home/liptp/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /home/liptp/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+Vivado journal file: 	/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-579-LiPtPDesktop
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2024.2/bin:/tools/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025:LiPtPDesktop_1765989714_510
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2024.2
+XILINX_SDK: /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2024.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,970 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: sdr-psk-fpga-2025.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 102 MB (+104172kb) [00:00:05]
+// [Engine Memory]: 1,496 MB (+1417337kb) [00:00:05]
+// [Engine Memory]: 1,881 MB (+325161kb) [00:00:06]
+// [GUI Memory]: 112 MB (+5309kb) [00:00:07]
+// WARNING: HEventQueue.dispatchEvent() is taking  1636 ms.
+// Tcl Message: open_project sdr-psk-fpga-2025.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'. 
+// [GUI Memory]: 157 MB (+41295kb) [00:00:07]
+// Project name: sdr-psk-fpga-2025; location: /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,004 MB. GUI used memory: 79 MB. Current time: 12/18/25, 12:42:08 AM CST
+// [Engine Memory]: 2,004 MB (+30158kb) [00:00:09]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg484-1 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Open Synthesized Design"); // a (RDIResource.ProgressDialog_BACKGROUND)
+// 'dV' command handler elapsed time: 7 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 2,625 MB. GUI used memory: 80 MB. Current time: 12/18/25, 12:42:23 AM CST
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,936 MB. GUI used memory: 81 MB. Current time: 12/18/25, 12:42:24 AM CST
+// [Engine Memory]: 2,936 MB (+871999kb) [00:00:24]
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 0.5s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 167 MB (+2405kb) [00:00:27]
+// [Engine Memory]: 3,162 MB (+83362kb) [00:00:27]
+// [Engine Memory]: 3,477 MB (+164583kb) [00:00:28]
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2556 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 8297.758 ; gain = 0.000 ; free physical = 11614 ; free virtual = 17464 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 512 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Project 1-1714] 16 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9030.262 ; gain = 0.000 ; free physical = 11079 ; free virtual = 16966 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 9464.656 ; gain = 1234.402 ; free physical = 10666 ; free virtual = 16558 
+dismissDialog("Open Synthesized Design"); // bh (Open Synthesized Design Progress)
+// [GUI Memory]: 178 MB (+2839kb) [00:00:29]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Clock Networks]", 22, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_CLOCK_NETWORKS
+selectButton(RDIResource.BaseDialog_OK, "OK", "Report Clock Networks"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Report Clock Networks"); // a (dialog0)
+// TclEventType: TIMING_CLOCK_NETWORKS_UPDATED
+// Tcl Message: report_clock_networks -name {network_1} 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads)]", 1); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+collapseTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I]", 7); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I]", 7); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I, clkin1_bufg, O, clk_in1_clk_wiz_128M, CLKIN1, mmcm_adv_inst]", 12); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I, clkin1_bufg, O, clk_in1_clk_wiz_128M, CLKIN1, mmcm_adv_inst, clk_200M_clk_wiz_128M (200.00 MHz) (drives 1 load)]", 14); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I, clkin1_bufg, O, clk_in1_clk_wiz_128M, CLKIN1, mmcm_adv_inst, clkfbout_clk_wiz_128M (100.00 MHz) (drives 1 load)]", 23); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+selectTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, PL_CLK_100MHz (100.00 MHz) (drives 6882 loads), PL_CLK_100MHz, I, PL_CLK_100MHz_IBUF_inst, O, PL_CLK_100MHz_IBUF, I, clkin1_bufg, O, clk_in1_clk_wiz_128M, CLKIN1, mmcm_adv_inst, clkfbout_clk_wiz_128M (100.00 MHz) (drives 1 load), CLKFBOUT, clkfbout_clk_wiz_128M, I, clkf_buf, O, clkfbout_buf_clk_wiz_128M, CLKFBIN, mmcm_adv_inst]", 31); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+expandTree(PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE, "[top objects, AD9361_DATACLK (30.72 MHz) (drives 302 loads)]", 0); // c.b (PAResourceAtoD.ClockNetworksReportView_CLOCK_NETWORK_TREE)
+// WARNING: HEventQueue.dispatchEvent() is taking  1461 ms.
+// Elapsed time: 17 seconds
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 13); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 13); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design, Schematic]", 17, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Elaborate Design"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Elaborate Design"); // u (dialog1)
+// TclEventType: ELABORATE_START
+// TclEventType: MSGMGR_REFRESH_MSG
+// [GUI Memory]: 191 MB (+3748kb) [00:01:20]
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: synth_design -rtl -rtl_skip_mlo -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -rtl_skip_mlo -name rtl_1 Starting synth_design Using part: xc7z020clg484-1 Top: top 
+// [Engine Memory]: 3,711 MB (+63407kb) [00:01:20]
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Open Elaborated Design"); // a (RDIResource.ProgressDialog_BACKGROUND)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,963 MB. GUI used memory: 114 MB. Current time: 12/18/25, 12:43:21 AM CST
+// TclEventType: ELABORATE_FINISH
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,895 MB. GUI used memory: 111 MB. Current time: 12/18/25, 12:43:27 AM CST
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 4,137 MB (+251664kb) [00:01:28]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  1161 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes. INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes INFO: [Synth 8-7075] Helper process launched with PID 1734 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 9763.676 ; gain = 299.020 ; free physical = 9831 ; free virtual = 15813 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'top' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized0' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized1' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized1' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized2' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 3 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized2' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized3' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter VALUE bound to: 128 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized3' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized4' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 8 - type: integer  	Parameter VALUE bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized4' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized5' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter VALUE bound to: 8192 - type: integer  
+// Tcl Message: 	Parameter BYTES bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'PN_Gen' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] 
+// Tcl Message: 	Parameter N bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PN_Gen' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] INFO: [Synth 8-6157] synthesizing module 'PN_Gen__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] 
+// Tcl Message: 	Parameter N bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PN_Gen__parameterized0' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] INFO: [Synth 8-6155] done synthesizing module 'Tx_Data' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v:12] INFO: [Synth 8-6157] synthesizing module 'Sync_FIFO' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:1] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 8 - type: integer  	Parameter DEPTH bound to: 512 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:59] INFO: [Synth 8-6155] done synthesizing module 'Sync_FIFO' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:1] INFO: [Synth 8-6157] synthesizing module 'Packetizer' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v:15] 
+// Tcl Message: 	Parameter BYTES bound to: 1'b1  
+// Tcl Message: 	Parameter I_WIDTH bound to: 32 - type: integer  	Parameter O_WIDTH bound to: 12 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'NCO_cos_sin' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v:11] INFO: [Synth 8-6157] synthesizing module 'PSK_Mod' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:3] 
+// Tcl Message: 	Parameter WIDTH bound to: 12 - type: integer  	Parameter BYTES bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Mod' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:3] INFO: [Synth 8-6155] done synthesizing module 'PSK_Modulation' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Bits_Flatten' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] 
+// Tcl Message: 	Parameter N bound to: 2 - type: integer  	Parameter M bound to: 8 - type: integer  	Parameter BYPASS_SELECTION bound to: 1'b1  
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: IDATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 31 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized0' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] 
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: DATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 31 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized0' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IBUFG' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:76309] 
+// Tcl Message: 	Parameter IBUF_LOW_PWR bound to: FALSE - type: string  	Parameter IOSTANDARD bound to: DEFAULT - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IBUFG' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:76309] INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921] INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921] INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized1' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] 
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: DATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 0 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized1' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IDDR' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77799] 
+// Tcl Message: 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string  	Parameter INIT_Q1 bound to: 1'b0  	Parameter INIT_Q2 bound to: 1'b0  	Parameter SRTYPE bound to: SYNC - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDDR' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77799] INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103072] 
+// Tcl Message: 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string  	Parameter INIT bound to: 1'b0  	Parameter SRTYPE bound to: SYNC - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'ODDR' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103072] INFO: [Synth 8-6155] done synthesizing module 'AD9361_1RT_FDD' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/vendor/AD9361_1RT_FDD.v:12] INFO: [Synth 8-6157] synthesizing module 'Rx' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'PSK_Signal_Extend' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v:11] 
+// Tcl Message: 	Parameter I_WIDTH bound to: 12 - type: integer  	Parameter O_WIDTH bound to: 12 - type: integer  	Parameter USE_I_STRM bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Signal_Extend' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v:11] INFO: [Synth 8-6157] synthesizing module 'costas_loop_wrapper' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v:1] 
+// Tcl Message: 	Parameter LPF_OUT_WIDTH bound to: 80 - type: integer  	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter MSB_TRUNCATE_BITS bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'NCO_rx_wrapper' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'NCO_Phase' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter FREE_FREQ bound to: 16'sb0100000000000000  
+// Tcl Message: 	Parameter I_WIDTH bound to: 80 - type: integer  	Parameter O_WIDTH bound to: 16 - type: integer  	Parameter MSB_TRUNCATE_BITS bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Truncate_IQ' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v:10] INFO: [Synth 8-6157] synthesizing module 'AXI_2x' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v:15] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_2x' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v:15] INFO: [Synth 8-6157] synthesizing module 'Error_Detect_Ctrl' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter SHIFT bound to: 0 - type: integer  
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Gardner_Timing_Error' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v:12] INFO: [Synth 8-6155] done synthesizing module 'timing_error_wrapper' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Gardner_Corrector' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:52] INFO: [Synth 8-6155] done synthesizing module 'Gardner_Corrector' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:11] INFO: [Synth 8-6155] done synthesizing module 'gardner_wrapper' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'PSK_Detection' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Detection' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v:11] INFO: [Synth 8-6157] synthesizing module 'SPB_Detection' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Rx_SD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Abs' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v:10] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Abs' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v:10] INFO: [Synth 8-6155] done synthesizing module 'Rx_SD' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v:11] INFO: [Synth 8-6157] synthesizing module 'Rx_PD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v:12] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Rx_PD' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v:12] INFO: [Synth 8-6157] synthesizing module 'Rx_BD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v:12] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Rx_BD' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v:12] INFO: [Synth 8-6155] done synthesizing module 'SPB_Detection' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Depacketizer' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v:10] 
+// Tcl Message: 	Parameter BYTES bound to: 1 - type: integer  	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Depacketizer' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v:10] INFO: [Synth 8-6157] synthesizing module 'Bits_Flatten__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] 
+// Tcl Message: 	Parameter N bound to: 2 - type: integer  	Parameter M bound to: 8 - type: integer  	Parameter BYPASS_SELECTION bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Bits_Flatten__parameterized0' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] INFO: [Synth 8-6155] done synthesizing module 'Rx' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v:1] INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v:1] 
+// Tcl Message: Reason is one or more of the following : 	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported.  RAM "mem_reg" dissolved into registers 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 9880.645 ; gain = 415.988 ; free physical = 9686 ; free virtual = 15672 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 9889.551 ; gain = 424.895 ; free physical = 9687 ; free virtual = 15673 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 9889.551 ; gain = 424.895 ; free physical = 9687 ; free virtual = 15673 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 9889.559 ; gain = 0.000 ; free physical = 9843 ; free virtual = 15831 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 113 Unisim elements for replacement 
+// Tcl Message: INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Clock_Gen/proc_sys_reset_gen/proc_sys_reset_gen.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: Finished Parsing XDC File [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/constraints/lt_zynq_V200.xdc] 
+// Tcl Message: Completed Processing XDC Constraints  
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9967.363 ; gain = 0.000 ; free physical = 9825 ; free virtual = 15815 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 1 instances were transformed.   IBUFG => IBUF: 1 instance   
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 10226.480 ; gain = 761.824 ; free physical = 9768 ; free virtual = 15763 
+// Tcl Message: 157 Infos, 112 Warnings, 1 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 10226.480 ; gain = 761.824 ; free physical = 9768 ; free virtual = 15763 
+// Tcl Message: INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3242.611; main = 3242.611; forked = 0.000 INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 10001.445; main = 10001.445; forked = 0.000 
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+dismissDialog("Open Elaborated Design"); // bh (Open Elaborated Design Progress)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // J (dialog2)
+closeView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Run Linter]", 12, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: synth_design -top top -part xc7z020clg484-1 -lint  
+// Tcl Message: Command: synth_design -top top -part xc7z020clg484-1 -lint Starting synth_design Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020' 
+// Tcl Message: INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020' INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,212 MB. GUI used memory: 120 MB. Current time: 12/18/25, 12:43:46 AM CST
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Run Linter"); // a (RDIResource.ProgressDialog_BACKGROUND)
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 10226.480 ; gain = 0.000 ; free physical = 9326 ; free virtual = 15328 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Clean up Linter database... 
+// TclEventType: LINTER_RUN
+// WARNING: HEventQueue.dispatchEvent() is taking  1703 ms.
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'top' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized0' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized1' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 0 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized1' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized2' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 4 - type: integer  	Parameter VALUE bound to: 3 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized2' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized3' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter VALUE bound to: 128 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized3' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized4' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 8 - type: integer  	Parameter VALUE bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'CONSTANT__parameterized4' (1#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] INFO: [Synth 8-6157] synthesizing module 'CONSTANT__parameterized5' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/constant.v:1] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter VALUE bound to: 8192 - type: integer  
+// Tcl Message: 	Parameter BYTES bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'PN_Gen' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] 
+// Tcl Message: 	Parameter N bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PN_Gen' (7#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] INFO: [Synth 8-6157] synthesizing module 'PN_Gen__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] 
+// Tcl Message: 	Parameter N bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PN_Gen__parameterized0' (7#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PN_Gen.v:31] INFO: [Synth 8-6155] done synthesizing module 'Tx_Data' (8#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Tx_Data.v:12] INFO: [Synth 8-6157] synthesizing module 'Sync_FIFO' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:1] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 8 - type: integer  	Parameter DEPTH bound to: 512 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:59] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Sync_FIFO' (9#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/utils/sync_FIFO.v:1] INFO: [Synth 8-6157] synthesizing module 'Packetizer' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Packetizer.v:15] 
+// Tcl Message: 	Parameter BYTES bound to: 1'b1  
+// Tcl Message: 	Parameter I_WIDTH bound to: 32 - type: integer  	Parameter O_WIDTH bound to: 12 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'NCO_cos_sin' (12#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_cos_sin.v:11] INFO: [Synth 8-6157] synthesizing module 'PSK_Mod' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:3] 
+// Tcl Message: 	Parameter WIDTH bound to: 12 - type: integer  	Parameter BYTES bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Mod' (13#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Mod.v:3] INFO: [Synth 8-6155] done synthesizing module 'PSK_Modulation' (14#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Modulation_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Bits_Flatten' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] 
+// Tcl Message: 	Parameter N bound to: 2 - type: integer  	Parameter M bound to: 8 - type: integer  	Parameter BYPASS_SELECTION bound to: 1'b1  
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: IDATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 31 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (18#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized0' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] 
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: DATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 31 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized0' (18#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IBUFG' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:76309] 
+// Tcl Message: 	Parameter IBUF_LOW_PWR bound to: FALSE - type: string  	Parameter IOSTANDARD bound to: DEFAULT - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IBUFG' (19#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:76309] INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921] INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (20#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921] INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized1' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] 
+// Tcl Message: 	Parameter CINVCTRL_SEL bound to: FALSE - type: string  	Parameter DELAY_SRC bound to: DATAIN - type: string  	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string  	Parameter IDELAY_TYPE bound to: FIXED - type: string  	Parameter IDELAY_VALUE bound to: 0 - type: integer  	Parameter PIPE_SEL bound to: FALSE - type: string  	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double  	Parameter SIGNAL_PATTERN bound to: DATA - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized1' (20#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934] INFO: [Synth 8-6157] synthesizing module 'IDDR' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77799] 
+// Tcl Message: 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string  	Parameter INIT_Q1 bound to: 1'b0  	Parameter INIT_Q2 bound to: 1'b0  	Parameter SRTYPE bound to: SYNC - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'IDDR' (21#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77799] INFO: [Synth 8-6157] synthesizing module 'ODDR' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103072] 
+// Tcl Message: 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string  	Parameter INIT bound to: 1'b0  	Parameter SRTYPE bound to: SYNC - type: string  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'ODDR' (22#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103072] INFO: [Synth 8-6155] done synthesizing module 'AD9361_1RT_FDD' (23#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/vendor/AD9361_1RT_FDD.v:12] INFO: [Synth 8-6157] synthesizing module 'Rx' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'PSK_Signal_Extend' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v:11] 
+// Tcl Message: 	Parameter I_WIDTH bound to: 12 - type: integer  	Parameter O_WIDTH bound to: 12 - type: integer  	Parameter USE_I_STRM bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Signal_Extend' (24#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Signal_Extend.v:11] INFO: [Synth 8-6157] synthesizing module 'costas_loop_wrapper' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/costas_loop_wrapper.v:1] 
+// Tcl Message: 	Parameter LPF_OUT_WIDTH bound to: 80 - type: integer  	Parameter DATA_WIDTH bound to: 16 - type: integer  	Parameter MSB_TRUNCATE_BITS bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'NCO_rx_wrapper' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_rx_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'NCO_Phase' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/NCO_Phase.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter FREE_FREQ bound to: 16'sb0100000000000000  
+// Tcl Message: 	Parameter I_WIDTH bound to: 80 - type: integer  	Parameter O_WIDTH bound to: 16 - type: integer  	Parameter MSB_TRUNCATE_BITS bound to: 6 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Truncate_IQ' (31#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Truncate_IQ.v:10] INFO: [Synth 8-6157] synthesizing module 'AXI_2x' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v:15] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'AXI_2x' (32#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/AXI_2x.v:15] INFO: [Synth 8-6157] synthesizing module 'Error_Detect_Ctrl' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Error_Detect_Ctrl.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter SHIFT bound to: 0 - type: integer  
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Gardner_Timing_Error' (42#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Timing_Error.v:12] INFO: [Synth 8-6155] done synthesizing module 'timing_error_wrapper' (43#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/timing_error_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Gardner_Corrector' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-155] case statement is not full and has no default [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:52] INFO: [Synth 8-6155] done synthesizing module 'Gardner_Corrector' (44#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Gardner_Corrector.v:11] INFO: [Synth 8-6155] done synthesizing module 'gardner_wrapper' (45#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/gardner_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'PSK_Detection' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'PSK_Detection' (46#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/PSK_Detection.v:11] INFO: [Synth 8-6157] synthesizing module 'SPB_Detection' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Rx_SD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v:11] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Abs' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v:10] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Abs' (47#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Abs.v:10] INFO: [Synth 8-6155] done synthesizing module 'Rx_SD' (48#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_SD.v:11] INFO: [Synth 8-6157] synthesizing module 'Rx_PD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v:12] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Rx_PD' (49#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_PD.v:12] INFO: [Synth 8-6157] synthesizing module 'Rx_BD' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v:12] 
+// Tcl Message: 	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Rx_BD' (50#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_BD.v:12] INFO: [Synth 8-6155] done synthesizing module 'SPB_Detection' (51#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/SPB_Detection_wrapper.v:1] INFO: [Synth 8-6157] synthesizing module 'Depacketizer' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v:10] 
+// Tcl Message: 	Parameter BYTES bound to: 1 - type: integer  	Parameter WIDTH bound to: 16 - type: integer  	Parameter MAX_WINDOW_WIDTH bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Depacketizer' (52#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Depacketizer.v:10] INFO: [Synth 8-6157] synthesizing module 'Bits_Flatten__parameterized0' [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] 
+// Tcl Message: 	Parameter N bound to: 2 - type: integer  	Parameter M bound to: 8 - type: integer  	Parameter BYPASS_SELECTION bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Bits_Flatten__parameterized0' (52#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Bits_Flatten.v:3] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Rx' (53#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/Rx_wrapper.v:1] INFO: [Synth 8-6155] done synthesizing module 'top' (54#1) [/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v:1] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 10226.480 ; gain = 0.000 ; free physical = 9320 ; free virtual = 15321 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 37-85] Total of 101 linter message(s) generated. INFO: [Synth 37-45] Linter Run Finished! 
+// Tcl Message: Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 10226.480 ; gain = 0.000 ; free physical = 9289 ; free virtual = 15291 
+// Tcl Message: INFO: [Common 17-83] Releasing license: Synthesis 
+// Tcl Message: 135 Infos, 114 Warnings, 5 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+dismissDialog("Run Linter"); // bh (Run Linter Progress)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aa
+selectTab((HResource) null, (HResource) null, "Netlist", 1); // aa
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top]", 0, true); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top]", 0, true); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top]", 0, true, false, false, false, false, true); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Double Click - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_DEFINITION
+// Launch External Editor: 'code /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/verilog/top_wrapper.v'
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top]", 0, true); // aG (PAResourceItoN.NetlistTreeView_NETLIST_TREE) - Node
+selectButton(PAResourceCommand.PACommandNames_SCHEMATIC, "Netlist_run_schematic"); // C (PAResourceCommand.PACommandNames_SCHEMATIC, Netlist_run_schematic)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// WARNING: HEventQueue.dispatchEvent() is taking  1294 ms.
+// Elapsed time: 33 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets tsm_concat]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets AD9361_CLK]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_Q]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1369 ms.
+// Elapsed time: 11 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets ADC_concat]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_I]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_Q]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_valid]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_I]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1411 ms.
+// Elapsed time: 13 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets ADC_concat]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// Elapsed time: 10 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells u_AD9361_1RT_FDD]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// Elapsed time: 15 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_cells u_Rx]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1456 ms.
+// Elapsed time: 35 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_aresetn_d2]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1098 ms.
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets decimate_cnt__0]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets decimate_cnt0_out]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets decimate_cnt]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_valid0]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_valid]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1119 ms.
+// Elapsed time: 24 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets rev_I]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1130 ms.
+// Elapsed time: 25 seconds
+runTclCommand (PAResourceOtoP.PAViews_SCHEMATIC, "select_objects [get_nets ADC_concat]"); // j (PAResourceOtoP.PAViews_SCHEMATIC, PlanAheadTabSchematic)
+// WARNING: HEventQueue.dispatchEvent() is taking  1147 ms.

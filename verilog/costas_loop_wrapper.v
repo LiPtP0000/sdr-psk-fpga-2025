@@ -5,6 +5,7 @@ module costas_loop_wrapper #(
 ) (
     input         clk_32M768,
     input         rst_32M768,
+    input         rst_n_32M768,
     input         clk_16M384,
     input  [11:0] PSK_signal,
     input         is_bpsk,
@@ -27,6 +28,7 @@ module costas_loop_wrapper #(
     NCO_rx_wrapper u_NCO_rx_wrapper (
         .clk_32M768     (clk_32M768),
         .rst_32M768     (rst_32M768),
+        .enable         (clk_16M384),
         .FEEDBACK_SHIFT (FEEDBACK_SHIFT),
         .feedback_tdata (feedback_tdata_inmodule),
         .feedback_tvalid(feedback_tvalid_inmodule),

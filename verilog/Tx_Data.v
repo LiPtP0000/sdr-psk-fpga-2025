@@ -67,7 +67,8 @@ module Tx_Data #(
                     data_tvalid <= 1'b1;
                     data_tlast  <= 1'b0;
                     data_tuser  <= 1'b0;
-                end else begin  // including MODE_CTRL == MODE_MIX
+                end else if (MODE_CTRL == MODE_MIX) begin  // MODE_CTRL == MODE_MIX
+
                     data_tdata <= {{BITS - 1{pn_5}}, mix_is_bpsk ? pn_5 : pn_4};
                     if (cnt + 16'd1 < payload_length_symbs + 16'd4) begin
                         data_tvalid <= 1'b1;
@@ -83,11 +84,29 @@ module Tx_Data #(
                             mix_is_bpsk <= ~mix_is_bpsk;  // change modulation every packet
                         end else;
                     end
+                end else begin  // Other modes that are not defined, output zeros
+                    data_tdata  <= {BITS{1'b0}};
+                    data_tvalid <= 1'b0;
+                    data_tlast  <= 1'b0;
+                    data_tuser  <= 1'b0;
                 end
+            end else begin
+                // hold values when clk_enable is low.
+                // but valid signal should be low to avoid accidental storage to FIFO
+                cnt <= cnt;
+                mix_is_bpsk <= mix_is_bpsk;
+                data_tdata <= data_tdata;
+                data_tvalid <= data_tvalid;
+                data_tlast <= data_tlast;
+                data_tuser <= data_tuser;
             end
         end else begin  // !rst_n
             cnt <= 16'b0;
             mix_is_bpsk <= 1'b0;
+            data_tdata <= {BITS{1'b0}};
+            data_tvalid <= 1'b0;
+            data_tlast <= 1'b0;
+            data_tuser <= 1'b0;
         end
     end
 

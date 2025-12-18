@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2,122,003.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="2,122,226.501 ns"></ZoomEndTime>
-      <Cursor1Time time="2,122,164.500 ns"></Cursor1Time>
+      <ZoomStartTime time="879.150 ns"></ZoomStartTime>
+      <ZoomEndTime time="901.701 ns"></ZoomEndTime>
+      <Cursor1Time time="888.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="148"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="24" />
    <wvobject type="array" fp_name="/tb_Tx/fd">
       <obj_property name="ElementShortName">fd[31:0]</obj_property>
       <obj_property name="ObjectShortName">fd[31:0]</obj_property>
@@ -29,12 +29,14 @@
       <obj_property name="ObjectShortName">DAC_I[11:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_Tx/DAC_Q">
       <obj_property name="ElementShortName">DAC_Q[11:0]</obj_property>
       <obj_property name="ObjectShortName">DAC_Q[11:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_Tx/DAC_bits">
       <obj_property name="ElementShortName">DAC_bits[1:0]</obj_property>
@@ -82,17 +84,9 @@
       <obj_property name="ElementShortName">clk_16M384</obj_property>
       <obj_property name="ObjectShortName">clk_16M384</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_Tx/rst_16M384">
-      <obj_property name="ElementShortName">rst_16M384</obj_property>
-      <obj_property name="ObjectShortName">rst_16M384</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/tb_Tx/clk_1M024">
       <obj_property name="ElementShortName">clk_1M024</obj_property>
       <obj_property name="ObjectShortName">clk_1M024</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_Tx/rst_n_1M024">
-      <obj_property name="ElementShortName">rst_n_1M024</obj_property>
-      <obj_property name="ObjectShortName">rst_n_1M024</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_Tx/clk_2M048">
       <obj_property name="ElementShortName">clk_2M048</obj_property>

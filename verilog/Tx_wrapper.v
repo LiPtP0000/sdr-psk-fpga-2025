@@ -57,6 +57,7 @@ module Tx (
     ) u_axis_data_fifo_0 (
         .s_axis_aresetn(rst_n_32M768),
         .s_axis_aclk   (clk_32M768),
+        .s_axis_aclken (clk_1M024),
         .s_axis_tvalid (Txdata_FIFO_tvalid),
         .s_axis_tready (Txdata_FIFO_tready),
         .s_axis_tdata  (Txdata_FIFO_tdata),
@@ -77,6 +78,12 @@ module Tx (
     wire       Packetizer_PSK_tuser;
     wire       Packetizer_PSK_tready;
 
+    wire [7:0] Packetizer_PSK_1M_tdata;
+    wire       Packetizer_PSK_1M_tvalid;
+    wire       Packetizer_PSK_1M_tready;
+    wire       Packetizer_PSK_1M_tlast;
+    wire       Packetizer_PSK_1M_tuser;
+
     wire       hdr_vld;
     wire       pld_vld;
 
@@ -94,14 +101,36 @@ module Tx (
         .I_tready      (FIFO_Packetizer_tready),
         .I_tlast       (FIFO_Packetizer_tlast),
         .I_tuser       (FIFO_Packetizer_tuser),
-        .O_tdata       (Packetizer_PSK_tdata),
-        .O_tvalid      (Packetizer_PSK_tvalid),
-        .O_tready      (Packetizer_PSK_tready),
-        .O_tlast       (Packetizer_PSK_tlast),
-        .O_tuser       (Packetizer_PSK_tuser),
+        .O_tdata       (Packetizer_PSK_1M_tdata),
+        .O_tvalid      (Packetizer_PSK_1M_tvalid),
+        .O_tready      (Packetizer_PSK_1M_tready),
+        .O_tlast       (Packetizer_PSK_1M_tlast),
+        .O_tuser       (Packetizer_PSK_1M_tuser),
         .hdr_vld       (hdr_vld),
         .pld_vld       (pld_vld),
         .pkt_sent      (pkt_sent)
+    );
+
+    // output declaration of module bridge_1m_to_16m
+
+    skid_buffer_1m_16m #(
+        .DATA_WIDTH(8),
+        .USER_WIDTH(1)
+    ) u_skidbuf_1m_to_16m (
+        .clk          (clk_32M768),
+        .rst_n        (rst_n_32M768),
+        .s_axis_tdata (Packetizer_PSK_1M_tdata),
+        .s_axis_tvalid(Packetizer_PSK_1M_tvalid),
+        .s_axis_tready(Packetizer_PSK_1M_tready),
+        .s_axis_tlast (Packetizer_PSK_tlast),
+        .s_axis_tuser (Packetizer_PSK_tuser),
+        .m_axis_tdata (Packetizer_PSK_tdata),
+        .m_axis_tvalid(Packetizer_PSK_tvalid),
+        .m_axis_tready(Packetizer_PSK_tready),
+        .m_axis_tlast (Packetizer_PSK_tlast),
+        .m_axis_tuser (Packetizer_PSK_tuser),
+        .ce_1m        (clk_1M024),
+        .ce_16m       (clk_16M384)
     );
 
     PSK_Modulation u_PSK_Modulation (
@@ -120,9 +149,6 @@ module Tx (
         .DAC_valid      (DAC_valid),
         .DAC_bits       (DAC_bits)
     );
-    // output declaration of module Bits_Flatten
-    reg O;
-    reg O_vld;
 
     Bits_Flatten #(
         .N               (2),

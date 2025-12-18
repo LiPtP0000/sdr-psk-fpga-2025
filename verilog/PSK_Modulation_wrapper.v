@@ -22,7 +22,6 @@ module PSK_Modulation (
     // output declaration of module carrier_gen
     wire        dds_nco_tvalid;
     wire [31:0] dds_nco_tdata;
-
     carrier_gen u_carrier_gen (
         .aclk                (clk_32d768M),
         .aclken              (clk_16d384M),

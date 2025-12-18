@@ -4,7 +4,8 @@
 // It also allows the selection of I or Q stream for later processing.
 //
 // Author: Wuqiong Zhao (me@wqzhao.org)
-// Date: 2024/01/05
+// Author: LiPtP
+// Date: 2025/12/18
 
 `timescale 1ns / 1ps
 
@@ -14,7 +15,6 @@ module PSK_Signal_Extend #(
     parameter USE_I_STRM = 1 // 1 for I stream, 0 for Q stream
 ) (
     input                           clk,
-    input                           clk_enable,
     input  signed     [I_WIDTH-1:0] DAC_I,
     input  signed     [I_WIDTH-1:0] DAC_Q,
     input                           is_bpsk,
@@ -25,22 +25,19 @@ module PSK_Signal_Extend #(
     generate
         if (USE_I_STRM) begin
             always @(posedge clk) begin
-                if (clk_enable) begin
-                    PSK_signal <= {DAC_I, {O_WIDTH - I_WIDTH{1'b0}}};
-                end
+                PSK_signal <= {DAC_I, {O_WIDTH - I_WIDTH{1'b0}}};
+
             end
         end else begin
             always @(posedge clk) begin
-                if (clk_enable) begin
-                    PSK_signal <= {DAC_Q, {O_WIDTH - I_WIDTH{1'b0}}};
-                end
+
+                PSK_signal <= {DAC_Q, {O_WIDTH - I_WIDTH{1'b0}}};
+
             end
         end
     endgenerate
 
     always @(posedge clk) begin
-        if (clk_enable) begin
-            is_bpsk_out <= is_bpsk;  // delay 1 CC
-        end
+        is_bpsk_out <= is_bpsk;  // delay 1 CC
     end
 endmodule

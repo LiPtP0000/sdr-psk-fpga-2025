@@ -102,7 +102,6 @@ module Rx (
         .USE_I_STRM(1)
     ) u_PSK_Signal_Extend (
         .clk        (clk_32M768),
-        .clk_enable (clk_16M384),
         .DAC_I      (ADC_I),
         .DAC_Q      (ADC_Q),
         .is_bpsk    (is_bpsk_from_depacketizer),
@@ -118,6 +117,7 @@ module Rx (
     ) u_costas_loop_wrapper (
         .clk_32M768    (clk_32M768),
         .rst_32M768    (rst_32M768),
+        .rst_n_32M768  (rst_n_32M768),
         .clk_16M384    (clk_16M384),
         .PSK_signal    (PSK_signal_extended),
         .is_bpsk       (is_bpsk_extended),

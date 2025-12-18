@@ -30,29 +30,27 @@ module Div_clk32M768 (
     output clk1K
 );
     reg [14:0] clk_cnt = 15'd0;
-    reg [14:0] clk_cnt_d = 15'd0;  // Delayed counter for edge detection
 
-    // Counter
+    // Counter increments on every 32MHz clock cycle
     always @(posedge clk32M768) begin
-        clk_cnt   <= clk_cnt + 15'd1;
-        clk_cnt_d <= clk_cnt;
+        clk_cnt <= clk_cnt + 15'd1;
     end
 
-    // Generate clock enable pulses by detecting rising edges (0->1 transition)
-    // Each output pulses high for one 32.768MHz clock cycle
-    assign clk16M384 = clk_cnt[0] & ~clk_cnt_d[0];  // Every 2 cycles
-    assign clk8M192  = clk_cnt[1] & ~clk_cnt_d[1];  // Every 4 cycles
-    assign clk4M096  = clk_cnt[2] & ~clk_cnt_d[2];  // Every 8 cycles
-    assign clk2M048  = clk_cnt[3] & ~clk_cnt_d[3];  // Every 16 cycles
-    assign clk1M024  = clk_cnt[4] & ~clk_cnt_d[4];  // Every 32 cycles
-    assign clk512K   = clk_cnt[5] & ~clk_cnt_d[5];  // Every 64 cycles
-    assign clk256K   = clk_cnt[6] & ~clk_cnt_d[6];  // Every 128 cycles
-    assign clk128K   = clk_cnt[7] & ~clk_cnt_d[7];  // Every 256 cycles
-    assign clk64K    = clk_cnt[8] & ~clk_cnt_d[8];  // Every 512 cycles
-    assign clk32K    = clk_cnt[9] & ~clk_cnt_d[9];  // Every 1024 cycles
-    assign clk16K    = clk_cnt[10] & ~clk_cnt_d[10];  // Every 2048 cycles
-    assign clk8K     = clk_cnt[11] & ~clk_cnt_d[11];  // Every 4096 cycles
-    assign clk4K     = clk_cnt[12] & ~clk_cnt_d[12];  // Every 8192 cycles
-    assign clk2K     = clk_cnt[13] & ~clk_cnt_d[13];  // Every 16384 cycles
-    assign clk1K     = clk_cnt[14] & ~clk_cnt_d[14];  // Every 32768 cycles
+    // Generate clock enable pulses - each pulses high for one 32MHz cycle
+    // when the corresponding bit transitions from 0 to 1
+    assign clk16M384 = (clk_cnt[0:0] == 1'd0);  // Pulse every 2 cycles (when cnt[0]=0)
+    assign clk8M192  = (clk_cnt[1:0] == 2'd0);  // Pulse every 4 cycles (when cnt[1:0]=00)
+    assign clk4M096  = (clk_cnt[2:0] == 3'd0);  // Pulse every 8 cycles
+    assign clk2M048  = (clk_cnt[3:0] == 4'd0);  // Pulse every 16 cycles
+    assign clk1M024  = (clk_cnt[4:0] == 5'd0);  // Pulse every 32 cycles
+    assign clk512K   = (clk_cnt[5:0] == 6'd0);  // Pulse every 64 cycles
+    assign clk256K   = (clk_cnt[6:0] == 7'd0);  // Pulse every 128 cycles
+    assign clk128K   = (clk_cnt[7:0] == 8'd0);  // Pulse every 256 cycles
+    assign clk64K    = (clk_cnt[8:0] == 9'd0);  // Pulse every 512 cycles
+    assign clk32K    = (clk_cnt[9:0] == 10'd0);  // Pulse every 1024 cycles
+    assign clk16K    = (clk_cnt[10:0] == 11'd0);  // Pulse every 2048 cycles
+    assign clk8K     = (clk_cnt[11:0] == 12'd0);  // Pulse every 4096 cycles
+    assign clk4K     = (clk_cnt[12:0] == 13'd0);  // Pulse every 8192 cycles
+    assign clk2K     = (clk_cnt[13:0] == 14'd0);  // Pulse every 16384 cycles
+    assign clk1K     = (clk_cnt[14:0] == 15'd0);  // Pulse every 32768 cycles
 endmodule

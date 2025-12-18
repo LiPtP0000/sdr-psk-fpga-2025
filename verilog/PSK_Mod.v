@@ -48,13 +48,20 @@ module PSK_Mod #(
             out_I       <= 'b0;
             out_Q       <= 'b0;
             out_vld     <= 1'b0;
-        end else if (clk_enable) begin
+            out_last    <= 1'b0;
+            out_is_bpsk <= 1'b0;
+            data_buf    <= {BITS{1'b0}};
+            vld_buf     <= 1'b0;
+            last_buf    <= 1'b0;
+            is_bpsk_buf <= 1'b0;
+        end else if (clk_enable) begin  // 16.384MHz clock enable
             // 计数器逻辑
             cnt <= cnt + 1'b1;
 
             // 数据握手逻辑 (保持原有时序)
-            if (cnt + 4'b1 == DELAY_CNT) data_tready <= 1'b1;
-            else if (cnt == DELAY_CNT) begin
+            if (cnt + 4'b1 == DELAY_CNT) begin
+                data_tready <= 1'b1;
+            end else if (cnt == DELAY_CNT) begin
                 data_buf    <= data_tdata;
                 vld_buf     <= data_tvalid;
                 last_buf    <= data_tlast;
@@ -66,9 +73,7 @@ module PSK_Mod #(
 
             // Modulation Output
             if (vld_buf) begin
-                // 根据 bit_0 决定 out_I 是否取反
                 out_I <= bit_0 ? -base_I : base_I;
-                // 根据 bit_1 决定 out_Q 是否取反
                 out_Q <= bit_1 ? -base_Q : base_Q;
             end else begin
                 out_I <= 0;
@@ -80,7 +85,25 @@ module PSK_Mod #(
             out_last    <= last_buf;
             out_is_bpsk <= is_bpsk_buf;
             out_bits    <= data_buf[1:0];
-        end else;  // prevent latch
+        end else begin
+            // hold values when clk_enable is low
+            cnt         <= cnt;
+            data_tready <= data_tready;
+
+            out_I       <= out_I;
+            out_Q       <= out_Q;
+            out_vld     <= out_vld;
+
+            // AXI status lines
+            out_bits    <= out_bits;
+            out_vld     <= vld_buf;
+            out_last    <= last_buf;
+            out_is_bpsk <= is_bpsk_buf;
+            is_bpsk_buf <= is_bpsk_buf;
+            data_buf    <= data_buf;
+            vld_buf     <= vld_buf;
+            last_buf    <= last_buf;
+        end
     end
 
 

@@ -22,13 +22,32 @@ module tb_BPSK;
     localparam [3:0] MODE_MIX = 4'b0100;
 
     // clock
-    reg clk_32M768;
-    reg rst_32M768;
-    reg clk_16M384;
-    reg rst_16M384;
-    reg clk_1M024;
-    reg rst_n_1M024;
-    reg clk_2M048;
+    reg  clk_32M768;
+    reg  rst_32M768;
+    reg  rst_n_32M768;
+    wire clk_16M384;
+    wire clk_1M024;
+    wire clk_2M048;
+
+    // Instantiate Div_clk32M768 to generate clock enable signals
+    Div_clk32M768 u_Div_clk32M768 (
+        .clk32M768(clk_32M768),
+        .clk16M384(clk_16M384),
+        .clk8M192 (),            // unused
+        .clk4M096 (),            // unused
+        .clk2M048 (clk_2M048),
+        .clk1M024 (clk_1M024),
+        .clk512K  (),            // unused
+        .clk256K  (),            // unused
+        .clk128K  (),            // unused
+        .clk64K   (),            // unused
+        .clk32K   (),            // unused
+        .clk16K   (),            // unused
+        .clk8K    (),            // unused
+        .clk4K    (),            // unused
+        .clk2K    (),            // unused
+        .clk1K    ()             // unused
+    );
 
     // Tx wires
     wire signed [11:0] DAC_I, DAC_Q;
@@ -52,24 +71,24 @@ module tb_BPSK;
 
     // module instantiation
     Tx inst_Tx (
-        .clk_16M384(clk_16M384),
-        .rst_16M384(rst_16M384),
-        .clk_1M024(clk_1M024),
-        .rst_n_1M024(rst_n_1M024),
-        .clk_2M048(clk_2M048),
-        .DELAY_CNT(DELAY_CNT),
-        .DAC_I(DAC_I),
-        .DAC_Q(DAC_Q),
-        .DAC_bits(DAC_bits),
-        .DAC_valid(DAC_vld),
-        .MODE_CTRL(MODE_CTRL),
+        .MODE_CTRL      (MODE_CTRL),
+        .DELAY_CNT      (DELAY_CNT),
         .TX_PHASE_CONFIG(TX_PHASE_CONFIG),
-        .tx_serial(Tx_1bit),
-        .tx_valid(Tx_vld),
-        .data_tdata(Tx_tdata),
-        .data_tlast(Tx_tlast),
-        .data_tuser(Tx_tuser),
-        .data_tvalid(Tx_tvalid)
+        .clk_32M768     (clk_32M768),
+        .rst_n_32M768   (rst_n_32M768),
+        .clk_16M384     (clk_16M384),
+        .clk_1M024      (clk_1M024),
+        .clk_2M048      (clk_2M048),
+        .tx_valid       (Tx_vld),
+        .tx_serial      (Tx_1bit),
+        .data_tlast     (Tx_tlast),
+        .data_tvalid    (Tx_tvalid),
+        .data_tuser     (Tx_tuser),
+        .data_tdata     (Tx_tdata),
+        .DAC_I          (DAC_I),
+        .DAC_Q          (DAC_Q),
+        .DAC_valid      (DAC_vld),
+        .DAC_bits       (DAC_bits)
     );
 
     // Rx wires
@@ -100,40 +119,40 @@ module tb_BPSK;
     wire [15:0] gardner_error;
     wire [15:0] gardner_increment;
     Rx inst_Rx (
-        .ADC_I(ADC_I),
-        .ADC_Q(ADC_Q),
-        .BPSK(BPSK),
-        .BPSK_raw(BPSK_raw),
-        .FEEDBACK_SHIFT(FEEDBACK_SHIFT),
-        .GARDNER_SHIFT(GARDNER_SHIFT),
-        .I_16M(I_16M),
-        .I_1M(I_1M),
-        .MODE_CTRL(MODE_CTRL),
-        .NCO_cos(NCO_cos),
-        .QPSK(QPSK),
-        .QPSK_raw(QPSK_raw),
-        .Q_16M(Q_16M),
-        .Q_1M(Q_1M),
-        .RX_BD_WINDOW(RX_BD_WINDOW),
-        .RX_PD_WINDOW(RX_PD_WINDOW),
-        .RX_SD_THRESHOLD(RX_SD_THRESHOLD),
-        .RX_SD_WINDOW(RX_SD_WINDOW),
-        .Rx_1bit(Rx_1bit),
-        .Rx_valid(Rx_valid),
-        .clk_16M384(clk_16M384),
-        .clk_1M024(clk_1M024),
-        .clk_1M_out(clk_1M_out),
-        .clk_2M048(clk_2M048),
-        .clk_32M768(clk_32M768),
-        .data_tdata(Rx_tdata),
-        .data_tlast(Rx_tlast),
-        .data_tuser(Rx_tuser),
-        .data_tvalid(Rx_tvalid),
-        .rst_16M384(rst_16M384),
-        .rst_32M768(rst_32M768),
-        .error_tdata(error_tdata),
-        .feedback_tdata(feedback_tdata),
-        .gardner_error(gardner_error),
+        .clk_1M024        (clk_1M024),
+        .clk_2M048        (clk_2M048),
+        .clk_16M384       (clk_16M384),
+        .clk_32M768       (clk_32M768),
+        .ADC_I            (ADC_I),
+        .ADC_Q            (ADC_Q),
+        .rst_32M768       (rst_32M768),
+        .rst_n_32M768     (rst_n_32M768),
+        .MODE_CTRL        (MODE_CTRL),
+        .FEEDBACK_SHIFT   (FEEDBACK_SHIFT),
+        .GARDNER_SHIFT    (GARDNER_SHIFT),
+        .RX_SD_THRESHOLD  (RX_SD_THRESHOLD),
+        .RX_SD_WINDOW     (RX_SD_WINDOW),
+        .RX_PD_WINDOW     (RX_PD_WINDOW),
+        .RX_BD_WINDOW     (RX_BD_WINDOW),
+        .BPSK_raw         (BPSK_raw),
+        .QPSK_raw         (QPSK_raw),
+        .I_16M            (I_16M),
+        .Q_16M            (Q_16M),
+        .NCO_cos          (NCO_cos),
+        .I_1M             (I_1M),
+        .Q_1M             (Q_1M),
+        .clk_1M_out       (clk_1M_out),
+        .QPSK             (QPSK),
+        .BPSK             (BPSK),
+        .Rx_1bit          (Rx_1bit),
+        .data_tdata       (Rx_tdata),
+        .data_tvalid      (Rx_tvalid),
+        .data_tlast       (Rx_tlast),
+        .data_tuser       (Rx_tuser),
+        .error_tdata      (error_tdata),
+        .feedback_tdata   (feedback_tdata),
+        .Rx_valid         (Rx_valid),
+        .gardner_error    (gardner_error),
         .gardner_increment(gardner_increment)
     );
 
@@ -149,28 +168,20 @@ module tb_BPSK;
     assign RX_SD_THRESHOLD = 16'd128;
     assign RX_SD_WINDOW = 8'd16;
 
-    // clock generation
+    // clock generation - only generate 32.768MHz base clock
     always #1 clk_32M768 = ~clk_32M768;
-    always #2 clk_16M384 = ~clk_16M384;
-    always #16 clk_2M048 = ~clk_2M048;  // 32 per symbol
-    always #32 clk_1M024 = ~clk_1M024;  // 64 per symbol
 
     // clock initial
     initial begin
         clk_32M768 = 1'b1;
-        clk_16M384 = 1'b1;
-        clk_2M048  = 1'b1;
-        clk_1M024  = 1'b1;
     end
 
     // reset generation
     initial begin
-        rst_32M768  = 1'b1;
-        rst_16M384  = 1'b1;
-        rst_n_1M024 = 1'b0;
+        rst_32M768   = 1'b1;
+        rst_n_32M768 = 1'b0;
         #256 rst_32M768 = 1'b0;
-        rst_16M384  = 1'b0;
-        rst_n_1M024 = 1'b1;
+        rst_n_32M768 = 1'b1;
         // #8192 $finish;
     end
 
