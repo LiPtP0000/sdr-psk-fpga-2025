@@ -10,7 +10,7 @@
 
 module NCO_Phase #(
     parameter        WIDTH     = 16,
-    parameter signed FREE_FREQ = 16'b0100000000000000  // 1/4 of 2^16
+    parameter signed FREE_FREQ = 16'b0100_0000_0000_0000  // 1/4 of 2^16
 ) (
     input                         clk,
     input                         enable,
@@ -31,16 +31,16 @@ module NCO_Phase #(
         end else begin
             if (enable) begin
                 if (feedback_tvalid) begin
-                    phase_tdata  <= FREE_FREQ + (feedback_tdata >>> FEEDBACK_SHIFT);
+                    phase_tdata  <= FREE_FREQ + (feedback_tdata >> FEEDBACK_SHIFT);
                     phase_tvalid <= 1'b1;
                 end else begin
                     phase_tdata  <= FREE_FREQ;
                     phase_tvalid <= 1'b1;
                 end
             end else begin
-                // disable phase_tvalid when not enabled
+                // phase value is valid all the time
                 phase_tdata  <= phase_tdata;
-                phase_tvalid <= 1'b0;
+                phase_tvalid <= 1'b1;
             end
         end
     end

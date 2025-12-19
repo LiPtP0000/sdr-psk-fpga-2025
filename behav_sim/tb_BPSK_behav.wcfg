@@ -11,15 +11,21 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="794.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,041.501 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="16.617334 us"></ZoomStartTime>
+      <ZoomEndTime time="37.657335 us"></ZoomEndTime>
+      <Cursor1Time time="20.124000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="106"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="102"></NameColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="101" />
+   <WVObjectSize size="129" />
+   <wave_markers>
+      <marker label="" time="4736000" />
+      <marker label="" time="6208000" />
+      <marker label="" time="10496000" />
+      <marker label="" time="12224000" />
+   </wave_markers>
    <wvobject type="array" fp_name="/tb_BPSK/fd">
       <obj_property name="ElementShortName">fd[31:0]</obj_property>
       <obj_property name="ObjectShortName">fd[31:0]</obj_property>
@@ -27,6 +33,10 @@
    <wvobject type="logic" fp_name="/tb_BPSK/rst_32M768">
       <obj_property name="ElementShortName">rst_32M768</obj_property>
       <obj_property name="ObjectShortName">rst_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/out_I_tvalid">
+      <obj_property name="ElementShortName">out_I_tvalid</obj_property>
+      <obj_property name="ObjectShortName">out_I_tvalid</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/clk_1M024">
       <obj_property name="ElementShortName">clk_1M024</obj_property>
@@ -182,10 +192,6 @@
       <obj_property name="ElementShortName">full</obj_property>
       <obj_property name="ObjectShortName">full</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_BPSK/inst_Tx/u_Tx_Data/inst_PN_Gen_N5/pn">
-      <obj_property name="ElementShortName">pn</obj_property>
-      <obj_property name="ObjectShortName">pn</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Tx/u_Tx_Data/data_tdata">
       <obj_property name="ElementShortName">data_tdata[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_tdata[7:0]</obj_property>
@@ -269,9 +275,29 @@
       <obj_property name="ElementShortName">MODE_CTRL[3:0]</obj_property>
       <obj_property name="ObjectShortName">MODE_CTRL[3:0]</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Tx/u_Tx_Data/inst_PN_Gen_N5/pn">
+      <obj_property name="ElementShortName">pn</obj_property>
+      <obj_property name="ObjectShortName">pn</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/Tx_1bit">
       <obj_property name="ElementShortName">Tx_1bit</obj_property>
       <obj_property name="ObjectShortName">Tx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/Rx_1bit">
+      <obj_property name="ElementShortName">Rx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Rx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/data_tdata[1]">
+      <obj_property name="ElementShortName">[1]</obj_property>
+      <obj_property name="ObjectShortName">[1]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/Rx_tdata[0]">
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">[0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/clk_1M_out">
+      <obj_property name="ElementShortName">clk_1M_out</obj_property>
+      <obj_property name="ObjectShortName">clk_1M_out</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/Tx_vld">
       <obj_property name="ElementShortName">Tx_vld</obj_property>
@@ -284,6 +310,7 @@
    <wvobject type="array" fp_name="/tb_BPSK/Tx_tdata">
       <obj_property name="ElementShortName">Tx_tdata[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_tdata[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/Tx_tlast">
       <obj_property name="ElementShortName">Tx_tlast</obj_property>
@@ -330,6 +357,140 @@
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/u_NCO_rx_wrapper/feedback_tvalid">
+      <obj_property name="ElementShortName">feedback_tvalid</obj_property>
+      <obj_property name="ObjectShortName">feedback_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/NCO_valid">
+      <obj_property name="ElementShortName">NCO_valid</obj_property>
+      <obj_property name="ObjectShortName">NCO_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/NCO_cos">
+      <obj_property name="ElementShortName">NCO_cos[11:0]</obj_property>
+      <obj_property name="ObjectShortName">NCO_cos[11:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/NCO_sin">
+      <obj_property name="ElementShortName">NCO_sin[11:0]</obj_property>
+      <obj_property name="ObjectShortName">NCO_sin[11:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/PD_I">
+      <obj_property name="ElementShortName">PD_I[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PD_I[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/PD_Q">
+      <obj_property name="ElementShortName">PD_Q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PD_Q[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/I_data">
+      <obj_property name="ElementShortName">I_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_data[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/Q_data">
+      <obj_property name="ElementShortName">Q_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_data[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/Tx_1bit">
+      <obj_property name="ElementShortName">Tx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Tx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/out_I_tdata">
+      <obj_property name="ElementShortName">out_I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out_I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/out_Q_tdata">
+      <obj_property name="ElementShortName">out_Q_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out_Q_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_tvalid">
+      <obj_property name="ElementShortName">I_tvalid</obj_property>
+      <obj_property name="ObjectShortName">I_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/Q_tvalid">
+      <obj_property name="ElementShortName">Q_tvalid</obj_property>
+      <obj_property name="ObjectShortName">Q_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDMAGRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/Q_tdata">
+      <obj_property name="ElementShortName">Q_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDMAGRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_1M">
+      <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/Rx_1bit_internal">
+      <obj_property name="ElementShortName">Rx_1bit_internal</obj_property>
+      <obj_property name="ObjectShortName">Rx_1bit_internal</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/Tx_1bit">
+      <obj_property name="ElementShortName">Tx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Tx_1bit</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/Q_1M">
+      <obj_property name="ElementShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/clk_out">
+      <obj_property name="ElementShortName">clk_out</obj_property>
+      <obj_property name="ObjectShortName">clk_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/w_error_n">
+      <obj_property name="ElementShortName">w_error_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w_error_n[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_PSK_Detection/BPSK">
+      <obj_property name="ElementShortName">BPSK</obj_property>
+      <obj_property name="ObjectShortName">BPSK</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/error_n">
+      <obj_property name="ElementShortName">error_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error_n[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/clk_16M384">
       <obj_property name="ElementShortName">clk_16M384</obj_property>
       <obj_property name="ObjectShortName">clk_16M384</obj_property>
@@ -370,46 +531,62 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/I_1M">
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_smoothed_tdata">
+      <obj_property name="ElementShortName">I_smoothed_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_smoothed_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/Q_smoothed_tdata">
+      <obj_property name="ElementShortName">Q_smoothed_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_smoothed_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_1M">
       <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
       <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/Q_1M">
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/Q_1M">
       <obj_property name="ElementShortName">Q_1M[15:0]</obj_property>
       <obj_property name="ObjectShortName">Q_1M[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_up2_tdata">
+      <obj_property name="ElementShortName">I_up2_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_up2_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/Q_up2_tdata">
+      <obj_property name="ElementShortName">Q_up2_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_up2_tdata[15:0]</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/NCO_cos">
       <obj_property name="ElementShortName">NCO_cos[11:0]</obj_property>
       <obj_property name="ObjectShortName">NCO_cos[11:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/QPSK">
-      <obj_property name="ElementShortName">QPSK[1:0]</obj_property>
-      <obj_property name="ObjectShortName">QPSK[1:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/u_Error_Detect_Ctrl/error_bpsk_tdata">
       <obj_property name="ElementShortName">error_bpsk_tdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">error_bpsk_tdata[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/feedback_tdata_inmodule">
       <obj_property name="ElementShortName">feedback_tdata_inmodule[15:0]</obj_property>
       <obj_property name="ObjectShortName">feedback_tdata_inmodule[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_timing_error_wrapper/error_n">
       <obj_property name="ElementShortName">error_n[15:0]</obj_property>
       <obj_property name="ObjectShortName">error_n[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/QPSK_raw">
       <obj_property name="ElementShortName">QPSK_raw[1:0]</obj_property>
@@ -431,10 +608,6 @@
       <obj_property name="ElementShortName">RX_SD_WINDOW[7:0]</obj_property>
       <obj_property name="ObjectShortName">RX_SD_WINDOW[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_BPSK/Rx_1bit">
-      <obj_property name="ElementShortName">Rx_1bit</obj_property>
-      <obj_property name="ObjectShortName">Rx_1bit</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/clk_1M_out">
       <obj_property name="ElementShortName">clk_1M_out</obj_property>
       <obj_property name="ObjectShortName">clk_1M_out</obj_property>
@@ -442,6 +615,7 @@
    <wvobject type="array" fp_name="/tb_BPSK/Rx_tdata">
       <obj_property name="ElementShortName">Rx_tdata[7:0]</obj_property>
       <obj_property name="ObjectShortName">Rx_tdata[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/Rx_tlast">
       <obj_property name="ElementShortName">Rx_tlast</obj_property>
@@ -459,32 +633,39 @@
       <obj_property name="ElementShortName">Rx_valid</obj_property>
       <obj_property name="ObjectShortName">Rx_valid</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/PD_I">
+      <obj_property name="ElementShortName">PD_I[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PD_I[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/Q_tdata">
+      <obj_property name="ElementShortName">Q_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/u_NCO_rx_wrapper/u_NCO_Phase/phase_tdata">
+      <obj_property name="ElementShortName">phase_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/error_tdata">
       <obj_property name="ElementShortName">error_tdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">error_tdata[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/feedback_tdata">
-      <obj_property name="ElementShortName">feedback_tdata[15:0]</obj_property>
-      <obj_property name="ObjectShortName">feedback_tdata[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/gardner_error">
-      <obj_property name="ElementShortName">gardner_error[15:0]</obj_property>
-      <obj_property name="ObjectShortName">gardner_error[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/gardner_increment">
-      <obj_property name="ElementShortName">gardner_increment[15:0]</obj_property>
-      <obj_property name="ObjectShortName">gardner_increment[15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/MODE_BPSK">
-      <obj_property name="ElementShortName">MODE_BPSK[3:0]</obj_property>
-      <obj_property name="ObjectShortName">MODE_BPSK[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/MODE_QPSK">
-      <obj_property name="ElementShortName">MODE_QPSK[3:0]</obj_property>
-      <obj_property name="ObjectShortName">MODE_QPSK[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_BPSK/MODE_MIX">
-      <obj_property name="ElementShortName">MODE_MIX[3:0]</obj_property>
-      <obj_property name="ObjectShortName">MODE_MIX[3:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

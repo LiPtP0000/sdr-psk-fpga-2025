@@ -54,9 +54,9 @@
 // coefficients: 1,2,1
 // chanpats: 173
 // name: interp_smoothing_filter
-// filter_type: 1
+// filter_type: 0
 // rate_change: 0
-// interp_rate: 2
+// interp_rate: 1
 // decim_rate: 1
 // zero_pack_factor: 1
 // coeff_padding: 0
@@ -65,7 +65,7 @@
 // reloadable: 0
 // is_halfband: 0
 // quantization: 0
-// coeff_width: 2
+// coeff_width: 3
 // coeff_fract_width: 0
 // chan_seq: 0
 // num_channels: 1
@@ -84,9 +84,9 @@ const xip_fir_v7_2_pattern interp_smoothing_filter_chanpats[1] = {P_BASIC};
 static xip_fir_v7_2_config gen_interp_smoothing_filter_config() {
   xip_fir_v7_2_config config;
   config.name                = "interp_smoothing_filter";
-  config.filter_type         = 1;
+  config.filter_type         = 0;
   config.rate_change         = XIP_FIR_INTEGER_RATE;
-  config.interp_rate         = 2;
+  config.interp_rate         = 1;
   config.decim_rate          = 1;
   config.zero_pack_factor    = 1;
   config.coeff               = &interp_smoothing_filter_coefficients[0];
@@ -96,7 +96,7 @@ static xip_fir_v7_2_config gen_interp_smoothing_filter_config() {
   config.reloadable          = 0;
   config.is_halfband         = 0;
   config.quantization        = XIP_FIR_INTEGER_COEFF;
-  config.coeff_width         = 2;
+  config.coeff_width         = 3;
   config.coeff_fract_width   = 0;
   config.chan_seq            = XIP_FIR_BASIC_CHAN_SEQ;
   config.num_channels        = 1;

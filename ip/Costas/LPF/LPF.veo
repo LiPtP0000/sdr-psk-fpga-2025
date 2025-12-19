@@ -57,6 +57,7 @@
 LPF your_instance_name (
   .aresetn(aresetn),                        // input wire aresetn
   .aclk(aclk),                              // input wire aclk
+  .aclken(aclken),                          // input wire aclken
   .s_axis_data_tvalid(s_axis_data_tvalid),  // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready),  // output wire s_axis_data_tready
   .s_axis_data_tdata(s_axis_data_tdata),    // input wire [31 : 0] s_axis_data_tdata

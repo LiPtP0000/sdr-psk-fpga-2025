@@ -136,6 +136,9 @@ module Rx (
         if (clk_16M384) begin
             I_16M_reg <= I_data_costas;
             Q_16M_reg <= Q_data_costas;
+        end else begin
+            I_16M_reg <= I_16M_reg;
+            Q_16M_reg <= Q_16M_reg;
         end
     end
 

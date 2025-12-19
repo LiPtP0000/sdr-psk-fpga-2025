@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_QPSK_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_QPSK" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="5,204.001 ns"></ZoomEndTime>
+      <Cursor1Time time="5,204.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="102"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="53" />
+   <wvobject type="array" fp_name="/tb_QPSK/fd">
+      <obj_property name="ElementShortName">fd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/clk_32M768">
+      <obj_property name="ElementShortName">clk_32M768</obj_property>
+      <obj_property name="ObjectShortName">clk_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/rst_32M768">
+      <obj_property name="ElementShortName">rst_32M768</obj_property>
+      <obj_property name="ObjectShortName">rst_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/rst_n_32M768">
+      <obj_property name="ElementShortName">rst_n_32M768</obj_property>
+      <obj_property name="ObjectShortName">rst_n_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/clk_16M384">
+      <obj_property name="ElementShortName">clk_16M384</obj_property>
+      <obj_property name="ObjectShortName">clk_16M384</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/clk_1M024">
+      <obj_property name="ElementShortName">clk_1M024</obj_property>
+      <obj_property name="ObjectShortName">clk_1M024</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/clk_2M048">
+      <obj_property name="ElementShortName">clk_2M048</obj_property>
+      <obj_property name="ObjectShortName">clk_2M048</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/DAC_I">
+      <obj_property name="ElementShortName">DAC_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_I[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/DAC_Q">
+      <obj_property name="ElementShortName">DAC_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_Q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/DAC_bits">
+      <obj_property name="ElementShortName">DAC_bits[1:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_bits[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/DAC_vld">
+      <obj_property name="ElementShortName">DAC_vld</obj_property>
+      <obj_property name="ObjectShortName">DAC_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/DELAY_CNT">
+      <obj_property name="ElementShortName">DELAY_CNT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DELAY_CNT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/MODE_CTRL">
+      <obj_property name="ElementShortName">MODE_CTRL[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_CTRL[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Tx_1bit">
+      <obj_property name="ElementShortName">Tx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Tx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Rx_1bit">
+      <obj_property name="ElementShortName">Rx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Rx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Tx_vld">
+      <obj_property name="ElementShortName">Tx_vld</obj_property>
+      <obj_property name="ObjectShortName">Tx_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/TX_PHASE_CONFIG">
+      <obj_property name="ElementShortName">TX_PHASE_CONFIG[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_PHASE_CONFIG[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/Tx_tdata">
+      <obj_property name="ElementShortName">Tx_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Tx_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Tx_tlast">
+      <obj_property name="ElementShortName">Tx_tlast</obj_property>
+      <obj_property name="ObjectShortName">Tx_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Tx_tuser">
+      <obj_property name="ElementShortName">Tx_tuser</obj_property>
+      <obj_property name="ObjectShortName">Tx_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Tx_tvalid">
+      <obj_property name="ElementShortName">Tx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">Tx_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/noise_I">
+      <obj_property name="ElementShortName">noise_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_I[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/noise_Q">
+      <obj_property name="ElementShortName">noise_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_Q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/ADC_I">
+      <obj_property name="ElementShortName">ADC_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_I[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/ADC_Q">
+      <obj_property name="ElementShortName">ADC_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_Q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/BPSK">
+      <obj_property name="ElementShortName">BPSK</obj_property>
+      <obj_property name="ObjectShortName">BPSK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/BPSK_raw">
+      <obj_property name="ElementShortName">BPSK_raw</obj_property>
+      <obj_property name="ObjectShortName">BPSK_raw</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/FEEDBACK_SHIFT">
+      <obj_property name="ElementShortName">FEEDBACK_SHIFT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">FEEDBACK_SHIFT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/GARDNER_SHIFT">
+      <obj_property name="ElementShortName">GARDNER_SHIFT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">GARDNER_SHIFT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/I_16M">
+      <obj_property name="ElementShortName">I_16M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_16M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/Q_16M">
+      <obj_property name="ElementShortName">Q_16M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_16M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/I_1M">
+      <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/Q_1M">
+      <obj_property name="ElementShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/NCO_cos">
+      <obj_property name="ElementShortName">NCO_cos[11:0]</obj_property>
+      <obj_property name="ObjectShortName">NCO_cos[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/QPSK">
+      <obj_property name="ElementShortName">QPSK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">QPSK[1:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/QPSK_raw">
+      <obj_property name="ElementShortName">QPSK_raw[1:0]</obj_property>
+      <obj_property name="ObjectShortName">QPSK_raw[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/RX_BD_WINDOW">
+      <obj_property name="ElementShortName">RX_BD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_BD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/RX_PD_WINDOW">
+      <obj_property name="ElementShortName">RX_PD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_PD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/RX_SD_THRESHOLD">
+      <obj_property name="ElementShortName">RX_SD_THRESHOLD[15:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_SD_THRESHOLD[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/RX_SD_WINDOW">
+      <obj_property name="ElementShortName">RX_SD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_SD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/clk_1M_out">
+      <obj_property name="ElementShortName">clk_1M_out</obj_property>
+      <obj_property name="ObjectShortName">clk_1M_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/Rx_tdata">
+      <obj_property name="ElementShortName">Rx_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Rx_tlast">
+      <obj_property name="ElementShortName">Rx_tlast</obj_property>
+      <obj_property name="ObjectShortName">Rx_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Rx_tuser">
+      <obj_property name="ElementShortName">Rx_tuser</obj_property>
+      <obj_property name="ObjectShortName">Rx_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Rx_tvalid">
+      <obj_property name="ElementShortName">Rx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">Rx_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_QPSK/Rx_valid">
+      <obj_property name="ElementShortName">Rx_valid</obj_property>
+      <obj_property name="ObjectShortName">Rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/error_tdata">
+      <obj_property name="ElementShortName">error_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/feedback_tdata">
+      <obj_property name="ElementShortName">feedback_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">feedback_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/gardner_error">
+      <obj_property name="ElementShortName">gardner_error[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gardner_error[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/gardner_increment">
+      <obj_property name="ElementShortName">gardner_increment[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gardner_increment[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/MODE_BPSK">
+      <obj_property name="ElementShortName">MODE_BPSK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_BPSK[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/MODE_QPSK">
+      <obj_property name="ElementShortName">MODE_QPSK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_QPSK[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_QPSK/MODE_MIX">
+      <obj_property name="ElementShortName">MODE_MIX[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_MIX[3:0]</obj_property>
+   </wvobject>
+</wave_config>

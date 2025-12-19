@@ -21,23 +21,26 @@ module PSK_Signal_Extend #(
     output reg signed [O_WIDTH-1:0] PSK_signal,
     output reg                      is_bpsk_out
 );
+    reg signed [O_WIDTH-1:0] PSK_signal_d;
+    reg                      is_bpsk_out_d;
+
     // assign LSB to zeros
     generate
         if (USE_I_STRM) begin
             always @(posedge clk) begin
-                PSK_signal <= {DAC_I, {O_WIDTH - I_WIDTH{1'b0}}};
-
+                PSK_signal_d <= {DAC_I, {O_WIDTH - I_WIDTH{1'b0}}};
             end
         end else begin
             always @(posedge clk) begin
-
-                PSK_signal <= {DAC_Q, {O_WIDTH - I_WIDTH{1'b0}}};
-
+                PSK_signal_d <= {DAC_Q, {O_WIDTH - I_WIDTH{1'b0}}};
             end
         end
     endgenerate
 
     always @(posedge clk) begin
-        is_bpsk_out <= is_bpsk;  // delay 1 CC
+        is_bpsk_out_d <= is_bpsk;
+
+        PSK_signal    <= PSK_signal_d;
+        is_bpsk_out   <= is_bpsk_out_d;
     end
 endmodule

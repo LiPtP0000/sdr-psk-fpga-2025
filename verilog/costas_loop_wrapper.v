@@ -22,6 +22,20 @@ module costas_loop_wrapper #(
     // output declaration of module NCO_rx_wrapper
     wire [15:0] feedback_tdata_inmodule;
     wire        feedback_tvalid_inmodule;
+
+    reg  [15:0] feedback_tdata_reg;
+    reg         feedback_tvalid_reg;
+
+    always @(posedge clk_32M768 or negedge rst_n_32M768) begin
+        if (!rst_n_32M768) begin
+            feedback_tdata_reg  <= 0;
+            feedback_tvalid_reg <= 1'b0;
+        end else begin
+            feedback_tdata_reg  <= feedback_tdata_inmodule;
+            feedback_tvalid_reg <= feedback_tvalid_inmodule;
+        end
+    end
+
     wire [11:0] NCO_sin;
     wire        NCO_valid;
 
@@ -30,8 +44,8 @@ module costas_loop_wrapper #(
         .rst_32M768     (rst_32M768),
         .enable         (clk_16M384),
         .FEEDBACK_SHIFT (FEEDBACK_SHIFT),
-        .feedback_tdata (feedback_tdata_inmodule),
-        .feedback_tvalid(feedback_tvalid_inmodule),
+        .feedback_tdata (feedback_tdata_reg),
+        .feedback_tvalid(feedback_tvalid_reg),
         .NCO_cos        (NCO_cos),
         .NCO_sin        (NCO_sin),
         .NCO_valid      (NCO_valid)
@@ -44,6 +58,7 @@ module costas_loop_wrapper #(
 
     Multiplier u_Multiplier_1 (
         .CLK(clk_32M768),
+        .CE (clk_16M384),
         .A  (PSK_signal),
         .B  (NCO_cos),
         .P  (PD_I)
@@ -55,6 +70,7 @@ module costas_loop_wrapper #(
 
     Multiplier u_Multiplier_2 (
         .CLK(clk_32M768),
+        .CE (clk_16M384),
         .A  (PSK_signal),
         .B  (NCO_sin),
         .P  (PD_Q)
@@ -79,6 +95,7 @@ module costas_loop_wrapper #(
     LPF u_LPF (
         .aclk              (clk_32M768),
         .aresetn           (rst_n_32M768),
+        .aclken            (clk_16M384),
         .s_axis_data_tvalid(NCO_valid_delayed),
         .s_axis_data_tready(LPF_data_tready),
         .s_axis_data_tdata (PD),
@@ -175,7 +192,8 @@ module costas_loop_wrapper #(
     );
     // output declaration of module err_detect_BPSK
 
-    // Requires 16-bit inputs, or use * and force DSP48 use.
+    // Requires 16-bit inputs, or use * and force DSP48 use
+    // Multiplier.
     err_detect_BPSK u_err_detect_BPSK (
         .CLK(clk_32M768),
         .A  (out_I_tdata),
@@ -184,6 +202,7 @@ module costas_loop_wrapper #(
     );
 
     // Requires 16-bit inputs, or use - and force DSP48 use.
+    // Substracter
     err_detect_QPSK u_err_detect_QPSK (
         .A  (out_I_tdata),
         .B  (out_Q_tdata),
@@ -197,6 +216,7 @@ module costas_loop_wrapper #(
     fir_compiler_0 u_fir_compiler_0 (
         .aclk              (clk_32M768),
         .aresetn           (rst_n_32M768),
+        .aclken            (clk_16M384),
         .s_axis_data_tvalid(error_tvalid),
         .s_axis_data_tready(loop_filter_tready),
         .s_axis_data_tdata (error_tdata),
@@ -204,9 +224,9 @@ module costas_loop_wrapper #(
         .m_axis_data_tdata (feedback_tdata_inmodule)
     );
 
-    assign PD = {PD_Q, PD_I};
-    assign feedback_tdata = feedback_tdata_inmodule;
 
+    assign feedback_tdata = feedback_tdata_inmodule;
+    assign PD = {PD_Q, PD_I};
     assign I_data = O1_I_tdata;
     assign Q_data = O1_Q_tdata;
     assign I_valid = O1_I_tvalid;

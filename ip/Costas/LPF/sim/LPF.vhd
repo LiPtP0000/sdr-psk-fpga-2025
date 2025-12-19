@@ -60,6 +60,7 @@ ENTITY LPF IS
   PORT (
     aresetn : IN STD_LOGIC;
     aclk : IN STD_LOGIC;
+    aclken : IN STD_LOGIC;
     s_axis_data_tvalid : IN STD_LOGIC;
     s_axis_data_tready : OUT STD_LOGIC;
     s_axis_data_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -181,6 +182,9 @@ ARCHITECTURE LPF_arch OF LPF IS
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
   ATTRIBUTE X_INTERFACE_MODE OF aclk: SIGNAL IS "slave aclk_intf";
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_DATA:S_AXIS_RELOAD, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF aclken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 aclken_intf CE";
+  ATTRIBUTE X_INTERFACE_MODE OF aclken: SIGNAL IS "slave aclken_intf";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF aclken: SIGNAL IS "XIL_INTERFACENAME aclken_intf, POLARITY ACTIVE_HIGH";
   ATTRIBUTE X_INTERFACE_INFO OF aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 aresetn_intf RST";
   ATTRIBUTE X_INTERFACE_MODE OF aresetn: SIGNAL IS "slave aresetn_intf";
   ATTRIBUTE X_INTERFACE_PARAMETER OF aresetn: SIGNAL IS "XIL_INTERFACENAME aresetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -215,7 +219,7 @@ BEGIN
       C_NUM_RELOAD_SLOTS => 1,
       C_COL_MODE => 1,
       C_COL_PIPE_LEN => 4,
-      C_COL_CONFIG => "7",
+      C_COL_CONFIG => "14",
       C_OPTIMIZATION => 0,
       C_DATA_PATH_WIDTHS => "16,16",
       C_DATA_IP_PATH_WIDTHS => "16,16",
@@ -235,11 +239,11 @@ BEGIN
       C_EXT_MULT_CNFG => "none",
       C_DATA_PATH_PSAMP_SRC => "0",
       C_OP_PATH_PSAMP_SRC => "0",
-      C_NUM_MADDS => 7,
+      C_NUM_MADDS => 14,
       C_OPT_MADDS => "none",
-      C_OVERSAMPLING_RATE => 2,
-      C_INPUT_RATE => 2,
-      C_OUTPUT_RATE => 2,
+      C_OVERSAMPLING_RATE => 1,
+      C_INPUT_RATE => 1,
+      C_OUTPUT_RATE => 1,
       C_DATA_MEMTYPE => 0,
       C_COEF_MEMTYPE => 2,
       C_IPBUFF_MEMTYPE => 0,
@@ -249,9 +253,9 @@ BEGIN
       C_DATA_MEM_PACKING => 0,
       C_COEF_MEM_PACKING => 0,
       C_FILTS_PACKED => 0,
-      C_LATENCY => 17,
+      C_LATENCY => 20,
       C_HAS_ARESETn => 1,
-      C_HAS_ACLKEN => 0,
+      C_HAS_ACLKEN => 1,
       C_DATA_HAS_TLAST => 0,
       C_S_DATA_HAS_FIFO => 1,
       C_S_DATA_HAS_TUSER => 0,
@@ -270,7 +274,7 @@ BEGIN
     PORT MAP (
       aresetn => aresetn,
       aclk => aclk,
-      aclken => '1',
+      aclken => aclken,
       s_axis_data_tvalid => s_axis_data_tvalid,
       s_axis_data_tready => s_axis_data_tready,
       s_axis_data_tlast => '0',

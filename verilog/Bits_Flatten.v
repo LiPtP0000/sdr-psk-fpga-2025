@@ -37,11 +37,11 @@ module Bits_Flatten #(
             latched_vld <= 1'b0;
             bit_cnt     <= 'd0;
         end else begin
-            // 默认情况下，Valid 信号是脉冲，不保持
+            // Don't hold O_vld high by default
             O_vld <= 1'b0;
 
             if (bypass) begin
-                // Bypass 模式：仅在 1M 使能时采样并输出
+                // Bypass mode: sample and output only when 1M enable is active
                 if (ce_1M) begin
                     O     <= I_vld & I[BYPASS_SELECTION];
                     O_vld <= I_vld;

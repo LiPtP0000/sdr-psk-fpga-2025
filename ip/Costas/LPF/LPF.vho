@@ -55,6 +55,7 @@ COMPONENT LPF
   PORT (
     aresetn : IN STD_LOGIC;
     aclk : IN STD_LOGIC;
+    aclken : IN STD_LOGIC;
     s_axis_data_tvalid : IN STD_LOGIC;
     s_axis_data_tready : OUT STD_LOGIC;
     s_axis_data_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -72,6 +73,7 @@ your_instance_name : LPF
   PORT MAP (
     aresetn => aresetn,
     aclk => aclk,
+    aclken => aclken,
     s_axis_data_tvalid => s_axis_data_tvalid,
     s_axis_data_tready => s_axis_data_tready,
     s_axis_data_tdata => s_axis_data_tdata,

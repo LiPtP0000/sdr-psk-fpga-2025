@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-// Date        : Wed Dec 17 08:14:24 2025
+// Date        : Wed Dec 17 07:33:18 2025
 // Host        : LiPtPDesktop running 64-bit Ubuntu 24.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Tx/carrier_gen/carrier_gen_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top carrier_gen -prefix
+//               carrier_gen_ carrier_gen_stub.v
 // Design      : carrier_gen
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "carrier_gen,dds_compiler_v6_0_26,{}" *) (* core_generation_info = "carrier_gen,dds_compiler_v6_0_26,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=dds_compiler,x_ipVersion=6.0,x_ipCoreRevision=26,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_XDEVICEFAMILY=zynq,C_MODE_OF_OPERATION=0,C_MODULUS=9,C_ACCUMULATOR_WIDTH=16,C_CHANNELS=1,C_HAS_PHASE_OUT=0,C_HAS_PHASEGEN=1,C_HAS_SINCOS=1,C_LATENCY=7,C_MEM_TYPE=1,C_NEGATIVE_COSINE=0,C_NEGATIVE_SINE=0,C_NOISE_SHAPING=0,C_OUTPUTS_REQUIRED=2,C_OUTPUT_FORM=0,C_OUTPUT_TYPE=0,C_OUTPUT_WIDTH=12,C_PHASE_ANGLE_WIDTH=12,C_PHASE_INCREMENT=1,C_PHASE_INCREMENT_VALUE=10000000000000_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0,C_RESYNC=0,C_PHASE_OFFSET=0,C_PHASE_OFFSET_VALUE=0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0,C_OPTIMISE_GOAL=0,C_USE_DSP48=0,C_POR_MODE=0,C_AMPLITUDE=0,C_HAS_ACLKEN=1,C_HAS_ARESETN=1,C_HAS_TLAST=0,C_HAS_TREADY=0,C_HAS_S_PHASE=0,C_S_PHASE_TDATA_WIDTH=1,C_S_PHASE_HAS_TUSER=0,C_S_PHASE_TUSER_WIDTH=1,C_HAS_S_CONFIG=1,C_S_CONFIG_SYNC_MODE=0,C_S_CONFIG_TDATA_WIDTH=16,C_HAS_M_DATA=1,C_M_DATA_TDATA_WIDTH=32,C_M_DATA_HAS_TUSER=0,C_M_DATA_TUSER_WIDTH=1,C_HAS_M_PHASE=0,C_M_PHASE_TDATA_WIDTH=1,C_M_PHASE_HAS_TUSER=0,C_M_PHASE_TUSER_WIDTH=1,C_DEBUG_INTERFACE=0,C_CHAN_WIDTH=1}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "carrier_gen,dds_compiler_v6_0_26,{}" *) (* core_generation_info = "carrier_gen,dds_compiler_v6_0_26,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=dds_compiler,x_ipVersion=6.0,x_ipCoreRevision=26,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_XDEVICEFAMILY=zynq,C_MODE_OF_OPERATION=0,C_MODULUS=9,C_ACCUMULATOR_WIDTH=15,C_CHANNELS=1,C_HAS_PHASE_OUT=0,C_HAS_PHASEGEN=1,C_HAS_SINCOS=1,C_LATENCY=7,C_MEM_TYPE=1,C_NEGATIVE_COSINE=0,C_NEGATIVE_SINE=0,C_NOISE_SHAPING=0,C_OUTPUTS_REQUIRED=2,C_OUTPUT_FORM=0,C_OUTPUT_TYPE=0,C_OUTPUT_WIDTH=12,C_PHASE_ANGLE_WIDTH=12,C_PHASE_INCREMENT=1,C_PHASE_INCREMENT_VALUE=10000000000000_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0,C_RESYNC=0,C_PHASE_OFFSET=0,C_PHASE_OFFSET_VALUE=0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0,C_OPTIMISE_GOAL=0,C_USE_DSP48=0,C_POR_MODE=0,C_AMPLITUDE=0,C_HAS_ACLKEN=1,C_HAS_ARESETN=1,C_HAS_TLAST=0,C_HAS_TREADY=0,C_HAS_S_PHASE=0,C_S_PHASE_TDATA_WIDTH=1,C_S_PHASE_HAS_TUSER=0,C_S_PHASE_TUSER_WIDTH=1,C_HAS_S_CONFIG=1,C_S_CONFIG_SYNC_MODE=0,C_S_CONFIG_TDATA_WIDTH=16,C_HAS_M_DATA=1,C_M_DATA_TDATA_WIDTH=32,C_M_DATA_HAS_TUSER=0,C_M_DATA_TUSER_WIDTH=1,C_HAS_M_PHASE=0,C_M_PHASE_TDATA_WIDTH=1,C_M_PHASE_HAS_TUSER=0,C_M_PHASE_TUSER_WIDTH=1,C_DEBUG_INTERFACE=0,C_CHAN_WIDTH=1}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "dds_compiler_v6_0_26,Vivado 2024.2" *) 
 module carrier_gen(aclk, aclken, aresetn, s_axis_config_tvalid, 
   s_axis_config_tdata, m_axis_data_tvalid, m_axis_data_tdata)

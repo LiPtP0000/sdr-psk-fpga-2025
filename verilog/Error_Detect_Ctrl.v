@@ -51,12 +51,14 @@ module Error_Detect_Ctrl #(
                 end else begin  // QPSK
                     // The arithematic right shift (>>>) is used to limit the output to match the scale of BPSK.
                     // It can be adjusted according to the specific case.
-                    out_I_tdata <= in_I_tvalid ? (in_Q_tdata[WIDTH-1] ? -in_I_tdata : in_I_tdata) >>> 6 : 0;
-                    out_Q_tdata <= in_Q_tvalid ? (in_I_tdata[WIDTH-1] ? -in_Q_tdata : in_Q_tdata) >>> 6 : 0;
+                    out_I_tdata <= in_I_tvalid ? (in_Q_tdata[WIDTH-1] ? -in_I_tdata : in_I_tdata) >>> 4 : 0;
+                    out_Q_tdata <= in_Q_tvalid ? (in_I_tdata[WIDTH-1] ? -in_Q_tdata : in_Q_tdata) >>> 4 : 0;
                 end
                 out_I_tvalid <= 1'b1;
                 out_Q_tvalid <= 1'b1;
             end else begin
+                // If Clock not enabled, hold the output and set valid low.
+                // For the subsequent modules to detect the invalid signal and set it to 0.
                 out_I_tdata  <= out_I_tdata;
                 out_I_tvalid <= 1'b0;
                 out_Q_tdata  <= out_Q_tdata;

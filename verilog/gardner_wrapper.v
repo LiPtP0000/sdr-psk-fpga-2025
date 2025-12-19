@@ -37,9 +37,9 @@ module gardner_wrapper (
         .Q_tdata   (Q_tdata),
         .Q_tvalid  (Q_tvalid),
         // Outputs
-        .I_up2     (w_I_up2),
-        .Q_up2     (w_Q_up2),
-        .vld       (w_interp_vld)
+        .I_smoothed_tdata(w_I_up2),
+        .Q_smoothed_tdata(w_Q_up2),
+        .smoothed_tvalid (w_interp_vld)
     );
 
     timing_error_wrapper u_timing_error_wrapper (

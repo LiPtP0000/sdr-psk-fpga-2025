@@ -108,7 +108,7 @@ architecture tb of tb_carrier_gen is
   -----------------------------------------------------------------------
 
   -- Config slave channel alias signals
-  signal s_axis_config_tdata_inc       : std_logic_vector(15 downto 0) := (others => '0');
+  signal s_axis_config_tdata_inc       : std_logic_vector(14 downto 0) := (others => '0');
 
   -- Data master channel alias signals
   signal m_axis_data_tdata_cosine      : std_logic_vector(11 downto 0) := (others => '0');
@@ -169,23 +169,23 @@ begin
     -- The phase increment value here is derived from the output frequency value set in the CORE Generator GUI.
     s_axis_config_tvalid <= '1';
     s_axis_config_tdata <= (others => '0');  -- set unused TDATA bits to zero
-    s_axis_config_tdata(15 downto 0) <= "0010000000000000";  -- phase increment
+    s_axis_config_tdata(14 downto 0) <= "010000000000000";  -- phase increment
     wait for CLOCK_PERIOD;
     s_axis_config_tvalid <= '0';
 
     -- Run for long enough to produce 5 periods of outputs
-    wait for CLOCK_PERIOD * 40;
+    wait for CLOCK_PERIOD * 20;
 
     -- Configure the core with a different configuration:
     --   set phase increment to half of its current value
     s_axis_config_tvalid <= '1';
     s_axis_config_tdata <= (others => '0');  -- set unused TDATA bits to zero
-    s_axis_config_tdata(15 downto 0) <= "0001000000000000";  -- current phase increment / 2
+    s_axis_config_tdata(14 downto 0) <= "001000000000000";  -- current phase increment / 2
     wait for CLOCK_PERIOD;
     s_axis_config_tvalid <= '0';
 
     -- Run for long enough to produce 5 periods of outputs
-    wait for CLOCK_PERIOD * 80;
+    wait for CLOCK_PERIOD * 40;
 
     -- Deassert clock enable for a bit
     aclken <= '0';
@@ -198,7 +198,7 @@ begin
     wait for CLOCK_PERIOD * 2;  -- Hold reset for 2 clock cycles, as specified in the DDS Compiler datasheet
     aresetn <= '1';
     -- Run for long enough to produce 5 periods of outputs
-    wait for CLOCK_PERIOD * 80;
+    wait for CLOCK_PERIOD * 40;
 
     -- End of test
     end_of_simulation <= true;           
@@ -242,7 +242,7 @@ begin
   -----------------------------------------------------------------------
 
   -- Config slave channel alias signals
-  s_axis_config_tdata_inc       <= s_axis_config_tdata(15 downto 0);
+  s_axis_config_tdata_inc       <= s_axis_config_tdata(14 downto 0);
 
   -- Data master channel alias signals: update these only when they are valid
   m_axis_data_tdata_cosine      <= m_axis_data_tdata(11 downto 0) when m_axis_data_tvalid = '1';
