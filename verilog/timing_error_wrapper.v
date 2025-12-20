@@ -40,7 +40,7 @@ module timing_error_wrapper (
     Gardner_Timing_Error #(
         .WIDTH(16),
         .USE_SIMPLE_GARDNER(0),
-        .DIFF_BITS(8)
+        .DIFF_BITS(6)
     ) u_Gardner_Timing_Error (
         .clk    (clk_32M768),
         .I      (I),

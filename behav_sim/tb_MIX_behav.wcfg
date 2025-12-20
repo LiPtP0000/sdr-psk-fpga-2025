@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_MIX_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_MIX" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="73.123661 us"></ZoomEndTime>
+      <Cursor1Time time="49.180100 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="67"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="62" />
+   <wvobject type="array" fp_name="/tb_MIX/fd">
+      <obj_property name="ElementShortName">fd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/clk_32M768">
+      <obj_property name="ElementShortName">clk_32M768</obj_property>
+      <obj_property name="ObjectShortName">clk_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/rst_32M768">
+      <obj_property name="ElementShortName">rst_32M768</obj_property>
+      <obj_property name="ObjectShortName">rst_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/rst_n_32M768">
+      <obj_property name="ElementShortName">rst_n_32M768</obj_property>
+      <obj_property name="ObjectShortName">rst_n_32M768</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/clk_16M384">
+      <obj_property name="ElementShortName">clk_16M384</obj_property>
+      <obj_property name="ObjectShortName">clk_16M384</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/clk_1M024">
+      <obj_property name="ElementShortName">clk_1M024</obj_property>
+      <obj_property name="ObjectShortName">clk_1M024</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/clk_2M048">
+      <obj_property name="ElementShortName">clk_2M048</obj_property>
+      <obj_property name="ObjectShortName">clk_2M048</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/DAC_I">
+      <obj_property name="ElementShortName">DAC_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_I[11:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/DAC_Q">
+      <obj_property name="ElementShortName">DAC_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_Q[11:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/DAC_bits">
+      <obj_property name="ElementShortName">DAC_bits[1:0]</obj_property>
+      <obj_property name="ObjectShortName">DAC_bits[1:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/DAC_vld">
+      <obj_property name="ElementShortName">DAC_vld</obj_property>
+      <obj_property name="ObjectShortName">DAC_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/DELAY_CNT">
+      <obj_property name="ElementShortName">DELAY_CNT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DELAY_CNT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/MODE_CTRL">
+      <obj_property name="ElementShortName">MODE_CTRL[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_CTRL[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Tx_vld">
+      <obj_property name="ElementShortName">Tx_vld</obj_property>
+      <obj_property name="ObjectShortName">Tx_vld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/TX_PHASE_CONFIG">
+      <obj_property name="ElementShortName">TX_PHASE_CONFIG[15:0]</obj_property>
+      <obj_property name="ObjectShortName">TX_PHASE_CONFIG[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/Tx_tdata">
+      <obj_property name="ElementShortName">Tx_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Tx_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Tx_tlast">
+      <obj_property name="ElementShortName">Tx_tlast</obj_property>
+      <obj_property name="ObjectShortName">Tx_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Tx_tuser">
+      <obj_property name="ElementShortName">Tx_tuser</obj_property>
+      <obj_property name="ObjectShortName">Tx_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Tx_tvalid">
+      <obj_property name="ElementShortName">Tx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">Tx_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/noise_I">
+      <obj_property name="ElementShortName">noise_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_I[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/noise_Q">
+      <obj_property name="ElementShortName">noise_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_Q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/ADC_I">
+      <obj_property name="ElementShortName">ADC_I[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_I[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/ADC_Q">
+      <obj_property name="ElementShortName">ADC_Q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ADC_Q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/BPSK">
+      <obj_property name="ElementShortName">BPSK</obj_property>
+      <obj_property name="ObjectShortName">BPSK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/BPSK_raw">
+      <obj_property name="ElementShortName">BPSK_raw</obj_property>
+      <obj_property name="ObjectShortName">BPSK_raw</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/FEEDBACK_SHIFT">
+      <obj_property name="ElementShortName">FEEDBACK_SHIFT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">FEEDBACK_SHIFT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/GARDNER_SHIFT">
+      <obj_property name="ElementShortName">GARDNER_SHIFT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">GARDNER_SHIFT[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/I_16M">
+      <obj_property name="ElementShortName">I_16M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_16M[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/Q_16M">
+      <obj_property name="ElementShortName">Q_16M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_16M[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/I_1M">
+      <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/Q_1M">
+      <obj_property name="ElementShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_1M[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/NCO_cos">
+      <obj_property name="ElementShortName">NCO_cos[11:0]</obj_property>
+      <obj_property name="ObjectShortName">NCO_cos[11:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_Depacketizer/state">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_Depacketizer/state_next">
+      <obj_property name="ElementShortName">state_next[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state_next[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/inst_Tx/u_Packetizer/hdr_cnt">
+      <obj_property name="ElementShortName">hdr_cnt[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hdr_cnt[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/u_Rx_SD_0/cnt">
+      <obj_property name="ElementShortName">cnt[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_Depacketizer/cnt">
+      <obj_property name="ElementShortName">cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/SD_flag">
+      <obj_property name="ElementShortName">SD_flag</obj_property>
+      <obj_property name="ObjectShortName">SD_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/PD_flag">
+      <obj_property name="ElementShortName">PD_flag</obj_property>
+      <obj_property name="ObjectShortName">PD_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/BD_flag">
+      <obj_property name="ElementShortName">BD_flag</obj_property>
+      <obj_property name="ObjectShortName">BD_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/BD_sgn">
+      <obj_property name="ElementShortName">BD_sgn</obj_property>
+      <obj_property name="ObjectShortName">BD_sgn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/QPSK">
+      <obj_property name="ElementShortName">QPSK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">QPSK[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/QPSK_raw">
+      <obj_property name="ElementShortName">QPSK_raw[1:0]</obj_property>
+      <obj_property name="ObjectShortName">QPSK_raw[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/RX_BD_WINDOW">
+      <obj_property name="ElementShortName">RX_BD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_BD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/RX_PD_WINDOW">
+      <obj_property name="ElementShortName">RX_PD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_PD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/RX_SD_THRESHOLD">
+      <obj_property name="ElementShortName">RX_SD_THRESHOLD[15:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_SD_THRESHOLD[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/RX_SD_WINDOW">
+      <obj_property name="ElementShortName">RX_SD_WINDOW[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RX_SD_WINDOW[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Tx_1bit">
+      <obj_property name="ElementShortName">Tx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Tx_1bit</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Rx_1bit">
+      <obj_property name="ElementShortName">Rx_1bit</obj_property>
+      <obj_property name="ObjectShortName">Rx_1bit</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/clk_1M_out">
+      <obj_property name="ElementShortName">clk_1M_out</obj_property>
+      <obj_property name="ObjectShortName">clk_1M_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/Rx_tdata">
+      <obj_property name="ElementShortName">Rx_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_tdata[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Rx_tlast">
+      <obj_property name="ElementShortName">Rx_tlast</obj_property>
+      <obj_property name="ObjectShortName">Rx_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Rx_tuser">
+      <obj_property name="ElementShortName">Rx_tuser</obj_property>
+      <obj_property name="ObjectShortName">Rx_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Rx_tvalid">
+      <obj_property name="ElementShortName">Rx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">Rx_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_MIX/Rx_valid">
+      <obj_property name="ElementShortName">Rx_valid</obj_property>
+      <obj_property name="ObjectShortName">Rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/error_tdata">
+      <obj_property name="ElementShortName">error_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">error_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/feedback_tdata">
+      <obj_property name="ElementShortName">feedback_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">feedback_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/gardner_error">
+      <obj_property name="ElementShortName">gardner_error[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gardner_error[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/gardner_increment">
+      <obj_property name="ElementShortName">gardner_increment[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gardner_increment[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/MODE_BPSK">
+      <obj_property name="ElementShortName">MODE_BPSK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_BPSK[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/MODE_QPSK">
+      <obj_property name="ElementShortName">MODE_QPSK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_QPSK[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_MIX/MODE_MIX">
+      <obj_property name="ElementShortName">MODE_MIX[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MODE_MIX[3:0]</obj_property>
+   </wvobject>
+</wave_config>

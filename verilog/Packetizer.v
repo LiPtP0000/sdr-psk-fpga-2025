@@ -22,7 +22,10 @@ module Packetizer #(
     output reg O_tuser,  // is_bpsk
     // internal status signals
     output reg hdr_vld,
-    output reg pld_vld,
+    output reg pld_tvalid,
+    input pld_tready,
+    output [BYTES*8-1:0] pld_tdata,
+    output pld_tuser,
     output reg pkt_sent
 );
     localparam BITS = BYTES * 8;
@@ -44,7 +47,6 @@ module Packetizer #(
     // Transaction handshake logic
     wire        I_trans = I_tvalid && I_tready;
 
-    // 1. State Transition Logic (Sequential)
     always @(posedge clk) begin
         if (!rst_n) begin
             state <= ST_IDLE;
@@ -53,7 +55,6 @@ module Packetizer #(
         end
     end
 
-    // 2. Next State Logic (Combinational)
     always @(*) begin
         state_next = state;
         case (state)
@@ -62,11 +63,18 @@ module Packetizer #(
                 if (MODE_CTRL == MODE_MIX && I_trans) state_next = ST_HDR;
             end
             ST_HDR: begin
+                // Penultimate transition: hdr_cnt starts from 0, so hdr_cnt==319 is the 320th cycle.
+                // This is equivalent to (hdr_cnt + 1 == HDR_LENGTH).
+                // On the next clock, state transitions to ST_PLD/ST_LAST after all 320 header bits.
                 // After finishing the fixed-length header, move to payload or last
                 if (hdr_cnt == HDR_LENGTH - 1)
                     state_next = (payload_length_symbs > 1) ? ST_PLD : ST_LAST;
             end
             ST_PLD: begin
+                // Penultimate transition: Jump to ST_LAST when processing the (L-1)th symbol.
+                // payload_cnt starts from 0, so payload_cnt==(L-2) means we've sent (L-1) symbols.
+                // This matches Depacketizer's logic: (cnt + 2 == L) <==> (cnt == L - 2).
+                // The Lth (last) symbol will be sent in ST_LAST with O_tlast asserted.
                 // Check if the next symbol is the last one in the packet
                 if (I_trans && (payload_cnt == payload_length_symbs - 2)) state_next = ST_LAST;
             end
@@ -110,7 +118,7 @@ module Packetizer #(
             O_tuser <= 1'b1;
             pkt_sent <= 0;
             hdr_vld <= 0;
-            pld_vld <= 0;
+            pld_tvalid <= 0;
             payload_length_symbs <= 0;
         end else if (clk_enable) begin
             if (MODE_CTRL == MODE_MIX) begin
@@ -122,17 +130,17 @@ module Packetizer #(
                         payload_cnt <= 0;
                         pkt_sent <= 1'b0;
                         hdr_vld <= 1'b0;
-                        pld_vld <= 1'b0;
+                        pld_tvalid <= 1'b0;
                         // Latch the payload length in symbols (adjust for BPSK/QPSK)
                         payload_length_symbs <= I_tuser ? payload_length : (payload_length >> 1);
                     end
 
                     ST_HDR: begin
-                        hdr_cnt  <= hdr_cnt + 1;
+                        hdr_cnt <= hdr_cnt + 1;
                         O_tvalid <= 1'b1;
-                        O_tuser  <= 1'b1;  // Header is always BPSK
-                        hdr_vld  <= 1'b1;
-                        pld_vld  <= 1'b0;
+                        O_tuser <= 1'b1;  // Header is always BPSK
+                        hdr_vld <= 1'b1;
+                        pld_tvalid <= 1'b0;
 
                         // Preamble/Header pattern generation
                         if (hdr_cnt < 256) begin  // 32 bytes preamble
@@ -156,15 +164,15 @@ module Packetizer #(
                         end
                         O_tuser <= 1'b0;  // Payload is not header BPSK
                         hdr_vld <= 1'b0;
-                        pld_vld <= 1'b1;
+                        pld_tvalid <= 1'b1;
                         if (I_trans) payload_cnt <= payload_cnt + 1;
                     end
 
                     ST_WAIT: begin
                         O_tvalid <= 1'b0;
-                        O_tlast  <= 1'b0;
-                        hdr_vld  <= 1'b0;
-                        pld_vld  <= 1'b0;
+                        O_tlast <= 1'b0;
+                        hdr_vld <= 1'b0;
+                        pld_tvalid <= 1'b0;
                         // Trigger pkt_sent pulse once FIFO is confirmed empty
                         if (!I_tvalid) pkt_sent <= 1'b1;
                     end
@@ -172,14 +180,15 @@ module Packetizer #(
             end else begin
                 // Bypass mode logic
                 O_tvalid <= I_tvalid;
-                O_tdata  <= I_tdata;
-                O_tlast  <= I_tlast;
-                O_tuser  <= I_tuser;
-                hdr_vld  <= 1'b0;
-                pld_vld  <= 1'b1;
+                O_tdata <= I_tdata;
+                O_tlast <= I_tlast;
+                O_tuser <= I_tuser;
+                hdr_vld <= 1'b0;
+                pld_tvalid <= 1'b1;
                 pkt_sent <= 1'b0;
             end
         end
     end
-
+    assign pld_tdata = (pld_tvalid & pld_tready) ? O_tdata : {BYTES * 8{1'b0}};
+    assign pld_tuser = O_tuser;
 endmodule

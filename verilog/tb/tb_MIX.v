@@ -68,7 +68,7 @@ module tb_MIX;
     // configuration parameters (constants)
     assign DELAY_CNT = 4'd8;
     assign MODE_CTRL = MODE_MIX;
-    assign TX_PHASE_CONFIG = 16'd8188;  // 8192 for 4.196 MHz
+    assign TX_PHASE_CONFIG = 16'd8192;  // 8192 for 4.196 MHz
 
     // module instantiation
     Tx inst_Tx (

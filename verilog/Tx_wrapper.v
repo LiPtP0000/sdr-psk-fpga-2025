@@ -85,7 +85,10 @@ module Tx (
     wire       Packetizer_PSK_1M_tuser;
 
     wire       hdr_vld;
-    wire       pld_vld;
+    wire       pld_tvalid;
+    wire [7:0] pld_tdata;
+    wire       pld_tready;
+    wire       pld_tuser;
 
 
     Packetizer #(
@@ -107,7 +110,10 @@ module Tx (
         .O_tlast       (Packetizer_PSK_1M_tlast),
         .O_tuser       (Packetizer_PSK_1M_tuser),
         .hdr_vld       (hdr_vld),
-        .pld_vld       (pld_vld),
+        .pld_tvalid    (pld_tvalid),
+        .pld_tready    (pld_tready),
+        .pld_tdata     (pld_tdata),
+        .pld_tuser     (pld_tuser),
         .pkt_sent      (pkt_sent)
     );
 
@@ -155,15 +161,17 @@ module Tx (
         .M               (8),
         .BYPASS_SELECTION(1'b1)
     ) u_Bits_Flatten (
-        .bypass(Packetizer_PSK_tuser),
-        .clk   (clk_32M768),
-        .ce_1M (clk_1M024),
-        .rst_n (rst_n_32M768),
-        .ce_2M (clk_2M048),
-        .I     (Packetizer_PSK_tdata),
-        .I_vld (pld_vld),
-        .O     (tx_serial),
-        .O_vld (tx_valid)
+        .bypass (pld_tuser),
+        .clk    (clk_32M768),
+        .ce_1M  (clk_1M024),
+        .rst_n  (rst_n_32M768),
+        .ce_2M  (clk_2M048),
+        .I      (pld_tdata),
+        .I_valid(pld_tvalid),
+        .I_ready(pld_tready),
+        .O      (tx_serial),
+        .O_valid(tx_valid),
+        .O_ready(1'b1)
     );
 
     // Output assignments

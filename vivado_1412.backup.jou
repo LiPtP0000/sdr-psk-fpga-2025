@@ -1,0 +1,228 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Dec 20 17:09:51 2025
+# Process ID         : 1412
+# Current directory  : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025
+# Command line       : vivado sdr-psk-fpga-2025.xpr
+# Log file           : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.log
+# Journal file       : /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/vivado.jou
+# Running On         : LiPtPDesktop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419.200 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 16611 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20906 MB
+# Available Virtual  : 18886 MB
+#-----------------------------------------------------------
+start_gui
+open_project sdr-psk-fpga-2025.xpr
+update_compile_order -fileset sources_1
+current_fileset -simset [ get_filesets sim_QPSK ]
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+run all
+relaunch_sim
+relaunch_sim
+run all
+run all
+relaunch_sim
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+run all
+set_property -dict [list \
+  CONFIG.DDS_Clock_Rate {16.384} \
+  CONFIG.Noise_Shaping {None} \
+  CONFIG.Output_Frequency1 {0} \
+  CONFIG.Phase_Width {16} \
+] [get_ips NCO_DDS]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/NCO_DDS/NCO_DDS.xci]
+catch { config_ip_cache -export [get_ips -all NCO_DDS] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/NCO_DDS/NCO_DDS.xci] -no_script -sync -force -quiet
+reset_run NCO_DDS_synth_1
+launch_runs NCO_DDS_synth_1 -jobs 32
+wait_on_run NCO_DDS_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/NCO_DDS/NCO_DDS.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+relaunch_sim
+run all
+run all
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg}
+close_sim
+current_fileset -simset [ get_filesets sim_BPSK ]
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+set_property CONFIG.CE {true} [get_ips err_detect_QPSK]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci]
+catch { config_ip_cache -export [get_ips -all err_detect_QPSK] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci] -no_script -sync -force -quiet
+reset_run err_detect_QPSK_synth_1
+launch_runs err_detect_QPSK_synth_1 -jobs 32
+wait_on_run err_detect_QPSK_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_QPSK/err_detect_QPSK.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+set_property CONFIG.ClockEnable {true} [get_ips err_detect_BPSK]
+generate_target all [get_files  /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci]
+catch { config_ip_cache -export [get_ips -all err_detect_BPSK] }
+export_ip_user_files -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -no_script -sync -force -quiet
+reset_run err_detect_BPSK_synth_1
+launch_runs err_detect_BPSK_synth_1 -jobs 32
+wait_on_run err_detect_BPSK_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/modelsim} {questa=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/questa} {xcelium=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/xcelium} {vcs=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/vcs} {riviera=/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.cache/compile_simlib/riviera}] -of_objects [get_files /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/err_detect_BPSK/err_detect_BPSK.xci] -directory /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/sim_scripts -ip_user_files_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files -ipstatic_source_dir /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/sdr-psk-fpga-2025.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_QPSK ]
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg}
+close_sim
+current_fileset -simset [ get_filesets sim_BPSK ]
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg}
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_QPSK ]
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+relaunch_sim
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_BPSK ]
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_QPSK ]
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+relaunch_sim
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_BPSK ]
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+save_wave_config {/home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg}
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_BPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_BPSK_behav.wcfg
+source tb_BPSK.tcl
+run all
+close_sim
+current_fileset -simset [ get_filesets sim_QPSK ]
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+run all
+run all
+close_sim
+launch_simulation -simset [get_filesets sim_QPSK ]
+open_wave_config /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/behav_sim/tb_QPSK_behav.wcfg
+source tb_QPSK.tcl
+run all
+close_sim

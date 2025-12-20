@@ -43,10 +43,10 @@ module Rx_BD #(
     // BPSK      | 0 1 0 1 0 1 1 0 1 0 1 0 1 0
     // BPSK_reg  | 1 0 1 0 1 0 1 1 0 1 0 1 0 1
     // BPSK_diff | 1 1 1 1 1 1 0 1 1 1 1 1 1 1
-    // ~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~ bit 224 in TRN field
     // BD_init   | 0 0 0 0 0 0 0 1 0 0 0 0 0 0
     //                           ______________
-    //             _____________/               BD_init
+    //             _____________/               BD_init (rise in bit 225)
     // cnt       | 0 0 0 0 0 0 0 1 2 3 4 4 4 4
     // BD_flag   | 0 0 0 0 0 0 0 0 0 0 0 1 1 1
     //                                   ______
@@ -78,6 +78,8 @@ module Rx_BD #(
                     if (~BD_flag) begin
                         BD_init <= 1;
                         cnt <= 1;  // the only way for 'cnt' to go beyond 0
+                        // if the sign is 0, it means the phase is biased by 180 degrees
+                        // At module Depacketizer, we will correct the bits accordingly
                         BD_sgn <= BPSK;
                     end else;
                 end else begin
@@ -85,6 +87,7 @@ module Rx_BD #(
                     if (cnt > 0) begin
                         if (cnt < RX_BD_WINDOW - 1) begin
                             cnt <= cnt + 1;
+                            BD_init <= BD_init;  // keep 1.
                         end else begin
                             cnt <= 0;
                             BD_init <= 0;

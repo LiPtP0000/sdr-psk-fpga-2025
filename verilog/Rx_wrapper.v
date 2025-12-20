@@ -225,20 +225,23 @@ module Rx (
     );
 
     // 8. Flatten
+    // The bypass signal
     Bits_Flatten #(
         .N               (2),
         .M               (8),
         .BYPASS_SELECTION(1)
     ) u_Bits_Flatten (
-        .clk   (clk_32M768),
-        .rst_n (rst_n_32M768),
-        .ce_1M (clk_1M024),
-        .ce_2M (clk_2M048),
-        .bypass(1'b0),
-        .I     (depacketizer_tdata),
-        .I_vld (depacketizer_tvalid),
-        .O     (Rx_1bit_internal),
-        .O_vld (Rx_vld_internal)
+        .clk    (clk_32M768),
+        .rst_n  (rst_n_32M768),
+        .ce_1M  (clk_1M024),
+        .ce_2M  (clk_2M048),
+        .bypass (depacketizer_tuser),
+        .I      (depacketizer_tdata),
+        .I_valid(depacketizer_tvalid),
+        .I_ready(depacketizer_tready),
+        .O      (Rx_1bit_internal),
+        .O_valid(Rx_vld_internal),
+        .O_ready(1'b1)
     );
 
 
