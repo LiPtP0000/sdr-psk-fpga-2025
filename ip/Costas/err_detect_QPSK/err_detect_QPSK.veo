@@ -58,6 +58,7 @@ err_detect_QPSK your_instance_name (
   .A(A),      // input wire [15 : 0] A
   .B(B),      // input wire [15 : 0] B
   .CLK(CLK),  // input wire CLK
+  .CE(CE),    // input wire CE
   .S(S)      // output wire [15 : 0] S
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

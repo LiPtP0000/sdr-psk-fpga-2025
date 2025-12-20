@@ -11,20 +11,20 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16.617334 us"></ZoomStartTime>
-      <ZoomEndTime time="37.657335 us"></ZoomEndTime>
-      <Cursor1Time time="20.124000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="24.700001 us"></ZoomEndTime>
+      <Cursor1Time time="16.024000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="102"></NameColumnWidth>
-      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="129" />
+   <WVObjectSize size="131" />
    <wave_markers>
-      <marker label="" time="4736000" />
-      <marker label="" time="6208000" />
-      <marker label="" time="10496000" />
-      <marker label="" time="12224000" />
+      <marker label="" time="13636000" />
+      <marker label="" time="11844000" />
+      <marker label="" time="11396000" />
+      <marker label="" time="9632921" />
    </wave_markers>
    <wvobject type="array" fp_name="/tb_BPSK/fd">
       <obj_property name="ElementShortName">fd[31:0]</obj_property>
@@ -449,7 +449,6 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/Rx_1bit_internal">
       <obj_property name="ElementShortName">Rx_1bit_internal</obj_property>
@@ -587,6 +586,20 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/PD_I">
+      <obj_property name="ElementShortName">PD_I[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PD_I[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/PD_Q">
+      <obj_property name="ElementShortName">PD_Q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PD_Q[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/QPSK_raw">
       <obj_property name="ElementShortName">QPSK_raw[1:0]</obj_property>

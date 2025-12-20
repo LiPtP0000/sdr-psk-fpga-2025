@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
--- Date        : Wed Dec 17 08:10:39 2025
+-- Date        : Sat Dec 20 17:39:57 2025
 -- Host        : LiPtPDesktop running 64-bit Ubuntu 24.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/liptp/courses_2025/general_ex_6/sdr-psk-fpga-2025/ip/Costas/NCO_DDS/NCO_DDS_stub.vhdl

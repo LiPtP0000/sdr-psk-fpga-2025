@@ -1,3 +1,7 @@
+// Module: Bits_Flatten
+// ===================
+// This module flattens N bits into serial output at a higher clock rate.
+// It supports a bypass mode to directly output a selected bit.
 `timescale 1ns / 1ps
 
 module Bits_Flatten #(

@@ -67,7 +67,9 @@ module tb_BPSK;
     // configuration parameters (constants)
     assign DELAY_CNT = 4'd8;
     assign MODE_CTRL = MODE_BPSK;
-    assign TX_PHASE_CONFIG = 8192;  // 8192 for 4.196 MHz
+    // 8192 for 4.196 MHz. CFOs can be simulated by slightly changing this value
+    // Costas loop may not work well if the CFO is too large
+    assign TX_PHASE_CONFIG = 8192;
 
     // module instantiation
     Tx inst_Tx (
@@ -157,10 +159,8 @@ module tb_BPSK;
     );
 
     // loopback
-    // assign ADC_I = DAC_vld ? (DAC_I / 4 * 3 + noise_I - 16) : 0; // loopback with gain and noise
-    // assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0; // loopback with gain and noise
-    assign ADC_I = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
-    assign ADC_Q = DAC_vld ? -(DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
+    assign ADC_I = DAC_vld ? (DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
+    assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
     assign FEEDBACK_SHIFT = 4'd0;
     assign GARDNER_SHIFT = 4'd3;
     assign RX_BD_WINDOW = 8'd16;

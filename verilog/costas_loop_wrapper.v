@@ -1,3 +1,7 @@
+// Module: costas_loop_wrapper
+// =========================
+// This module wraps the Costas loop components including NCO, multipliers, LPF, error detector, etc.
+// Note that the whole module works at 32.768 MHz clock, but enabled by 16.384 MHz clock. This may cause some inefficiency.
 module costas_loop_wrapper #(
     parameter LPF_OUT_WIDTH = 80,
     parameter DATA_WIDTH = 16,
@@ -196,6 +200,7 @@ module costas_loop_wrapper #(
     // Multiplier.
     err_detect_BPSK u_err_detect_BPSK (
         .CLK(clk_32M768),
+        .CE (clk_16M384),
         .A  (out_I_tdata),
         .B  (out_Q_tdata),
         .P  (error_bpsk_tdata)
@@ -207,6 +212,7 @@ module costas_loop_wrapper #(
         .A  (out_I_tdata),
         .B  (out_Q_tdata),
         .CLK(clk_32M768),
+        .CE (clk_16M384),
         .S  (error_qpsk_tdata)
     );
 

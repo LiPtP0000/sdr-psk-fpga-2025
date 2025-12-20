@@ -9,6 +9,7 @@ module err_detect_QPSK (
   A,
   B,
   CLK,
+  CE,
   S
 );
 
@@ -24,6 +25,10 @@ module err_detect_QPSK (
   (* X_INTERFACE_MODE = "slave clk_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF s_intf:c_out_intf:sinit_intf:sset_intf:bypass_intf:c_in_intf:add_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN , ASSOCIATED_PORT , INSERT_VIP 0" *)
   input CLK;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 ce_intf CE" *)
+  (* X_INTERFACE_MODE = "slave ce_intf" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_HIGH" *)
+  input CE;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 s_intf DATA" *)
   (* X_INTERFACE_MODE = "master s_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_intf, LAYERED_METADATA undef" *)

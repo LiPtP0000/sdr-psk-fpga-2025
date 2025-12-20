@@ -1,3 +1,10 @@
+// Module: PSK_Mod
+// ===================
+// This module generates the PSK modulated I and Q signals based on input bits and carrier signals.
+// It has a delay of 1 16M384 clock cycle.
+// 
+// Author: LiPtP
+// Date: 2025/12/20
 `timescale 1ns / 1ps
 
 module PSK_Mod #(

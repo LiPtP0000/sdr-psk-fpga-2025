@@ -9,6 +9,7 @@ module err_detect_BPSK (
   CLK,
   A,
   B,
+  CE,
   P
 );
 
@@ -24,6 +25,10 @@ module err_detect_BPSK (
   (* X_INTERFACE_MODE = "slave b_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME b_intf, LAYERED_METADATA undef" *)
   input [15:0]B;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clockenable:1.0 ce_intf CE" *)
+  (* X_INTERFACE_MODE = "slave ce_intf" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_HIGH" *)
+  input CE;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 p_intf DATA" *)
   (* X_INTERFACE_MODE = "master p_intf" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME p_intf, LAYERED_METADATA undef" *)

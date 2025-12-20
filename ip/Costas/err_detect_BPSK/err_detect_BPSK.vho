@@ -56,6 +56,7 @@ COMPONENT err_detect_BPSK
     CLK : IN STD_LOGIC;
     A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    CE : IN STD_LOGIC;
     P : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
   );
 END COMPONENT;
@@ -70,6 +71,7 @@ your_instance_name : err_detect_BPSK
     CLK => CLK,
     A => A,
     B => B,
+    CE => CE,
     P => P
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------

@@ -234,7 +234,7 @@ module Rx (
         .rst_n (rst_n_32M768),
         .ce_1M (clk_1M024),
         .ce_2M (clk_2M048),
-        .bypass(1'b1),
+        .bypass(1'b0),
         .I     (depacketizer_tdata),
         .I_vld (depacketizer_tvalid),
         .O     (Rx_1bit_internal),
