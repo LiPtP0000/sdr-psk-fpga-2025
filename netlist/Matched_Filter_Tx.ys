@@ -1,0 +1,5 @@
+read_verilog -sv -formal -overwrite {workspace}/verilog/utils/skid_buffer_1m_16m.v
+read_verilog -sv -formal -overwrite {workspace}/ip/Matched_Filter/RRC_Tx_Filter/RRC_Tx_Filter_bmstub.v
+read_verilog -sv -formal -overwrite {workspace}/verilog/Matched_Filter_Tx.v
+design -reset-vlog; proc;
+write_json {workspace}/netlist/Matched_Filter_Tx.json
