@@ -68,7 +68,7 @@ module tb_MIX;
     // configuration parameters (constants)
     assign DELAY_CNT = 4'd8;
     assign MODE_CTRL = MODE_MIX;
-    assign TX_PHASE_CONFIG = 16'd8192;  // 8192 for 4.196 MHz
+    assign TX_PHASE_CONFIG = 16'd8192 - 8;  // 8192 for 4.196 MHz
 
     // module instantiation
     Tx inst_Tx (
@@ -158,10 +158,10 @@ module tb_MIX;
     );
 
     // loopback
-    // assign ADC_I = DAC_vld ? (DAC_I / 4 * 3 + noise_I - 16) : 0; // loopback with gain and noise
-    // assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0; // loopback with gain and noise
-    assign ADC_I = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
-    assign ADC_Q = DAC_vld ? -(DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
+    assign ADC_I = DAC_vld ? (DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
+    assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
+    // assign ADC_I = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
+    // assign ADC_Q = DAC_vld ? -(DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
     assign FEEDBACK_SHIFT = 4'd0;
     assign GARDNER_SHIFT = 4'd3;
     assign RX_BD_WINDOW = 8'd16;

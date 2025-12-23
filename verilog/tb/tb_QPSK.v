@@ -66,7 +66,7 @@ module tb_QPSK;
     // configuration parameters (constants)
     assign DELAY_CNT = 4'd8;
     assign MODE_CTRL = MODE_QPSK;
-    assign TX_PHASE_CONFIG = 8192;  // 8192 for 4.096 MHz
+    assign TX_PHASE_CONFIG = 16'd8192;  // 8192 for 4.096 MHz
 
     // module instantiation
     Tx inst_Tx (

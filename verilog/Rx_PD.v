@@ -33,20 +33,33 @@ module Rx_PD #(
     assign BPSK_diff = BPSK ^ BPSK_reg;
 
     always @(posedge clk) begin
-        if (rst | disassert_PD | ~SD_flag) begin  // synchronized rst
-            cnt <= 0;
-            PD_flag <= 0;
-            BPSK_reg <= 0;
+        if (rst) begin
+            PD_flag  <= 1'b0;
+            BPSK_reg <= 1'b0;
         end else if (clk_enable) begin
+            if (disassert_PD | ~SD_flag) begin
+                PD_flag <= 1'b0;
+            end else if (cnt >= RX_PD_WINDOW) begin
+                PD_flag <= 1'b1;
+            end else begin
+                PD_flag <= PD_flag;  // we do not disassert it automatically
+            end
             BPSK_reg <= BPSK;
+        end
+    end
+    always @(posedge clk) begin
+        if (rst) begin  // synchronized rst
+            cnt <= 0;
+        end else if (clk_enable) begin
             if (BPSK_diff == 1'b1) begin
-                if (cnt < RX_PD_WINDOW) cnt <= cnt + 1;
+                if (cnt < RX_PD_WINDOW) begin
+                    cnt <= cnt + 1;
+                end else begin
+                    cnt <= cnt;  // hold
+                end
             end else begin
                 cnt <= 0;
             end
-            if (cnt >= RX_PD_WINDOW) begin
-                PD_flag <= 1;
-            end else;  // we do not disassert it automatically
         end
     end
 endmodule

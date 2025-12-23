@@ -228,7 +228,7 @@ module top (
         .s_axis_aclk   (AD9361_CLK),
         .s_axis_tvalid (rev_valid),
         .s_axis_tready (rev_tready),
-        .s_axis_tdata  ({rev_Q, rev_I}),
+        .s_axis_tdata  (rev_concat),
         .m_axis_aclk   (clk_32d768M),
         .m_axis_tvalid (ADC_tvalid),
         .m_axis_tready (1'b1),
@@ -252,7 +252,8 @@ module top (
     assign rev_aresetn = rev_aresetn_d2;
 
     // Only when RX_FRAME is valid, write to FIFO
-    assign rev_valid = AD9361_RX_FRAME;
+    // This is abandoned since RX_FRAME is always 0 for unknown reason
+    assign rev_valid = 1'b1;
     assign ADC_I = ADC_concat[11:0];
     assign ADC_Q = ADC_concat[23:12];
     assign rev_concat = {rev_Q, rev_I};
@@ -278,7 +279,10 @@ module top (
     wire        Rx_valid;
     wire [15:0] gardner_error;
     wire [15:0] gardner_increment;
-
+    wire        SD_flag;
+    wire        PD_flag;
+    wire        BD_flag;
+    wire        BD_sgn;
     Rx u_Rx (
         .clk_1M024        (clk_1d024M),
         .clk_2M048        (clk_2d048M),
@@ -314,7 +318,11 @@ module top (
         .feedback_tdata   (feedback_tdata),
         .Rx_valid         (Rx_valid),
         .gardner_error    (gardner_error),
-        .gardner_increment(gardner_increment)
+        .gardner_increment(gardner_increment),
+        .SD_flag          (SD_flag),
+        .PD_flag          (PD_flag),
+        .BD_flag          (BD_flag),
+        .BD_sgn           (BD_sgn)
     );
 
     // GPIOs
@@ -323,4 +331,45 @@ module top (
     assign GPIO_TH3 = clk_2d048M;
     assign GPIO_TH4 = clk_1M_out;
 
+    // ILA Probes
+    ILA ILA_Probes (
+        .clk(clk_32d768M),  // input wire clk
+        .probe0(DAC_I),  // input wire [11:0]  probe0  
+        .probe1(DAC_Q),  // input wire [11:0]  probe1 
+        .probe2(tx_serial),  // input wire [0:0]  probe2 
+        .probe3(I_16M),  // input wire [15:0]  probe3 
+        .probe4(Q_16M),  // input wire [15:0]  probe4 
+        .probe5(error_tdata),  // input wire [15:0]  probe5 
+        .probe6(feedback_tdata),  // input wire [15:0]  probe6 
+        .probe7(I_1M),  // input wire [15:0]  probe7 
+        .probe8(Q_1M),  // input wire [15:0]  probe8 
+        .probe9(clk_1M_out),  // input wire [0:0]  probe9 
+        .probe10(gardner_error),  // input wire [15:0]  probe10 
+        .probe11(gardner_increment),  // input wire [15:0]  probe11 
+        .probe12(BPSK_raw),  // input wire [0:0]  probe12 
+        .probe13(QPSK_raw),  // input wire [1:0]  probe13 
+        .probe14(SD_flag),  // input wire [0:0]  probe14 
+        .probe15(PD_flag),  // input wire [0:0]  probe15 
+        .probe16(BD_flag),  // input wire [0:0]  probe16 
+        .probe17(rx_data_tlast),  // input wire [0:0]  probe17 
+        .probe18(BPSK),  // input wire [0:0]  probe18 
+        .probe19(QPSK),  // input wire [1:0]  probe19 
+        .probe20(rx_serial),  // input wire [0:0]  probe20 
+        .probe21(Rx_valid),  // input wire [0:0]  probe21
+        .probe22(ADC_I),  // input wire [11:0]  probe22     
+        .probe23(ADC_Q)  // input wire [11:0]  probe23
+    );
+    ILA_AD9361 ILA_AD9361_Probes (
+        .clk(AD9361_CLK),
+        .probe0(tsm_I),
+        .probe1(tsm_Q),
+        .probe2(tsm_I),
+        .probe3(tsm_Q),
+        .probe4(rev_I),
+        .probe5(rev_Q),
+        .probe6(rev_valid),
+        .probe7(rev_valid),
+        .probe8(rev_valid),
+        .probe9(rev_valid)
+    );
 endmodule

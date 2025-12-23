@@ -1,39 +1,43 @@
 module Rx (
-    input         clk_1M024,
-    input         clk_2M048,
-    input         clk_16M384,
-    input         clk_32M768,
-    input         rst_n_32M768,
-    input         rst_32M768,
-    input  [11:0] ADC_I,
-    input  [11:0] ADC_Q,
-    input  [ 3:0] MODE_CTRL,
-    input  [ 3:0] FEEDBACK_SHIFT,
-    input  [ 3:0] GARDNER_SHIFT,
-    input  [15:0] RX_SD_THRESHOLD,
-    input  [ 7:0] RX_SD_WINDOW,
-    input  [ 7:0] RX_PD_WINDOW,
-    input  [ 7:0] RX_BD_WINDOW,
-    output        BPSK_raw,
-    output [ 1:0] QPSK_raw,
-    output [15:0] I_16M,
-    output [15:0] Q_16M,
-    output [11:0] NCO_cos,
-    output [15:0] I_1M,
-    output [15:0] Q_1M,
-    output        clk_1M_out,
-    output [ 1:0] QPSK,
-    output        BPSK,
-    output        Rx_1bit,
-    output [ 7:0] data_tdata,
-    output        data_tvalid,
-    output        data_tlast,
-    output        data_tuser,
-    output [15:0] error_tdata,
-    output [15:0] feedback_tdata,
-    output        Rx_valid,
-    output [15:0] gardner_error,
-    output [15:0] gardner_increment
+    input              clk_1M024,
+    input              clk_2M048,
+    input              clk_16M384,
+    input              clk_32M768,
+    input              rst_n_32M768,
+    input              rst_32M768,
+    input       [11:0] ADC_I,
+    input       [11:0] ADC_Q,
+    input       [ 3:0] MODE_CTRL,
+    input       [ 3:0] FEEDBACK_SHIFT,
+    input       [ 3:0] GARDNER_SHIFT,
+    input       [15:0] RX_SD_THRESHOLD,
+    input       [ 7:0] RX_SD_WINDOW,
+    input       [ 7:0] RX_PD_WINDOW,
+    input       [ 7:0] RX_BD_WINDOW,
+    output             BPSK_raw,
+    output      [ 1:0] QPSK_raw,
+    output      [15:0] I_16M,
+    output      [15:0] Q_16M,
+    output      [11:0] NCO_cos,
+    output      [15:0] I_1M,
+    output      [15:0] Q_1M,
+    output             clk_1M_out,
+    output      [ 1:0] QPSK,
+    output             BPSK,
+    output             Rx_1bit,
+    output      [ 7:0] data_tdata,
+    output             data_tvalid,
+    output             data_tlast,
+    output             data_tuser,
+    output      [15:0] error_tdata,
+    output      [15:0] feedback_tdata,
+    output             Rx_valid,
+    output      [15:0] gardner_error,
+    output      [15:0] gardner_increment,
+    output wire        SD_flag,
+    output wire        PD_flag,
+    output wire        BD_flag,
+    output wire        BD_sgn
 );
 
     // =========================================================================
@@ -69,10 +73,7 @@ module Rx (
     wire        psk_detection_valid;
 
     // SPB Detection
-    wire        SD_flag;
-    wire        PD_flag;
-    wire        BD_flag;
-    wire        BD_sgn;
+
     wire        disassert_BD;
     wire        disassert_PD;
 
@@ -99,7 +100,7 @@ module Rx (
     PSK_Signal_Extend #(
         .I_WIDTH   (12),
         .O_WIDTH   (12),
-        .USE_I_STRM(1)
+        .USE_I_STRM(0)
     ) u_PSK_Signal_Extend (
         .clk        (clk_32M768),
         .DAC_I      (ADC_I),
