@@ -9,5 +9,6 @@ ip/*
 !ip/**/*.xci
 
 # Ignore Vivado log files
-vivado.jou
-vivado.log
+*.jou
+*.log
+*.str
