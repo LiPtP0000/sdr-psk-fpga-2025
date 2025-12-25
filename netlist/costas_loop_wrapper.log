@@ -1,1 +1,0 @@
-{workspace}/verilog/costas_loop_wrapper.v:127: ERROR: Cannot add cell `\u_AXI_2x' because a cell with the same name was already created at {workspace}/verilog/costas_loop_wrapper.v:110.7-117.6!

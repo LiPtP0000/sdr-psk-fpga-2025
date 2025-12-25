@@ -1,3 +1,0 @@
-read_verilog -sv -formal -overwrite {workspace}/verilog/Bits_Flatten.v
-design -reset-vlog; proc;
-write_json {workspace}/netlist/Bits_Flatten.json

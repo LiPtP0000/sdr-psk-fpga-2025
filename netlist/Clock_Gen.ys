@@ -1,9 +1,0 @@
-read_verilog -sv -formal -overwrite {workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M.v
-read_verilog -sv -formal -overwrite {workspace}/ip/Clock_Gen/clk_wiz_128M/clk_wiz_128M_clk_wiz.v
-read_verilog -sv -formal -overwrite {workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768.v
-read_verilog -sv -formal -overwrite {workspace}/ip/Clock_Gen/clk_wiz_32M768/clk_wiz_32M768_clk_wiz.v
-read_verilog -sv -formal -overwrite {workspace}/verilog/Div_clk32M768.v
-read_verilog -sv -formal -overwrite {workspace}/ip/Clock_Gen/proc_sys_reset_gen/proc_sys_reset_gen_bmstub.v
-read_verilog -sv -formal -overwrite {workspace}/verilog/Clock_Gen_wrapper.v
-design -reset-vlog; proc;
-write_json {workspace}/netlist/Clock_Gen.json

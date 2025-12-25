@@ -1,4 +1,0 @@
-read_verilog -sv -formal -overwrite {workspace}/verilog/PN_Gen.v
-read_verilog -sv -formal -overwrite {workspace}/verilog/Tx_Data.v
-design -reset-vlog; proc;
-write_json {workspace}/netlist/Tx_Data.json

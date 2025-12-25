@@ -1,11 +1,8 @@
 // Module: AD9361_1RT_FDD
 // ======================
 // 
-// Modified by Wuqiong Zhao (me@wqzhao.org)
-// 1. Change file encoding to UTF-8
-// 2. Change Chinese comments to English
-// 3. Improve file formatting
-// Date: 2023/12/07
+// Last Modified by LiPtP
+// Date: 2
 
 `timescale 1ns / 1ps
 

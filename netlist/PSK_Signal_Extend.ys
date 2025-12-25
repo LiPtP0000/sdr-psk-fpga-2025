@@ -1,3 +1,0 @@
-read_verilog -sv -formal -overwrite {workspace}/verilog/PSK_Signal_Extend.v
-design -reset-vlog; proc;
-write_json {workspace}/netlist/PSK_Signal_Extend.json

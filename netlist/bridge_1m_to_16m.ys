@@ -1,3 +1,0 @@
-read_verilog -sv -formal -overwrite {workspace}/verilog/utils/bridge.v
-design -reset-vlog; proc;
-write_json {workspace}/netlist/bridge_1m_to_16m.json
