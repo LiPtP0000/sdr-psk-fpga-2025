@@ -12,3 +12,6 @@ ip/*
 *.jou
 *.log
 *.str
+
+# VSCode settings
+.vscode/*
