@@ -15,3 +15,9 @@ ip/*
 
 # VSCode settings
 .vscode/*
+
+# DIDE files
+*.dideignore
+*.view
+netlist/*
+icarus/*
