@@ -1,0 +1,11 @@
+*.cache
+*.sim
+*.runs
+*.ip_user_files/*
+!*.ip_user_files/README*
+
+# Ignore all files in ip/ folder except .xci files
+ip/*
+!ip/**/*.xci
+!ip/*/
+!ip/*/*/
