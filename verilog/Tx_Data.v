@@ -4,7 +4,7 @@
 // Currently it employs a PN sequence generator to generate the data.
 // It can be modified for customized data generation.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

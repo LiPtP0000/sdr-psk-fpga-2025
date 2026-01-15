@@ -3,7 +3,6 @@
 // This module extends the PSK signal to a wider width. (Actually not used now, when I_WIDTH == Q_WIDTH).
 // It also allows the selection of I or Q stream for later processing.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
 // Author: LiPtP
 // Date: 2025/12/18
 

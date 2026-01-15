@@ -3,8 +3,8 @@
 // This module detects the error signal from the NCO in the Costas loop.
 // It also provides a delayed version of is_bpsk.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
-// Date: 2024/01/05
+// Author: LiPtP
+// Date: 2026/01/16
 
 `timescale 1ns / 1ps
 

@@ -1,13 +1,16 @@
-// Module: Depacketizer (Corrected Version)
+// Module: Depacketizer (Robust Version)
 // ====================
-// Simplified FSM while strictly maintaining original timing and logic.
+// Correction: Added Sanity Check for Payload Length.
+// Solves the deadlock where an erroneous huge length prevents 
+// disassert_PD from triggering, keeping Rx_PD stuck at 1.
 
 `timescale 1ns / 1ps
 
 module Depacketizer #(
     parameter BYTES = 1,
     parameter WIDTH = 16,
-    parameter MAX_WINDOW_WIDTH = 8
+    parameter MAX_WINDOW_WIDTH = 8,
+    parameter MAX_PAYLOAD_BYTES = 300 // 新增：最大允许的包长度（字节），根据你的协议修改
 ) (
     input                             clk,
     input                             clk_enable,
@@ -35,7 +38,6 @@ module Depacketizer #(
     localparam BITS = BYTES * 8;
     localparam MODE_BPSK = 4'b0001, MODE_QPSK = 4'b0010, MODE_MIX = 4'b0100;
 
-    // 状态定义（恢复 LAST 状态以保证 tlast 时序一致）
     localparam ST_IDLE = 3'd0;
     localparam ST_TRN = 3'd1;
     localparam ST_HDR = 3'd2;
@@ -45,12 +47,20 @@ module Depacketizer #(
 
     reg [2:0] state, state_next;
     reg [15:0] cnt;
-    reg [15:0] payload_length, payload_length_symbs;
+    reg [15:0] payload_length;
+    reg [15:0] payload_length_symbs;
     reg [7:0] MCS, signature;
     reg        BD_sgn_reg;
     reg        is_bpsk_reg;
     wire       in_BPSK_signed = in_BPSK ~^ BD_sgn_reg;
     wire [1:0] sym_fsm_qpsk = is_bpsk_reg ? {2{in_BPSK_signed}} : (in_QPSK ~^ {2{BD_sgn_reg}});
+
+    // 计算最大允许的 Symbol 数，用于 Sanity Check
+    // 如果是 QPSK，Symbols = Bytes * 4; 如果是 BPSK，Symbols = Bytes * 8
+    // 这里为了安全，我们取一个较大的宽限值，或者根据 MCS 动态判断。
+    // 简单起见，如果 payload_length (bit单位或其他单位) 解析出来过大，直接拒绝。
+    // 假设 payload_length 是字节数：
+    wire       length_valid = (payload_length <= MAX_PAYLOAD_BYTES);
 
     // ===========================
     // State Register
@@ -62,7 +72,6 @@ module Depacketizer #(
             state <= state_next;
         end
     end
-
 
     // ===========================
     // Next State Logic
@@ -79,28 +88,20 @@ module Depacketizer #(
             end
             ST_TRN: begin
                 if (cnt == (30 - RX_BD_WINDOW)) begin
-                    //  * BD_init is triggered by TRN bit 224, asserted at bit 225.
-                    //  * BD_flag rises at bit (224 + RX_BD_WINDOW + 1).
-                    //  * cnt = 1 starts at bit (226 + RX_BD_WINDOW), state transitions to ST_TRN.
-                    //  * When cnt == (30 - RX_BD_WINDOW), state_next updates to ST_HDR (at bit 255).
-                    //  * HDR state starts at bit 256.
                     state_next = ST_HDR;
                 end else begin
                     state_next = ST_TRN;
                 end
             end
             ST_HDR: begin
-                // Header transition: cnt starts from 0 and increments unconditionally (no data_tready wait).
-                //   - cnt=0: process 1st bit, then cnt becomes 1
-                //   - cnt=62: process 63rd bit, then cnt becomes 63
-                //   - cnt=63: process 64th bit, (cnt+1==64) triggers state_next=ST_PLD
-                //   - Next clock: state switches to ST_PLD after all 64 header bits processed
-                // Unlike ST_PLD (which uses +2), ST_HDR uses +1 because counter increments
-                // every cycle without handshake delay.
                 if (cnt + 1 == 64) begin
-                    //  * cnt = 0 starts at bit 256. HDR length is 64 bits.
-                    //  * When cnt + 1 == 64 (i.e., cnt=63), we've processed all 64 header bits
-                    if (payload_length_symbs == 0) begin
+                    // ========================================================
+                    // 修正核心：Sanity Check (安全性检查)
+                    // 如果解析出的长度超过了协议允许的最大值，或者为0，
+                    // 强制跳转回 IDLE。这会触发 disassert 信号，
+                    // 从而复位 Rx_PD，打破死锁。
+                    // ========================================================
+                    if (payload_length_symbs == 0 || !length_valid) begin
                         state_next = ST_IDLE;
                     end else if (payload_length_symbs == 1) begin
                         state_next = ST_LAST;
@@ -112,13 +113,6 @@ module Depacketizer #(
                 end
             end
             ST_PLD: begin
-                // Penultimate transition: Jump to ST_LAST when processing the (L-1)th symbol.
-                // cnt + 2 == payload_length_symbs accounts for:
-                //   - cnt starts from 0 (cnt=0 is 1st symbol, cnt=L-2 is (L-1)th symbol)
-                //   - state_next is computed one cycle ahead (combinational logic)
-                // Example: If L=10, when cnt=8 (9th symbol), (8+2==10) triggers ST_LAST.
-                //          The 10th symbol is then processed in ST_LAST with data_tlast asserted.
-                // When the data before last is ready, move to LAST state
                 if (data_tready && (cnt + 2 == payload_length_symbs)) begin
                     state_next = ST_LAST;
                 end else begin
@@ -141,6 +135,9 @@ module Depacketizer #(
         endcase
     end
 
+    // ===========================
+    // Data Path Logic
+    // ===========================
     always @(posedge clk) begin
         if (rst) begin
             cnt <= 0;
@@ -149,13 +146,12 @@ module Depacketizer #(
             payload_length_symbs <= 0;
             BD_sgn_reg <= 0;
         end else if (clk_enable) begin
-            // Global counter: reset on state change, otherwise increment when ready (auto increment in TRN/HDR states)
             if (state != state_next) begin
                 cnt <= 0;
             end else if (data_tready || state == ST_TRN || state == ST_HDR) begin
                 cnt <= cnt + 1;
             end else begin
-                cnt <= cnt;  // Hold current value
+                cnt <= cnt;
             end
 
             case (state)
@@ -163,24 +159,19 @@ module Depacketizer #(
 
                 ST_HDR: begin
                     if (data_tready) begin
-                        // 还原 Header 解析每一位的精确逻辑
                         if (cnt <= 7) begin
                             MCS[7-cnt] <= in_BPSK_signed;
                         end else if (cnt <= 23) begin
                             payload_length[23-cnt] <= in_BPSK_signed;
                         end else if (cnt == 28) begin
                             signature[3] <= in_BPSK;
-                            is_bpsk_reg  <= MCS[5];  // Update MCS in advance
+                            is_bpsk_reg  <= MCS[5];
                         end else if (cnt == 29) begin
                             signature[2] <= in_BPSK;
                             payload_length_symbs <= is_bpsk_reg ? payload_length : (payload_length >> 1);
                         end else if (cnt <= 31) begin
                             signature[31-cnt] <= in_BPSK_signed;
-                        end else begin
-                            // cnt > 31: no action needed, maintain current values
                         end
-                    end else begin
-                        // data_tready is low: hold current values
                     end
                 end
 
@@ -188,35 +179,24 @@ module Depacketizer #(
                     is_bpsk_reg <= 1'b1;
                 end
 
-                ST_PLD: begin
-                    // No register updates in PLD state
-                end
-
-                ST_LAST: begin
-                    // No register updates in LAST state
-                end
-
-                ST_WAIT: begin
-                    // No register updates in WAIT state
-                end
-
                 default: begin
-                    // Default case: maintain current values
                 end
             endcase
         end
     end
 
+    // ===========================
+    // Output Logic
+    // ===========================
     always @(*) begin
         case (MODE_CTRL)
             MODE_BPSK, MODE_QPSK: begin
                 data_tdata  = {{BITS - 2{1'b0}}, in_QPSK};
                 data_tvalid = 1'b1;
-                data_tlast  = 1'b0;  // no LAST in non-packet mode
+                data_tlast  = 1'b0;
                 is_bpsk     = (MODE_CTRL == MODE_BPSK);
             end
             MODE_MIX: begin
-                // Gives output only in PLD and LAST states
                 if (state == ST_PLD || state == ST_LAST) begin
                     data_tdata  = {{BITS - 2{1'b0}}, sym_fsm_qpsk};
                     data_tvalid = 1'b1;
@@ -238,12 +218,30 @@ module Depacketizer #(
         endcase
     end
 
-    // 连线赋值
-    assign in_ready     = data_tready;
-    assign data_tuser   = is_bpsk;
-    assign QPSK         = (MODE_CTRL == MODE_MIX) ? sym_fsm_qpsk : in_QPSK;
-    assign BPSK         = (MODE_CTRL == MODE_MIX) ? in_BPSK_signed : in_BPSK;
-    assign disassert_BD = data_tlast;
-    assign disassert_PD = data_tlast;
+    assign in_ready   = data_tready;
+    assign data_tuser = is_bpsk;
+    assign QPSK       = (MODE_CTRL == MODE_MIX) ? sym_fsm_qpsk : in_QPSK;
+    assign BPSK       = (MODE_CTRL == MODE_MIX) ? in_BPSK_signed : in_BPSK;
+
+    // ========================================================
+    // 修正的 Disassert 逻辑
+    // 当 FSM 回到 IDLE 状态时（无论是正常结束还是因为 Sanity Check 失败强制退出），
+    // 必须确保没有待处理的 disassert 信号被遗漏。
+    // 但根据时序，通常在 ST_LAST 结束时发出 disassert。
+    // 如果 Header 检查失败导致直接跳回 IDLE，我们需要在这里生成一个脉冲吗？
+    //
+    // 观察 Rx_PD: if (disassert_PD | ~SD_flag) ...
+    // 我们需要在回到 IDLE 的瞬间让 disassert_PD 有效。
+    //
+    // 方法1：利用 data_tlast (原有逻辑，适用于正常包)
+    // 方法2：增加逻辑：如果我们刚刚决定从 ST_HDR 跳回 ST_IDLE (即 Header 无效)，也拉高 disassert。
+    // ========================================================
+
+    // 检测是否正在因为错误而强制跳转回 IDLE
+    wire error_abort = (state == ST_HDR) && (state_next == ST_IDLE) && (payload_length_symbs != 0);
+    // 注意：正常的 payload=0 结束也会走这里，所以这行逻辑覆盖了空包和错误包，都可以 assert，没问题。
+
+    assign disassert_BD = data_tlast || error_abort;
+    assign disassert_PD = data_tlast || error_abort;
 
 endmodule

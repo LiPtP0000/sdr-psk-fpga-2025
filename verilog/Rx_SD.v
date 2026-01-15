@@ -3,7 +3,7 @@
 // SD: Strength Detection
 // This module detects the strength of the received signal.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

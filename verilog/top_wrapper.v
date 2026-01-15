@@ -359,17 +359,17 @@ module top (
         .probe22(ADC_I),  // input wire [11:0]  probe22     
         .probe23(ADC_Q)  // input wire [11:0]  probe23
     );
-    ILA_AD9361 ILA_AD9361_Probes (
-        .clk(AD9361_CLK),
-        .probe0(tsm_I),
-        .probe1(tsm_Q),
-        .probe2(tsm_I),
-        .probe3(tsm_Q),
-        .probe4(rev_I),
-        .probe5(rev_Q),
-        .probe6(rev_valid),
-        .probe7(rev_valid),
-        .probe8(rev_valid),
-        .probe9(rev_valid)
-    );
+    // ILA_AD9361 ILA_AD9361_Probes (
+    // .clk(AD9361_CLK),
+    // .probe0(tsm_I),
+    // .probe1(tsm_Q),
+    // .probe2(tsm_I),
+    // .probe3(tsm_Q),
+    // .probe4(rev_I),
+    // .probe5(rev_Q),
+    // .probe6(rev_valid),
+    // .probe7(rev_valid),
+    // .probe8(rev_valid),
+    // .probe9(rev_valid)
+    // );
 endmodule

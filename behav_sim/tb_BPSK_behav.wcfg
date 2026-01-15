@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="24.700001 us"></ZoomEndTime>
-      <Cursor1Time time="16.024000 us"></Cursor1Time>
+      <ZoomStartTime time="35,636.166 ns"></ZoomStartTime>
+      <ZoomEndTime time="37,966.167 ns"></ZoomEndTime>
+      <Cursor1Time time="41,432.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="102"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <NameColumnWidth column_width="99"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="131" />
+   <WVObjectSize size="143" />
    <wave_markers>
       <marker label="" time="13636000" />
       <marker label="" time="11844000" />
@@ -436,6 +436,13 @@
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">SIGNEDMAGRADIX</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/Q_tdata">
       <obj_property name="ElementShortName">Q_tdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">Q_tdata[15:0]</obj_property>
@@ -449,12 +456,22 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/Rx_1bit_internal">
       <obj_property name="ElementShortName">Rx_1bit_internal</obj_property>
       <obj_property name="ObjectShortName">Rx_1bit_internal</obj_property>
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/clk_out">
+      <obj_property name="ElementShortName">clk_out</obj_property>
+      <obj_property name="ObjectShortName">clk_out</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/Tx_1bit">
       <obj_property name="ElementShortName">Tx_1bit</obj_property>
@@ -468,6 +485,12 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/clk_out">
       <obj_property name="ElementShortName">clk_out</obj_property>
@@ -547,12 +570,103 @@
       <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/Q_1M">
       <obj_property name="ElementShortName">Q_1M[15:0]</obj_property>
       <obj_property name="ObjectShortName">Q_1M[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_1M">
+      <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Tx/tx_serial">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">tx_serial</obj_property>
+      <obj_property name="ObjectShortName">tx_serial</obj_property>
+      <obj_property name="label">BPSK_Real</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_BPSK/inst_Rx/u_PSK_Detection/BPSK">
+      <obj_property name="ElementShortName">BPSK</obj_property>
+      <obj_property name="ObjectShortName">BPSK</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_PSK_Detection/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_up2_tdata">
+      <obj_property name="ElementShortName">I_up2_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_up2_tdata[15:0]</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/out_I_tdata">
+      <obj_property name="ElementShortName">out_I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out_I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_tdata">
+      <obj_property name="ElementShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_tdata[15:0]</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/u_interpolation_wrapper/I_up2_tdata">
       <obj_property name="ElementShortName">I_up2_tdata[15:0]</obj_property>
@@ -663,6 +777,13 @@
    <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_costas_loop_wrapper/Q_tdata">
       <obj_property name="ElementShortName">Q_tdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">Q_tdata[15:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_BPSK/inst_Rx/u_gardner_wrapper/I_1M">
+      <obj_property name="ElementShortName">I_1M[15:0]</obj_property>
+      <obj_property name="ObjectShortName">I_1M[15:0]</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>

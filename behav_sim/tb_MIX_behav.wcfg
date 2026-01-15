@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="12,239.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="12,774.001 ns"></ZoomEndTime>
-      <Cursor1Time time="12,924.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="96.771118 us"></ZoomEndTime>
+      <Cursor1Time time="61.916000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="66"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="63" />
+   <WVObjectSize size="60" />
    <wvobject type="array" fp_name="/tb_MIX/fd">
       <obj_property name="ElementShortName">fd[31:0]</obj_property>
       <obj_property name="ObjectShortName">fd[31:0]</obj_property>
@@ -184,20 +184,6 @@
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_Depacketizer/state">
-      <obj_property name="ElementShortName">state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_Depacketizer/state_next">
-      <obj_property name="ElementShortName">state_next[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state_next[2:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_MIX/inst_Tx/u_Packetizer/hdr_cnt">
-      <obj_property name="ElementShortName">hdr_cnt[9:0]</obj_property>
-      <obj_property name="ObjectShortName">hdr_cnt[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_MIX/inst_Rx/u_SPB_Detection/u_Rx_SD_0/cnt">
       <obj_property name="ElementShortName">cnt[7:0]</obj_property>

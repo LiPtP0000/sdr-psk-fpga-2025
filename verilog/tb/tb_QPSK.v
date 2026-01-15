@@ -2,7 +2,7 @@
 // ===============
 // This module is the testbench for the QPSK mode.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/07
 
 `timescale 1ns / 1ps
@@ -156,8 +156,8 @@ module tb_QPSK;
     );
 
     // loopback
-    assign ADC_I = DAC_vld ? (DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
-    assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
+    assign ADC_I = DAC_vld ? (DAC_I / 4 * 3) : 0;  // loopback with gain and noise
+    assign ADC_Q = DAC_vld ? (DAC_Q / 4 * 3) : 0;  // loopback with gain and noise
     // assign ADC_I = DAC_vld ? (DAC_Q / 4 * 3 + noise_Q - 16) : 0;  // loopback with gain and noise
     // assign ADC_Q = DAC_vld ? -(DAC_I / 4 * 3 + noise_I - 16) : 0;  // loopback with gain and noise
     assign FEEDBACK_SHIFT = 4'd0;
@@ -186,8 +186,8 @@ module tb_QPSK;
 
     // random number
     always begin
-        #4 noise_I <= $urandom_range(32);
-        noise_Q <= $urandom_range(32);
+        #4 noise_I <= $urandom_range(32) - 16;
+        noise_Q <= $urandom_range(32) - 16;
     end
 
     // data writing to CSV

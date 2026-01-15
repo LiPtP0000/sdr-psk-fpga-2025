@@ -2,7 +2,7 @@
 // =============
 // This module is the testbench for Tx.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/07
 
 `timescale 1ns / 1ps

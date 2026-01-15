@@ -3,7 +3,7 @@
 // This module implements the Gardner timing error corrector.
 // It takes the 32.768MHz input and outputs the 1.024MHz symbol.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

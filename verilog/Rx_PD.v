@@ -4,7 +4,7 @@
 // This module detects the presence of packet transmission.
 // It detects the repeated 010101... sequence.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

@@ -3,7 +3,7 @@
 // This module connects NCO (DDS) to provide the cos and sin signal.
 // It has a delay of 1 clock cycle.
 // 
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

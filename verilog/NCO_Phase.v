@@ -3,7 +3,7 @@
 // This module generates the phase of the NCO from Costas loop feedback.
 // It has a delay of 1 clock.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

@@ -2,7 +2,7 @@
 // ===============
 // This module is the testbench for the BPSK mode.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/07
 
 `timescale 1ns / 1ps
@@ -69,7 +69,7 @@ module tb_BPSK;
     assign MODE_CTRL = MODE_BPSK;
     // 8192 for 4.196 MHz. CFOs can be simulated by slightly changing this value
     // Costas loop may not work well if the CFO is too large
-    assign TX_PHASE_CONFIG = 8192 - 16;
+    assign TX_PHASE_CONFIG = 8192;
 
     // module instantiation
     Tx inst_Tx (

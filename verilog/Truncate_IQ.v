@@ -2,7 +2,7 @@
 // ===================
 // Truncate IQ data on MSB.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps

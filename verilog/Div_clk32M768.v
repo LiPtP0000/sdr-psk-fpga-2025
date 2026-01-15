@@ -5,7 +5,7 @@
 // 16KHz, 8KHz, 4KHz, 2KHz, 1KHz.
 // Clock enable signals pulse high for one 32.768MHz clock cycle at the corresponding rate.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 // Modified: 2025/12/17 - Changed to clock enable implementation
 

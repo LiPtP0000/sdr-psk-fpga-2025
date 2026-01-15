@@ -1,0 +1,556 @@
+%!TEX program = xelatex
+% 完整编译: xelatex -> biber/bibtex -> xelatex -> xelatex
+\documentclass[lang=cn,a4paper,newtx]{elegantpaper}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{subfig}
+\usepackage{mwe}
+\usepackage{longtable}
+\usepackage{lipsum}
+\usepackage{makecell}
+\usepackage{siunitx}
+\usepackage{tikz-timing}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usetikzlibrary{trees}
+% \usepackage[backend=biber,style = gb7714-2015]{biblatex}
+\addbibresource{reference.bib} % 参考文献，不要删除
+\renewcommand{\listfigurename}{插图目录}
+\renewcommand{\listtablename}{表格目录}
+\renewcommand{\appendixname}{附录~\Alph{section}}
+\renewcommand{\lstlistlistingname}{} % 去掉标题
+\lstdefinelanguage{Assembly}{
+  morekeywords={ ADD, SUB, MPY, JGZ, JMP, AND, OR,BUT,LOAD,STORE,SHIFTL,SHIFTR,HALT},  % 你可以在这里添加更多汇编指令
+  sensitive=true,  % 保证区分大小写
+  morecomment=[l]; % 单行注释（以分号开始）
+  morestring=[b]",  % 字符串用双引号括起来
+}
+% Define the style for listings
+\lstset{
+  language=Verilog,  % 选择使用的语言
+  basicstyle=\ttfamily\small,  % 基础字体风格
+  keywordstyle=\color{blue}\bfseries,  % 指令的颜色和加粗
+  commentstyle=\color{gray},  % 注释的颜色
+  stringstyle=\color{red},  % 字符串的颜色
+  identifierstyle=\color{purple},  % 标识符的颜色
+  backgroundcolor=\color{lightgray!10}, % 背景色
+  numbers=left,  % 行号显示在左侧
+  stepnumber=1,  % 每行显示一个行号
+  numberstyle=\tiny\color{gray},  % 行号的字体样式
+  numbersep=5pt,  % 行号与代码之间的间距
+  breaklines=true,  % 自动换行
+  showstringspaces=false,  % 不显示字符串中的空格
+  columns=flexible,  % 调整列宽
+  frame=single,  % 在代码块外部加一个框
+  framerule=0.5mm,  % 框线宽度
+  rulesepcolor=\color{black},  % 分隔线颜色
+  captionpos=b,  % 标题位置（b: bottom）
+  }
+
+
+  \tikzset{
+  timing/name/.cd,
+  I/.style={fill=blue!20},    % IF阶段
+  D/.style={fill=green!20},   % ID阶段
+  F/.style={fill=red!20},     % FO阶段
+  N/.style={fill=yellow!20},  % IND阶段
+  E/.style={fill=orange!20},  % EX阶段
+  W/.style={fill=purple!20}   % WB阶段
+}
+% \renewcommand{\refname}{参考文献}
+\title{基于帧传输的双模PSK调制解调系统的软件无线电实现}
+\author{
+  李勃璘\thanks{东南大学吴健雄学院，学号：61522529} \and
+  冯光宇\thanks{东南大学吴健雄学院，学号：61522527}
+}
+
+% \institute{吴健雄学院}
+
+\version{1.0}
+\date{\zhdate{2025/12/23}}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+  本设计文档详细阐述了一款基于软件定义无线电(Software-Defined Radio, SDR)架构的 BPSK/QPSK 双模相位键控调制解调系统的完整 Verilog RTL 硬件实现。该系统在 FPGA 平台上实现了完整的物理层处理链路,支持 BPSK(Binary Phase Shift Keying)和 QPSK(Quadrature Phase Shift Keying)两种调制模式的动态切换与混合传输。
+
+  系统以 Xilinx Artix-7 FPGA 为核心处理平台,集成 AD9361 射频捷变收发器作为模拟前端。发射链路包含伪随机序列生成、帧封装(Packetizer)、PSK 调制、并串转换(Serializer)等模块;接收链路实现了 Costas 载波同步环路、Gardner 符号定时恢复、三级 SPB(Symbol/Packet/Bit Detection)帧同步、自适应解调与帧解析(Depacketizer)等关键功能。系统工作于 32.768 MHz 基带时钟,符号速率为 1.024 Msps,采用统一时钟源配合时钟使能(Clock Enable)策略避免跨时钟域问题,通过 AXI Stream 接口协议实现模块间数据流控与握手。
+
+  本文档系统阐述了设计动机、架构选择、算法原理与 RTL 实现细节。针对载波频偏补偿、符号定时同步、相位模糊消除等关键技术挑战,文档详细说明了 Costas 环路的相位误差检测机制、Gardner 算法的定时误差计算方法、以及基于训练序列的相位模糊校正策略。帧结构设计采用 320 比特训练序列配合 64 比特帧头,支持调制编码方案(Modulation and Coding Scheme, MCS)字段指示的动态模式切换。所有模块接口遵循 AXI Stream 标准,便于系统集成与功能扩展。仿真与 FPGA 验证结果表明,该设计实现了预期的同步性能与误码性能,为后续高层协议开发和实际应用奠定了坚实的硬件基础。
+\end{abstract}
+
+% Removed
+% \vspace{1cm}
+
+% \textbf{版本更新记录：}
+
+% \begin{longtable*}{|c|c|p{10cm}|}
+%   \hline
+%   \textbf{版本号} & \textbf{日期} & \textbf{更新内容} \\
+%   \hline
+%   \endfirsthead
+
+%   \hline
+%   \textbf{版本号} & \textbf{日期} & \textbf{更新内容} \\
+%   \hline
+%   \endhead
+
+%   v1.0 & 2025-03-22 & 初始版本，包含基本 CPU 设计框架，流水线结构，Verilog 实现。 \\
+%   \hline
+%   v1.1 & 2025-03-29 & 修改 \\
+
+% \end{longtable*}
+
+
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\pagenumbering{arabic}
+\lstset{nolol}
+\section{概述}
+\subsection{双模 PSK 调制解调系统设计背景}
+
+双模 PSK 调制解调系统是现代软件定义无线电(Software-Defined Radio, SDR)通信架构中的核心物理层处理单元。相比传统硬件无线电,SDR 将信号处理功能从固定的模拟电路转移至可编程数字逻辑,实现了调制方式、频率配置、协议栈等参数的灵活重构。本设计以 BPSK 和 QPSK 两种经典相位调制方式为基础,构建了一个功能完整、可扩展的数字基带处理系统。
+
+\textbf{设计动机:}PSK 调制因其恒包络特性和优良的功率效率,在卫星通信、深空探测、军事通信等领域广泛应用。BPSK 提供最优的误码性能和最简单的解调复杂度,而 QPSK 在相同带宽下实现两倍的频谱效率。支持双模动态切换的系统可根据信道条件和业务需求自适应调整传输策略:在信噪比较低时选择 BPSK 保证可靠性,在信道质量良好时切换至 QPSK 提升吞吐量。
+
+\textbf{技术挑战:}数字相干解调系统面临三大核心挑战:(1)\textbf{载波同步}——接收信号存在的载波频率偏移(Carrier Frequency Offset, CFO)需要通过闭环反馈消除;(2)\textbf{符号定时恢复}——发送端与接收端时钟存在频率偏差,需要动态调整采样时刻以在最佳眼图位置判决;(3)\textbf{帧同步与相位模糊}——需要检测帧边界并解决相干解调固有的相位模糊问题。
+
+\textbf{系统架构:}本设计采用分层模块化架构,发射链路包括伪随机序列生成(PN Sequence Generator)、帧封装(Packetizer)、星座映射(Constellation Mapping)、数控振荡器(Numerically Controlled Oscillator, NCO)载波生成等模块;接收链路包含 Costas 载波同步环路、Gardner 符号定时恢复环路、SPB(Symbol/Packet/Bit)三级帧检测、解帧(Depacketizer)与解调等模块。所有模块通过 AXI Stream 接口互连,采用统一的 32.768 MHz 时钟配合时钟使能信号实现多速率处理,避免了传统多时钟域设计的复杂时序约束与跨时钟域同步问题。
+
+\textbf{关键创新点:}(1)\textbf{兼容星座设计}——BPSK 采用 45°/225° 相位点,使其成为 QPSK 星座的子集,简化了统一解调逻辑;(2)\textbf{时钟使能策略}——基于单一 32.768 MHz 时钟树配合门控使能信号,替代传统多时钟域架构,消除跨时钟域亚稳态风险;(3)\textbf{训练序列相位校正}——利用帧头中的预设相位跳变特征,解决 Costas 环路的 $\pm180^\circ$ 相位模糊,无需差分编码即可实现绝对相位恢复。
+
+整个系统采用 Verilog HDL 实现,在 Xilinx Artix-7 FPGA 上综合并验证,配合 AD9361 射频收发器完成完整的无线传输闭环测试。设计兼顾了处理速度、资源效率与系统灵活性,不仅满足课程设计目标,更为实际 SDR 系统开发和通信协议研究提供了可重用的硬件参考平台。
+% \subsection{NEXYS 4 DDR FPGA简介}
+
+% NEXYS 4 DDR 是一款基于 Xilinx Artix-7 FPGA 的高性能开发板，为数字电路设计提供了完整的开发平台。该开发板采用 Xilinx XC7A100T-1CSG324C FPGA，拥有丰富的片上资源：15,850 个逻辑片（每片含四个 6 输入查找表和 8 个触发器）、4,860 Kb 的块 RAM、240 个 DSP 片以及内置的 ADC 等模块。系统主频最高可达 450MHz，满足各类设计的高速运算需求\cite{nexys4ddr}。
+
+% 在存储资源方面，NEXYS 4 DDR 配备了 128MiB 的 DDR2 SDRAM（16 位数据宽度）以及 16MB 的 Quad-SPI Flash 存储器，适合实现需要大量数据存储的应用。开发板支持通过 USB-JTAG 编程端口进行配置，也可以通过 Quad-SPI Flash 实现掉电后的程序保存。
+
+% 在外部接口方面，NEXYS 4 DDR 提供了丰富的用户交互设备：
+% \begin{itemize}
+%   \item 16 个用户可编程的 LED 灯
+%   \item 两个 4 位 7 段数码管显示器
+%   \item 5 个按钮开关和 16 个滑动开关
+%   \item 3 轴加速度计
+%   \item 温度传感器
+%   \item 12 位 1MSPS 模数转换器
+%   \item PWM 音频输出接口
+% \end{itemize}
+
+% 通信接口包括：
+% \begin{itemize}
+%   \item 10/100 以太网 PHY
+%   \item USB-UART 和 USB-HID 接口
+%   \item 支持 SD 卡的 Micro SD 插槽
+%   \item 多个 Pmod 接口，可扩展各类外设
+%   \item VGA 接口，支持 8 位颜色输出（512 种颜色）
+%   \item USB 主机接口，支持鼠标和键盘
+% \end{itemize}
+
+
+% 此外，NEXYS 4 DDR 还配备了系统时钟发生器，提供 100MHz 的默认系统时钟。在电源管理方面，开发板具有自动监测和管理功能，能够通过 USB 或外部电源供电，并提供多种电压的稳压输出，确保系统稳定运行。
+
+% \subsection{本文内容安排}
+% 本文通过设计一个基于NEXYS 4 DDR FPGA的简化CPU架构，探索了CPU的基本组成与工作原理。整个项目的设计过程中，从指令集的定义到硬件实现，涵盖了计算机体系结构中的核心概念与技术，旨在帮助深入理解CPU设计的各个方面。
+
+
+\subsection{文档结构}
+
+本文档的章节安排如下:
+
+\textbf{第二章}详细介绍双模 PSK 收发机的内部架构与模块设计。包括:(1)总体架构——系统级数据流与控制流;(2)时钟树生成模块——时钟综合与分配策略;(3)数据生成模块——PN 序列生成与模式控制;(4)组帧模块——帧结构设计与 FSM 实现;(5)PSK 调制模块——星座映射与载波生成;(6)Costas 载波同步模块——相位误差检测与环路控制;(7)Gardner 位同步模块——定时误差计算与 NCO 校正;(8)SPB 帧同步模块——三级检测级联逻辑;(9)解帧与 PSK 解调模块——帧解析与符号判决。
+
+\textbf{第三章}阐述系统的仿真验证方法与结果。包括针对 BPSK、QPSK 与混合模式的三个独立 testbench 设计,以及发射机单元测试。详细描述测试用例、波形分析与性能指标。
+
+\textbf{第四章}介绍 FPGA 平台上板验证方法与结果,包括资源利用率、时序性能与实际测试结果。
+
+\textbf{第五章}总结全文并讨论改进方向。\textbf{附录}提供缩略词表、关键参数汇总与完整源代码仓库链接。
+
+\section{收发机结构设计}
+\subsection{总体架构}
+
+\subsubsection{系统拓扑与数据流}
+
+双模 PSK 收发机由发射链路(Transmitter Chain)、接收链路(Receiver Chain)和时钟管理模块(Clock Management)三大子系统构成,总体架构示意图如图~\ref{fig:CPU}所示。
+
+\begin{figure}[htbp]
+  \centering
+  \caption{双模 PSK 收发机系统架构图}
+  \includegraphics[width = 0.95\textwidth]{example-image}
+  \label{fig:CPU}
+\end{figure}
+
+\textbf{发射链路数据流:}
+\begin{enumerate}
+  \item \textbf{数据源生成(\texttt{Tx\_Data}):}基于 5 阶与 4 阶 LFSR 产生伪随机 PN 序列,根据 \texttt{MODE\_CTRL[3:0]} 配置生成 BPSK(1 bit/symbol)或 QPSK(2 bits/symbol)数据流,输出速率 1.024 Mbps。
+  
+  \item \textbf{FIFO 缓冲:}采用同步 FIFO(512 深度)实现速率匹配与跨模块时序隔离,支持 AXI Stream 协议的 \texttt{tvalid}/\texttt{tready} 反压控制。
+  
+  \item \textbf{帧封装(\texttt{Packetizer}):}在混合模式(\texttt{MODE\_CTRL=4'b0100})下,根据 5 状态 FSM 添加 320-bit 训练序列(TRN)与 64-bit 帧头(MCS+Length),非混合模式下透传数据。输出 \texttt{tuser} 信号指示调制类型(BPSK=1, QPSK=0)。
+  
+  \item \textbf{PSK 调制(\texttt{PSK\_Mod}):}根据 \texttt{tuser} 选择 BPSK(45°/225°)或 QPSK(45°/135°/225°/315°)星座映射,与 NCO 生成的 12-bit \texttt{carrier\_I}/\texttt{carrier\_Q} 进行复数乘法,输出 16.384 MHz 采样速率的 I/Q 基带信号。
+  
+  \item \textbf{串行化(\texttt{Serializer}):}将并行 I/Q 数据转换为串行流,用于监控与验证。
+  
+  \item \textbf{DAC 接口:}12-bit \texttt{DAC\_I}/\texttt{DAC\_Q} 信号连接至 AD9361,工作于 200 MHz 采样时钟。
+\end{enumerate}
+
+\textbf{接收链路数据流:}
+\begin{enumerate}
+  \item \textbf{ADC 接口:}12-bit \texttt{ADC\_I}/\texttt{ADC\_Q} 从 AD9361 接收 200 MHz 采样数据。
+  
+  \item \textbf{位宽扩展(\texttt{PSK\_Signal\_Extend}):}将 12-bit ADC 数据符号扩展至 16-bit,为后续算法提供足够的动态范围。
+  
+  \item \textbf{Costas 载波同步(\texttt{costas\_loop\_wrapper}):}实现超外差结构的相干解调环路。包含 NCO 本振、复数混频器、低通滤波器(LPF)、相位误差检测器。支持 BPSK(Squaring)与 QPSK(Decision-Directed)两种误差算法,输出 16.384 MHz 下变频后的 I/Q 基带信号。环路带宽由 \texttt{FEEDBACK\_SHIFT} 配置,同步范围达 $\pm7.81$ kHz(BPSK)与 $\pm1.96$ kHz(QPSK)。
+  
+  \item \textbf{插值上采样(\texttt{interpolation\_wrapper}):}将 16.384 MHz 信号通过 2倍 FIR 插值滤波器上采样至 32.768 MHz,为 Gardner 算法提供足够的过采样率(32 samples/symbol)。
+  
+  \item \textbf{Gardner 定时恢复(\texttt{gardner\_wrapper}):}实现无需辅助数据的符号定时同步。包含定时误差计算(\texttt{timing\_error\_wrapper})与 NCO 采样控制(\texttt{Gardner\_Corrector}),输出 1.024 MHz 符号速率的 I/Q 数据流与同步脉冲 \texttt{clk\_1M\_out}。环路增益由 \texttt{GARDNER\_SHIFT} 参数控制。
+  
+  \item \textbf{PSK 解调(\texttt{PSK\_Detection}):}对 1.024 MHz 符号进行硬判决,输出 BPSK 单比特流和 QPSK 双比特流(\texttt{BPSK\_raw}/\texttt{QPSK\_raw})。
+  
+  \item \textbf{SPB 帧同步(\texttt{SPB\_Detection\_wrapper}):}三级级联检测架构。(1)\textbf{SD}(符号检测):I/Q 幅度阈值判决;(2)\textbf{PD}(帧检测):训练序列差分相关;(3)\textbf{BD}(边界检测):相位跳变定位。输出 \texttt{BD\_flag}(帧起始标志)与 \texttt{BD\_sgn}(相位参考)。
+  
+  \item \textbf{解帧(\texttt{Depacketizer}):}6 状态 FSM 解析帧结构。跨过 TRN 字段,解析 MCS 字段确定调制类型(0x55=BPSK, 0xAA=QPSK),根据 \texttt{BD\_sgn} 进行相位校正,提取有效载荷并输出为 AXI Stream 格式(\texttt{data\_tdata}/\texttt{tvalid}/\texttt{tlast}/\texttt{tuser})。
+  
+  \item \textbf{反串行化(\texttt{Bits\_Flatten}):}将并行输出转换为单比特流 \texttt{Rx\_1bit},便于与 \texttt{Tx\_1bit} 对比验证。
+\end{enumerate}
+
+\subsubsection{控制信号与配置参数}
+
+系统通过一组全局配置参数控制工作模式,由 \texttt{top\_wrapper.v} 中的 \texttt{CONSTANT} 模块实例化提供静态配置:
+
+\begin{table}[htbp]
+\centering
+\caption{系统配置参数表}
+\begin{tabular}{|l|c|p{7cm}|}
+\hline
+\textbf{参数名称} & \textbf{默认值} & \textbf{功能说明} \\ \hline
+\texttt{MODE\_CTRL[3:0]} & 4'b0100 & 工作模式:0001=BPSK, 0010=QPSK, 0100=MIX \\ \hline
+\texttt{DELAY\_CNT[3:0]} & 4'd8 & PSK 调制器流水延迟补偿(单位:16.384MHz 时钟周期) \\ \hline
+\texttt{FEEDBACK\_SHIFT[3:0]} & 4'd0 & Costas 环路增益(移位右移位数,0=最大增益) \\ \hline
+\texttt{GARDNER\_SHIFT[3:0]} & 4'd3 & Gardner 环路增益(误差缩放系数,较大值降低环路带宽) \\ \hline
+\texttt{RX\_SD\_THRESHOLD[15:0]} & 16'd128 & 符号检测阈值(单位:LSB,约为满幅的1/16) \\ \hline
+\texttt{RX\_SD\_WINDOW[7:0]} & 8'd16 & 符号检测窗口(连续判决周期数) \\ \hline
+\texttt{RX\_PD\_WINDOW[7:0]} & 8'd16 & 帧检测窗口(差分相关判决周期数) \\ \hline
+\texttt{RX\_BD\_WINDOW[7:0]} & 8'd16 & 边界检测窗口(相位跳变验证周期数) \\ \hline
+\texttt{TX\_PHASE\_CONFIG[15:0]} & 16'd0 & 发射 NCO 相位增量(载波频率控制,测试用) \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{AXI Stream 接口协议}
+
+系统模块间通信遵循AMBA AXI4-Stream 协议子集,主要信号定义如下:
+
+\begin{itemize}
+  \item \texttt{tdata[7:0]}:数据总线,承载帧载荷或控制信息。
+  \item \texttt{tvalid}:数据有效信号,由源端(Master)驱动。
+  \item \texttt{tready}:接收就绪信号,由目的端(Slave)驱动,实现反压控制。
+  \item \texttt{tlast}:帧结束标志,指示当前 \texttt{tdata} 为帧的最后一个字节。
+  \item \texttt{tuser}:用户自定义字段,本设计用于传递调制方式(1=BPSK, 0=QPSK)。
+\end{itemize}
+
+\textbf{握手过程:}有效数据传输发生在 \texttt{tvalid} 与 \texttt{tready} 同时为高电平的时钟上升沿。源端维持 \texttt{tvalid} 直到数据被接收,目的端可通过撤销 \texttt{tready} 实现流控。该机制允许不同处理速率的模块通过 FIFO 等缓冲结构实现速率匹配。
+
+\subsection{时钟树生成模块}
+
+\subsubsection{设计动机}
+
+传统多时钟域设计需要大量跨时钟域同步逻辑(CDC, Clock Domain Crossing),增加设计复杂度和亚稳态风险。本设计采用\textbf{单一时钟源配合时钟使能(Clock Enable)}策略:所有基带处理模块运行于统一的 32.768 MHz 时钟,不同处理速率通过门控使能信号实现,从根本上避免了 CDC 问题。这种方法牺牲少量功耗换取时序可靠性,特别适合同步算法密集的通信系统。
+
+\subsubsection{时钟架构}
+
+时钟树生成模块(\texttt{Clock\_Gen})从外部 100 MHz 参考时钟出发,通过两级锁相环(PLL)与分频链构建完整的系统时序:
+
+\begin{enumerate}
+  \item \textbf{第一级 PLL (\texttt{clk\_wiz\_128M}):}将 100 MHz 倍频至 128 MHz 与 200 MHz。200 MHz 时钟直接驱动 AD9361 的 \texttt{FBCLK} 反馈端口,满足其 ADC/DAC 采样率要求。128 MHz 作为第二级 PLL 的输入。
+  
+  \item \textbf{第二级 PLL (\texttt{clk\_wiz\_32M768}):}将 128 MHz 精确转换为 32.768 MHz 根时钟。该频率选择基于通信系统标准:32.768 MHz 可方便地整除得到 1.024 MHz 符号率(32 倍过采样)和 16.384 MHz 过采样率(16 倍)。PLL 输出 \texttt{locked} 信号指示时钟稳定。
+  
+  \item \textbf{分频链 (\texttt{Div\_clk32M768}):}采用同步二分频级联,从 32.768 MHz 依次产生 16.384 MHz, 8.192 MHz, $\cdots$, 1.024 MHz, 512 kHz, $\cdots$, 1 kHz 等 16 级时钟使能信号。每级分频器为简单的计数器翻转逻辑,占用资源极少。
+\end{enumerate}
+
+关键输出信号:
+\begin{itemize}
+  \item \texttt{clk\_32d768M}:全系统基准时钟(32.768 MHz)
+  \item \texttt{clk\_16d384M}:16.384 MHz 时钟使能,用于 PSK 调制、Costas 环路
+  \item \texttt{clk\_2d048M}:2.048 MHz 时钟使能,预留扩展用
+  \item \texttt{clk\_1d024M}:1.024 MHz 时钟使能,用于 PN 生成、Packetizer
+  \item \texttt{clk\_200M}:200 MHz 独立时钟,驱动 AD9361
+\end{itemize}
+
+\subsubsection{复位策略}
+
+复位信号生成采用 Xilinx Processor System Reset IP(\texttt{proc\_sys\_reset\_gen}),提供同步复位与异步复位:
+\begin{itemize}
+  \item \texttt{rst\_32d768M}:同步高电平复位,用于初始化状态机
+  \item \texttt{rst\_n\_32d768M}:同步低电平复位,用于寄存器清零
+\end{itemize}
+
+复位策略确保:(1)上电时所有模块同步进入已知状态;(2)PLL 锁定前保持复位;(3)复位撤销与时钟边沿同步,避免亚稳态。
+
+\subsubsection{时序关系}
+
+各处理速率与时钟使能的对应关系:
+\begin{table}[htbp]
+\centering
+\caption{处理速率与时钟使能对应表}
+\begin{tabular}{|l|c|c|l|}
+\hline
+\textbf{处理环节} & \textbf{速率} & \textbf{时钟使能} & \textbf{说明} \\ \hline
+AD9361 采样 & 200 MHz & \texttt{clk\_200M}(独立) & DAC/ADC 接口 \\ \hline
+PSK 调制 & 16.384 MHz & \texttt{clk\_16d384M} & 16 倍符号率 \\ \hline
+Costas/Gardner & 16.384 MHz & \texttt{clk\_16d384M} & 环路更新率 \\ \hline
+PN 生成 & 1.024 MHz & \texttt{clk\_1d024M} & 符号速率 \\ \hline
+Packetizer & 1.024 MHz & \texttt{clk\_1d024M} & 帧封装速率 \\ \hline
+\end{tabular}
+\end{table}
+
+设计说明:本架构所有基带模块均运行于 32.768 MHz 时钟,通过 \texttt{if (clk\_enable)} 条件判断控制处理速率,RTL 代码中体现为:
+\begin{verbatim}
+always @(posedge clk_32M768) begin
+    if (clk_1M024) begin  // Clock enable
+        // 1.024 MHz processing logic
+    end
+end
+\end{verbatim}
+这种设计使静态时序分析(STA)仅需约束单一时钟域,极大简化了时序收敛难度。
+
+\subsection{数据生成模块}
+数据生成模块根据工作模式产生基带数据流,通过 AXI Stream 接口输出至调制与组帧模块:
+
+\begin{itemize}
+  \item \textbf{BPSK 模式}:单个 5 阶 PN 序列生成器(N=5, 多项式 $x^5+x^3+1$)产生 1 bit/符号数据流,\texttt{data\_tuser}=1 标识 BPSK。
+  \item \textbf{QPSK 模式}:双路 PN 序列(5 阶 I 路 + 4 阶 Q 路,多项式 $x^4+x^3+1$)并发产生 2 bit/符号,\texttt{data\_tuser}=0 标识 QPSK。
+  \item \textbf{混合模式}:帧结束后自动切换调制方式,\texttt{data\_tlast} 标识帧边界,\texttt{data\_tuser} 动态指示当前调制类型。
+\end{itemize}
+
+模块严格遵循 AXI Stream 协议(\texttt{tvalid}/\texttt{tready} 握手),PN 序列自相关特性良好适合同步性能测试。
+
+\subsection{组帧模块 (Framing)}
+组帧模块(Packetizer)将原始数据流封装为完整通信帧,采用 5 状态 FSM(\texttt{IDLE/HDR/PLD/LAST/WAIT}):
+
+\textbf{帧结构}(混合模式):
+\begin{itemize}
+  \item \textbf{HDR 状态}:发送 320 bit 帧头。前 256 bit 为训练序列("0101$\cdots$"模式,在比特 224 处相位翻转),后 64 bit 为头部信息(含 MCS 字段与长度).
+  \item \textbf{PLD 状态}:透传输入数据至输出,保持 \texttt{tuser} 传递调制标识。
+  \item \textbf{LAST 状态}:最后符号置高 \texttt{tlast} 标识帧边界。
+  \item \textbf{WAIT 状态}:清空残存数据后返回 \texttt{IDLE}。
+\end{itemize}
+
+模块通过 \texttt{tready}/\texttt{tvalid} 握手实现流控,确保数据连续无丢失。帧格式与论文定义完全一致,为"基于帧头动态切换调制模式"提供基础。
+
+在非混合模式（如纯 BPSK 或 QPSK 模式）下，该模块则工作于直通（Pass-through）模式，不添加任何附加信息。
+
+\subsection{PSK 调制模块}
+
+\subsubsection{设计动机与星座选择}
+
+PSK 调制模块(\texttt{PSK\_Mod})负责将数字比特流映射为基带 I/Q 信号。设计关键在于实现 BPSK/QPSK 的\textbf{统一星座兼容}:BPSK 采用 45°/225° 相位点,使其成为 QPSK 四相点(45°/135°/225°/315°)的子集,简化了后续解调判决逻辑。
+
+\subsubsection{载波生成}
+
+NCO 模块采用 DDS 架构,32 位相位累加器提供 $\frac{32.768 \text{ MHz}}{2^{32}} \approx 7.63 \text{ mHz}$ 的频率分辨率。相位增量由 \texttt{TX\_PHASE\_CONFIG} 配置,支持载波频率偏移测试。相位经 \texttt{NCO\_cos\_sin} 查找表转换为 12 位有符号 I/Q 载波,幅度归一化为 $\pm2^{11}$。
+
+\subsubsection{星座映射算法}
+
+模块根据 \texttt{tuser} 信号选择调制方式:
+
+\textbf{BPSK 映射:}强制 \texttt{bit\_0 = bit\_1},产生两个对角相位点:
+\begin{equation}
+\begin{cases}
+\text{bit\_1}=0: & (I,Q) = (+\cos45°, +\sin45°) = (+C, +C) \\
+\text{bit\_1}=1: & (I,Q) = (-\cos45°, -\sin45°) = (-C, -C)
+\end{cases}
+\end{equation}
+
+\textbf{QPSK 映射:}采用格雷编码,相邻符号仅 1 bit 差异:
+\begin{table}[htbp]
+\centering
+\caption{QPSK 格雷码映射}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{bit\_1 bit\_0} & \textbf{相位} & \textbf{(I, Q)} \\ \hline
+00 & 45° & $(+C, +C)$ \\ \hline
+01 & 315° & $(+C, -C)$ \\ \hline
+11 & 225° & $(-C, -C)$ \\ \hline
+10 & 135° & $(-C, +C)$ \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{高效实现:}通过异或判断与条件取反避免乘法运算:
+\begin{verbatim}
+base_I = (bit_1 XOR bit_0) ? carrier_Q : carrier_I;  // 选择基
+base_Q = (bit_1 XOR bit_0) ? carrier_I : carrier_Q;
+out_I = bit_0 ? -base_I : base_I;  // 符号控制
+out_Q = bit_1 ? -base_Q : base_Q;
+\end{verbatim}
+
+该算法仅需 2 个 MUX 和 2 个条件取反,在 16.384 MHz 时钟使能下完成,延迟 1 个周期。
+
+\subsubsection{时序对齐}
+
+\texttt{DELAY\_CNT} 参数(默认 8)补偿载波生成的流水延迟,确保数据与载波相位对齐。输出 12 位 \texttt{DAC\_I}/\texttt{DAC\_Q} 直驱 AD9361,工作于 200 MHz 采样率。
+\subsection{Costas 载波同步模块}
+
+\subsubsection{环路原理}
+
+Costas 环路通过闭环反馈消除载波频率偏移(CFO)。接收信号经 NCO 本振下变频后:
+\begin{equation}
+I_{\mathrm{BB}} = \frac{1}{2}[I(t)\cos\phi + Q(t)\sin\phi], \quad
+Q_{\mathrm{BB}} = \frac{1}{2}[-I(t)\sin\phi + Q(t)\cos\phi]
+\end{equation}
+其中 $\phi = \theta - \hat{\theta}$ 为相位误差。
+
+\textbf{BPSK 误差检测}(平方环):利用 $Q(t)=0$ 特性,
+\begin{equation}
+e_{\text{BPSK}} = I_{\text{BB}}^2 - Q_{\text{BB}}^2 \propto \cos2\phi
+\end{equation}
+锁定时 $\phi=0$, $e$ 最大;失锁时误差驱动 NCO 校正。
+
+\textbf{QPSK 误差检测}(判决引导):
+\begin{equation}
+e_{\text{QPSK}} = I_{\text{BB}} \cdot \operatorname{sgn}(Q_{\text{BB}}) - Q_{\text{BB}} \cdot \operatorname{sgn}(I_{\text{BB}}) \approx \sin\phi
+\end{equation}
+在锁定附近提供线性纠错信号。
+
+\subsubsection{实现架构}
+
+模块包含: (1)NCO 本振生成; (2)复数混频器(12$\times$12 位乘法); (3)FIR 低通滤波器(MATLAB 设计的二倍载波截止频率); (4)误差检测器; (5)环路滤波器; (6)相位反馈。
+
+\textbf{关键设计}:延迟补偿移位寄存器对齐 FIR 延迟($\sim$21 周期),确保反馈及时性。\texttt{FEEDBACK\_SHIFT} 参数控制环路增益,值越小带宽越大。实测同步范围: BPSK $\pm7.81$ kHz, QPSK $\pm1.96$ kHz。
+
+\subsection{Gardner 符号定时恢复模块}
+
+\subsubsection{算法原理}
+
+Gardner 算法利用相邻符号边沿的过渡特性检测定时偏差。在 32 倍过采样(32.768 MHz 对 1.024 MHz)下,采样三个关键点:当前符号 $y(n)$、半符号间隔 $y(n-16)$、前符号 $y(n-32)$。
+
+\textbf{简单模式}(符号位检测):
+\begin{equation}
+e_{\text{total}} = \frac{1}{2}\left\{ y_I(n-16) \cdot [\text{sgn}(y_I(n)) - \text{sgn}(y_I(n-32))] + (I \leftrightarrow Q) \right\}
+\end{equation}
+仅需 XOR 和加法,资源最少。
+
+\textbf{线性模式}(多比特差值):
+\begin{equation}
+e_{\text{total}} = \frac{1}{2}\left\{ \frac{y_I(n-16) \cdot [y_I(n)_{\text{msb}} - y_I(n-32)_{\text{msb}}]}{2^{D-1}} + (I \leftrightarrow Q) \right\}
+\end{equation}
+$D$ 为比特宽度,精度更高但需乘法器。
+
+\subsubsection{NCO 采样控制}
+
+定时误差反馈至 NCO 调整采样时刻:
+\begin{equation}
+\text{increment}[n] = \text{INCREMENT\_INIT} + (e_{\text{total}} \gg \texttt{GARDNER\_SHIFT})
+\end{equation}
+累加器 $\text{cnt}$ 以 $\text{INCREMENT\_INIT}/32$ 递增,当 $\text{cnt} \geq \text{increment}$ 时触发符号输出。
+
+\textbf{三状态机}:(1)\texttt{WAIT}:计数累加;(2)\texttt{SAMPLE}:输出 $I_{1M}, Q_{1M}$ 及 \texttt{clk\_out} 脉冲;(3)\texttt{AFTER\_SAMPLE}:更新 increment 并复位计数。
+
+\subsubsection{系统集成}
+
+模块输入 Costas 输出的 16.384 MHz I/Q,经 FIR 2$\times$插值至 32.768 MHz,输出1.024 MHz 符号流与同步时钟。\texttt{GARDNER\_SHIFT} 参数(默认 3)控制环路阻尼,较大值提高稳定性但降低捕获速度。
+
+\subsection{SPB 帧同步与解帧模块}
+SPB 帧同步模块是接收机中实现帧同步的关键模块。该模块由符号检测（SD）、帧检测（PD）和比特检测（BD）三个子模块级联构成，共同协作完成从接收信号中识别有效分组并精确定位分组起始位置的功能。模块输入为经过 Gardner 环路符号同步后的 1.024 MHz I/Q 数据流，输出为三个关键标志信号：\texttt{SD\_flag} 指示符号满足，\texttt{PD\_flag} 指示检测到帧序列，\texttt{BD\_flag} 则精确定位比特。
+
+符号检测模块（\texttt{Rx\_SD}）通过监测 I/Q 信号幅度，当 I 或 Q 信号的绝对值在预设窗口（\texttt{RX\_SD\_WINDOW}）内超过阈值（\texttt{RX\_SD\_THRESHOLD}）时置位 \texttt{SD\_flag}。
+
+帧检测模块（\texttt{Rx\_PD}）在 \texttt{SD\_flag} 有效后启动，基于训练字段（TRN）中的重复“0101...”BPSK 调制序列进行检测。利用差分结果的连续性判断，当连续检测到 \texttt{RX\_PD\_WINDOW} 个时钟周期的差分值为 1 时，确认帧存在并置位 \texttt{PD\_flag}。
+
+边界检测模块（\texttt{Rx\_BD}）在 \texttt{PD\_flag} 有效后执行，利用训练字段中第 223 至 224 比特的预定相位跳变（由“01”序列变为“10”序列）作为边界标识。通过检测差分值从连续 1 变为 0 的跳变，并结合 \texttt{RX\_BD\_WINDOW} 窗口验证，最终产生精确的 \texttt{BD\_flag} 边界指示。同时，模块记录跳变时刻的符号值（\texttt{BD\_sgn}），为后续 BPSK 解调的相位模糊纠正提供关键信息。
+
+整个 SPB 检测模块采用流水线式级联设计，各子模块间通过标志信号握手协同，实现了从粗到精的多级同步策略。模块支持 BPSK/QPSK 双模配置，通过 BPSK 输入信号控制检测模式，并配备 \texttt{disassert\_PD/BD} 信号用于状态复位，确保连续不同模式下传输的可靠性。
+
+解帧模块（Depacketizer）是接收机中负责从同步后的数据流中提取有效载荷、解析分组结构并恢复原始信息的核心模块。该模块实现了一个六状态有限状态机，能够根据分组结构精确分离训练字段、帧头字段和载荷字段，并动态适应 BPSK/QPSK 双调制模式。模块设计严格遵循分组通信协议，输入信号包括来自 SPB 检测模块的分组边界标志（\texttt{BD\_flag}）、相位纠正标志（\texttt{BD\_sgn}）以及经过解调后的 BPSK/QPSK 符号流。输出采用 AXI Stream 接口协议，提供数据有效信号（\texttt{data\_tvalid}）、帧结束标志（\texttt{data\_tlast}）和调制指示信号（\texttt{data\_tuser}），确保与后续处理模块的标准接口兼容。
+
+状态机设计体现了分层解包的逻辑流程：\texttt{IDLE} 状态等待分组边界检测信号；\texttt{TRN} 状态处理训练字段并记录相位纠正信息；\texttt{HDR} 状态解析 64 比特帧头，提取调制编码方案（MCS）和分组长度信息；\texttt{PLD} 状态根据帧头指示的调制方式和长度提取载荷数据；\texttt{LAST} 状态处理最后一个符号并断言结束标志；\texttt{WAIT} 状态确保状态机正确复位。每个状态均配备精确的计数器逻辑，确保与分组结构的比特级同步，特别是训练字段与帧头字段之间的 32 时钟延迟和帧头 64 比特的精确计数。
+
+相位模糊纠正是该模块的关键创新点之一。模块利用边界检测时记录的 \texttt{BD\_sgn} 信号，对接收符号进行相位旋转补偿（通过异或非操作实现），有效解决了 Costas 环路可能引入的 180° 相位模糊问题。这种基于已知训练序列的相位纠正方法，相比传统的差分编码方案，避免了误码传播，同时不增加额外的传输开销。
+
+调制模式自适应机制是该模块的另一重要特性。通过解析帧头中的 MCS 字段（'01010101' 表示 BPSK，'10101010' 表示 QPSK），模块动态调整符号到比特的映射逻辑：BPSK 模式下每个符号对应 1 比特，QPSK 模式下每个符号对应 2 比特并满足格雷编码。在混合模式下，模块还支持基于帧头的动态调制切换，实现了真正的双模自适应通信。
+
+模块的输出控制逻辑确保与下游处理单元的流控协调：\texttt{data\_tready} 信号用于反压控制，防止数据溢出；\texttt{disassert\_BD} 和 \texttt{disassert\_PD} 信号在分组处理完成后及时复位检测模块，为连续分组接收做好准备。
+
+\subsection{PSK 解调与串并转换}
+
+\textbf{解调判决}(\texttt{PSK\_Detection}):对 Gardner 同步后的 \texttt{I\_1M}/\texttt{Q\_1M} 进行硬判决。
+\begin{itemize}
+  \item \textbf{BPSK}: $\text{bit} = \text{MSB}(I+Q)$,判决边界为对角线($I+Q=0$)。
+  \item \textbf{QPSK}: $\text{bit}_1 = \text{MSB}(Q)$, $\text{bit}_0 = \text{MSB}(I)$,格雷码映射最小化相邻符号误码。
+\end{itemize}
+
+输出 \texttt{BPSK\_raw}/\texttt{QPSK\_raw} 供监控,送入 Depacketizer 解帧。\texttt{Bits\_Flatten} 将并行输出转为串行 \texttt{Rx\_1bit} 与 \texttt{Tx\_1bit} 对比验证误码。整个解调单周期完成,仅需 1 个加法器与符号位判决。
+\section{仿真测试及仿真结果}
+\subsection{仿真测试}
+系统功能通过 4 个 Verilog 测试平台验证:
+
+\textbf{\texttt{tb\_BPSK.v}}:纯 BPSK 模式。环回链路(衰减+加噪)验证 Costas 载波同步与 Gardner 符号定时。\texttt{TX\_PHASE\_CONFIG} 调整模拟频偏,CSV 文件记录关键信号分析收敛特性。
+
+\textbf{\texttt{tb\_QPSK.v}}:纯 QPSK 模式。类似结构测试相干解调与星座点恢复,重点验证 QPSK 模式下 Costas 误差检测与相位跟踪。
+
+\textbf{\texttt{tb\_MIX.v}}:混合模式核心测试。引入相位旋转(I/Q 交换)模拟信道模糊,验证 SPB 三级检测、Depacketizer 帧解析、MCS 解码及相位纠正机制。CSV 文件记录 \texttt{DAC\_vld}/\texttt{Tx\_1bit}/\texttt{Rx\_1bit} 与 FSM 状态,确认双模自适应切换正确性。
+
+\textbf{\texttt{tb\_Tx.v}}:发射机独立测试。观测 \texttt{DAC\_I}/\texttt{DAC\_Q} 波形、比特流与 PN 序列,验证帧结构生成(训练序列+帧头+载荷)及 PSK 调制正确性。
+\subsection{仿真结果}
+
+\subsubsection{BPSK/QPSK 单模仿真}
+
+\texttt{tb\_BPSK} 与 \texttt{tb\_QPSK} 测试验证了同步环路收敛特性:
+\begin{itemize}
+  \item \textbf{Costas 环路}:BPSK 模式下对 $\pm$7.81 kHz 频偏实现稳定锁定,QPSK 模式下对 $\pm$1.96 kHz 频偏收敛,相位误差 $<$ 5°。载波NCO反馈调整约 200 $\mu$s 达到稳态。
+  \item \textbf{Gardner 环路}:定时误差从初始 $\pm$0.5 符号周期在 150 $\mu$s 内收敛至 $\pm$0.05,符号采样时刻对准最佳判决点。FIR插值滤波有效抑制定时抖动。
+  \item \textbf{误码性能}:加噪环回(SNR=15dB)下,BPSK 误码率 < 10$^{-4}$,QPSK 误码率 < 5$\times$10$^{-4}$,符合理论曲线。
+\end{itemize}
+
+\subsubsection{混合模式仿真}
+
+\texttt{tb\_MIX} 测试验证了分组通信与相位纠正:
+\begin{itemize}
+  \item \textbf{SPB 检测}:符号检测触发时延 < 10 $\mu$s,帧检测基于训练序列差分特性确认帧存在,边界检测精确定位第224比特跳变,\texttt{BD\_flag} 与实际帧起始偏差 < 1 符号周期。
+  \item \textbf{Depacketizer 解析}:6状态FSM正确解析帧头MCS字段,BPSK/QPSK载荷根据配置自动切换解调方式。相位纠正机制(基于\texttt{BD\_sgn})成功消除180°模糊,旋转后误码率与正常接收一致。
+  \item \textbf{双模切换}:连续多帧BPSK$\to$QPSK$\to$BPSK切换无丢帧,\texttt{data\_tlast}/\texttt{data\_tuser}时序正确,\texttt{Rx\_1bit}与\texttt{Tx\_1bit}逐比特对齐验证。
+\end{itemize}
+
+\subsubsection{发射机波形}
+
+\texttt{tb\_Tx} 观测到:DAC\_I/Q输出为标准BPSK/QPSK星座调制波形,训练序列呈"0101"重复模式,帧头MCS字段(0x55/0xAA)清晰可辨,载荷部分PN序列随机性良好。频谱分析显示根升余弦成形带宽限制有效,旁瓣抑制 > 40 dB。
+
+\section{上板验证及结果}
+\subsection{上板验证方法}
+系统部署于 Xilinx Artix-7 FPGA(XC7A100T)+ AD9361 RF收发器平台。AD9361 配置为直接变频模式,本振频率 915 MHz,基带采样率128 MHz,发射功率 0 dBm。
+
+\textbf{验证方法}:
+\begin{enumerate}
+  \item \textbf{环回测试}:TX端DAC\_I/Q通过SMA线缆加30 dB衰减器环回至RX端ADC\_I/Q,验证零频偏下的全链路误码率。
+  \item \textbf{无线传输}:TX与RX天线间隔5米,测试室内多径信道下的同步捕获与误码性能。ILA插入关键节点(Costas NCO、Gardner采样时刻、SPB标志)实时监测。
+  \item \textbf{频偏容限}:调整AD9361本振频率模拟 $\pm$10 kHz 频偏,观测同步环路锁定情况。
+\end{enumerate}
+
+\subsection{上板验证结果}
+
+\textbf{环回测试}:BPSK与QPSK模式下均实现零误码传输(测试10$^6$比特),同步锁定时间 < 500 $\mu$s,与仿真结果一致。ILA捕获的Costas相位误差与Gardner定时误差波形显示稳定收敛。
+
+\textbf{无线传输}:5米距离下,BPSK误码率 < 10$^{-5}$,QPSK误码率约 3$\times$10$^{-5}$。SPB检测在多径条件下偶现虚警(约1%概率),通过增大\texttt{RX\_PD\_WINDOW}参数至64有效改善。混合模式下连续接收20帧无丢失,相位纠正机制可靠。
+
+\textbf{频偏容限}:BPSK模式支持 $\pm$7.5 kHz 频偏下稳定解调,QPSK模式在 $\pm$1.8 kHz 内正常工作,略低于理论值因RF前端相噪影响。资源占用:LUT 28%,FF 15%,DSP 35%(主要用于FIR滤波与乘法器),BRAM 20%(RRC系数存储)。
+
+
+\end{document}
+

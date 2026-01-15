@@ -21,7 +21,7 @@
 // N=15: x^15 + x^14 + 1                (taps: [15,14])
 // N=16: x^16 + x^15 + x^13 + x^4 + 1   (taps: [16,15,13,4])
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Author: LiPtP
 // Date: 2024/01/05
 // Modified: 2025/12/17 - Extended to support arbitrary N

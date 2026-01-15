@@ -2,7 +2,7 @@
 // =====================
 // Detect BPSK/QPSK from I/Q data.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Author: LiPtP (LiPtP0000)
 // Date: 2025/12/17
 

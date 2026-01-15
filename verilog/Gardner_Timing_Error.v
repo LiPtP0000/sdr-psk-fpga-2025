@@ -4,7 +4,7 @@
 // It requires samples y(n), y(n-16), y(n-32) as inputs,
 // which has a sample rate 32x of the symbol rate.
 //
-// Author: Wuqiong Zhao (me@wqzhao.org)
+
 // Date: 2024/01/05
 
 `timescale 1ns / 1ps
